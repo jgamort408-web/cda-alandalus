@@ -76,7 +76,6 @@
   --turquesa:#238281;
   --frambuesa:#C23464;
   --azul:#1F4E86;
-  --rojo:#C0281C;
   --acc:var(--coral);
   /* sombras y radios */
   --sombra-1:0 1px 2px rgba(18,41,59,.05);
@@ -111,7 +110,6 @@
     --turquesa:#3FB3AF;
     --frambuesa:#E56A90;
     --azul:#7FB2EA;
-    --rojo:#FF7A6B;
     --sombra-1:0 1px 2px rgba(0,0,0,.4);
     --sombra-2:0 2px 4px rgba(0,0,0,.3), 0 12px 28px -16px rgba(0,0,0,.7);
     --sombra-3:0 8px 20px -6px rgba(0,0,0,.45), 0 32px 60px -30px rgba(0,0,0,.8);
@@ -134,7 +132,6 @@
   --turquesa:#3FB3AF;
   --frambuesa:#E56A90;
   --azul:#7FB2EA;
-  --rojo:#FF7A6B;
   --sombra-1:0 1px 2px rgba(0,0,0,.4);
   --sombra-2:0 2px 4px rgba(0,0,0,.3), 0 12px 28px -16px rgba(0,0,0,.7);
   --sombra-3:0 8px 20px -6px rgba(0,0,0,.45), 0 32px 60px -30px rgba(0,0,0,.8);
@@ -489,11 +486,7 @@ p{margin:0}
 .e-proceso{color:var(--mostaza);border-color:color-mix(in srgb,var(--mostaza) 40%,transparent);background:color-mix(in srgb,var(--mostaza) 12%,transparent)}
 .e-debate{color:var(--frambuesa);border-color:color-mix(in srgb,var(--frambuesa) 40%,transparent);background:color-mix(in srgb,var(--frambuesa) 12%,transparent)}
 .e-pendiente{color:var(--tinta-3);border-color:var(--linea-fuerte)}
-.e-inviable{color:var(--rojo);border-color:color-mix(in srgb,var(--rojo) 45%,transparent);background:color-mix(in srgb,var(--rojo) 12%,transparent)}
 .sueno--cumplido{background:color-mix(in srgb,var(--salvia) 7%,var(--papel-2))}
-.sueno--inviable{background:color-mix(in srgb,var(--rojo) 6%,var(--papel-2))}
-.sueno--inviable .sueno__txt{color:var(--rojo);text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:color-mix(in srgb,var(--rojo) 45%,transparent)}
-.chip[data-estado="inviable"][aria-pressed="true"]{background:var(--rojo);border-color:var(--rojo);color:#fff}
 
 /* banda de sueños cumplidos del curso anterior */
 .logros{
@@ -1020,8 +1013,8 @@ p{margin:0}
         <h2>Los sueños</h2>
         <p>
           Todo lo que la comunidad pidió en la última fase del sueño, comisión por comisión.
-          Filtra por estado o busca una palabra para encontrar el tuyo. En rojo van los que hemos
-          descartado por inviables o muy difíciles: siguen a la vista, porque también eso hay que contarlo.
+          Filtra por estado o busca una palabra para encontrar el tuyo. Están todos, también los más
+          difíciles: si alguien lo ha soñado, aquí sigue.
         </p>
       </div>
 
@@ -1037,7 +1030,6 @@ p{margin:0}
           <button class="chip" data-estado="proceso" aria-pressed="false">En marcha</button>
           <button class="chip" data-estado="pendiente" aria-pressed="false">Pendientes</button>
           <button class="chip" data-estado="debate" aria-pressed="false">En debate</button>
-          <button class="chip" data-estado="inviable" aria-pressed="false">Inviables</button>
         </div>
       </div>
 
@@ -1362,8 +1354,8 @@ const CDA = {
         {t:"Un porterillo para entrar por la puerta que da a la Finca.",e:"pendiente"},
         {t:"Más plantas en la entrada.",e:"pendiente"},
         {t:"Bandera de España y de Andalucía en la fachada del centro.",e:"pendiente"},
-        {t:"Uniforme.",e:"inviable",n:"No corresponde al centro decidirlo."},
-        {t:"Piscina.",e:"inviable",n:"El sueño más ambicioso de toda la recogida. Sin espacio ni presupuesto posible."}
+        {t:"Uniforme.",e:"pendiente"},
+        {t:"Piscina.",e:"pendiente",n:"El sueño más ambicioso de toda la recogida."}
       ]},
     { id:"activ", nombre:"Actividades", color:"mostaza",
       responsables:["Carmen R.","José M."], vacantes:1,
@@ -1379,15 +1371,15 @@ const CDA = {
         {t:"Un baile de invierno.",e:"proceso",n:"Se celebra a finales de enero."},
         {t:"Un día del pijama.",e:"proceso",n:"Vinculado al Aula Hospitalaria."},
         {t:"Hacer un cine con palomitas.",e:"pendiente"},
-        {t:"Que se ponga una sala de videojuegos para todo el curso.",e:"inviable",n:"No hay aula disponible ni forma de supervisarla todo el curso."},
+        {t:"Que se ponga una sala de videojuegos para todo el curso.",e:"pendiente"},
         {t:"Poder llevar una tarde mascotas al instituto: concurso, exhibición…",e:"pendiente"},
-        {t:"Dormir una noche en el instituto.",e:"inviable",n:"La normativa de uso de las instalaciones no lo permite."},
+        {t:"Dormir una noche en el instituto.",e:"pendiente"},
         {t:"Más excursiones.",e:"pendiente"},
         {t:"Excursiones fuera de Almería.",e:"pendiente"},
         {t:"Excursión a Aguadulce.",e:"pendiente"},
-        {t:"Excursión a la Warner.",e:"inviable",n:"Distancia y coste por encima de lo asumible."},
+        {t:"Excursión a la Warner.",e:"pendiente"},
         {t:"Visita al instituto de Pechina.",e:"pendiente"},
-        {t:"Viaje de estudios para todo el centro.",e:"inviable",n:"Imposible de organizar para todo el alumnado a la vez."},
+        {t:"Viaje de estudios para todo el centro.",e:"pendiente"},
         {t:"Baile de prom.",e:"pendiente"},
         {t:"Fiesta del amor.",e:"pendiente"},
         {t:"Días temáticos: los 80, informal…",e:"pendiente"},
@@ -1419,7 +1411,7 @@ const CDA = {
         {t:"Pan integral en la cantina.",e:"pendiente"},
         {t:"Una clase para descansar si nos encontramos mal.",e:"pendiente"},
         {t:"Poner en la cantina cañas, pizzas…",e:"pendiente"},
-        {t:"Poder salir al baño cuando queramos.",e:"inviable",n:"Choca con las normas de organización y funcionamiento del centro."},
+        {t:"Poder salir al baño cuando queramos.",e:"pendiente"},
         {t:"Que se permita estar en clase con la capucha puesta.",e:"debate",n:"Choca con las normas de convivencia vigentes."},
         /* ⚠ Sueño transcrito literalmente del cartel de la comisión.
            Si prefieres no publicarlo, borra la línea siguiente. */
@@ -1631,7 +1623,7 @@ const esc = t => String(t).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':
 const menos = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const iniciales = n => n.split(/\s+/).slice(0,2).map(p=>p[0]).join('').toUpperCase();
 
-const ETIQUETA = { cumplido:'Cumplido', proceso:'En marcha', debate:'En debate', pendiente:'Pendiente', inviable:'Inviable' };
+const ETIQUETA = { cumplido:'Cumplido', proceso:'En marcha', debate:'En debate', pendiente:'Pendiente' };
 const activos   = c => c.suenos.filter(s=>s.e!=='cumplido');
 const cumplidos = c => c.suenos.filter(s=>s.e==='cumplido');
 
@@ -1850,7 +1842,7 @@ function pintarSuenos(){
     return;
   }
   caja.innerHTML = lista.map(s=>`
-    <article class="sueno ${s.e==='inviable'?'sueno--inviable':''}">
+    <article class="sueno">
       <span class="sueno__estado e-${s.e}">${ETIQUETA[s.e]}</span>
       <p class="sueno__txt">${esc(s.t)}</p>
       ${s.n?`<p class="sueno__nota">${esc(s.n)}</p>`:''}
