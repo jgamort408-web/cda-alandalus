@@ -1963,8 +1963,8 @@ function pintarComision(){
   const equipo = [...c.responsables.map(p=>`<strong>${esc(p)}</strong>`),
                   ...Array(c.vacantes||0).fill('<em style="opacity:.65">plaza libre</em>')].join(' · ');
 
-  /* el porcentaje solo se muestra cuando no es cero */
-  const marcador = hechos > 0 ? `
+  /* solo se enseña un marcador cuando hay algo que enseñar: ni un 0 % ni un 0 en marcha */
+  const marcador = hechos === 0 && enMarcha === 0 ? '' : hechos > 0 ? `
       <div class="anillo">
         <svg width="76" height="76" viewBox="0 0 76 76" aria-hidden="true">
           <circle class="anillo__pista" cx="38" cy="38" r="${R}" fill="none" stroke-width="7"/>
@@ -2468,8 +2468,9 @@ function guionComision(i, cierre = true){
   const hechos = cumplidos(c).length;
   const resto = activos(c);
   const enMarcha = resto.filter(s=>s.e==='proceso');
-  const cifras = [{v:resto.length,k:'sueños en el plan'},{v:enMarcha.length,k:'ya en marcha'}];
-  /* el porcentaje de cumplidos solo aparece cuando no es cero */
+  /* solo se cuenta lo que suma: nada de ceros subrayados */
+  const cifras = [{v:resto.length,k:'sueños en el plan'}];
+  if (enMarcha.length) cifras.push({v:enMarcha.length,k:'ya en marcha'});
   if (hechos > 0) cifras.push({v:Math.round(hechos/c.suenos.length*100)+'%',k:'cumplido el curso pasado'});
 
   const L = [
