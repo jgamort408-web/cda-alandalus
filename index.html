@@ -215,10 +215,21 @@ p{margin:0}
   min-height:var(--rail);
   display:flex;align-items:center;gap:1rem;
 }
-.marca{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:-.01em;text-decoration:none;flex:0 0 auto}
-.marca svg{flex:0 0 auto}
-.marca span{font-size:.95rem}
+.marca{display:flex;align-items:center;gap:.7rem;font-weight:800;letter-spacing:-.01em;text-decoration:none;flex:0 0 auto;min-width:0}
+.marca__txt{font-size:.95rem;white-space:nowrap}
 .marca small{display:block;font-size:.66rem;font-weight:600;color:var(--tinta-3);letter-spacing:.06em;text-transform:uppercase}
+/* la placa de logos encogida para las barras */
+.logos--barra{--alto:26px;gap:.5rem;padding:.3rem .55rem;border-radius:10px;box-shadow:none}
+.logos--barra .logos__raya{margin-block:3px}
+/* en el deck el título puede ser largo: se recorta, no se oculta */
+.deck__cab .marca{min-width:0;flex:1 1 auto;margin-right:auto}
+.deck__cab .marca__txt{overflow:hidden;text-overflow:ellipsis}
+/* al estrecharse la barra, primero se va el rótulo y después el logo largo */
+@media (max-width:900px){ .barra .marca__txt{display:none} }
+@media (max-width:560px){
+  .logos--barra img:last-of-type,
+  .logos--barra .logos__raya{display:none}
+}
 
 .segmentos{
   display:flex;gap:2px;padding:3px;margin-inline:auto;
@@ -951,12 +962,13 @@ p{margin:0}
 <!-- ====================== BARRA ====================== -->
 <header class="barra">
   <div class="barra__fila">
-    <a class="marca" href="#portada">
-      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 3" opacity=".45"/>
-        <path d="M16 6.5 18.4 13h6.8l-5.5 4 2.1 6.6L16 19.5 10.2 23.6l2.1-6.6-5.5-4h6.8L16 6.5Z" fill="currentColor"/>
-      </svg>
-      <span>I.E.S. Al-Ándalus<small>Comunidades de Aprendizaje</small></span>
+    <a class="marca" href="#portada" aria-label="Inicio · IES Al-Ándalus, Comunidades de Aprendizaje">
+      <span class="logos logos--barra">
+        <img src="assets/logo-ies.png" width="520" height="520" alt="">
+        <span class="logos__raya"></span>
+        <img src="assets/logo-cda.png" width="700" height="346" alt="">
+      </span>
+      <span class="marca__txt">I.E.S. Al-Ándalus<small>Comunidades de Aprendizaje</small></span>
     </a>
 
     <div class="segmentos" role="tablist" aria-label="Partes de la página">
@@ -1367,11 +1379,12 @@ p{margin:0}
 <div class="deck" id="deck" hidden>
   <div class="deck__cab">
     <span class="marca">
-      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 3" opacity=".45"/>
-        <path d="M16 6.5 18.4 13h6.8l-5.5 4 2.1 6.6L16 19.5 10.2 23.6l2.1-6.6-5.5-4h6.8L16 6.5Z" fill="currentColor"/>
-      </svg>
-      <span id="deck-titulo">Presentación</span>
+      <span class="logos logos--barra">
+        <img src="assets/logo-ies.png" width="520" height="520" alt="">
+        <span class="logos__raya"></span>
+        <img src="assets/logo-cda.png" width="700" height="346" alt="">
+      </span>
+      <span class="marca__txt" id="deck-titulo">Presentación</span>
     </span>
     <span class="deck__cuenta" id="deck-cuenta"></span>
     <button class="deck__tam" id="deck-tam" title="Tamaño de la letra (teclas + y −)">
