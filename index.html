@@ -713,6 +713,15 @@ p{margin:0}
 }
 .ficha:hover{border-color:var(--coral);color:var(--coral)}
 .ficha svg{color:var(--tinta-3)}
+.ficha--destacada{
+  border-color:var(--coral);background:color-mix(in srgb,var(--coral) 10%,var(--papel-2));
+  font-weight:700;
+}
+.ficha--destacada svg{color:var(--coral)}
+.ficha--destacada em{
+  font-style:normal;font-size:.63rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  color:#fff;background:var(--coral);padding:.12rem .45rem;border-radius:999px;
+}
 
 /* ==========================================================================
    CIERRE A PANTALLA COMPLETA
@@ -1141,7 +1150,7 @@ p{margin:0}
             haría que el alumnado animara a los suyos a venir? Ahí es donde necesitamos vuestras propuestas.
           </p>
         </div>
-        <a class="btn btn--acento" style="--acc:var(--mostaza)" href="#coordinacion">Enviar una propuesta</a>
+        <a class="btn btn--acento" style="--acc:var(--mostaza)" id="btn-propuesta" href="#coordinacion">Enviar una propuesta</a>
       </div>
       <p style="font-size:.8rem;color:var(--tinta-3);margin-top:1.4rem">
         Ejemplos para arrancar la conversación. Ninguno está aprobado todavía.
@@ -1206,7 +1215,7 @@ p{margin:0}
 <footer class="pie">
   <div class="contenedor pie__fila">
     <span>IES Al-Ándalus · Almería · Comunidad de Aprendizaje · Curso 2026-2027</span>
-    <span><a href="https://iesalandalus.org/joomla/" target="_blank" rel="noopener">iesalandalus.org</a></span>
+    <span id="pie-contacto"></span>
   </div>
 </footer>
 
@@ -1598,7 +1607,8 @@ const CDA = {
     cargo:"Coordinación de Comunidades de Aprendizaje",
     bloque:"Captación de Voluntariado y Formación de Familiares",
     centro:"IES Al-Ándalus · Almería",
-    email:"",                 /* escribe aquí tu correo */
+    email:"cda@iesalandalus.org",              /* preferido: centraliza todo lo de CdA */
+    emailAlt:"juan.gamez@iesalandalus.org",    /* alternativa directa con coordinación */
     telefono:"",              /* opcional */
     horario:"",               /* p. ej. «Martes y jueves, de 11:15 a 12:15» */
     web:"https://iesalandalus.org/joomla/",
@@ -2021,8 +2031,10 @@ $('#beneficios').innerHTML = CDA.beneficios.map(b=>`
    ========================================================================== */
 (function coord(){
   const c = CDA.coordinacion;
+  const sobre = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="m2 4.5 6 4 6-4"/></svg>';
   const fichas = [];
-  if (c.email)    fichas.push(`<a class="ficha" href="mailto:${esc(c.email)}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="m2 4.5 6 4 6-4"/></svg>${esc(c.email)}</a>`);
+  if (c.email)    fichas.push(`<a class="ficha ficha--destacada" href="mailto:${esc(c.email)}">${sobre}${esc(c.email)}<em>recomendado</em></a>`);
+  if (c.emailAlt) fichas.push(`<a class="ficha" href="mailto:${esc(c.emailAlt)}">${sobre}${esc(c.emailAlt)}</a>`);
   if (c.telefono) fichas.push(`<a class="ficha" href="tel:${esc(c.telefono.replace(/\s/g,''))}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2.5h3l1 3-1.7 1.2a9 9 0 0 0 4 4L10.5 9l3 1v3a10.5 10.5 0 0 1-10.5-10.5Z" stroke-linejoin="round"/></svg>${esc(c.telefono)}</a>`);
   if (c.horario)  fichas.push(`<span class="ficha"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.5V8l2.3 1.6" stroke-linecap="round"/></svg>${esc(c.horario)}</span>`);
   if (c.web)      fichas.push(`<a class="ficha" href="${esc(c.web)}" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.2"/><path d="M2 8h12M8 1.8c3.5 3.6 3.5 8.8 0 12.4-3.5-3.6-3.5-8.8 0-12.4Z"/></svg>Consulta tus puntos</a>`);
@@ -2041,6 +2053,20 @@ $('#beneficios').innerHTML = CDA.beneficios.map(b=>`
       <p class="coord__mensaje">${esc(c.mensaje)}</p>
       <div class="coord__fichas">${fichas.join('')}</div>
     </div>`;
+
+  /* el botón de propuestas escribe directamente al correo de la comunidad */
+  const btn = $('#btn-propuesta');
+  if (btn && c.email){
+    btn.href = `mailto:${c.email}?subject=${encodeURIComponent('Propuesta de recompensa para las familias')}`
+             + `&body=${encodeURIComponent('Mi propuesta de recompensa:\n\n\nA quién va dirigida:\n\n\nQué haría falta para ponerla en marcha:\n')}`;
+  }
+
+  /* contacto en el pie */
+  const pie = $('#pie-contacto');
+  if (pie){
+    pie.innerHTML = (c.email ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a> · ` : '')
+      + `<a href="${esc(c.web)}" target="_blank" rel="noopener">iesalandalus.org</a>`;
+  }
 })();
 
 /* ==========================================================================
@@ -2298,7 +2324,8 @@ pintarSubnav();
 
 let tic = false;
 addEventListener('scroll', ()=>{
-  if (tic) return; tic = true;
+  if (tic) return;
+  tic = true;
   requestAnimationFrame(()=>{
     tic = false;
     marcarActiva();
