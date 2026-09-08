@@ -28,6 +28,23 @@ Está comentado en español y las partes que hay que rellenar a mano llevan la m
 
 Las imágenes van en `assets/`. Si sustituyes alguna, mantén el mismo nombre de archivo.
 
+## Licencia
+
+Contenido y código bajo **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)**:
+cualquiera puede compartirlo y adaptarlo, incluso comercialmente, siempre que cite la
+fuente. Quedan fuera los dos logotipos, la imagen del equipo y los nombres de las
+personas; ver [LICENSE](LICENSE).
+
+## Volver a la paleta anterior
+
+Los colores actuales salen de los logos. La paleta previa, tomada de los carteles de la
+Fase del Sueño, quedó guardada en la etiqueta `paleta-carteles`:
+
+```bash
+git show paleta-carteles:index.html > index.html   # recuperar solo esa versión
+git diff paleta-carteles -- index.html             # ver qué cambió
+```
+
 ## Archivos
 
 ```
