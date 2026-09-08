@@ -803,51 +803,80 @@ p{margin:0}
    MODO PRESENTACIÓN
    ========================================================================== */
 .deck{
+  --z:1.25;                 /* tamaño de letra de las láminas; lo cambia el botón «Letra» */
   position:fixed;inset:0;z-index:150;background:var(--papel);
   display:flex;flex-direction:column;
   background-image:
     radial-gradient(circle at 15% 12%, color-mix(in srgb,var(--acc) 10%,transparent) 0 25%, transparent 62%),
     radial-gradient(circle at 85% 88%, color-mix(in srgb,var(--acc) 8%,transparent) 0 22%, transparent 58%);
 }
+.deck[data-tam="normal"]{--z:1}
+.deck[data-tam="grande"]{--z:1.25}
+.deck[data-tam="enorme"]{--z:1.6}
+.deck[data-tam="gigante"]{--z:2}
 .deck__cab{display:flex;align-items:center;gap:1rem;padding:.9rem 1.4rem;border-bottom:1px solid var(--linea)}
+.deck__tam{
+  display:inline-flex;align-items:center;gap:.45rem;padding:.34rem .8rem;
+  border:1.5px solid var(--linea);background:var(--papel-2);border-radius:999px;
+  font-size:.78rem;font-weight:700;color:var(--tinta-2);cursor:pointer;white-space:nowrap;
+  transition:border-color .2s,color .2s;
+}
+.deck__tam:hover{border-color:var(--acc);color:var(--acc)}
+.deck__tam b{
+  font-family:var(--f-display);font-size:1rem;line-height:1;color:var(--acc);
+}
 .deck__cab .marca{margin-right:auto}
 .deck__cuenta{font-size:.8rem;font-weight:700;color:var(--tinta-2);font-variant-numeric:tabular-nums}
 .deck__barra{height:3px;background:var(--linea)}
 .deck__barra i{display:block;height:100%;background:var(--acc);transition:width .35s cubic-bezier(.2,.8,.2,1)}
 .deck__lienzo{
-  flex:1;display:grid;place-items:center;padding:clamp(1.5rem,4vw,3.5rem);overflow:auto;
+  flex:1;display:grid;padding:clamp(1.5rem,4vw,3.5rem);overflow:auto;
+  place-items:center;
+  place-items:safe center;   /* con la letra muy grande, que no se corte por arriba */
 }
 .lam{width:min(100%,1000px);display:flex;flex-direction:column;gap:1.1rem;animation:entrar .45s cubic-bezier(.2,.8,.2,1)}
 @keyframes entrar{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.lam__eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
-.lam h2{font-size:clamp(2rem,5.5vw,3.6rem)}
+.lam__eyebrow{font-size:calc(.75rem * var(--z));font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
+.lam h2{font-size:calc(clamp(2rem,5.5vw,3.6rem) * var(--z))}
 .lam h2 em{font-style:normal;color:var(--acc)}
-.lam__sub{font-family:var(--f-mano);font-size:clamp(1.4rem,3vw,2.1rem);color:var(--tinta-2);line-height:1.15}
-.lam__items{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.lam__sub{font-family:var(--f-mano);font-size:calc(clamp(1.4rem,3vw,2.1rem) * var(--z));color:var(--tinta-2);line-height:1.15}
+.lam__items{list-style:none;margin:0;padding:0;display:grid;gap:calc(.7rem * var(--z))}
 .lam__items li{
-  display:flex;gap:.9rem;align-items:flex-start;font-size:clamp(1rem,2vw,1.35rem);line-height:1.35;
-  padding:.7rem .95rem;border-radius:var(--r-m);background:var(--papel-2);border:1px solid var(--linea);
+  display:flex;gap:.9rem;align-items:flex-start;
+  font-size:calc(clamp(1rem,2vw,1.35rem) * var(--z));line-height:1.35;
+  padding:calc(.7rem * var(--z)) calc(.95rem * var(--z));
+  border-radius:var(--r-m);background:var(--papel-2);border:1px solid var(--linea);
 }
-.lam__items li::before{content:"";flex:0 0 10px;height:10px;margin-top:.5em;border-radius:50%;background:var(--acc)}
+.lam__items li::before{
+  content:"";flex:0 0 calc(10px * var(--z));height:calc(10px * var(--z));
+  margin-top:.5em;border-radius:50%;background:var(--acc);
+}
 .lam__items li.ok{background:color-mix(in srgb,var(--salvia) 10%,var(--papel-2));border-color:color-mix(in srgb,var(--salvia) 35%,transparent)}
 .lam__items li.ok::before{background:var(--salvia)}
 .lam__firma{
   display:inline-flex;align-items:center;gap:.5rem;width:max-content;max-width:100%;
-  font-size:.9rem;font-weight:700;color:var(--acc);
+  font-size:calc(.9rem * var(--z));font-weight:700;color:var(--acc);
   padding:.35rem .9rem;border-radius:999px;
   border:1.5px solid color-mix(in srgb,var(--acc) 35%,transparent);
   background:color-mix(in srgb,var(--acc) 9%,transparent);
 }
 .lam--portada .lam__firma{margin-inline:auto}
-.lam__claves{display:flex;flex-wrap:wrap;gap:.5rem}
+
+/* palabras clave: son el mensaje entero de la lámina, así que van grandes */
+.lam__claves{display:flex;flex-wrap:wrap;gap:calc(.7rem * var(--z));justify-content:flex-start}
+.lam--portada .lam__claves{justify-content:center}
 .lam__claves span{
-  padding:.4rem .9rem;border-radius:999px;border:1.5px solid var(--acc);color:var(--acc);
-  font-size:clamp(.85rem,1.6vw,1.05rem);font-weight:600;
+  padding:calc(.5rem * var(--z)) calc(1.25rem * var(--z));
+  border-radius:999px;border:2.5px solid var(--acc);color:var(--acc);
+  background:color-mix(in srgb,var(--acc) 8%,transparent);
+  font-family:var(--f-display);font-variation-settings:"SOFT" 40,"WONK" 1;
+  font-size:calc(clamp(1.4rem,3.4vw,2.6rem) * var(--z));
+  font-weight:700;line-height:1.15;letter-spacing:-.01em;
 }
 .lam__cifras{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:.5rem}
 .lam__cifra{display:flex;flex-direction:column}
-.lam__cifra b{font-family:var(--f-display);font-size:clamp(2.4rem,6vw,3.6rem);line-height:1;color:var(--acc);font-variant-numeric:tabular-nums}
-.lam__cifra span{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2)}
+.lam__cifra b{font-family:var(--f-display);font-size:calc(clamp(2.4rem,6vw,3.6rem) * var(--z));line-height:1;color:var(--acc);font-variant-numeric:tabular-nums}
+.lam__cifra span{font-size:calc(.8rem * var(--z));font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2)}
 .lam--portada{text-align:center;align-items:center}
 .lam--portada .lam__sub{max-width:36ch}
 .deck__pie{display:flex;align-items:center;gap:.6rem;padding:.9rem 1.4rem;border-top:1px solid var(--linea);justify-content:center}
@@ -1246,6 +1275,9 @@ p{margin:0}
       <span id="deck-titulo">Presentación</span>
     </span>
     <span class="deck__cuenta" id="deck-cuenta"></span>
+    <button class="deck__tam" id="deck-tam" title="Tamaño de la letra (teclas + y −)">
+      <b>Aa</b> <span id="deck-tam-txt">Grande</span>
+    </button>
     <button class="icono-btn" id="deck-pantalla" aria-label="Pantalla completa" title="Pantalla completa">
       <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7V3h4M17 7V3h-4M3 13v4h4M17 13v4h-4" stroke-linecap="round"/></svg>
     </button>
@@ -1258,7 +1290,7 @@ p{margin:0}
   <div class="deck__pie">
     <button class="btn btn--linea btn--mini" id="deck-antes">← Anterior</button>
     <button class="btn btn--solido btn--mini" id="deck-luego">Siguiente →</button>
-    <span class="pista">Usa ← → para moverte · Esc para salir</span>
+    <span class="pista">← → moverte · + − tamaño de letra · Esc salir</span>
   </div>
 </div>
 
@@ -2189,6 +2221,26 @@ const Deck = (function(){
     if (ultimoFoco) ultimoFoco.focus();
   }
 
+  /* --- tamaño de letra para que se lea desde el fondo del aula --- */
+  const TAMANOS = ['normal','grande','enorme','gigante'];
+  const NOMBRES = { normal:'Normal', grande:'Grande', enorme:'Enorme', gigante:'Gigante' };
+  let tam = 'grande';
+  try { tam = localStorage.getItem('cda-deck-tam') || 'grande'; } catch(e){}
+  if (!TAMANOS.includes(tam)) tam = 'grande';
+
+  function aplicarTam(){
+    caja.dataset.tam = tam;
+    $('#deck-tam-txt').textContent = NOMBRES[tam];
+    try { localStorage.setItem('cda-deck-tam', tam); } catch(e){}
+  }
+  function cambiarTam(paso){
+    const i = TAMANOS.indexOf(tam);
+    tam = TAMANOS[(i + paso + TAMANOS.length) % TAMANOS.length];
+    aplicarTam();
+  }
+  aplicarTam();
+  $('#deck-tam').addEventListener('click', ()=>cambiarTam(1));
+
   $('#deck-antes').addEventListener('click', ()=>ir(-1));
   $('#deck-luego').addEventListener('click', ()=>ir(1));
   $('#deck-cerrar').addEventListener('click', cerrar);
@@ -2200,6 +2252,8 @@ const Deck = (function(){
     if (caja.hidden) return;
     if (e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){ e.preventDefault(); ir(1); }
     if (e.key==='ArrowLeft' ||e.key==='PageUp'){ e.preventDefault(); ir(-1); }
+    if (e.key==='+'||e.key==='='){ e.preventDefault(); cambiarTam(1); }
+    if (e.key==='-'||e.key==='_'){ e.preventDefault(); cambiarTam(-1); }
     if (e.key==='Escape') cerrar();
   });
 
