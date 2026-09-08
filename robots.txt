@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jgamort408-web.github.io/cda-alandalus/sitemap.xml

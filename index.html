@@ -1,0 +1,2320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Al-Ándalus Dialógico</title>
+<meta name="description" content="Comunidad de Aprendizaje del IES Al-Ándalus (Almería): actuaciones educativas de éxito, sueños de la comunidad, comisiones mixtas, calendario del curso y baremos de participación. Plan de Actuación 2026-2027.">
+
+<!-- ⚠️ Si el repositorio no se llama «cda-alandalus», cambia esta dirección aquí,
+     en las dos etiquetas og:url / twitter y en sitemap.xml. -->
+<link rel="canonical" href="https://jgamort408-web.github.io/cda-alandalus/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Comunidad de Aprendizaje · IES Al-Ándalus">
+<meta name="keywords" content="comunidades de aprendizaje, IES Al-Ándalus, Almería, grupos interactivos, tertulias dialógicas, bibliotecas tutorizadas, recreos activos, comisiones mixtas, aprendizaje dialógico, fase del sueño">
+<meta name="theme-color" content="#F7F2E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1920" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Al-Ándalus Dialógico">
+<meta property="og:url" content="https://jgamort408-web.github.io/cda-alandalus/">
+<meta property="og:title" content="Al-Ándalus Dialógico · Comunidad de Aprendizaje">
+<meta property="og:description" content="Los sueños de la comunidad, las comisiones mixtas, el calendario del curso y los baremos de participación del IES Al-Ándalus (Almería).">
+<meta property="og:image" content="https://jgamort408-web.github.io/cda-alandalus/assets/og-portada.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Comunidades de Aprendizaje · IES Al-Ándalus · Almería · Curso 2026-2027">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/og-portada.png">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Al-Ándalus Dialógico",
+  "inLanguage":"es-ES",
+  "description":"Plan de Actuación 2026-2027 de la Comunidad de Aprendizaje del IES Al-Ándalus.",
+  "about":{
+    "@type":"EducationalOrganization",
+    "name":"IES Al-Ándalus",
+    "address":{"@type":"PostalAddress","addressLocality":"Almería","addressCountry":"ES"},
+    "url":"https://iesalandalus.org/joomla/"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<style>
+/* ==========================================================================
+   AL-ÁNDALUS DIALÓGICO — hoja de estilo única
+   Paleta tomada de los carteles de la Fase del Sueño: tinta marina sobre
+   papel crema, con un color propio por bloque.
+   ========================================================================== */
+
+:root{
+  /* superficies */
+  --papel:#F7F2E8;
+  --papel-2:#FFFCF5;
+  --papel-3:#EFE6D6;
+  --velo:rgba(247,242,232,.86);
+  /* texto */
+  --tinta:#12293B;
+  --tinta-2:#51677A;
+  --tinta-3:#8194A3;
+  /* líneas */
+  --linea:#E0D6C3;
+  --linea-fuerte:#CBBEA6;
+  /* acentos */
+  --coral:#DD5138;
+  --salvia:#55926A;
+  --mostaza:#C98A12;
+  --turquesa:#238281;
+  --frambuesa:#C23464;
+  --azul:#1F4E86;
+  --rojo:#C0281C;
+  --acc:var(--coral);
+  /* sombras y radios */
+  --sombra-1:0 1px 2px rgba(18,41,59,.05);
+  --sombra-2:0 2px 4px rgba(18,41,59,.05), 0 12px 28px -16px rgba(18,41,59,.28);
+  --sombra-3:0 8px 20px -6px rgba(18,41,59,.16), 0 32px 60px -30px rgba(18,41,59,.4);
+  --r-s:6px; --r-m:12px; --r-l:20px;
+  /* tipografías */
+  --f-display:"Fraunces","Iowan Old Style",Georgia,serif;
+  --f-ui:"Hanken Grotesk","Segoe UI",system-ui,sans-serif;
+  --f-mano:"Caveat","Bradley Hand",cursive;
+  /* medidas */
+  --ancho:1200px;
+  --medida:64ch;
+  --rail:58px;
+  color-scheme:light;
+}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --papel:#0E1920;
+    --papel-2:#15232C;
+    --papel-3:#1C2C37;
+    --velo:rgba(14,25,32,.88);
+    --tinta:#EDE4D5;
+    --tinta-2:#A6B5C0;
+    --tinta-3:#7B8B98;
+    --linea:#2A3A46;
+    --linea-fuerte:#3C4F5C;
+    --coral:#F27C60;
+    --salvia:#7FC08F;
+    --mostaza:#E4B14B;
+    --turquesa:#3FB3AF;
+    --frambuesa:#E56A90;
+    --azul:#7FB2EA;
+    --rojo:#FF7A6B;
+    --sombra-1:0 1px 2px rgba(0,0,0,.4);
+    --sombra-2:0 2px 4px rgba(0,0,0,.3), 0 12px 28px -16px rgba(0,0,0,.7);
+    --sombra-3:0 8px 20px -6px rgba(0,0,0,.45), 0 32px 60px -30px rgba(0,0,0,.8);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --papel:#0E1920;
+  --papel-2:#15232C;
+  --papel-3:#1C2C37;
+  --velo:rgba(14,25,32,.88);
+  --tinta:#EDE4D5;
+  --tinta-2:#A6B5C0;
+  --tinta-3:#7B8B98;
+  --linea:#2A3A46;
+  --linea-fuerte:#3C4F5C;
+  --coral:#F27C60;
+  --salvia:#7FC08F;
+  --mostaza:#E4B14B;
+  --turquesa:#3FB3AF;
+  --frambuesa:#E56A90;
+  --azul:#7FB2EA;
+  --rojo:#FF7A6B;
+  --sombra-1:0 1px 2px rgba(0,0,0,.4);
+  --sombra-2:0 2px 4px rgba(0,0,0,.3), 0 12px 28px -16px rgba(0,0,0,.7);
+  --sombra-3:0 8px 20px -6px rgba(0,0,0,.45), 0 32px 60px -30px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+body{
+  margin:0;
+  font-family:var(--f-ui);
+  font-size:16.5px;
+  line-height:1.6;
+  color:var(--tinta);
+  background-color:var(--papel);
+  background-image:
+    radial-gradient(circle at 12% 8%, color-mix(in srgb,var(--mostaza) 7%,transparent) 0 22%, transparent 60%),
+    radial-gradient(circle at 88% 4%, color-mix(in srgb,var(--turquesa) 6%,transparent) 0 20%, transparent 55%),
+    repeating-linear-gradient(0deg, color-mix(in srgb,var(--tinta) 3%,transparent) 0 1px, transparent 1px 4px);
+  background-attachment:fixed,fixed,scroll;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2.5px solid var(--coral);outline-offset:3px;border-radius:4px}
+[hidden]{display:none!important}
+
+/* ---------- tipografía ---------- */
+h1,h2,h3,h4{
+  font-family:var(--f-display);
+  font-variation-settings:"SOFT" 40,"WONK" 1;
+  font-weight:700;
+  line-height:1.05;
+  text-wrap:balance;
+  margin:0;
+  letter-spacing:-.015em;
+}
+h1{font-size:clamp(2.6rem,7.5vw,5.1rem)}
+h2{font-size:clamp(1.9rem,4.2vw,3rem)}
+h3{font-size:clamp(1.25rem,2.2vw,1.6rem)}
+h4{font-size:1.05rem;letter-spacing:0}
+p{margin:0}
+.medida{max-width:var(--medida)}
+
+.eyebrow{
+  font-family:var(--f-ui);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--acc);
+  display:flex;align-items:center;gap:.6rem;
+}
+.eyebrow::before{
+  content:"";flex:0 0 26px;height:2px;background:currentColor;border-radius:2px;
+}
+.mano{font-family:var(--f-mano);font-size:1.32em;line-height:1.25}
+
+/* ---------- estructura ---------- */
+.contenedor{width:min(100% - 2.5rem,var(--ancho));margin-inline:auto}
+.seccion{padding-block:clamp(3.5rem,7vw,6rem);position:relative;scroll-margin-top:calc(var(--rail) + 46px)}
+.seccion + .seccion{border-top:1px solid var(--linea)}
+.seccion__cab{display:flex;flex-direction:column;gap:.9rem;margin-bottom:2.5rem}
+.seccion__cab p{color:var(--tinta-2);max-width:62ch}
+
+/* ---------- barra superior ---------- */
+.barra{
+  position:sticky;top:0;z-index:60;
+  background:var(--velo);
+  backdrop-filter:blur(14px) saturate(1.3);
+  -webkit-backdrop-filter:blur(14px) saturate(1.3);
+  border-bottom:1px solid var(--linea);
+}
+.barra__fila{
+  width:min(100% - 1.5rem,1360px);margin-inline:auto;
+  min-height:var(--rail);
+  display:flex;align-items:center;gap:1rem;
+}
+.marca{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:-.01em;text-decoration:none;flex:0 0 auto}
+.marca svg{flex:0 0 auto}
+.marca span{font-size:.95rem}
+.marca small{display:block;font-size:.66rem;font-weight:600;color:var(--tinta-3);letter-spacing:.06em;text-transform:uppercase}
+
+.segmentos{
+  display:flex;gap:2px;padding:3px;margin-inline:auto;
+  background:var(--papel-3);border-radius:999px;border:1px solid var(--linea);
+}
+.segmentos button{
+  border:0;background:transparent;cursor:pointer;
+  padding:.42rem 1rem;border-radius:999px;
+  font-size:.85rem;font-weight:600;color:var(--tinta-2);
+  white-space:nowrap;transition:background .2s,color .2s;
+}
+.segmentos button[aria-selected="true"]{background:var(--tinta);color:var(--papel);box-shadow:var(--sombra-1)}
+.barra__acciones{display:flex;align-items:center;gap:.4rem;flex:0 0 auto}
+
+.icono-btn{
+  width:36px;height:36px;display:grid;place-items:center;
+  border:1px solid var(--linea);background:var(--papel-2);
+  border-radius:10px;cursor:pointer;color:var(--tinta-2);
+  transition:border-color .2s,color .2s,transform .2s;
+}
+.icono-btn:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-1px)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.62rem 1.15rem;border-radius:999px;border:1.5px solid transparent;
+  font-size:.88rem;font-weight:700;cursor:pointer;text-decoration:none;
+  transition:transform .18s,box-shadow .18s,background .18s,border-color .18s;
+}
+.btn--solido{background:var(--tinta);color:var(--papel);box-shadow:var(--sombra-2)}
+.btn--solido:hover{transform:translateY(-2px);box-shadow:var(--sombra-3)}
+.btn--acento{background:var(--acc);color:#fff;box-shadow:var(--sombra-2)}
+.btn--acento:hover{transform:translateY(-2px)}
+.btn--linea{border-color:var(--linea-fuerte);background:var(--papel-2);color:var(--tinta)}
+.btn--linea:hover{border-color:var(--acc);color:var(--acc)}
+.btn--mini{padding:.34rem .8rem;font-size:.78rem}
+
+/* subnavegación por partes */
+.subnav{border-bottom:1px solid var(--linea);background:var(--velo);position:sticky;top:var(--rail);z-index:55;backdrop-filter:blur(10px)}
+.subnav__fila{width:min(100% - 1.5rem,1360px);margin-inline:auto;display:flex;gap:.2rem;overflow-x:auto;scrollbar-width:none}
+.subnav__fila::-webkit-scrollbar{display:none}
+.subnav a{
+  padding:.7rem .85rem;font-size:.82rem;font-weight:600;color:var(--tinta-3);
+  text-decoration:none;white-space:nowrap;border-bottom:2.5px solid transparent;transition:color .2s,border-color .2s;
+}
+.subnav a:hover{color:var(--tinta)}
+.subnav a.activo{color:var(--acc);border-bottom-color:var(--acc)}
+
+/* ---------- cabecera de parte ---------- */
+.parte{scroll-margin-top:calc(var(--rail) + 44px)}
+.parte__marca{
+  display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;
+  padding-block:1.4rem;border-bottom:3px solid var(--acc);margin-bottom:.5rem;
+}
+.parte__num{
+  font-family:var(--f-display);font-size:clamp(2.4rem,6vw,4rem);line-height:.8;
+  font-weight:800;color:var(--acc);font-variation-settings:"WONK" 1;
+}
+.parte__tit{display:flex;flex-direction:column;gap:.15rem}
+.parte__tit strong{font-family:var(--f-display);font-size:clamp(1.4rem,3vw,2.1rem);font-weight:700}
+.parte__tit span{font-size:.85rem;color:var(--tinta-2)}
+
+/* ==========================================================================
+   PORTADA
+   ========================================================================== */
+.portada{position:relative;padding-block:clamp(2.5rem,6vw,4.5rem) clamp(3rem,6vw,5rem);overflow:hidden}
+.portada__rejilla{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(2rem,4vw,4rem);align-items:center}
+@media (max-width:900px){.portada__rejilla{grid-template-columns:1fr}}
+
+.portada__sello{
+  display:inline-flex;align-items:center;gap:.55rem;padding:.34rem .9rem .34rem .5rem;
+  border:1.5px solid var(--linea-fuerte);border-radius:999px;background:var(--papel-2);
+  font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2);
+  width:max-content;box-shadow:var(--sombra-1);
+}
+.portada__sello b{color:var(--coral)}
+.portada h1{margin-block:1.1rem .6rem}
+.portada h1 em{
+  font-style:normal;color:var(--coral);
+  font-variation-settings:"SOFT" 90,"WONK" 1;
+  display:inline-block;
+}
+.portada__lema{font-family:var(--f-mano);font-size:clamp(1.4rem,3vw,2rem);color:var(--turquesa);margin-bottom:1.2rem;line-height:1.15}
+.portada__texto{color:var(--tinta-2);max-width:54ch;font-size:1.05rem}
+.portada__acciones{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.8rem}
+
+/* cifras */
+.cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;margin-top:2.4rem;background:var(--linea);border:1px solid var(--linea);border-radius:var(--r-m);overflow:hidden}
+.cifra{background:var(--papel-2);padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.15rem}
+.cifra b{font-family:var(--f-display);font-size:2rem;line-height:1;font-weight:700;color:var(--acc);font-variant-numeric:tabular-nums}
+.cifra span{font-size:.75rem;color:var(--tinta-2);font-weight:600;letter-spacing:.03em}
+
+/* papeletas flotantes de la portada */
+.mural{position:relative;min-height:460px}
+.papeleta{
+  position:absolute;width:min(72%,300px);
+  background:var(--papel-2);border:1px solid var(--linea);
+  border-left:4px solid var(--acc);
+  border-radius:4px 12px 12px 4px;padding:.9rem 1rem;
+  box-shadow:var(--sombra-2);
+  font-family:var(--f-mano);font-size:1.28rem;line-height:1.2;
+  animation:flotar 7s ease-in-out infinite;
+}
+.papeleta small{display:block;font-family:var(--f-ui);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-3);margin-top:.45rem}
+.papeleta:nth-child(1){top:2%;left:0;--acc:var(--turquesa);transform:rotate(-3deg);animation-delay:0s}
+.papeleta:nth-child(2){top:26%;right:0;--acc:var(--mostaza);transform:rotate(2.4deg);animation-delay:.9s}
+.papeleta:nth-child(3){top:52%;left:4%;--acc:var(--frambuesa);transform:rotate(-1.6deg);animation-delay:1.8s}
+.papeleta:nth-child(4){top:76%;right:6%;--acc:var(--salvia);transform:rotate(3deg);animation-delay:2.7s}
+.papeleta--ok{border-left-color:var(--salvia)}
+.papeleta__sello{
+  position:absolute;top:-12px;right:-8px;transform:rotate(-11deg);
+  font-family:var(--f-ui);font-size:.6rem;font-weight:800;letter-spacing:.12em;
+  padding:.2rem .5rem;border:2px solid var(--salvia);color:var(--salvia);
+  border-radius:4px;background:var(--papel-2);
+}
+@keyframes flotar{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@media (max-width:900px){
+  .mural{min-height:0;display:grid;gap:.8rem}
+  .papeleta{position:static;width:100%;transform:none!important;animation:none}
+}
+
+/* ==========================================================================
+   ACTUACIONES + PALABRAS CLAVE FLOTANTES
+   ========================================================================== */
+.actuaciones{display:grid;gap:1.4rem}
+.actuacion{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:1.5rem;align-items:center;
+  background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--r-l);
+  padding:clamp(1.3rem,2.5vw,2rem);position:relative;overflow:hidden;
+  box-shadow:var(--sombra-1);transition:box-shadow .25s,border-color .25s;
+}
+.actuacion:hover{box-shadow:var(--sombra-2);border-color:color-mix(in srgb,var(--acc) 45%,var(--linea))}
+.actuacion::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--acc)}
+.actuacion__cuerpo{display:flex;flex-direction:column;gap:.7rem;padding-left:.4rem}
+.actuacion__tit{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+.actuacion__tit h3{color:var(--tinta)}
+.actuacion p{color:var(--tinta-2)}
+.actuacion__pie{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.3rem}
+
+.insignia{
+  display:inline-flex;align-items:center;gap:.35rem;
+  font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:.24rem .6rem;border-radius:999px;
+  color:var(--acc);background:color-mix(in srgb,var(--acc) 12%,transparent);
+  border:1px solid color-mix(in srgb,var(--acc) 30%,transparent);
+}
+
+/* nube de palabras clave */
+.nube{position:relative;height:290px;display:grid;place-items:center}
+.nube__centro{
+  width:104px;height:104px;border-radius:50%;
+  display:grid;place-items:center;
+  background:color-mix(in srgb,var(--acc) 14%,var(--papel-2));
+  border:2px dashed color-mix(in srgb,var(--acc) 45%,transparent);
+  color:var(--acc);z-index:2;
+}
+.clave{
+  position:absolute;left:50%;top:50%;
+  translate:-50% -50%;
+  margin-left:var(--x,0px);margin-top:var(--y,0px);
+  padding:.26rem .68rem;border-radius:999px;
+  background:var(--papel-2);border:1px solid var(--linea);
+  font-size:.74rem;font-weight:600;color:var(--tinta-2);white-space:nowrap;
+  box-shadow:var(--sombra-1);
+  animation:orbitar var(--dur,9s) ease-in-out infinite;
+  animation-delay:var(--retraso,0s);
+  transition:color .25s,border-color .25s,scale .25s;
+}
+.actuacion:hover .clave,.actuacion:focus-within .clave{
+  color:var(--acc);border-color:color-mix(in srgb,var(--acc) 40%,transparent);scale:1.06;
+}
+@keyframes orbitar{0%,100%{translate:-50% -50%}50%{translate:calc(-50% + var(--dx,4px)) calc(-50% - var(--dy,6px))}}
+@media (max-width:820px){
+  .actuacion{grid-template-columns:1fr}
+  .nube{height:auto;display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-start;padding-left:.4rem}
+  .nube__centro{display:none}
+  .clave{position:static;translate:none;margin:0;animation:none}
+}
+
+/* ---------- fases ---------- */
+.fases{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;border:1px solid var(--linea);border-radius:var(--r-m);overflow:hidden;background:var(--linea)}
+.fase{background:var(--papel-2);padding:1.2rem 1.2rem 1.4rem;display:flex;flex-direction:column;gap:.45rem;position:relative}
+.fase__n{
+  font-family:var(--f-display);font-size:.85rem;font-weight:800;letter-spacing:.05em;
+  color:var(--acc);
+}
+.fase h4{font-family:var(--f-display);font-size:1.12rem;font-weight:700}
+.fase p{font-size:.87rem;color:var(--tinta-2)}
+.fase--activa{background:color-mix(in srgb,var(--coral) 9%,var(--papel-2))}
+.fase--activa .fase__n{color:var(--coral)}
+
+/* ==========================================================================
+   TABLERO DE SUEÑOS
+   ========================================================================== */
+.tablero__mandos{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between;margin-bottom:1.4rem}
+.pestanas{display:flex;gap:.4rem;flex-wrap:wrap}
+.pestana{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.5rem .95rem;border-radius:999px;cursor:pointer;
+  border:1.5px solid var(--linea);background:var(--papel-2);
+  font-size:.85rem;font-weight:700;color:var(--tinta-2);
+  transition:all .2s;
+}
+.pestana:hover{border-color:var(--acc);color:var(--acc)}
+.pestana[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:#fff}
+.pestana b{
+  font-size:.72rem;padding:.05rem .4rem;border-radius:999px;
+  background:color-mix(in srgb,var(--tinta) 8%,transparent);font-variant-numeric:tabular-nums;
+}
+.pestana[aria-selected="true"] b{background:rgba(255,255,255,.25)}
+
+.filtros{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.buscador{position:relative;display:flex;align-items:center}
+.buscador svg{position:absolute;left:.7rem;color:var(--tinta-3);pointer-events:none}
+.buscador input{
+  font:inherit;font-size:.85rem;padding:.5rem .8rem .5rem 2.1rem;
+  border:1.5px solid var(--linea);border-radius:999px;background:var(--papel-2);color:var(--tinta);
+  width:210px;transition:border-color .2s,width .2s;
+}
+.buscador input:focus{border-color:var(--acc);outline:none;width:240px}
+.chip{
+  padding:.4rem .8rem;border-radius:999px;border:1.5px solid var(--linea);
+  background:var(--papel-2);font-size:.78rem;font-weight:700;color:var(--tinta-2);cursor:pointer;transition:all .2s;
+}
+.chip[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
+
+/* cabecera de la comisión activa */
+.comision__cab{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.5rem;align-items:center;
+  padding:1.4rem 1.5rem;border:1px solid var(--linea);border-radius:var(--r-l) var(--r-l) 0 0;
+  border-bottom:0;background:color-mix(in srgb,var(--acc) 7%,var(--papel-2));
+}
+.comision__cab h3{margin-bottom:.25rem}
+.comision__cab .mano{color:var(--acc)}
+.comision__cab p{color:var(--tinta-2);font-size:.92rem;max-width:60ch;margin-top:.5rem}
+.comision__resp{font-size:.8rem;color:var(--tinta-2);margin-top:.7rem;display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
+.comision__resp strong{color:var(--tinta)}
+@media (max-width:760px){.comision__cab{grid-template-columns:1fr}}
+
+.anillo{display:flex;align-items:center;gap:.9rem}
+.anillo svg{flex:0 0 auto;transform:rotate(-90deg)}
+.anillo__pista{stroke:var(--linea-fuerte);opacity:.5}
+.anillo__valor{stroke:var(--acc);stroke-linecap:round;transition:stroke-dashoffset 1s cubic-bezier(.2,.8,.2,1)}
+.anillo__txt{display:flex;flex-direction:column;line-height:1.15}
+.anillo__txt b{font-family:var(--f-display);font-size:1.5rem;font-variant-numeric:tabular-nums}
+.anillo__txt span{font-size:.74rem;color:var(--tinta-2);font-weight:600}
+
+/* rejilla de papeletas */
+.suenos{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:1px;
+  background:var(--linea);border:1px solid var(--linea);border-radius:0 0 var(--r-l) var(--r-l);overflow:hidden;
+}
+.sueno{
+  background:var(--papel-2);padding:1.05rem 1.1rem;display:flex;flex-direction:column;gap:.5rem;
+  position:relative;transition:background .2s;
+}
+.sueno:hover{background:color-mix(in srgb,var(--acc) 5%,var(--papel-2))}
+.sueno__txt{font-family:var(--f-mano);font-size:1.24rem;line-height:1.22;color:var(--tinta)}
+.sueno__nota{font-size:.78rem;color:var(--tinta-2);border-left:2px solid var(--linea-fuerte);padding-left:.6rem}
+.sueno__estado{
+  display:inline-flex;align-items:center;gap:.35rem;width:max-content;
+  font-size:.63rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
+  padding:.2rem .55rem;border-radius:999px;border:1px solid;
+}
+.e-cumplido{color:var(--salvia);border-color:color-mix(in srgb,var(--salvia) 40%,transparent);background:color-mix(in srgb,var(--salvia) 12%,transparent)}
+.e-proceso{color:var(--mostaza);border-color:color-mix(in srgb,var(--mostaza) 40%,transparent);background:color-mix(in srgb,var(--mostaza) 12%,transparent)}
+.e-debate{color:var(--frambuesa);border-color:color-mix(in srgb,var(--frambuesa) 40%,transparent);background:color-mix(in srgb,var(--frambuesa) 12%,transparent)}
+.e-pendiente{color:var(--tinta-3);border-color:var(--linea-fuerte)}
+.e-inviable{color:var(--rojo);border-color:color-mix(in srgb,var(--rojo) 45%,transparent);background:color-mix(in srgb,var(--rojo) 12%,transparent)}
+.sueno--cumplido{background:color-mix(in srgb,var(--salvia) 7%,var(--papel-2))}
+.sueno--inviable{background:color-mix(in srgb,var(--rojo) 6%,var(--papel-2))}
+.sueno--inviable .sueno__txt{color:var(--rojo);text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:color-mix(in srgb,var(--rojo) 45%,transparent)}
+.chip[data-estado="inviable"][aria-pressed="true"]{background:var(--rojo);border-color:var(--rojo);color:#fff}
+
+/* banda de sueños cumplidos del curso anterior */
+.logros{
+  margin-top:2.5rem;border:1.5px solid color-mix(in srgb,var(--salvia) 38%,var(--linea));
+  border-radius:var(--r-l);overflow:hidden;background:var(--papel-2);
+}
+.logros__cab{
+  padding:1.2rem 1.4rem;background:color-mix(in srgb,var(--salvia) 12%,var(--papel-2));
+  border-bottom:1px solid color-mix(in srgb,var(--salvia) 30%,var(--linea));
+  display:flex;flex-wrap:wrap;gap:.8rem;align-items:baseline;justify-content:space-between;
+}
+.logros__cab h3{font-size:1.3rem;color:var(--salvia)}
+.logros__cab p{font-size:.85rem;color:var(--tinta-2);max-width:56ch;margin-top:.25rem}
+.logros__lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:var(--linea)}
+.logro{
+  background:var(--papel-2);padding:.9rem 1.05rem;display:flex;gap:.7rem;align-items:flex-start;
+  font-family:var(--f-mano);font-size:1.2rem;line-height:1.2;
+}
+.logro svg{flex:0 0 auto;color:var(--salvia);margin-top:.25rem}
+
+/* contraste del cambio de curso */
+.cambio{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:2.2rem}
+.cambio__caja{
+  border:1px solid var(--linea);border-radius:var(--r-l);background:var(--papel-2);
+  padding:1.3rem 1.4rem;border-top:5px solid var(--acc);display:flex;flex-direction:column;gap:.6rem;
+}
+.cambio__caja h3{font-size:1.15rem;color:var(--acc)}
+.cambio__caja p{font-size:.92rem;color:var(--tinta-2)}
+.cambio__flecha{
+  font-family:var(--f-mano);font-size:1.5rem;color:var(--acc);line-height:1.15;
+  padding:.5rem .8rem;background:color-mix(in srgb,var(--acc) 10%,transparent);border-radius:var(--r-m);
+}
+.llamada{
+  border:2px dashed var(--mostaza);border-radius:var(--r-l);
+  background:color-mix(in srgb,var(--mostaza) 9%,var(--papel-2));
+  padding:1.4rem 1.5rem;margin-top:1.5rem;display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;
+}
+.llamada > div{flex:1;min-width:250px}
+.llamada h3{font-size:1.15rem;color:var(--mostaza);margin-bottom:.35rem}
+.llamada p{font-size:.92rem;color:var(--tinta-2)}
+.vacio{padding:3rem 1rem;text-align:center;color:var(--tinta-2);background:var(--papel-2);grid-column:1/-1}
+
+/* ==========================================================================
+   MÓDULOS DE LA APLICACIÓN
+   ========================================================================== */
+.app-modulo{
+  --acc:var(--azul);
+  margin-top:2.5rem;
+  border:1.5px solid color-mix(in srgb,var(--azul) 30%,var(--linea));
+  border-radius:var(--r-l);
+  background:
+    linear-gradient(180deg,color-mix(in srgb,var(--azul) 7%,var(--papel-2)),var(--papel-2) 55%);
+  padding:clamp(1.3rem,2.4vw,1.9rem);
+  position:relative;overflow:hidden;
+}
+.app-modulo::after{
+  content:"";position:absolute;top:-40px;right:-40px;width:150px;height:150px;border-radius:50%;
+  border:1.5px dashed color-mix(in srgb,var(--azul) 25%,transparent);
+}
+.app-modulo__cab{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-bottom:.9rem}
+.app-modulo__pieza{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:#fff;background:var(--azul);padding:.28rem .7rem;border-radius:999px;
+}
+.app-modulo h3{font-size:1.35rem}
+.app-modulo__gancho{font-family:var(--f-mano);font-size:1.4rem;color:var(--azul);line-height:1.2;margin-bottom:.8rem}
+.app-modulo__rejilla{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:1.5rem}
+@media (max-width:820px){.app-modulo__rejilla{grid-template-columns:1fr}}
+.app-lista{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.app-lista li{display:flex;gap:.65rem;font-size:.92rem;color:var(--tinta-2);line-height:1.45}
+.app-lista li::before{
+  content:"";flex:0 0 7px;height:7px;margin-top:.5rem;border-radius:2px;
+  background:var(--azul);rotate:45deg;
+}
+.app-modulo__aparte{
+  background:var(--papel-3);border-radius:var(--r-m);padding:1rem 1.1rem;
+  font-size:.86rem;color:var(--tinta-2);border-left:3px solid var(--azul);align-self:start;
+}
+.app-modulo__aparte strong{color:var(--tinta);display:block;margin-bottom:.3rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+.app-pasos{display:flex;gap:.3rem;margin-top:1.2rem;align-items:center}
+.app-pasos i{width:100%;height:3px;border-radius:2px;background:var(--linea);flex:1}
+.app-pasos i.hecho{background:var(--azul)}
+.app-pasos i.actual{background:var(--coral)}
+.app-pasos span{font-size:.7rem;color:var(--tinta-3);font-weight:700;white-space:nowrap;margin-left:.5rem}
+
+/* ==========================================================================
+   BLOQUES Y RESPONSABLES
+   ========================================================================== */
+.bloques{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1rem}
+.bloque{
+  border:1px solid var(--linea);border-radius:var(--r-m);background:var(--papel-2);
+  padding:1.1rem;display:flex;flex-direction:column;gap:.65rem;
+  border-top:4px solid var(--acc);box-shadow:var(--sombra-1);
+  transition:transform .2s,box-shadow .2s;
+}
+.bloque:hover{transform:translateY(-3px);box-shadow:var(--sombra-2)}
+.bloque h4{font-family:var(--f-ui);font-size:.78rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
+.personas{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+.personas li{display:flex;align-items:center;gap:.55rem;font-size:.95rem;font-weight:600}
+.avatar{
+  flex:0 0 26px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+  font-size:.66rem;font-weight:800;color:#fff;background:var(--acc);letter-spacing:.02em;
+}
+.personas li.libre{color:var(--tinta-3);font-weight:500;font-style:italic}
+.personas li.libre .avatar{background:transparent;border:1.5px dashed var(--linea-fuerte);color:var(--tinta-3)}
+
+/* ==========================================================================
+   TRIMESTRES
+   ========================================================================== */
+.trimestres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+@media (max-width:960px){.trimestres{grid-template-columns:1fr}}
+.trimestre{
+  border:1px solid var(--linea);border-radius:var(--r-l);background:var(--papel-2);overflow:hidden;
+  display:flex;flex-direction:column;box-shadow:var(--sombra-1);
+}
+.trimestre__cab{padding:1.15rem 1.2rem;background:color-mix(in srgb,var(--acc) 11%,var(--papel-2));border-bottom:1px solid var(--linea)}
+.trimestre__cab h3{font-size:1.25rem;color:var(--acc)}
+.trimestre__cab span{font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--tinta-2)}
+.trimestre__cab p{font-family:var(--f-mano);font-size:1.24rem;color:var(--tinta-2);margin-top:.35rem}
+.eventos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;flex:1}
+.evento{border-bottom:1px solid var(--linea)}
+.evento:last-child{border-bottom:0}
+.evento__btn{
+  width:100%;text-align:left;background:transparent;border:0;cursor:pointer;
+  padding:.95rem 1.2rem;display:flex;gap:.8rem;align-items:flex-start;transition:background .2s;
+}
+.evento__btn:hover{background:color-mix(in srgb,var(--acc) 6%,transparent)}
+.evento__punto{flex:0 0 auto;margin-top:.25rem;color:var(--acc)}
+.evento__cuerpo{flex:1;min-width:0}
+.evento__nombre{font-weight:700;font-size:.98rem;display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+.evento__ventana{font-size:.8rem;color:var(--tinta-2);margin-top:.15rem}
+.evento__flecha{flex:0 0 auto;color:var(--tinta-3);transition:rotate .25s;margin-top:.2rem}
+.evento__btn[aria-expanded="true"] .evento__flecha{rotate:180deg}
+.evento__detalle{padding:0 1.2rem 1.1rem 3rem;display:grid;gap:.7rem}
+.evento__detalle p{font-size:.87rem;color:var(--tinta-2)}
+.ediciones{list-style:none;margin:0;padding:0;display:grid;gap:.3rem}
+.ediciones li{
+  display:flex;gap:.6rem;align-items:baseline;font-size:.8rem;
+  padding:.35rem .6rem;background:var(--papel-3);border-radius:var(--r-s);
+  font-variant-numeric:tabular-nums;
+}
+.ediciones b{font-weight:700;min-width:8.5em}
+.ediciones span{color:var(--tinta-2)}
+.marca-estrella{color:var(--mostaza)}
+
+/* ==========================================================================
+   BAREMOS Y RÚBRICAS
+   ========================================================================== */
+.baremos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem}
+.baremo{
+  border:1px solid var(--linea);border-radius:var(--r-l);background:var(--papel-2);
+  overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--sombra-1);
+}
+.baremo__cab{padding:1.1rem 1.2rem;border-bottom:1px solid var(--linea);display:flex;flex-direction:column;gap:.3rem;background:color-mix(in srgb,var(--acc) 8%,var(--papel-2))}
+.baremo__cab h3{font-size:1.15rem;color:var(--acc)}
+.baremo__cab span{font-size:.76rem;color:var(--tinta-2);font-weight:600}
+.baremo__lista{list-style:none;margin:0;padding:.4rem 0;flex:1}
+.baremo__lista li{
+  display:flex;justify-content:space-between;gap:1rem;align-items:baseline;
+  padding:.5rem 1.2rem;font-size:.87rem;border-bottom:1px dashed var(--linea);
+}
+.baremo__lista li:last-child{border-bottom:0}
+.baremo__lista span{color:var(--tinta-2);min-width:0}
+.baremo__lista b{font-variant-numeric:tabular-nums;color:var(--acc);white-space:nowrap;font-size:.84rem}
+.baremo__pie{padding:1rem 1.2rem;border-top:1px solid var(--linea);display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.mini-foto{
+  width:100%;height:210px;object-fit:contain;object-position:center;
+  padding:.5rem;border-radius:var(--r-m);border:1px solid var(--linea);cursor:zoom-in;
+  transition:transform .25s,box-shadow .25s;background:#fff;
+}
+.mini-foto:hover{transform:scale(1.012);box-shadow:var(--sombra-2)}
+
+.aviso{
+  display:flex;gap:1rem;align-items:flex-start;
+  border:2px solid var(--coral);border-radius:var(--r-l);
+  background:color-mix(in srgb,var(--coral) 8%,var(--papel-2));
+  padding:1.3rem 1.5rem;margin-top:2rem;
+}
+.aviso svg{flex:0 0 auto;color:var(--coral);margin-top:.15rem}
+.aviso strong{display:block;font-family:var(--f-display);font-size:1.12rem;margin-bottom:.3rem}
+.aviso p{font-size:.92rem;color:var(--tinta-2)}
+
+/* niveles y beneficios */
+.niveles{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+.nivel{
+  display:flex;flex-direction:column;gap:.15rem;padding:.7rem .95rem;border-radius:var(--r-m);
+  border:1px solid var(--linea);background:var(--papel-2);flex:1 1 150px;border-top:4px solid var(--nc);
+}
+.nivel b{font-size:.92rem}
+.nivel span{font-size:.74rem;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+.beneficios{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.5rem;margin-top:1rem}
+.beneficio{
+  display:flex;justify-content:space-between;gap:.7rem;align-items:center;
+  padding:.6rem .85rem;border:1px solid var(--linea);border-radius:999px;background:var(--papel-2);font-size:.85rem;
+}
+.beneficio b{color:var(--azul);font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.8rem}
+
+/* ==========================================================================
+   COORDINACIÓN
+   ========================================================================== */
+.coord{
+  display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:2rem;align-items:center;
+  border:1px solid var(--linea);border-radius:var(--r-l);background:var(--papel-2);
+  padding:clamp(1.4rem,3vw,2.4rem);box-shadow:var(--sombra-2);
+}
+@media (max-width:760px){.coord{grid-template-columns:1fr}}
+.coord__retrato{
+  width:150px;height:150px;border-radius:50%;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--coral) 14%,var(--papel-3));
+  border:2px dashed color-mix(in srgb,var(--coral) 45%,transparent);
+  font-family:var(--f-display);font-size:3rem;font-weight:700;color:var(--coral);
+}
+.coord__datos{display:grid;gap:.2rem;margin-bottom:1rem}
+.coord__datos h3{font-size:1.6rem}
+.coord__datos .cargo{color:var(--coral);font-weight:700;font-size:.9rem}
+.coord__datos .centro{color:var(--tinta-2);font-size:.87rem}
+.coord__mensaje{font-size:.95rem;color:var(--tinta-2);max-width:58ch;margin-bottom:1.1rem}
+.coord__fichas{display:flex;flex-wrap:wrap;gap:.5rem}
+.ficha{
+  display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .85rem;
+  border:1px solid var(--linea);border-radius:999px;background:var(--papel-3);
+  font-size:.82rem;text-decoration:none;transition:border-color .2s,color .2s;
+}
+.ficha:hover{border-color:var(--coral);color:var(--coral)}
+.ficha svg{color:var(--tinta-3)}
+
+/* ==========================================================================
+   CIERRE A PANTALLA COMPLETA
+   ========================================================================== */
+.cierre{
+  position:relative;min-height:100vh;min-height:100svh;
+  display:flex;flex-direction:column;gap:1rem;
+  padding:clamp(1.2rem,3vw,2.2rem) 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, #16303F 0%, #0B171F 62%);
+  color:#F4EDE0;border-top:1px solid var(--linea);
+  scroll-margin-top:calc(var(--rail) + 46px);
+}
+.cierre__cab{
+  display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-end;justify-content:space-between;
+}
+.cierre__cab h2{color:#fff;margin-top:.5rem}
+.cierre__cab p{color:rgba(244,237,224,.78);margin-top:.5rem;max-width:56ch;font-size:.95rem}
+.cierre__cab .eyebrow{color:#FFC48A}
+.cierre__marco{
+  flex:1;position:relative;display:grid;place-items:center;min-height:340px;
+  border-radius:var(--r-l);overflow:hidden;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+}
+.cierre__foto{
+  width:100%;height:100%;max-height:66vh;object-fit:contain;cursor:zoom-in;
+  transition:opacity .3s;
+}
+.cierre__falta{
+  position:absolute;inset:0;display:grid;place-content:center;gap:.4rem;text-align:center;
+  color:rgba(244,237,224,.55);font-size:.9rem;padding:2rem;
+}
+.cierre__rejilla{
+  position:absolute;inset:0;z-index:3;overflow:auto;padding:1.2rem;
+  background:rgba(9,20,28,.93);backdrop-filter:blur(6px);
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:.7rem;align-content:start;
+}
+.tarjeta-eq{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.14);border-left:3px solid var(--acc);
+  border-radius:var(--r-m);padding:.75rem .9rem;
+}
+.tarjeta-eq h4{
+  font-family:var(--f-ui);font-size:.63rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--acc);margin-bottom:.4rem;
+}
+.tarjeta-eq ul{list-style:none;margin:0;padding:0;display:grid;gap:.15rem}
+.tarjeta-eq li{font-size:.9rem;font-weight:600;color:#F4EDE0}
+.tarjeta-eq li.libre{color:rgba(244,237,224,.5);font-style:italic;font-weight:500;font-size:.82rem}
+.cierre__pie{
+  padding-top:.9rem;border-top:1px solid rgba(255,255,255,.16);
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;
+  font-size:.8rem;color:rgba(244,237,224,.7);
+}
+.cierre__pie .mano{font-size:1.5rem;color:#FFC48A}
+.cierre .btn--linea{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);color:#F4EDE0}
+.cierre .btn--linea:hover{border-color:#FFC48A;color:#FFC48A}
+
+/* pie */
+.pie{padding:2.5rem 0;border-top:1px solid var(--linea);font-size:.82rem;color:var(--tinta-3)}
+.pie__fila{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+
+/* ==========================================================================
+   VISOR DE IMÁGENES
+   ========================================================================== */
+.visor{
+  position:fixed;inset:0;z-index:120;background:rgba(8,16,22,.94);
+  display:flex;flex-direction:column;padding:1rem;gap:.8rem;
+}
+.visor__barra{display:flex;gap:.6rem;align-items:center;justify-content:space-between;color:#F4EDE0}
+.visor__barra strong{font-family:var(--f-display);font-size:1.05rem}
+.visor__marco{flex:1;overflow:auto;display:grid;place-items:center;border-radius:var(--r-m)}
+.visor__marco img{max-width:none;width:auto;height:auto;border-radius:6px;cursor:grab;background:#fff}
+.visor__marco img.ajuste{max-width:100%;max-height:100%;object-fit:contain}
+.visor .icono-btn{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);color:#F4EDE0}
+.visor .icono-btn:hover{background:rgba(255,255,255,.2);color:#fff}
+
+/* ==========================================================================
+   MODO PRESENTACIÓN
+   ========================================================================== */
+.deck{
+  position:fixed;inset:0;z-index:150;background:var(--papel);
+  display:flex;flex-direction:column;
+  background-image:
+    radial-gradient(circle at 15% 12%, color-mix(in srgb,var(--acc) 10%,transparent) 0 25%, transparent 62%),
+    radial-gradient(circle at 85% 88%, color-mix(in srgb,var(--acc) 8%,transparent) 0 22%, transparent 58%);
+}
+.deck__cab{display:flex;align-items:center;gap:1rem;padding:.9rem 1.4rem;border-bottom:1px solid var(--linea)}
+.deck__cab .marca{margin-right:auto}
+.deck__cuenta{font-size:.8rem;font-weight:700;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+.deck__barra{height:3px;background:var(--linea)}
+.deck__barra i{display:block;height:100%;background:var(--acc);transition:width .35s cubic-bezier(.2,.8,.2,1)}
+.deck__lienzo{
+  flex:1;display:grid;place-items:center;padding:clamp(1.5rem,4vw,3.5rem);overflow:auto;
+}
+.lam{width:min(100%,1000px);display:flex;flex-direction:column;gap:1.1rem;animation:entrar .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes entrar{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.lam__eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
+.lam h2{font-size:clamp(2rem,5.5vw,3.6rem)}
+.lam h2 em{font-style:normal;color:var(--acc)}
+.lam__sub{font-family:var(--f-mano);font-size:clamp(1.4rem,3vw,2.1rem);color:var(--tinta-2);line-height:1.15}
+.lam__items{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.lam__items li{
+  display:flex;gap:.9rem;align-items:flex-start;font-size:clamp(1rem,2vw,1.35rem);line-height:1.35;
+  padding:.7rem .95rem;border-radius:var(--r-m);background:var(--papel-2);border:1px solid var(--linea);
+}
+.lam__items li::before{content:"";flex:0 0 10px;height:10px;margin-top:.5em;border-radius:50%;background:var(--acc)}
+.lam__items li.ok{background:color-mix(in srgb,var(--salvia) 10%,var(--papel-2));border-color:color-mix(in srgb,var(--salvia) 35%,transparent)}
+.lam__items li.ok::before{background:var(--salvia)}
+.lam__firma{
+  display:inline-flex;align-items:center;gap:.5rem;width:max-content;max-width:100%;
+  font-size:.9rem;font-weight:700;color:var(--acc);
+  padding:.35rem .9rem;border-radius:999px;
+  border:1.5px solid color-mix(in srgb,var(--acc) 35%,transparent);
+  background:color-mix(in srgb,var(--acc) 9%,transparent);
+}
+.lam--portada .lam__firma{margin-inline:auto}
+.lam__claves{display:flex;flex-wrap:wrap;gap:.5rem}
+.lam__claves span{
+  padding:.4rem .9rem;border-radius:999px;border:1.5px solid var(--acc);color:var(--acc);
+  font-size:clamp(.85rem,1.6vw,1.05rem);font-weight:600;
+}
+.lam__cifras{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:.5rem}
+.lam__cifra{display:flex;flex-direction:column}
+.lam__cifra b{font-family:var(--f-display);font-size:clamp(2.4rem,6vw,3.6rem);line-height:1;color:var(--acc);font-variant-numeric:tabular-nums}
+.lam__cifra span{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2)}
+.lam--portada{text-align:center;align-items:center}
+.lam--portada .lam__sub{max-width:36ch}
+.deck__pie{display:flex;align-items:center;gap:.6rem;padding:.9rem 1.4rem;border-top:1px solid var(--linea);justify-content:center}
+.deck__pie .pista{margin-left:auto;font-size:.72rem;color:var(--tinta-3)}
+@media (max-width:640px){.deck__pie .pista{display:none}}
+
+/* ---------- utilidades ---------- */
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.saltar{position:absolute;left:-999px;top:0;z-index:200;background:var(--tinta);color:var(--papel);padding:.6rem 1rem;border-radius:0 0 8px 0}
+.saltar:focus{left:0}
+
+@media print{
+  .barra,.subnav,.deck,.visor,.portada__acciones,.filtros,.icono-btn{display:none!important}
+  body{background:#fff}
+  .seccion{padding-block:1.5rem;break-inside:avoid}
+  .cierre{min-height:auto}
+}
+</style>
+</head>
+<body>
+<a class="saltar" href="#parte1">Saltar al contenido</a>
+
+<!-- ====================== BARRA ====================== -->
+<header class="barra">
+  <div class="barra__fila">
+    <a class="marca" href="#portada">
+      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 3" opacity=".45"/>
+        <path d="M16 6.5 18.4 13h6.8l-5.5 4 2.1 6.6L16 19.5 10.2 23.6l2.1-6.6-5.5-4h6.8L16 6.5Z" fill="currentColor"/>
+      </svg>
+      <span>Al-Ándalus Dialógico<small>Comunidad de Aprendizaje</small></span>
+    </a>
+
+    <div class="segmentos" role="tablist" aria-label="Partes de la página">
+      <button role="tab" id="seg-1" aria-selected="true" aria-controls="parte1" data-parte="parte1">Empieza aquí</button>
+      <button role="tab" id="seg-2" aria-selected="false" aria-controls="parte2" data-parte="parte2">Plan de Actuación</button>
+    </div>
+
+    <div class="barra__acciones">
+      <button class="btn btn--acento btn--mini" id="btn-presentar" style="--acc:var(--coral)">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 2.5 13.5 8 3 13.5V2.5Z"/></svg>
+        Presentar
+      </button>
+      <button class="icono-btn" id="btn-tema" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <circle cx="10" cy="10" r="4"/><path d="M10 1.5v2M10 16.5v2M1.5 10h2M16.5 10h2M4 4l1.4 1.4M14.6 14.6 16 16M16 4l-1.4 1.4M5.4 14.6 4 16" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="subnav" aria-label="Secciones">
+  <div class="subnav__fila" id="subnav"></div>
+</nav>
+
+<main>
+<!-- ==================================================================
+     PARTE 1 — EMPIEZA AQUÍ
+     ================================================================== -->
+<div id="parte1" class="parte">
+
+  <section class="seccion portada" id="portada" style="--acc:var(--coral)">
+    <div class="contenedor">
+      <div class="portada__rejilla">
+        <div>
+          <span class="portada__sello">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 4.2 9.1 7h2.9l-2.35 1.7.9 2.8L8 9.75 5.55 11.5l.9-2.8L4.1 7H7L8 4.2Z"/></svg>
+            IES Al-Ándalus · Almería · <b>Curso 2026-2027</b>
+          </span>
+          <h1>Comunidades <em>de</em> Aprendizaje</h1>
+          <p class="portada__lema">«Cumplamos los sueños de nuestra comunidad»</p>
+          <p class="portada__texto">
+            Un instituto donde el alumnado, las familias, el profesorado y el personal del centro
+            deciden juntos y en igualdad. Esta página tiene dos partes: una <strong>bienvenida</strong>
+            para quien llega nuevo, y el <strong>Plan de Actuación</strong> del curso para toda la comunidad.
+          </p>
+          <div class="portada__acciones">
+            <button class="btn btn--solido" data-deck="bienvenida">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 2.5 13.5 8 3 13.5V2.5Z"/></svg>
+              Ver la presentación
+            </button>
+            <a class="btn btn--linea" href="#parte2">Ir al Plan de Actuación</a>
+          </div>
+          <div class="cifras" id="cifras-portada"></div>
+        </div>
+
+        <div class="mural" aria-hidden="true">
+          <div class="papeleta">Que haya un rocódromo en el instituto.<small>Infraestructura</small></div>
+          <div class="papeleta papeleta--ok">
+            <span class="papeleta__sello">Cumplido</span>
+            Música de Harry Styles como timbre.<small>Actividades</small>
+          </div>
+          <div class="papeleta">Alumnado cotutor de 4.º ESO para 1.º ESO.<small>Convivencia</small></div>
+          <div class="papeleta papeleta--ok">
+            <span class="papeleta__sello">Cumplido</span>
+            Taquillas para toda la ESO.<small>Infraestructura</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="que-es" style="--acc:var(--turquesa)">
+    <div class="contenedor">
+      <div class="parte__marca">
+        <span class="parte__num">1</span>
+        <span class="parte__tit"><strong>Empieza aquí</strong><span>Para quien acaba de llegar al centro o a la comunidad</span></span>
+      </div>
+      <div class="seccion__cab" style="margin-top:2rem">
+        <span class="eyebrow">Qué es esto</span>
+        <h2>No es un programa más. Es una forma de decidir.</h2>
+        <p>
+          Una Comunidad de Aprendizaje es un centro que se transforma con toda su comunidad dentro:
+          se abren las aulas al voluntariado, se lee y se debate en igualdad, y las decisiones se toman
+          en comisiones donde el alumnado y las familias valen tanto como el claustro. No se aplica un método:
+          se ponen en marcha <strong>actuaciones educativas de éxito</strong>, avaladas por la investigación internacional.
+        </p>
+      </div>
+      <div class="actuaciones" id="actuaciones"></div>
+
+      <div class="seccion__cab" style="margin-top:3.5rem">
+        <span class="eyebrow" style="--acc:var(--mostaza)">Además</span>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">Bloques propios del centro</h2>
+        <p>No son actuaciones de éxito reconocidas, sino iniciativas nacidas aquí que sostienen a las demás: la banda sonora del instituto y la ventana por la que se ve todo esto desde fuera.</p>
+      </div>
+      <div class="actuaciones" id="bloques-centro"></div>
+    </div>
+  </section>
+
+  <section class="seccion" id="fases" style="--acc:var(--frambuesa)">
+    <div class="contenedor">
+      <div class="seccion__cab">
+        <span class="eyebrow">El proceso</span>
+        <h2>Cinco fases. Estamos en la tercera todos los años.</h2>
+        <p>La fase del sueño no se hace una vez: se repite cada curso, porque cada curso entra gente nueva con sueños nuevos.</p>
+      </div>
+      <div class="fases" id="lista-fases"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ==================================================================
+     PARTE 2 — PLAN DE ACTUACIÓN
+     ================================================================== -->
+<div id="parte2" class="parte">
+
+  <section class="seccion" id="plan" style="--acc:var(--coral)">
+    <div class="contenedor">
+      <div class="parte__marca">
+        <span class="parte__num">2</span>
+        <span class="parte__tit"><strong>Plan de Actuación 2026-2027</strong><span>Para toda la comunidad</span></span>
+      </div>
+      <div class="seccion__cab" style="margin-top:2rem">
+        <span class="eyebrow">Cómo se lee este plan</span>
+        <h2>Cuatro patas: sueños, responsables, calendario y novedades.</h2>
+        <p>
+          Los sueños dicen <em>qué</em> queremos. Los responsables, <em>quién</em> lo empuja. El calendario, <em>cuándo</em>.
+          Y las novedades, <em>con qué</em>: este curso estrenamos herramienta propia, y la vamos a ir explicando
+          pieza a pieza, dentro de la parte del plan a la que sirve cada una.
+        </p>
+      </div>
+      <div class="cifras" id="cifras-plan"></div>
+    </div>
+  </section>
+
+  <!-- SUEÑOS -->
+  <section class="seccion" id="suenos" style="--acc:var(--turquesa)">
+    <div class="contenedor">
+      <div class="seccion__cab">
+        <span class="eyebrow">Plan · primera pata</span>
+        <h2>Los sueños</h2>
+        <p>
+          Todo lo que la comunidad pidió en la última fase del sueño, comisión por comisión.
+          Filtra por estado o busca una palabra para encontrar el tuyo. En rojo van los que hemos
+          descartado por inviables o muy difíciles: siguen a la vista, porque también eso hay que contarlo.
+        </p>
+      </div>
+
+      <div class="tablero__mandos">
+        <div class="pestanas" role="tablist" aria-label="Comisiones" id="pestanas"></div>
+        <div class="filtros">
+          <label class="buscador">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3" stroke-linecap="round"/></svg>
+            <span class="sr">Buscar un sueño</span>
+            <input type="search" id="buscar" placeholder="Buscar un sueño…" autocomplete="off">
+          </label>
+          <button class="chip" data-estado="todos" aria-pressed="true">Todos</button>
+          <button class="chip" data-estado="proceso" aria-pressed="false">En marcha</button>
+          <button class="chip" data-estado="pendiente" aria-pressed="false">Pendientes</button>
+          <button class="chip" data-estado="debate" aria-pressed="false">En debate</button>
+          <button class="chip" data-estado="inviable" aria-pressed="false">Inviables</button>
+        </div>
+      </div>
+
+      <div id="comision-cab"></div>
+      <div class="suenos" id="rejilla-suenos"></div>
+
+      <section class="logros">
+        <header class="logros__cab">
+          <div>
+            <h3>Sueños cumplidos el curso pasado</h3>
+            <p>Los cumplió el centro entero, así que van juntos y sin repartir méritos por comisiones.</p>
+          </div>
+          <span class="insignia" style="--acc:var(--salvia)" id="logros-cuenta"></span>
+        </header>
+        <div class="logros__lista" id="logros-lista"></div>
+      </section>
+
+      <div class="app-modulo" data-modulo="1"></div>
+    </div>
+  </section>
+
+  <!-- RESPONSABLES -->
+  <section class="seccion" id="responsables" style="--acc:var(--frambuesa)">
+    <div class="contenedor">
+      <div class="seccion__cab">
+        <span class="eyebrow">Plan · segunda pata</span>
+        <h2>Quién se encarga de qué</h2>
+        <p>
+          Doce bloques con sus responsables. Donde pone <em>plaza libre</em> es que falta gente:
+          esos huecos son la primera petición del curso.
+        </p>
+      </div>
+      <div class="bloques" id="bloques"></div>
+      <div class="app-modulo" data-modulo="2"></div>
+    </div>
+  </section>
+
+  <!-- CALENDARIO -->
+  <section class="seccion" id="calendario" style="--acc:var(--mostaza)">
+    <div class="contenedor">
+      <div class="seccion__cab">
+        <span class="eyebrow">Plan · tercera pata</span>
+        <h2>El curso, trimestre a trimestre</h2>
+        <p>
+          Fechas estimadas a partir de las ediciones de cursos anteriores. Despliega cualquier evento
+          para ver cuándo se celebró y a qué hora: esa es la mejor pista de cuándo caerá este año.
+        </p>
+      </div>
+      <div class="trimestres" id="trimestres"></div>
+      <div class="app-modulo" data-modulo="3"></div>
+    </div>
+  </section>
+
+  <!-- NOVEDADES -->
+  <section class="seccion" id="creditos" style="--acc:var(--azul)">
+    <div class="contenedor">
+      <div class="seccion__cab">
+        <span class="eyebrow">Plan · cuarta pata · novedades</span>
+        <h2>Lo que suma tu participación</h2>
+        <p>
+          Este curso el reconocimiento de la participación está escrito y es público: tres documentos,
+          uno para el profesorado y dos para quienes sostienen la comunidad desde fuera del claustro.
+          Pulsa cualquier imagen para verla a tamaño completo.
+        </p>
+      </div>
+
+      <div class="cambio">
+        <article class="cambio__caja" style="--acc:var(--salvia)">
+          <h3>Alumnado</h3>
+          <p class="cambio__flecha">Participar → nota</p>
+          <p>
+            Es el cambio grande de este curso: los puntos de participación cuentan en lo académico.
+            Al llegar a <strong>50 puntos en la ESO</strong>, o a <strong>75 en 1.º SMR y 1.º de Bachillerato</strong>,
+            se suma <strong>1 punto</strong> a través de la rúbrica.
+          </p>
+        </article>
+        <article class="cambio__caja" style="--acc:var(--turquesa)">
+          <h3>Familias y voluntariado</h3>
+          <p class="cambio__flecha">Participar → recompensas</p>
+          <p>
+            Sus créditos no van a la nota de nadie: se canjean por recompensas del centro.
+            <strong>Ese catálogo todavía no existe</strong>, y hay que escribirlo este trimestre.
+          </p>
+        </article>
+      </div>
+
+      <div class="baremos" id="baremos"></div>
+      <div class="app-modulo" data-modulo="4"></div>
+    </div>
+  </section>
+
+  <section class="seccion" id="pasaporte" style="--acc:var(--azul)">
+    <div class="contenedor">
+      <div class="seccion__cab">
+        <span class="eyebrow">Novedades · reconocimiento</span>
+        <h2>El pasaporte, sin convertirlo en una carrera</h2>
+        <p>Cinco niveles según los créditos del curso. Sin clasificaciones y sin rachas: no las hay y no las habrá.</p>
+      </div>
+      <div class="niveles" id="niveles"></div>
+      <div class="app-modulo" data-modulo="5"></div>
+      <div class="app-modulo" data-modulo="6"></div>
+
+      <div class="llamada">
+        <div>
+          <h3>Buscamos ideas para las recompensas de las familias</h3>
+          <p>
+            El catálogo está en blanco a propósito: lo decide el claustro. ¿Qué puede ofrecer el centro
+            a una familia que viene a un grupo interactivo cada semana? Y sobre todo, ¿qué recompensa
+            haría que el alumnado animara a los suyos a venir? Ahí es donde necesitamos vuestras propuestas.
+          </p>
+        </div>
+        <a class="btn btn--acento" style="--acc:var(--mostaza)" href="#coordinacion">Enviar una propuesta</a>
+      </div>
+      <p style="font-size:.8rem;color:var(--tinta-3);margin-top:1.4rem">
+        Ejemplos para arrancar la conversación. Ninguno está aprobado todavía.
+      </p>
+      <div class="beneficios" id="beneficios" style="margin-top:.6rem"></div>
+
+      <div class="app-modulo" data-modulo="7"></div>
+      <div class="aviso">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 3 7v6c0 5 3.8 8.6 9 10 5.2-1.4 9-5 9-10V7l-9-4Z" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <strong>La regla que no se toca</strong>
+          <p id="regla"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COORDINACIÓN -->
+  <section class="seccion" id="coordinacion" style="--acc:var(--coral)">
+    <div class="contenedor">
+      <div class="seccion__cab">
+        <span class="eyebrow">Contacto</span>
+        <h2>Coordinación</h2>
+      </div>
+      <div class="coord" id="coord"></div>
+    </div>
+  </section>
+</div>
+
+<!-- CIERRE A PANTALLA COMPLETA -->
+<section class="cierre" id="equipo">
+  <div class="contenedor cierre__cab">
+    <div>
+      <span class="eyebrow">Curso 2026-2027</span>
+      <h2 id="equipo-tit">Coordinadores y coordinadoras de bloques</h2>
+      <p id="equipo-sub">Doce bloques y las personas que los sostienen.</p>
+    </div>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+      <button class="btn btn--linea btn--mini" id="btn-nombres" aria-pressed="false">Ver los nombres en texto</button>
+      <button class="btn btn--linea btn--mini" id="btn-foto-grande">Ampliar la imagen</button>
+    </div>
+  </div>
+
+  <div class="contenedor" style="flex:1;display:flex">
+    <div class="cierre__marco">
+      <p class="cierre__falta" id="equipo-falta" hidden>
+        No se encuentra la imagen del equipo.<br>
+        <span style="font-size:.8rem">Deja el archivo junto a esta página con el nombre indicado en el bloque <code>equipo</code>.</span>
+      </p>
+      <img class="cierre__foto" id="foto-equipo" alt="Coordinadores y coordinadoras de los bloques de la Comunidad de Aprendizaje, curso 2026-2027">
+      <div class="cierre__rejilla" id="equipo-rejilla" hidden></div>
+    </div>
+  </div>
+
+  <div class="contenedor cierre__pie">
+    <span id="equipo-pie"></span>
+    <span class="mano">¡Tu participación hace nuestra escuela mejor!</span>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__fila">
+    <span>IES Al-Ándalus · Almería · Comunidad de Aprendizaje · Curso 2026-2027</span>
+    <span><a href="https://iesalandalus.org/joomla/" target="_blank" rel="noopener">iesalandalus.org</a></span>
+  </div>
+</footer>
+
+<!-- VISOR DE IMÁGENES -->
+<div class="visor" id="visor" hidden>
+  <div class="visor__barra">
+    <strong id="visor-tit"></strong>
+    <div style="display:flex;gap:.4rem">
+      <button class="icono-btn" id="visor-zoom" aria-label="Alternar zoom" title="Ampliar / ajustar">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 4 4M7 9h4M9 7v4" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icono-btn" id="visor-cerrar" aria-label="Cerrar el visor">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 5 10 10M15 5 5 15" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="visor__marco"><img id="visor-img" class="ajuste" alt=""></div>
+</div>
+
+<!-- MODO PRESENTACIÓN -->
+<div class="deck" id="deck" hidden>
+  <div class="deck__cab">
+    <span class="marca">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 3" opacity=".45"/>
+        <path d="M16 6.5 18.4 13h6.8l-5.5 4 2.1 6.6L16 19.5 10.2 23.6l2.1-6.6-5.5-4h6.8L16 6.5Z" fill="currentColor"/>
+      </svg>
+      <span id="deck-titulo">Presentación</span>
+    </span>
+    <span class="deck__cuenta" id="deck-cuenta"></span>
+    <button class="icono-btn" id="deck-pantalla" aria-label="Pantalla completa" title="Pantalla completa">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7V3h4M17 7V3h-4M3 13v4h4M17 13v4h-4" stroke-linecap="round"/></svg>
+    </button>
+    <button class="icono-btn" id="deck-cerrar" aria-label="Salir de la presentación">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 5 10 10M15 5 5 15" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="deck__barra"><i id="deck-progreso"></i></div>
+  <div class="deck__lienzo" id="deck-lienzo"></div>
+  <div class="deck__pie">
+    <button class="btn btn--linea btn--mini" id="deck-antes">← Anterior</button>
+    <button class="btn btn--solido btn--mini" id="deck-luego">Siguiente →</button>
+    <span class="pista">Usa ← → para moverte · Esc para salir</span>
+  </div>
+</div>
+
+<script>
+/* ==========================================================================
+   1. DATOS — edita solo esta sección para actualizar la página
+   ========================================================================== */
+const CDA = {
+  centro:{ nombre:"IES Al-Ándalus", localidad:"Almería", curso:"2026-2027" },
+
+  /* ---------- actuaciones educativas de éxito ---------- */
+  actuaciones:[
+    { id:"gi", resp:[], nombre:"Grupos Interactivos", color:"turquesa", tipo:"exito",
+      resumen:"El aula se divide en grupos pequeños y heterogéneos. En cada uno hay una persona voluntaria que no explica: dinamiza para que el alumnado se ayude entre sí. Cada 10 o 15 minutos, los grupos rotan de actividad.",
+      claves:["heterogéneo","voluntariado","10-15 minutos","rotación","solidaridad","inclusión"],
+      presenta:["Cuatro o cinco grupos por aula, cada uno con una actividad distinta y una persona adulta que dinamiza.","El voluntariado no corrige ni explica: pregunta, reparte turnos y cuida que todo el mundo participe.","En una sola hora, cada alumno pasa por cuatro actividades y cuatro dinamizaciones diferentes."] },
+    { id:"td", resp:["Mar B.","José Miguel M."], nombre:"Tertulias Dialógicas y Pedagógicas", color:"frambuesa", tipo:"exito",
+      resumen:"Se lee un clásico universal y cada persona trae subrayado el párrafo que le ha removido. Nadie interpreta por encima de nadie: manda el argumento, no la autoridad de quien habla.",
+      claves:["clásicos universales","turno de palabra","moderación","argumento","escucha","igualdad"],
+      presenta:["Se acuerda entre todos hasta dónde se lee, y cada participante elige un fragmento y lo justifica.","Una persona modera, da los turnos y prioriza a quien menos ha intervenido.","El principio fundamental es el de diálogo igualitario."] },
+    { id:"bt", resp:["Antonio G.","José M."], nombre:"Bibliotecas Tutorizadas", color:"salvia", tipo:"exito",
+      resumen:"La biblioteca abre en los recreos con acompañamiento del profesorado voluntario. Es tiempo extra de aprendizaje para quien lo necesita, sin sacar a nadie de su grupo y sin bajarle el nivel a nadie.",
+      claves:["recreo","acompañamiento","más tiempo","trabajo entre iguales","lectura","refuerzo"],
+      presenta:["Ampliar el tiempo de aprendizaje en lugar de recortar el currículum: ese es el criterio.","Profesorado voluntario y alumnado mayor acompañan tareas, lecturas y estudio.","Trabajo entre iguales: quien ya lo ha entendido se lo explica a quien todavía no.","Es el marco donde vamos a poner en marcha el alumnado cotutor."] },
+    { id:"ra", resp:["Roberto L.","Paqui E."], nombre:"Recreos Activos", color:"mostaza", tipo:"exito",
+      resumen:"El patio deja de ser tiempo muerto: deporte, juegos de mesa, música y biblioteca durante el recreo, con alumnado que organiza y que media. Menos conflictos y menos gente sola.",
+      claves:["patio","deporte","juegos de mesa","música","mediación","nadie solo"],
+      presenta:["Espacios simultáneos: pistas, mesas de juego, biblioteca abierta y música elegida por el alumnado.","El propio alumnado organiza las ligas y forma el equipo de mediación.","El objetivo es que ningún alumno pase el recreo aislado."] },
+    { id:"cm", resp:["Carmen R.","José M.","Loli M.","Montse G.","Sergio G.","Alfonso R.","David M."], nombre:"Comisiones Mixtas", color:"coral", tipo:"exito",
+      resumen:"Alumnado, familias, profesorado y personal del centro deciden juntos y en igualdad. Cada comisión recoge los sueños de su ámbito, los prioriza y los convierte en acuerdos con responsable y con plazo.",
+      claves:["alumnado","familias","profesorado","acuerdos","sueños","una persona, una voz"],
+      presenta:["Cuatro comisiones: Infraestructura y Emprendimiento, Actividades, Convivencia y Formación Profesional.","En la mesa todos los sectores valen lo mismo: no decide el cargo, decide el acuerdo.","De la comisión salen los sueños priorizados, quién se encarga y para cuándo."] },
+    { id:"md", resp:["Rocío P.","Mónica F."], nombre:"Modelo Dialógico de Resolución de Conflictos", color:"azul", tipo:"exito", nuevo:true,
+      resumen:"Los conflictos no se resuelven con una sanción decidida arriba, sino con normas acordadas por toda la comunidad y con la mirada puesta en quien sufre el daño. Es la actuación que estamos implantando este curso.",
+      claves:["norma consensuada","prevención","proteger a la víctima","toda la comunidad","valentía","diálogo"],
+      presenta:["La comunidad entera acuerda las normas: quien participa en decidirlas, después las defiende.","Ante un conflicto se escucha y se protege primero a quien lo está sufriendo.","Es la respuesta del centro al acoso y a la violencia: prevenir hablando, antes que castigar después.","Se implanta este curso de la mano de la Comisión de Convivencia."] },
+    { id:"pm", resp:["Mónica G."], nombre:"Proyecto Musical de Timbre y Recreos Musicales", color:"frambuesa", tipo:"centro",
+      resumen:"El timbre deja de ser un pitido: suena la música que elige el alumnado, y el recreo tiene su propia lista. Nació como un sueño de la Comisión de Actividades y hoy es un bloque con responsable propia.",
+      claves:["timbre musical","lista del recreo","elige el alumnado","diversidad","semanas temáticas","identidad"],
+      presenta:["El alumnado propone y elige las canciones, y cada semana puede tener su propio tema.","Ya sonaron «Die with a smile» como timbre y música marroquí en el recreo: dos sueños que se cumplieron.","La música baja el ruido de los pasillos y da carácter a los cambios de clase."] },
+    { id:"pod", nombre:"Podcast", color:"turquesa", tipo:"centro", resp:["Juan B."],
+      resumen:"El centro tiene una sala habilitada para grabar. Se graba en grupos de hasta cuatro personas y se reserva coordinándolo antes con Juan B., que es quien lleva el recurso.",
+      claves:["sala del centro","hasta 4 personas","reserva previa","la voz del alumnado","grabación","difusión"],
+      presenta:["Hay una sala del centro montada y lista para grabar.","Cada grabación admite un máximo de cuatro personas.","Para usarla hay que coordinarse antes con Juan B.: él gestiona el calendario de la sala.","Está a disposición de cualquier bloque: tertulias, comisiones, Semana Cultural o la memoria del curso."] },
+    { id:"rs", resp:["Mar P.","Paula M.","Elena S."], nombre:"Redes Sociales", color:"mostaza", tipo:"centro",
+      resumen:"Lo que pasa dentro se cuenta fuera. El equipo documenta las actuaciones, publica lo que se consigue y es la puerta de entrada de las familias que todavía no participan.",
+      claves:["contar lo que se hace","transparencia","difusión","memoria del curso","captación","familias"],
+      presenta:["Cada actuación deja rastro: qué se hizo, cuándo y qué se consiguió.","Es la vía más rápida para que una familia descubra que puede entrar al aula como voluntaria.","Lo publicado alimenta la memoria del curso y el balance de sueños cumplidos."] }
+  ],
+
+  /* ---------- fases del proceso ---------- */
+  fases:[
+    { n:"Fase 1", nombre:"Sensibilización", texto:"Se presenta a toda la comunidad qué es una Comunidad de Aprendizaje y en qué se basa." },
+    { n:"Fase 2", nombre:"Toma de decisión", texto:"El centro decide transformarse con todos los sectores. No se impone: se vota." },
+    { n:"Fase 3", nombre:"El Sueño", texto:"Todo el mundo escribe el instituto que querría. Sin filtros, sin presupuesto y sin «eso no puede ser».", activa:true },
+    { n:"Fase 4", nombre:"Selección de prioridades", texto:"Las comisiones agrupan los sueños, los ordenan y eligen por dónde empezar." },
+    { n:"Fase 5", nombre:"Planificación", texto:"Cada sueño priorizado recibe responsables, recursos y una fecha. Y se rinde cuentas." }
+  ],
+
+  /* ---------- comisiones y sueños ---------- */
+  comisiones:[
+    { id:"infra", nombre:"Infraestructura y Emprendimiento", corto:"Infraestructura", color:"turquesa",
+      responsables:["Alfonso R.","David M."],
+      lema:"El edificio también educa.",
+      resumen:"La comisión con más propuestas: espacios, mantenimiento, cantina y todo lo que se toca cada día. Sus sueños son los más concretos y también los más caros.",
+      suenos:[
+        {t:"Espejos en todos los baños.",e:"cumplido"},
+        {t:"Espejos en los vestuarios del gimnasio.",e:"cumplido"},
+        {t:"Poner un futbolín y organizar una liga.",e:"cumplido"},
+        {t:"Compresas y salvaslips para urgencias.",e:"cumplido"},
+        {t:"Taquillas para todos los cursos.",e:"cumplido",n:"Instaladas para toda la ESO."},
+        {t:"Poner música como timbre.",e:"cumplido",n:"Sueño compartido con la Comisión de Actividades."},
+        {t:"Calefacción en las clases.",e:"pendiente"},
+        {t:"Que pongan aire o ventiladores en el gimnasio.",e:"pendiente"},
+        {t:"Ventiladores en todas las aulas: si no, pasamos mucho calor.",e:"pendiente"},
+        {t:"Papel higiénico en los baños.",e:"pendiente"},
+        {t:"Jabón para lavarse las manos.",e:"pendiente"},
+        {t:"Baños más limpios.",e:"pendiente"},
+        {t:"Sillas más cómodas.",e:"pendiente"},
+        {t:"Cambiar las sillas del salón de actos.",e:"pendiente",n:"Idea de la propia comisión: financiarlas con un crowdfunding."},
+        {t:"Tener un aula de Música.",e:"pendiente"},
+        {t:"Un lugar para dejar los instrumentos y poder tener la batería montada.",e:"pendiente"},
+        {t:"Que haya un rocódromo en el instituto.",e:"cumplido",n:"El sueño más ambicioso que ha llegado a cumplirse."},
+        {t:"Columpios en el patio.",e:"pendiente"},
+        {t:"Poner red a las porterías.",e:"pendiente"},
+        {t:"Un chill-out en el jardín delantero.",e:"pendiente"},
+        {t:"Un aula al aire libre.",e:"pendiente"},
+        {t:"Aparcamiento suficiente para las bicicletas, con sombra.",e:"pendiente"},
+        {t:"Filtro de agua en la fuente.",e:"pendiente"},
+        {t:"Un microondas para uso del alumnado.",e:"pendiente"},
+        {t:"Máquina expendedora con alimentos sin gluten y otras intolerancias.",e:"pendiente"},
+        {t:"Que la máquina expendedora funcione por las mañanas.",e:"pendiente"},
+        {t:"Más variedad en la cantina: tostadas diferentes, galletas, zumos, kebab…",e:"pendiente"},
+        {t:"Lista de difusión para pedir por adelantado en la cantina.",e:"pendiente"},
+        {t:"Más libros en la biblioteca.",e:"pendiente"},
+        {t:"Cómics en la biblioteca.",e:"pendiente"},
+        {t:"Pizarra en 1.º Bach B y recuperar la de la biblioteca.",e:"pendiente"},
+        {t:"Cambiar la cerradura del aula de 1.º Bach B.",e:"pendiente"},
+        {t:"Persianas nuevas.",e:"pendiente"},
+        {t:"Que se arreglen y pinten las paredes de los departamentos.",e:"pendiente"},
+        {t:"Que se limpie el frigorífico de la sala de profesores.",e:"pendiente"},
+        {t:"Un porterillo para entrar por la puerta que da a la Finca.",e:"pendiente"},
+        {t:"Más plantas en la entrada.",e:"pendiente"},
+        {t:"Bandera de España y de Andalucía en la fachada del centro.",e:"pendiente"},
+        {t:"Uniforme.",e:"inviable",n:"No corresponde al centro decidirlo."},
+        {t:"Piscina.",e:"inviable",n:"El sueño más ambicioso de toda la recogida. Sin espacio ni presupuesto posible."}
+      ]},
+    { id:"activ", nombre:"Actividades", color:"mostaza",
+      responsables:["Carmen R.","José M."], vacantes:1,
+      lema:"Un instituto al que apetezca venir.",
+      resumen:"Excursiones, fiestas, música y días temáticos. Es la comisión que más sueños ha cumplido, porque muchos de los suyos se resuelven con organización antes que con presupuesto.",
+      suenos:[
+        {t:"Música de Harry Styles como timbre.",e:"cumplido",n:"«Die with a smile» sonó como timbre la semana del 2 al 6 de febrero."},
+        {t:"Excursión a la nieve.",e:"cumplido"},
+        {t:"Música del recreo más moderna.",e:"cumplido"},
+        {t:"Música marroquí en el recreo.",e:"cumplido"},
+        {t:"Excursión de convivencia con familiares.",e:"cumplido"},
+        {t:"Un pasaje del terror.",e:"proceso",n:"Ya es una cita fija del primer trimestre."},
+        {t:"Un baile de invierno.",e:"proceso",n:"Se celebra a finales de enero."},
+        {t:"Un día del pijama.",e:"proceso",n:"Vinculado al Aula Hospitalaria."},
+        {t:"Hacer un cine con palomitas.",e:"pendiente"},
+        {t:"Que se ponga una sala de videojuegos para todo el curso.",e:"inviable",n:"No hay aula disponible ni forma de supervisarla todo el curso."},
+        {t:"Poder llevar una tarde mascotas al instituto: concurso, exhibición…",e:"pendiente"},
+        {t:"Dormir una noche en el instituto.",e:"inviable",n:"La normativa de uso de las instalaciones no lo permite."},
+        {t:"Más excursiones.",e:"pendiente"},
+        {t:"Excursiones fuera de Almería.",e:"pendiente"},
+        {t:"Excursión a Aguadulce.",e:"pendiente"},
+        {t:"Excursión a la Warner.",e:"inviable",n:"Distancia y coste por encima de lo asumible."},
+        {t:"Visita al instituto de Pechina.",e:"pendiente"},
+        {t:"Viaje de estudios para todo el centro.",e:"inviable",n:"Imposible de organizar para todo el alumnado a la vez."},
+        {t:"Baile de prom.",e:"pendiente"},
+        {t:"Fiesta del amor.",e:"pendiente"},
+        {t:"Días temáticos: los 80, informal…",e:"pendiente"},
+        {t:"Venir un día todos de etiqueta.",e:"pendiente"},
+        {t:"Que haya clases de cocina.",e:"pendiente"},
+        {t:"Pizza como premio para toda la clase.",e:"pendiente"},
+        {t:"Balones en el recreo los miércoles.",e:"pendiente"},
+        {t:"Decorar todo el centro en Navidad y que las familias vengan a verlo.",e:"pendiente"},
+        {t:"Poder elegir más personas en la Semana Cultural.",e:"pendiente"}
+      ]},
+    { id:"conviv", nombre:"Convivencia", color:"frambuesa",
+      responsables:["Loli M."], vacantes:1,
+      lema:"Cómo nos tratamos.",
+      resumen:"Aquí están los sueños que no se compran: respeto, empatía y un centro seguro. También los que se contradicen entre sí —el móvil, por ejemplo— y que justo por eso hay que hablarlos en comisión.",
+      suenos:[
+        {t:"Que no haya bullying.",e:"proceso",n:"Se aborda con el Modelo Dialógico de Resolución de Conflictos, en implantación este curso."},
+        {t:"Que no haya violencia en el centro, ni en la salida.",e:"proceso",n:"Se aborda con el Modelo Dialógico de Resolución de Conflictos."},
+        {t:"Que los alumnos sean respetuosos y amables entre ellos.",e:"proceso",n:"Normas acordadas por toda la comunidad, dentro del Modelo Dialógico."},
+        {t:"Alumnado cotutor de 4.º ESO o 1.º Bach para el alumnado de 1.º ESO.",e:"proceso",n:"Se va a trabajar desde las Bibliotecas Tutorizadas."},
+        {t:"Que se acaben las malas contestaciones y las faltas de respeto a los profesores.",e:"pendiente"},
+        {t:"Mayor empatía.",e:"pendiente"},
+        {t:"Crear un banco de la amistad.",e:"pendiente"},
+        {t:"Mejorar el nivel educativo.",e:"pendiente"},
+        {t:"Menos ruido en los pasillos.",e:"pendiente"},
+        {t:"Aulas más limpias.",e:"pendiente"},
+        {t:"Un patio sin basura.",e:"pendiente"},
+        {t:"No comer en la biblioteca.",e:"pendiente"},
+        {t:"Más tipos de comida en la cantina.",e:"pendiente"},
+        {t:"Pan integral en la cantina.",e:"pendiente"},
+        {t:"Una clase para descansar si nos encontramos mal.",e:"inviable",n:"Sin espacio ni personal para atenderla con garantías."},
+        {t:"Poder salir al baño cuando queramos.",e:"inviable",n:"Choca con las normas de organización y funcionamiento del centro."},
+        {t:"Poner en la cantina cañas, pizzas…",e:"inviable",n:"No cabe alcohol en un centro educativo."},
+        {t:"Que se permita estar en clase con la capucha puesta.",e:"debate",n:"Choca con las normas de convivencia vigentes."},
+        /* ⚠ Sueño transcrito literalmente del cartel de la comisión.
+           Si prefieres no publicarlo, borra la línea siguiente. */
+        {t:"Que el instituto sea un lugar donde ninguna mujer esté obligada a llevar hijab.",e:"debate",n:"Recogido literalmente en el cartel de la comisión."}
+      ]},
+    { id:"fp", nombre:"Formación Profesional", corto:"F.P.", color:"salvia",
+      responsables:["Montse G.","Sergio G."],
+      lema:"El taller y el aula de informática.",
+      resumen:"La comisión con menos sueños recogidos: tres en el cartel. Ese dato es en sí mismo el primer objetivo del curso, llegar mejor al alumnado de F.P. en la próxima fase del sueño.",
+      suenos:[
+        {t:"Dejar al alumnado de GBFP salir en los recreos si tiene más de 16 años.",e:"pendiente"},
+        {t:"Sillas ergonómicas.",e:"pendiente"},
+        {t:"Alfombrillas para los ratones.",e:"pendiente"},
+        {t:"Más almacenamiento en los ordenadores.",e:"pendiente"},
+        {t:"Más licencias para trabajar con máquinas virtuales.",e:"pendiente"},
+        {t:"Calefacción en las aulas de F.P.",e:"pendiente"},
+        {t:"Papel y jabón en los baños de F.P.",e:"pendiente"},
+        {t:"Que el alumnado de FPB pueda comprar en la cantina.",e:"pendiente"},
+        {t:"Hacer excursiones relacionadas con la Informática.",e:"pendiente"}
+      ]}
+  ],
+
+  /* ---------- los doce bloques y sus responsables ---------- */
+  bloques:[
+    { nombre:"Bibliotecas Tutorizadas", color:"turquesa", personas:["Antonio G.","José M."] },
+    { nombre:"Tertulias Dialógicas y Pedagógicas", color:"frambuesa", personas:["Mar B.","José Miguel M."] },
+    { nombre:"Recreos Activos", color:"salvia", personas:["Roberto L.","Paqui E."] },
+    { nombre:"Juegos de Mesa", color:"mostaza", personas:[], vacantes:1 },
+    { nombre:"Comisión de Actividades", color:"mostaza", personas:["Carmen R.","José M."], vacantes:1 },
+    { nombre:"Comisión de Convivencia", color:"frambuesa", personas:["Loli M."], vacantes:1 },
+    { nombre:"Comisión de Formación Profesional", color:"salvia", personas:["Montse G.","Sergio G."] },
+    { nombre:"Comisión de Infraestructura y Emprendimiento", color:"turquesa", personas:["Alfonso R.","David M."] },
+    { nombre:"Redes Sociales", color:"mostaza", personas:["Mar P.","Paula M.","Elena S."] },
+    { nombre:"Captación de Voluntariado y Formación de Familiares", color:"coral", personas:["Carmen R.","Juan G."] },
+    { nombre:"Proyecto Musical de Timbre y Recreos Musicales", color:"frambuesa", personas:["Mónica G."] },
+    { nombre:"Modelo Dialógico de Resolución de Conflictos", color:"salvia", personas:["Rocío P.","Mónica F."] },
+    { nombre:"Podcast", color:"turquesa", personas:["Juan B."] }
+  ],
+
+  /* ---------- calendario por trimestres ---------- */
+  trimestres:[
+    { nombre:"Primer trimestre", meses:"Septiembre — Diciembre", color:"mostaza", titular:"El trimestre en el que se sueña",
+      eventos:[
+        { nombre:"Recogida de sueños", tipo:"proceso", ventana:"Octubre y noviembre",
+          desc:"Todos los sectores escriben sus sueños, en tutoría y por buzones. De aquí salen los carteles de cada comisión.", ediciones:[] },
+        { nombre:"Pasaje del Terror", tipo:"fiesta", ventana:"Última semana de octubre o primeros de noviembre",
+          desc:"Lo organiza el alumnado con las familias. Se monta en el propio centro y se abre a toda la comunidad.",
+          ediciones:[{f:"2 nov 2023",d:"Jueves",h:"17:00 – 21:30"},{f:"30 oct 2024",d:"Miércoles",h:"18:30 – 20:30"}] },
+        { nombre:"Día del Pijama", tipo:"fiesta", ventana:"Finales de noviembre",
+          desc:"A beneficio del Aula Hospitalaria. Se viene al instituto en pijama.",
+          ediciones:[{f:"29 nov 2023",d:"Miércoles",h:"12:45 – 14:45"}] },
+        { nombre:"Fiesta del Sueño", tipo:"estrella", ventana:"Entre la última semana de noviembre y la primera de diciembre",
+          desc:"El acto central del curso: se exponen los sueños de toda la comunidad y se cuentan los que ya se han cumplido.",
+          ediciones:[{f:"27 nov 2023",d:"Lunes",h:"16:30 – 18:30"},{f:"2 dic 2024",d:"Lunes",h:"16:00 – 19:00"}] },
+        { nombre:"Fiesta de la Convivencia", tipo:"fiesta", ventana:"Último día lectivo antes de Navidad",
+          desc:"Cierre del trimestre con el centro decorado, actuaciones y las familias invitadas.",
+          ediciones:[{f:"21 dic 2023",d:"Jueves",h:"12:00 – 15:00"}] }
+      ]},
+    { nombre:"Segundo trimestre", meses:"Enero — Marzo", color:"turquesa", titular:"El trimestre en el que se hace",
+      eventos:[
+        { nombre:"Baile de Invierno", tipo:"fiesta", ventana:"Última semana de enero",
+          desc:"Un sueño de la Comisión de Actividades convertido en cita fija. Se celebra en el salón de actos.",
+          ediciones:[{f:"26 ene 2024",d:"Viernes",h:"18:00 – 21:00"},{f:"30 ene 2026",d:"Viernes",h:"18:30 – 21:30"}] },
+        { nombre:"Carrera Solidaria", tipo:"fiesta", ventana:"Primeros días de febrero",
+          desc:"A beneficio de Save the Children. En 2024 se celebró la IV edición.",
+          ediciones:[{f:"2 feb 2024",d:"Viernes",h:"12:45 – 14:45"}] },
+        { nombre:"Semana Cultural", tipo:"estrella", ventana:"Última semana de febrero",
+          desc:"Talleres elegidos por el alumnado, y buena parte de ellos impartidos por la propia comunidad.",
+          ediciones:[{f:"23 – 27 feb 2024",d:"5 jornadas",h:"Todo el día"},{f:"24 – 26 feb 2025",d:"3 jornadas",h:"Todo el día"}] },
+        { nombre:"Fiesta de la Convivencia", tipo:"fiesta", ventana:"Antes de Semana Santa",
+          desc:"Versión corta de la fiesta de diciembre, para cerrar el trimestre.",
+          ediciones:[{f:"22 mar 2024",d:"Viernes",h:"12:00 – 13:00"}] }
+      ]},
+    { nombre:"Tercer trimestre", meses:"Abril — Junio", color:"frambuesa", titular:"El trimestre en el que se rinde cuentas",
+      eventos:[
+        { nombre:"Fiesta de las Familias", tipo:"estrella", ventana:"Primeros días de mayo",
+          desc:"La tarde más larga del curso: el centro se abre a las familias con comida, música y actividades de todas las comisiones.",
+          ediciones:[{f:"6 may 2024",d:"Lunes",h:"15:30 – 19:30"}] },
+        { nombre:"Balance de sueños cumplidos", tipo:"proceso", ventana:"Junio",
+          desc:"Cada comisión revisa qué se cumplió, qué quedó a medias y qué pasa al curso siguiente.", ediciones:[] }
+      ]}
+  ],
+
+  /* ---------- baremos y rúbricas (imágenes de la misma carpeta) ---------- */
+  baremos:[
+    { id:"prof", titulo:"Baremo del profesorado", color:"azul",
+      sub:"Para la continuidad en Comunidad de Aprendizaje · mínimo 5 puntos",
+      img:"assets/baremo-profesorado.png",
+      alt:"Baremo de profesorado para continuidad en Comunidad de Aprendizaje, curso 2026-2027",
+      lineas:[
+        ["Formación (curso de sensibilización obligatorio)","máx. 1 pto"],
+        ["Jornadas, encuentros y congresos sobre CdA","0,5 / jornada"],
+        ["Impartir formación sobre CdA","1 pto"],
+        ["Por cada voluntario captado y activo","0,1 / asistencia"],
+        ["Realizar un Grupo Interactivo","0,5 / GI"],
+        ["Participar en un Grupo Interactivo","0,2 / GI"],
+        ["Coordinar comisión mixta · bibliotecas · tertulias · recreos","hasta 2 ptos"],
+        ["Asistencia a cada reunión de comisión","0,2"],
+        ["Tertulia de tarde: organizar / asistir","0,6 / 0,3"],
+        ["Responsable de un taller de la Semana Cultural","1 pto"],
+        ["Ayuda el día del Pasaje del Terror (toda la tarde)","1 pto"],
+        ["Asistencia y participación en la Fiesta del Sueño","0,2"]
+      ],
+      cierre:"Con 5 puntos y el curso de sensibilización se puede solicitar la continuidad. En caso de empate por supresión de plaza, permanece quien tenga más tiempo de servicio." },
+    { id:"alum", titulo:"Rúbrica del alumnado", color:"salvia",
+      sub:"Mi participación · curso 2026-2027",
+      img:"assets/rubrica-alumnado.png",
+      alt:"Rúbrica de participación del alumnado, curso 2026-2027",
+      lineas:[
+        ["Tertulias dialógicas (recreo / tarde)","3 / 5 ptos"],
+        ["Bibliotecas tutorizadas (recreo / tarde)","2 / 5 ptos"],
+        ["Comisiones mixtas (recreo / tarde)","3 / 5 ptos"],
+        ["Semana Cultural (2.º trimestre)","hasta 15"],
+        ["Asamblea de delegados","hasta 3 / reunión"],
+        ["Consejo Escolar","hasta 3 / reunión"],
+        ["Recreos activos (1.º Bach y 1.º SMR)","máx. 15"],
+        ["Otras actividades","3 o 5 ptos"]
+      ],
+      cierre:"1 punto extra en la nota al llegar a 50 puntos en la ESO, o a 75 puntos en 1.º SMR y 1.º de Bachillerato." },
+    { id:"fam", titulo:"Rúbrica de las familias", color:"turquesa",
+      sub:"Voluntariado · mis créditos · curso 2026-2027",
+      img:"assets/rubrica-familias.png",
+      alt:"Rúbrica de participación de las familias, curso 2026-2027",
+      lineas:[
+        ["Fiesta del Sueño (1.er trimestre)","5 / familiar · hasta 25"],
+        ["Semana Cultural (2.º trimestre)","hasta 25"],
+        ["Fiesta de las Familias (3.er trimestre)","5 / familiar · hasta 25"],
+        ["Grupo interactivo","5 / reunión"],
+        ["Tertulia dialógica","5 / reunión"],
+        ["Comisiones mixtas","5 / reunión"],
+        ["Asamblea de delegados · Consejo Escolar","5 / reunión"],
+        ["Otras actividades con la comunidad","hasta 5 / sesión"]
+      ],
+      cierre:"Los créditos se convierten en recompensas canjeables desde la propia web. Consigue tu Kit de Voluntario o Voluntaria el primer día." }
+  ],
+
+  /* ---------- la aplicación, pieza a pieza ---------- */
+  app:{
+    regla:"Son dos monedas distintas y no se mezclan. Los puntos de participación del alumnado cuentan para la rúbrica acordada y pueden sumar 1 punto en la nota: los aplica el profesorado, no la aplicación. Los créditos comunitarios de familias y voluntariado viven en un registro separado del expediente académico: no modifican calificaciones, no se exportan a Séneca y no influyen en la promoción ni en la titulación. No es una promesa, está escrito en el propio código.",
+    modulos:[
+      { n:1, titulo:"Buzón de Sueños", gancho:"Lo primero que sustituye la app son los carteles de papel.",
+        hace:["Cualquiera propone un sueño desde el móvil, y el resto de la comunidad puede apoyarlo.","Cada sueño recorre cinco estados visibles: recibido, en estudio, aceptado, en marcha y cumplido.","Antes de publicar un sueño en el muro público la app pide confirmación: es contenido sensible y conviene pensarlo dos veces."],
+        aparte:{t:"Por qué importa",x:"El muro es público. Así, cuando un sueño se cumple, todo el mundo ve cuánto tardó y quién lo empujó."} },
+      { n:2, titulo:"Comisiones mixtas", gancho:"Lo segundo, las actas que siempre se pierden.",
+        hace:["Convocatoria, orden del día y acta de cada reunión, en el mismo sitio.","Los acuerdos se votan dentro de la app y se aprueban por mayoría simple; las abstenciones no cuentan.","Cada objetivo tiene responsable y fecha, y se ve de un vistazo si va en plazo."],
+        aparte:{t:"La regla de la mesa",x:"Solo Dirección abre y cierra una votación, pero el voto de cada sector vale exactamente lo mismo."} },
+      { n:3, titulo:"Agenda comunitaria", gancho:"Lo tercero, el clásico «yo no me enteré».",
+        hace:["Todas las actuaciones abiertas, con inscripción en un clic.","Recordatorio el día antes para quien se ha apuntado.","Al terminar se registra la asistencia, y de ahí salen las horas de voluntariado del curso."],
+        aparte:{t:"Termómetro comunitario",x:"La suma de esas horas alimenta una meta colectiva de 500 horas para el curso. Es una meta del centro: nunca un ranking de personas."} },
+      { n:4, titulo:"Puntos y créditos", gancho:"Y aquí llega la novedad grande: los baremos de arriba, dentro de la app y al día.",
+        hace:["Cada actuación vale lo que dice el baremo acordado, ni más ni menos.","La app lleva las dos cuentas por separado: los puntos del alumnado, que van a la rúbrica, y los créditos de familias y voluntariado, que van a recompensas.","El baremo del profesorado es editable desde Dirección: si la comunidad cambia el criterio, cambia la app."],
+        aparte:{t:"Quién decide",x:"Los baremos no los inventa la aplicación: son los tres documentos de esta sección, acordados por la comunidad. Todo movimiento queda en un histórico consultable y exportable."} },
+      { n:5, titulo:"Pasaporte, niveles e insignias", gancho:"El reconocimiento, sin convertirlo en una competición.",
+        hace:["Un pasaporte personal con todo lo aportado durante el curso.","Cinco niveles según los créditos, de Participante a Referente Comunitario.","Insignias de identidad que Dirección concede con una dedicatoria escrita: Mentor de Sabiduría, Embajadora de Convivencia, Tejedora de Comunidad, Voz de las Familias."],
+        aparte:{t:"Lo que nunca habrá",x:"No hay clasificaciones ni rachas, y no las habrá: está documentado como política de diseño. Las insignias de identidad no dan créditos, porque no todo lo que vale se cuenta."} },
+      { n:6, titulo:"Recompensas y retos", gancho:"El mecanismo de canje ya está hecho. Lo que falta es decidir qué se canjea.",
+        hace:["La app ya sabe descontar créditos y registrar un canje: el catálogo se rellena cuando la comunidad lo acuerde.","Cada recompensa se publica con su precio en créditos, a la vista de todo el mundo.","Retos colaborativos que acreditan a un equipo mixto entero a la vez, no a una sola persona."],
+        aparte:{t:"Aquí hace falta el claustro",x:"El catálogo de recompensas de las familias está en blanco a propósito. Es la decisión pendiente más importante del trimestre."} },
+      { n:7, titulo:"Diseño calmo, certificados y datos", gancho:"Y lo último: que la app no se convierta en una molestia.",
+        hace:["Los correos no urgentes no salen entre las 20:00 y las 8:00, ni en fin de semana: se guardan y se envían después.","Un único resumen diario en lugar de veinte avisos sueltos.","Modo accesible con texto grande y alto contraste, interfaz en español, inglés y árabe, y un tour de práctica donde se puede probar todo sin que quede registrado."],
+        aparte:{t:"Papeleo resuelto",x:"El certificado de voluntariado y el pasaporte se descargan en PDF, y cualquiera puede exportar o borrar sus propios datos."} }
+    ]
+  },
+
+  niveles:[
+    { nombre:"Participante", desde:10, hasta:24, c:"#B9A98A" },
+    { nombre:"Colaboradora", desde:25, hasta:49, c:"#4C8FC7" },
+    { nombre:"Mentora", desde:50, hasta:74, c:"#D2941C" },
+    { nombre:"Agente de Cambio", desde:75, hasta:99, c:"#238281" },
+    { nombre:"Referente Comunitario", desde:100, hasta:null, c:"#2F7A48" }
+  ],
+
+  beneficios:[
+    {t:"Diploma de reconocimiento",c:10},{t:"Elegir tu sitio en clase",c:15},
+    {t:"Foto en el tablón de honor",c:15},{t:"Día sin deberes",c:20},
+    {t:"Elegir la actividad de tutoría",c:25},{t:"Delegado o delegada por un día",c:30},
+    {t:"Material escolar premium",c:35},{t:"Libro de lectura a elegir",c:40},
+    {t:"Visita a una empresa local",c:50}
+  ],
+
+  /* ---------- ✏️ EDITA AQUÍ: tus datos como coordinador ---------- */
+  coordinacion:{
+    nombre:"Juan G.",
+    cargo:"Coordinación de Comunidades de Aprendizaje",
+    bloque:"Captación de Voluntariado y Formación de Familiares",
+    centro:"IES Al-Ándalus · Almería",
+    email:"",                 /* escribe aquí tu correo */
+    telefono:"",              /* opcional */
+    horario:"",               /* p. ej. «Martes y jueves, de 11:15 a 12:15» */
+    web:"https://iesalandalus.org/joomla/",
+    mensaje:"Si quieres participar como voluntariado en los grupos interactivos o en las tertulias, o si simplemente tienes un sueño que contar, escríbeme. No hace falta ser docente ni tener formación previa: hace falta querer estar."
+  },
+
+  /* ---------- imagen final a pantalla completa ---------- */
+  equipo:{
+    titulo:"Coordinadores y coordinadoras de bloques",
+    entradilla:"Doce bloques y las personas que los sostienen. Detrás de cada sueño cumplido hay alguien que se encargó de que pasara.",
+    imagen:"assets/coordinadores-bloques.png",
+    pie:"Comunidad de Aprendizaje · IES Al-Ándalus · Almería"
+  }
+};
+
+/* ==========================================================================
+   2. UTILIDADES
+   ========================================================================== */
+const $  = (s,c=document)=>c.querySelector(s);
+const $$ = (s,c=document)=>[...c.querySelectorAll(s)];
+const esc = t => String(t).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const menos = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const iniciales = n => n.split(/\s+/).slice(0,2).map(p=>p[0]).join('').toUpperCase();
+
+const ETIQUETA = { cumplido:'Cumplido', proceso:'En marcha', debate:'En debate', pendiente:'Pendiente', inviable:'Inviable' };
+const activos   = c => c.suenos.filter(s=>s.e!=='cumplido');
+const cumplidos = c => c.suenos.filter(s=>s.e==='cumplido');
+
+/* ==========================================================================
+   3. TEMA CLARO / OSCURO
+   ========================================================================== */
+(function tema(){
+  const raiz = document.documentElement;
+  let guardado = null;
+  try { guardado = localStorage.getItem('cda-tema'); } catch(e){}
+  if (guardado) raiz.setAttribute('data-theme', guardado);
+  $('#btn-tema').addEventListener('click', ()=>{
+    const oscuroAhora = raiz.getAttribute('data-theme') === 'dark'
+      || (!raiz.hasAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    const nuevo = oscuroAhora ? 'light' : 'dark';
+    raiz.setAttribute('data-theme', nuevo);
+    try { localStorage.setItem('cda-tema', nuevo); } catch(e){}
+  });
+})();
+
+/* ==========================================================================
+   4. PORTADA: CIFRAS
+   ========================================================================== */
+const totalSuenos   = CDA.comisiones.reduce((a,c)=>a+c.suenos.length,0);
+const totalCumplidos= CDA.comisiones.reduce((a,c)=>a+c.suenos.filter(s=>s.e==='cumplido').length,0);
+const totalPersonas = new Set(CDA.bloques.flatMap(b=>b.personas)).size;
+const totalVacantes = CDA.bloques.reduce((a,b)=>a+(b.vacantes||0),0);
+
+function pintarCifras(destino, datos){
+  $(destino).innerHTML = datos.map(d=>
+    `<div class="cifra" style="--acc:var(--${d.color})"><b data-cuenta="${d.v}">0</b><span>${esc(d.k)}</span></div>`
+  ).join('');
+}
+pintarCifras('#cifras-portada',[
+  {v:totalSuenos, k:'sueños recogidos', color:'turquesa'},
+  {v:totalCumplidos, k:'cumplidos el curso pasado', color:'salvia'},
+  {v:CDA.bloques.length, k:'bloques activos', color:'mostaza'},
+  {v:CDA.actuaciones.filter(a=>a.tipo==='exito').length, k:'actuaciones de éxito', color:'frambuesa'}
+]);
+const totalActivos = CDA.comisiones.reduce((a,c)=>a+c.suenos.filter(s=>s.e!=='cumplido').length,0);
+pintarCifras('#cifras-plan',[
+  {v:totalActivos, k:'sueños en el plan', color:'turquesa'},
+  {v:totalPersonas, k:'personas al frente', color:'coral'},
+  {v:totalVacantes, k:'plazas libres', color:'mostaza'},
+  {v:CDA.app.modulos.length, k:'piezas nuevas de la app', color:'azul'}
+]);
+
+/* contadores animados */
+(function contar(){
+  const nums = $$('[data-cuenta]');
+  if (menos){ nums.forEach(n=>n.textContent=n.dataset.cuenta); return; }
+  const obs = new IntersectionObserver(entradas=>{
+    entradas.forEach(e=>{
+      if (!e.isIntersecting) return;
+      obs.unobserve(e.target);
+      const fin = +e.target.dataset.cuenta, t0 = performance.now(), dur = 900;
+      (function paso(t){
+        const p = Math.min(1,(t-t0)/dur);
+        e.target.textContent = Math.round(fin * (1-Math.pow(1-p,3)));
+        if (p<1) requestAnimationFrame(paso);
+      })(t0);
+    });
+  },{threshold:.4});
+  nums.forEach(n=>obs.observe(n));
+})();
+
+/* ==========================================================================
+   5. ACTUACIONES CON PALABRAS CLAVE FLOTANTES
+   ========================================================================== */
+/* «Coordina: Nombre A., Nombre B.» — con marcado en la tarjeta, en texto llano en el deck */
+function firmaDe(a, conMarcado){
+  if (!a.resp || !a.resp.length){
+    return conMarcado
+      ? '<em style="opacity:.7">Coordinación pendiente de asignar</em>'
+      : 'Coordinación pendiente de asignar';
+  }
+  const etiqueta = a.id==='cm' ? 'Coordinan las cuatro comisiones' : 'Coordina';
+  return conMarcado
+    ? `${etiqueta}: ` + a.resp.map(p=>`<strong>${esc(p)}</strong>`).join(' · ')
+    : `${etiqueta}: ` + a.resp.join(' · ');
+}
+
+const tarjetaActuacion = a=>`
+  <article class="actuacion" style="--acc:var(--${a.color})">
+    <div class="actuacion__cuerpo">
+      <div class="actuacion__tit">
+        <h3>${esc(a.nombre)}</h3>
+        <span class="insignia">${a.tipo==='exito' ? 'Actuación de éxito' : 'Bloque del centro'}</span>
+        ${a.nuevo ? '<span class="insignia" style="--acc:var(--coral)">Se implanta este curso</span>' : ''}
+      </div>
+      <p>${esc(a.resumen)}</p>
+      <p class="comision__resp">${firmaDe(a, true)}</p>
+      <div class="actuacion__pie">
+        <button class="btn btn--linea btn--mini" data-deck="actuacion" data-id="${a.id}">
+          Presentar este bloque
+        </button>
+      </div>
+    </div>
+    <div class="nube" data-nube>
+      <div class="nube__centro" aria-hidden="true">
+        <svg width="42" height="42" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="16" cy="16" r="13" stroke-dasharray="4 3" opacity=".6"/>
+          <path d="M16 9.5 18 14h4.6l-3.7 2.8 1.4 4.5L16 18.5l-4.3 2.8 1.4-4.5L9.4 14H14l2-4.5Z" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      ${a.claves.map(c=>`<span class="clave">${esc(c)}</span>`).join('')}
+    </div>
+  </article>`;
+
+$('#actuaciones').innerHTML     = CDA.actuaciones.filter(a=>a.tipo==='exito').map(tarjetaActuacion).join('');
+$('#bloques-centro').innerHTML  = CDA.actuaciones.filter(a=>a.tipo==='centro').map(tarjetaActuacion).join('');
+
+function colocarClaves(){
+  $$('[data-nube]').forEach(nube=>{
+    const claves = $$('.clave', nube);
+    const ancho = nube.clientWidth;
+    if (ancho < 420){ claves.forEach(c=>c.style.cssText=''); return; }
+    const rx = Math.min(ancho/2 - 58, 150), ry = 112;
+    claves.forEach((c,i)=>{
+      const ang = (-90 + (360/claves.length)*i) * Math.PI/180;
+      c.style.setProperty('--x', Math.round(Math.cos(ang)*rx)+'px');
+      c.style.setProperty('--y', Math.round(Math.sin(ang)*ry)+'px');
+      c.style.setProperty('--dx', (Math.cos(ang)*5).toFixed(1)+'px');
+      c.style.setProperty('--dy', (4 + (i%3)*2)+'px');
+      c.style.setProperty('--dur', (7.5 + (i%4)*1.3)+'s');
+      c.style.setProperty('--retraso', (i*.35).toFixed(2)+'s');
+    });
+  });
+}
+colocarClaves();
+addEventListener('resize', colocarClaves);
+
+/* ==========================================================================
+   6. FASES
+   ========================================================================== */
+$('#lista-fases').innerHTML = CDA.fases.map(f=>`
+  <div class="fase ${f.activa?'fase--activa':''}">
+    <span class="fase__n">${esc(f.n)}${f.activa?' · aquí estamos':''}</span>
+    <h4>${esc(f.nombre)}</h4>
+    <p>${esc(f.texto)}</p>
+  </div>
+`).join('');
+
+/* ==========================================================================
+   7. TABLERO DE SUEÑOS
+   ========================================================================== */
+let comisionActiva = 0, filtroEstado = 'todos', textoBusqueda = '';
+
+$('#pestanas').innerHTML = CDA.comisiones.map((c,i)=>`
+  <button class="pestana" role="tab" id="tab-${c.id}" aria-controls="rejilla-suenos"
+          aria-selected="${i===0}" data-i="${i}" style="--acc:var(--${c.color})">
+    ${esc(c.corto||c.nombre)} <b>${activos(c).length}</b>
+  </button>
+`).join('');
+
+function pintarComision(){
+  const c = CDA.comisiones[comisionActiva];
+  const hechos = cumplidos(c).length;
+  const enMarcha = c.suenos.filter(s=>s.e==='proceso').length;
+  const pct = Math.round(hechos / c.suenos.length * 100);
+  const R = 30, C = 2*Math.PI*R;
+
+  const equipo = [...c.responsables.map(p=>`<strong>${esc(p)}</strong>`),
+                  ...Array(c.vacantes||0).fill('<em style="opacity:.65">plaza libre</em>')].join(' · ');
+
+  /* el porcentaje solo se muestra cuando no es cero */
+  const marcador = hechos > 0 ? `
+      <div class="anillo">
+        <svg width="76" height="76" viewBox="0 0 76 76" aria-hidden="true">
+          <circle class="anillo__pista" cx="38" cy="38" r="${R}" fill="none" stroke-width="7"/>
+          <circle class="anillo__valor" cx="38" cy="38" r="${R}" fill="none" stroke-width="7"
+                  stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${C.toFixed(1)}" id="aro"/>
+        </svg>
+        <span class="anillo__txt"><b>${pct}%</b><span>cumplido<br>el curso pasado</span></span>
+      </div>` : `
+      <div class="anillo">
+        <span class="anillo__txt"><b>${enMarcha}</b><span>sueños ya<br>en marcha</span></span>
+      </div>`;
+
+  $('#comision-cab').innerHTML = `
+    <div class="comision__cab" style="--acc:var(--${c.color})">
+      <div>
+        <h3>${esc(c.nombre)}</h3>
+        <span class="mano">${esc(c.lema)}</span>
+        <p>${esc(c.resumen)}</p>
+        <p class="comision__resp">Coordina: ${equipo}</p>
+        <button class="btn btn--linea btn--mini" style="margin-top:.9rem"
+                data-deck="comision" data-i="${comisionActiva}">Presentar esta comisión</button>
+      </div>
+      ${marcador}
+    </div>`;
+
+  requestAnimationFrame(()=>{
+    const aro = $('#aro');
+    if (aro) aro.style.strokeDashoffset = (C * (1 - pct/100)).toFixed(1);
+  });
+
+  pintarSuenos();
+}
+
+function pintarSuenos(){
+  const c = CDA.comisiones[comisionActiva];
+  const q = textoBusqueda.trim().toLowerCase();
+  /* los sueños cumplidos van aparte, en su propia banda */
+  const lista = activos(c).filter(s=>{
+    const okEstado = filtroEstado==='todos' || s.e===filtroEstado;
+    const okTexto = !q || s.t.toLowerCase().includes(q) || (s.n||'').toLowerCase().includes(q);
+    return okEstado && okTexto;
+  });
+
+  const caja = $('#rejilla-suenos');
+  caja.style.setProperty('--acc', `var(--${c.color})`);
+
+  if (!lista.length){
+    caja.innerHTML = `<p class="vacio">Ningún sueño de <strong>${esc(c.corto||c.nombre)}</strong> coincide con ese filtro.</p>`;
+    return;
+  }
+  caja.innerHTML = lista.map(s=>`
+    <article class="sueno ${s.e==='inviable'?'sueno--inviable':''}">
+      <span class="sueno__estado e-${s.e}">${ETIQUETA[s.e]}</span>
+      <p class="sueno__txt">${esc(s.t)}</p>
+      ${s.n?`<p class="sueno__nota">${esc(s.n)}</p>`:''}
+    </article>
+  `).join('');
+}
+
+/* banda con todos los sueños cumplidos, sin repartirlos por comisión */
+(function logros(){
+  const todos = CDA.comisiones.flatMap(c=>cumplidos(c));
+  $('#logros-cuenta').textContent = todos.length + ' cumplidos';
+  $('#logros-lista').innerHTML = todos.map(s=>`
+    <div class="logro">
+      <svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+        <path d="m3.5 9.5 3.5 3.5 7.5-8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>${esc(s.t)}</span>
+    </div>`).join('');
+})();
+
+$('#pestanas').addEventListener('click', e=>{
+  const b = e.target.closest('.pestana'); if(!b) return;
+  comisionActiva = +b.dataset.i;
+  $$('.pestana').forEach(p=>p.setAttribute('aria-selected', p===b));
+  pintarComision();
+});
+$('#pestanas').addEventListener('keydown', e=>{
+  if (!['ArrowRight','ArrowLeft'].includes(e.key)) return;
+  const paso = e.key==='ArrowRight' ? 1 : -1;
+  const n = CDA.comisiones.length;
+  comisionActiva = (comisionActiva + paso + n) % n;
+  const b = $$('.pestana')[comisionActiva];
+  $$('.pestana').forEach(p=>p.setAttribute('aria-selected', p===b));
+  b.focus(); pintarComision();
+});
+$$('.chip').forEach(ch=>ch.addEventListener('click', ()=>{
+  filtroEstado = ch.dataset.estado;
+  $$('.chip').forEach(o=>o.setAttribute('aria-pressed', o===ch));
+  pintarSuenos();
+}));
+$('#buscar').addEventListener('input', e=>{ textoBusqueda = e.target.value; pintarSuenos(); });
+pintarComision();
+
+/* ==========================================================================
+   8. BLOQUES Y RESPONSABLES
+   ========================================================================== */
+$('#bloques').innerHTML = CDA.bloques.map(b=>`
+  <article class="bloque" style="--acc:var(--${b.color})">
+    <h4>${esc(b.nombre)}</h4>
+    <ul class="personas">
+      ${b.personas.map(p=>`<li><span class="avatar">${esc(iniciales(p))}</span>${esc(p)}</li>`).join('')}
+      ${Array(b.vacantes||0).fill(`<li class="libre"><span class="avatar">+</span>Plaza libre</li>`).join('')}
+    </ul>
+  </article>
+`).join('');
+
+/* ==========================================================================
+   9. TRIMESTRES
+   ========================================================================== */
+const ICONO_TIPO = {
+  estrella:'<svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.6 9.9 6h4.6l-3.7 3 1.4 4.6L8 10.8 3.8 13.6 5.2 9 1.5 6h4.6L8 1.6Z"/></svg>',
+  fiesta:'<svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="4.2"/></svg>',
+  proceso:'<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="4.2" stroke-dasharray="3 2.6"/></svg>'
+};
+
+$('#trimestres').innerHTML = CDA.trimestres.map((t,ti)=>`
+  <section class="trimestre" style="--acc:var(--${t.color})">
+    <header class="trimestre__cab">
+      <span>${esc(t.meses)}</span>
+      <h3>${esc(t.nombre)}</h3>
+      <p>${esc(t.titular)}</p>
+    </header>
+    <ul class="eventos">
+      ${t.eventos.map((ev,ei)=>`
+        <li class="evento">
+          <button class="evento__btn" aria-expanded="false" aria-controls="ev-${ti}-${ei}">
+            <span class="evento__punto ${ev.tipo==='estrella'?'marca-estrella':''}">${ICONO_TIPO[ev.tipo]}</span>
+            <span class="evento__cuerpo">
+              <span class="evento__nombre">${esc(ev.nombre)}
+                ${ev.tipo==='estrella'?'<span class="insignia" style="--acc:var(--mostaza)">Cita mayor</span>':''}
+                ${ev.tipo==='proceso'?'<span class="insignia" style="--acc:var(--tinta-3)">Proceso</span>':''}
+              </span>
+              <span class="evento__ventana">${esc(ev.ventana)}</span>
+            </span>
+            <span class="evento__flecha"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 6 4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="evento__detalle" id="ev-${ti}-${ei}" hidden>
+            <p>${esc(ev.desc)}</p>
+            ${ev.ediciones.length ? `
+              <ul class="ediciones">
+                ${ev.ediciones.map(x=>`<li><b>${esc(x.f)}</b><span>${esc(x.d)} · ${esc(x.h)}</span></li>`).join('')}
+              </ul>` : `<p style="font-size:.78rem;color:var(--tinta-3)">Sin fecha cerrada: depende del calendario de cada curso.</p>`}
+          </div>
+        </li>`).join('')}
+    </ul>
+  </section>
+`).join('');
+
+$('#trimestres').addEventListener('click', e=>{
+  const b = e.target.closest('.evento__btn'); if(!b) return;
+  const abierto = b.getAttribute('aria-expanded')==='true';
+  b.setAttribute('aria-expanded', String(!abierto));
+  document.getElementById(b.getAttribute('aria-controls')).hidden = abierto;
+});
+
+/* ==========================================================================
+   10. BAREMOS Y RÚBRICAS
+   ========================================================================== */
+$('#baremos').innerHTML = CDA.baremos.map(b=>`
+  <article class="baremo" style="--acc:var(--${b.color})">
+    <header class="baremo__cab">
+      <h3>${esc(b.titulo)}</h3>
+      <span>${esc(b.sub)}</span>
+    </header>
+    <div style="padding:1rem 1.2rem 0">
+      <img class="mini-foto" src="${b.img}" alt="${esc(b.alt)}" loading="lazy"
+           data-visor="${b.img}" data-titulo="${esc(b.titulo)}">
+    </div>
+    <ul class="baremo__lista">
+      ${b.lineas.map(l=>`<li><span>${esc(l[0])}</span><b>${esc(l[1])}</b></li>`).join('')}
+    </ul>
+    <div class="baremo__pie">
+      <p style="font-size:.8rem;color:var(--tinta-2);flex:1;min-width:180px">${esc(b.cierre)}</p>
+      <button class="btn btn--linea btn--mini" data-visor="${b.img}" data-titulo="${esc(b.titulo)}">Ver completo</button>
+    </div>
+  </article>
+`).join('');
+
+/* si alguna imagen cambia de nombre, se avisa en su sitio en vez de romperse */
+$$('.mini-foto').forEach(im=>im.addEventListener('error', ()=>{
+  const aviso = document.createElement('p');
+  aviso.style.cssText = 'height:210px;display:grid;place-content:center;text-align:center;font-size:.8rem;color:var(--tinta-3);border:1px dashed var(--linea-fuerte);border-radius:var(--r-m);padding:1rem';
+  aviso.textContent = 'No se encuentra el archivo «' + decodeURIComponent(im.getAttribute('src')) + '» en esta carpeta.';
+  im.replaceWith(aviso);
+}));
+
+/* ==========================================================================
+   11. MÓDULOS DE LA APP
+   ========================================================================== */
+const totalModulos = CDA.app.modulos.length;
+$$('[data-modulo]').forEach(caja=>{
+  const m = CDA.app.modulos.find(x=>x.n === +caja.dataset.modulo);
+  if (!m) return;
+  caja.innerHTML = `
+    <div class="app-modulo__cab">
+      <span class="app-modulo__pieza">
+        <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h5v5H2V2Zm7 0h5v5H9V2ZM2 9h5v5H2V9Zm7 0h5v5H9V9Z"/></svg>
+        La app · pieza ${m.n} de ${totalModulos}
+      </span>
+      <h3>${esc(m.titulo)}</h3>
+    </div>
+    <p class="app-modulo__gancho">${esc(m.gancho)}</p>
+    <div class="app-modulo__rejilla">
+      <ul class="app-lista">${m.hace.map(h=>`<li>${esc(h)}</li>`).join('')}</ul>
+      <aside class="app-modulo__aparte"><strong>${esc(m.aparte.t)}</strong>${esc(m.aparte.x)}</aside>
+    </div>
+    <div class="app-pasos" aria-hidden="true">
+      ${Array.from({length:totalModulos},(_,i)=>
+        `<i class="${i+1 < m.n ? 'hecho' : i+1===m.n ? 'actual' : ''}"></i>`).join('')}
+      <span>${m.n}/${totalModulos}</span>
+    </div>`;
+});
+$('#regla').textContent = CDA.app.regla;
+
+/* niveles y beneficios */
+$('#niveles').innerHTML = CDA.niveles.map(n=>`
+  <div class="nivel" style="--nc:${n.c}">
+    <b>${esc(n.nombre)}</b>
+    <span>${n.desde}${n.hasta ? '–'+n.hasta : ' o más'} créditos</span>
+  </div>`).join('');
+$('#beneficios').innerHTML = CDA.beneficios.map(b=>`
+  <div class="beneficio"><span>${esc(b.t)}</span><b>${b.c} cr.</b></div>`).join('');
+
+/* ==========================================================================
+   12. COORDINACIÓN
+   ========================================================================== */
+(function coord(){
+  const c = CDA.coordinacion;
+  const fichas = [];
+  if (c.email)    fichas.push(`<a class="ficha" href="mailto:${esc(c.email)}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="m2 4.5 6 4 6-4"/></svg>${esc(c.email)}</a>`);
+  if (c.telefono) fichas.push(`<a class="ficha" href="tel:${esc(c.telefono.replace(/\s/g,''))}"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2.5h3l1 3-1.7 1.2a9 9 0 0 0 4 4L10.5 9l3 1v3a10.5 10.5 0 0 1-10.5-10.5Z" stroke-linejoin="round"/></svg>${esc(c.telefono)}</a>`);
+  if (c.horario)  fichas.push(`<span class="ficha"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.5V8l2.3 1.6" stroke-linecap="round"/></svg>${esc(c.horario)}</span>`);
+  if (c.web)      fichas.push(`<a class="ficha" href="${esc(c.web)}" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.2"/><path d="M2 8h12M8 1.8c3.5 3.6 3.5 8.8 0 12.4-3.5-3.6-3.5-8.8 0-12.4Z"/></svg>Consulta tus puntos</a>`);
+  if (!fichas.length) fichas.push(`<span class="ficha" style="border-style:dashed">Añade tu correo en el bloque <code>coordinacion</code> del archivo</span>`);
+
+  $('#coord').innerHTML = `
+    <div style="display:grid;place-items:center">
+      <div class="coord__retrato">${esc(iniciales(c.nombre))}</div>
+    </div>
+    <div>
+      <div class="coord__datos">
+        <h3>${esc(c.nombre)}</h3>
+        <span class="cargo">${esc(c.cargo)}</span>
+        <span class="centro">${esc(c.bloque)} · ${esc(c.centro)}</span>
+      </div>
+      <p class="coord__mensaje">${esc(c.mensaje)}</p>
+      <div class="coord__fichas">${fichas.join('')}</div>
+    </div>`;
+})();
+
+/* ==========================================================================
+   13. CIERRE A PANTALLA COMPLETA
+   ========================================================================== */
+(function cierre(){
+  const e = CDA.equipo;
+  const img = $('#foto-equipo'), rejilla = $('#equipo-rejilla');
+  img.src = e.imagen;
+  img.addEventListener('error', ()=>{ img.hidden = true; $('#equipo-falta').hidden = false; });
+  img.addEventListener('click', ()=> abrirVisor(e.imagen, e.titulo));
+  $('#equipo-tit').textContent = e.titulo;
+  $('#equipo-sub').textContent = e.entradilla;
+  $('#equipo-pie').textContent = e.pie;
+  $('#btn-foto-grande').addEventListener('click', ()=> abrirVisor(e.imagen, e.titulo));
+
+  rejilla.innerHTML = CDA.bloques.map(b=>`
+    <article class="tarjeta-eq" style="--acc:var(--${b.color})">
+      <h4>${esc(b.nombre)}</h4>
+      <ul>
+        ${b.personas.map(p=>`<li>${esc(p)}</li>`).join('')}
+        ${Array(b.vacantes||0).fill('<li class="libre">plaza libre</li>').join('')}
+      </ul>
+    </article>`).join('');
+
+  const btn = $('#btn-nombres');
+  btn.addEventListener('click', ()=>{
+    const mostrar = rejilla.hidden;
+    rejilla.hidden = !mostrar;
+    btn.setAttribute('aria-pressed', String(mostrar));
+    btn.textContent = mostrar ? 'Volver a la imagen' : 'Ver los nombres en texto';
+  });
+})();
+
+/* ==========================================================================
+   14. VISOR DE IMÁGENES
+   ========================================================================== */
+let abrirVisor = ()=>{};
+(function visor(){
+  const caja = $('#visor'), img = $('#visor-img'), tit = $('#visor-tit');
+  let ultimoFoco = null;
+
+  function abrir(src, titulo){
+    ultimoFoco = document.activeElement;
+    img.src = src; img.alt = titulo; img.classList.add('ajuste');
+    tit.textContent = titulo;
+    caja.hidden = false; document.body.style.overflow='hidden';
+    $('#visor-cerrar').focus();
+  }
+  function cerrar(){
+    caja.hidden = true; document.body.style.overflow='';
+    if (ultimoFoco) ultimoFoco.focus();
+  }
+  document.addEventListener('click', e=>{
+    const d = e.target.closest('[data-visor]');
+    if (d) abrir(d.dataset.visor, d.dataset.titulo || '');
+  });
+  $('#visor-cerrar').addEventListener('click', cerrar);
+  $('#visor-zoom').addEventListener('click', ()=>{
+    img.classList.toggle('ajuste');
+    img.style.cursor = img.classList.contains('ajuste') ? 'zoom-in' : 'grab';
+  });
+  caja.addEventListener('click', e=>{ if (e.target === caja || e.target.classList.contains('visor__marco')) cerrar(); });
+  addEventListener('keydown', e=>{ if (e.key==='Escape' && !caja.hidden) cerrar(); });
+  abrirVisor = abrir;
+})();
+
+/* ==========================================================================
+   15. MODO PRESENTACIÓN
+   ========================================================================== */
+const Deck = (function(){
+  const caja = $('#deck'), lienzo = $('#deck-lienzo');
+  let laminas = [], i = 0, ultimoFoco = null;
+
+  function lamina(l){
+    const acc = l.color ? `--acc:var(--${l.color})` : '';
+    const firma = l.firma ? `<p class="lam__firma">${esc(l.firma)}</p>` : '';
+    if (l.tipo === 'portada'){
+      return `<div class="lam lam--portada" style="${acc}">
+        <span class="lam__eyebrow">${esc(l.eyebrow||'')}</span>
+        <h2>${l.titulo}</h2>
+        ${l.sub?`<p class="lam__sub">${esc(l.sub)}</p>`:''}
+        ${firma}
+        ${l.cifras?`<div class="lam__cifras">${l.cifras.map(c=>
+          `<span class="lam__cifra"><b>${esc(c.v)}</b><span>${esc(c.k)}</span></span>`).join('')}</div>`:''}
+      </div>`;
+    }
+    return `<div class="lam" style="${acc}">
+      <span class="lam__eyebrow">${esc(l.eyebrow||'')}</span>
+      <h2>${l.titulo}</h2>
+      ${l.sub?`<p class="lam__sub">${esc(l.sub)}</p>`:''}
+      ${firma}
+      ${l.items?`<ul class="lam__items">${l.items.map(x=>
+        `<li class="${x.ok?'ok':''}">${esc(x.t||x)}</li>`).join('')}</ul>`:''}
+      ${l.claves?`<div class="lam__claves">${l.claves.map(c=>`<span>${esc(c)}</span>`).join('')}</div>`:''}
+    </div>`;
+  }
+
+  function pintar(){
+    lienzo.innerHTML = lamina(laminas[i]);
+    $('#deck-cuenta').textContent = `${i+1} / ${laminas.length}`;
+    $('#deck-progreso').style.width = ((i+1)/laminas.length*100)+'%';
+    $('#deck-antes').disabled = i===0;
+    $('#deck-luego').textContent = i===laminas.length-1 ? 'Terminar' : 'Siguiente →';
+  }
+  function ir(d){
+    if (i===laminas.length-1 && d>0) return cerrar();
+    i = Math.max(0, Math.min(laminas.length-1, i+d));
+    pintar();
+  }
+  function abrir(titulo, ls){
+    laminas = ls; i = 0; ultimoFoco = document.activeElement;
+    $('#deck-titulo').textContent = titulo;
+    caja.hidden = false; document.body.style.overflow='hidden';
+    pintar(); $('#deck-luego').focus();
+  }
+  function cerrar(){
+    caja.hidden = true; document.body.style.overflow='';
+    if (document.fullscreenElement) document.exitFullscreen().catch(()=>{});
+    if (ultimoFoco) ultimoFoco.focus();
+  }
+
+  $('#deck-antes').addEventListener('click', ()=>ir(-1));
+  $('#deck-luego').addEventListener('click', ()=>ir(1));
+  $('#deck-cerrar').addEventListener('click', cerrar);
+  $('#deck-pantalla').addEventListener('click', ()=>{
+    if (document.fullscreenElement) document.exitFullscreen().catch(()=>{});
+    else caja.requestFullscreen?.().catch(()=>{});
+  });
+  addEventListener('keydown', e=>{
+    if (caja.hidden) return;
+    if (e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){ e.preventDefault(); ir(1); }
+    if (e.key==='ArrowLeft' ||e.key==='PageUp'){ e.preventDefault(); ir(-1); }
+    if (e.key==='Escape') cerrar();
+  });
+
+  return { abrir };
+})();
+
+/* --- guiones de las presentaciones --- */
+function guionBienvenida(){
+  const L = [
+    { tipo:'portada', color:'coral', eyebrow:`${CDA.centro.nombre} · ${CDA.centro.localidad}`,
+      titulo:'Comunidades<br><em>de</em> Aprendizaje',
+      sub:'Cumplamos los sueños de nuestra comunidad',
+      cifras:[{v:totalSuenos,k:'sueños'},{v:totalCumplidos,k:'cumplidos'},{v:CDA.bloques.length,k:'bloques'}] },
+    { color:'turquesa', eyebrow:'Qué es', titulo:'No es un programa.<br>Es una forma <em>de decidir</em>.',
+      items:['El centro se transforma con toda su comunidad implicada.',
+             'Se abren las aulas a las familias y al voluntariado.',
+             'Las decisiones se toman en comisiones donde participan estudiantes, familias y profesorado.',
+             'Las actuaciones que se llevan a cabo son de éxito y están avaladas por la investigación.'] }
+  ];
+  CDA.actuaciones.forEach(a=>{
+    L.push({ color:a.color, eyebrow:a.tipo==='exito'?'Actuación de éxito':'Bloque del centro',
+             titulo:esc(a.nombre), sub:a.resumen.split('.')[0]+'.',
+             firma:firmaDe(a,false), items:a.presenta });
+    L.push({ color:a.color, eyebrow:esc(a.nombre), titulo:'En pocas <em>palabras</em>',
+             claves:a.claves, firma:firmaDe(a,false) });
+  });
+  L.push({ color:'frambuesa', eyebrow:'El proceso', titulo:'Cinco fases',
+           items:CDA.fases.map(f=>({t:`${f.nombre} — ${f.texto}`, ok:!!f.activa})) });
+  L.push({ color:'coral', eyebrow:'Las comisiones', titulo:'Cuatro <em>comisiones</em> mixtas',
+           items:CDA.comisiones.map(c=>({t:`${c.nombre} — ${activos(c).length} sueños en el plan`})) });
+  L.push({ tipo:'portada', color:'salvia', eyebrow:'Gracias', titulo:'Muchas <em>gracias</em>',
+           sub:'¡Tu participación hace nuestra escuela mejor!' });
+  return L;
+}
+
+function guionActuacion(id){
+  const a = CDA.actuaciones.find(x=>x.id===id);
+  return [
+    { tipo:'portada', color:a.color,
+      eyebrow:a.tipo==='exito'?'Actuación educativa de éxito':'Bloque del centro',
+      titulo:esc(a.nombre), sub:a.resumen, firma:firmaDe(a,false) },
+    { color:a.color, eyebrow:'Cómo se hace', titulo:'En la <em>práctica</em>',
+      items:a.presenta, firma:firmaDe(a,false) },
+    { color:a.color, eyebrow:'Palabras clave', titulo:'En pocas <em>palabras</em>',
+      claves:a.claves, firma:firmaDe(a,false) }
+  ];
+}
+
+function guionComision(i){
+  const c = CDA.comisiones[i];
+  const hechos = cumplidos(c).length;
+  const resto = activos(c);
+  const enMarcha = resto.filter(s=>s.e==='proceso');
+  const cifras = [{v:resto.length,k:'sueños en el plan'},{v:enMarcha.length,k:'ya en marcha'}];
+  /* el porcentaje de cumplidos solo aparece cuando no es cero */
+  if (hechos > 0) cifras.push({v:Math.round(hechos/c.suenos.length*100)+'%',k:'cumplido el curso pasado'});
+
+  const L = [
+    { tipo:'portada', color:c.color, eyebrow:'Comisión mixta', titulo:esc(c.nombre), sub:c.lema, cifras },
+    { color:c.color, eyebrow:'Quién coordina', titulo:'El <em>equipo</em>',
+      items:[...c.responsables, ...Array(c.vacantes||0).fill('Plaza libre: se busca gente')] }
+  ];
+  if (enMarcha.length)
+    L.push({ color:c.color, eyebrow:'Ya se está trabajando', titulo:'Sueños <em>en marcha</em>',
+             items:enMarcha.map(s=>({t:s.t, ok:true})) });
+  const porHacer = resto.filter(s=>s.e!=='proceso');
+  for (let k=0; k<porHacer.length; k+=6)
+    L.push({ color:c.color, eyebrow:`Sueños del plan · ${Math.floor(k/6)+1}`,
+             titulo:'Lo que <em>queda</em>', items:porHacer.slice(k,k+6).map(s=>s.t) });
+  L.push({ tipo:'portada', color:c.color, eyebrow:esc(c.nombre), titulo:'Muchas <em>gracias</em>',
+           sub:'Cumplamos los sueños de nuestra comunidad' });
+  return L;
+}
+
+document.addEventListener('click', e=>{
+  const b = e.target.closest('[data-deck]'); if(!b) return;
+  const tipo = b.dataset.deck;
+  if (tipo==='bienvenida') Deck.abrir('Bienvenida a la Comunidad de Aprendizaje', guionBienvenida());
+  if (tipo==='actuacion')  Deck.abrir(CDA.actuaciones.find(a=>a.id===b.dataset.id).nombre, guionActuacion(b.dataset.id));
+  if (tipo==='comision')   Deck.abrir(CDA.comisiones[+b.dataset.i].nombre, guionComision(+b.dataset.i));
+});
+$('#btn-presentar').addEventListener('click', ()=>{
+  const enPlan = $('#seg-2').getAttribute('aria-selected')==='true';
+  if (enPlan) Deck.abrir(CDA.comisiones[comisionActiva].nombre, guionComision(comisionActiva));
+  else Deck.abrir('Bienvenida a la Comunidad de Aprendizaje', guionBienvenida());
+});
+
+/* ==========================================================================
+   16. NAVEGACIÓN: SUBMENÚ, PARTES Y SECCIÓN ACTIVA
+   ========================================================================== */
+const MAPA = {
+  parte1:[['#portada','Portada'],['#que-es','Qué es'],['#fases','Las cinco fases']],
+  parte2:[['#plan','El plan'],['#suenos','Sueños'],['#responsables','Responsables'],
+          ['#calendario','Calendario'],['#creditos','Baremos'],['#pasaporte','Pasaporte'],
+          ['#coordinacion','Coordinación'],['#equipo','El equipo']]
+};
+let parteActual = 'parte1';
+
+function pintarSubnav(){
+  $('#subnav').innerHTML = MAPA[parteActual]
+    .map(([h,t])=>`<a href="${h}">${t}</a>`).join('');
+  marcarActiva();
+}
+function cambiarParte(p, saltar=true){
+  parteActual = p;
+  $$('.segmentos button').forEach(b=>b.setAttribute('aria-selected', String(b.dataset.parte===p)));
+  pintarSubnav();
+  if (saltar) document.getElementById(p).scrollIntoView({behavior: menos?'auto':'smooth'});
+}
+$$('.segmentos button').forEach(b=>b.addEventListener('click', ()=>cambiarParte(b.dataset.parte)));
+
+function marcarActiva(){
+  const y = scrollY + 140;
+  let activa = null;
+  MAPA[parteActual].forEach(([h])=>{
+    const s = document.querySelector(h);
+    if (s && s.offsetTop <= y) activa = h;
+  });
+  $$('#subnav a').forEach(a=>a.classList.toggle('activo', a.getAttribute('href')===activa));
+}
+pintarSubnav();
+
+let tic = false;
+addEventListener('scroll', ()=>{
+  if (tic) return; tic = true;
+  requestAnimationFrame(()=>{
+    tic = false;
+    marcarActiva();
+    const p2 = document.getElementById('parte2').offsetTop;
+    const debeSer = scrollY + 200 >= p2 ? 'parte2' : 'parte1';
+    if (debeSer !== parteActual) cambiarParte(debeSer, false);
+  });
+}, {passive:true});
+</script>
+</body>
+</html>
