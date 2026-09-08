@@ -1,4 +1,4 @@
-# Al-Ándalus Dialógico
+# I.E.S. Al-Ándalus · Comunidades de Aprendizaje
 
 Web de la Comunidad de Aprendizaje del **IES Al-Ándalus** (Almería).
 Página única con dos partes: la bienvenida para quien llega nuevo y el Plan de Actuación del curso 2026-2027.

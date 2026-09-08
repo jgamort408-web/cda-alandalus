@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Al-Ándalus Dialógico</title>
+<title>I.E.S. Al-Ándalus · Comunidades de Aprendizaje</title>
 <meta name="description" content="Comunidad de Aprendizaje del IES Al-Ándalus (Almería): actuaciones educativas de éxito, sueños de la comunidad, comisiones mixtas, calendario del curso y baremos de participación. Plan de Actuación 2026-2027.">
 
 <!-- ⚠️ Si el repositorio no se llama «cda-alandalus», cambia esta dirección aquí,
@@ -17,9 +17,9 @@
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
-<meta property="og:site_name" content="Al-Ándalus Dialógico">
+<meta property="og:site_name" content="I.E.S. Al-Ándalus · Comunidades de Aprendizaje">
 <meta property="og:url" content="https://jgamort408-web.github.io/cda-alandalus/">
-<meta property="og:title" content="Al-Ándalus Dialógico · Comunidad de Aprendizaje">
+<meta property="og:title" content="I.E.S. Al-Ándalus · Comunidades de Aprendizaje">
 <meta property="og:description" content="Los sueños de la comunidad, las comisiones mixtas, el calendario del curso y los baremos de participación del IES Al-Ándalus (Almería).">
 <meta property="og:image" content="https://jgamort408-web.github.io/cda-alandalus/assets/og-portada.png">
 <meta property="og:image:width" content="1200">
@@ -34,7 +34,7 @@
 {
   "@context":"https://schema.org",
   "@type":"WebPage",
-  "name":"Al-Ándalus Dialógico",
+  "name":"I.E.S. Al-Ándalus · Comunidades de Aprendizaje",
   "inLanguage":"es-ES",
   "description":"Plan de Actuación 2026-2027 de la Comunidad de Aprendizaje del IES Al-Ándalus.",
   "about":{
@@ -546,6 +546,20 @@ p{margin:0}
   content:"";position:absolute;top:-40px;right:-40px;width:150px;height:150px;border-radius:50%;
   border:1.5px dashed color-mix(in srgb,var(--azul) 25%,transparent);
 }
+.obras{
+  display:flex;gap:1rem;align-items:flex-start;margin-top:2rem;
+  border:2px solid var(--azul);border-radius:var(--r-l);
+  background:color-mix(in srgb,var(--azul) 8%,var(--papel-2));
+  padding:1.3rem 1.5rem;
+}
+.obras svg{flex:0 0 auto;color:var(--azul);margin-top:.15rem}
+.obras strong{display:block;font-family:var(--f-display);font-size:1.15rem;margin-bottom:.3rem;color:var(--azul)}
+.obras p{font-size:.92rem;color:var(--tinta-2);max-width:62ch}
+.app-modulo__obras{
+  font-size:.68rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--azul);border:1.5px dashed color-mix(in srgb,var(--azul) 50%,transparent);
+  padding:.24rem .6rem;border-radius:999px;
+}
 .app-modulo__cab{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-bottom:.9rem}
 .app-modulo__pieza{
   display:inline-flex;align-items:center;gap:.45rem;
@@ -593,6 +607,20 @@ p{margin:0}
 }
 .personas li.libre{color:var(--tinta-3);font-weight:500;font-style:italic}
 .personas li.libre .avatar{background:transparent;border:1.5px dashed var(--linea-fuerte);color:var(--tinta-3)}
+
+/* profesorado enlace de cada grupo */
+.grupos{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:.8rem}
+.grupo{
+  border:1.5px dashed var(--linea-fuerte);border-radius:var(--r-m);background:var(--papel-2);
+  padding:1rem;display:flex;flex-direction:column;gap:.5rem;align-items:flex-start;
+  transition:border-color .2s,background .2s;
+}
+.grupo:hover{border-color:var(--coral);background:color-mix(in srgb,var(--coral) 5%,var(--papel-2))}
+.grupo b{font-family:var(--f-display);font-size:1.5rem;line-height:1;color:var(--tinta)}
+.grupo span{font-size:.78rem;font-weight:700;color:var(--tinta-3)}
+.grupo--libre b{color:var(--tinta-2)}
+.grupo--cubierto{border-style:solid;border-color:var(--salvia)}
+.grupo--cubierto span{color:var(--salvia)}
 
 /* ==========================================================================
    TRIMESTRES
@@ -907,7 +935,7 @@ p{margin:0}
         <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 3" opacity=".45"/>
         <path d="M16 6.5 18.4 13h6.8l-5.5 4 2.1 6.6L16 19.5 10.2 23.6l2.1-6.6-5.5-4h6.8L16 6.5Z" fill="currentColor"/>
       </svg>
-      <span>Al-Ándalus Dialógico<small>Comunidad de Aprendizaje</small></span>
+      <span>I.E.S. Al-Ándalus<small>Comunidades de Aprendizaje</small></span>
     </a>
 
     <div class="segmentos" role="tablist" aria-label="Partes de la página">
@@ -1017,37 +1045,11 @@ p{margin:0}
       <div class="fases" id="lista-fases"></div>
     </div>
   </section>
-</div>
-
-<!-- ==================================================================
-     PARTE 2 — PLAN DE ACTUACIÓN
-     ================================================================== -->
-<div id="parte2" class="parte">
-
-  <section class="seccion" id="plan" style="--acc:var(--coral)">
-    <div class="contenedor">
-      <div class="parte__marca">
-        <span class="parte__num">2</span>
-        <span class="parte__tit"><strong>Plan de Actuación 2026-2027</strong><span>Para toda la comunidad</span></span>
-      </div>
-      <div class="seccion__cab" style="margin-top:2rem">
-        <span class="eyebrow">Cómo se lee este plan</span>
-        <h2>Cuatro patas: sueños, responsables, calendario y novedades.</h2>
-        <p>
-          Los sueños dicen <em>qué</em> queremos. Los responsables, <em>quién</em> lo empuja. El calendario, <em>cuándo</em>.
-          Y las novedades, <em>con qué</em>: este curso estrenamos herramienta propia, y la vamos a ir explicando
-          pieza a pieza, dentro de la parte del plan a la que sirve cada una.
-        </p>
-      </div>
-      <div class="cifras" id="cifras-plan"></div>
-    </div>
-  </section>
-
   <!-- SUEÑOS -->
   <section class="seccion" id="suenos" style="--acc:var(--turquesa)">
     <div class="contenedor">
       <div class="seccion__cab">
-        <span class="eyebrow">Plan · primera pata</span>
+        <span class="eyebrow">Lo que hemos soñado</span>
         <h2>Los sueños</h2>
         <p>
           Todo lo que la comunidad pidió en la última fase del sueño, comisión por comisión.
@@ -1084,6 +1086,46 @@ p{margin:0}
         </header>
         <div class="logros__lista" id="logros-lista"></div>
       </section>
+    </div>
+  </section>
+</div>
+
+<!-- ==================================================================
+     PARTE 2 — PLAN DE ACTUACIÓN
+     ================================================================== -->
+<div id="parte2" class="parte">
+
+  <section class="seccion" id="plan" style="--acc:var(--coral)">
+    <div class="contenedor">
+      <div class="parte__marca">
+        <span class="parte__num">2</span>
+        <span class="parte__tit"><strong>Plan de Actuación 2026-2027</strong><span>Para toda la comunidad</span></span>
+      </div>
+      <div class="seccion__cab" style="margin-top:2rem">
+        <span class="eyebrow">Cómo se lee este plan</span>
+        <h2>Tres patas: responsables, calendario y novedades.</h2>
+        <p>
+          Los sueños ya los has visto arriba: dicen <em>qué</em> queremos. Aquí viene el resto.
+          Los responsables, <em>quién</em> lo empuja. El calendario, <em>cuándo</em>.
+          Y las novedades, <em>con qué</em>: este curso llega una herramienta propia, y la vamos a ir
+          explicando pieza a pieza, dentro de la parte del plan a la que sirve cada una.
+        </p>
+      </div>
+      <div class="cifras" id="cifras-plan"></div>
+
+      <div class="obras">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <strong>La aplicación todavía no está en marcha</strong>
+          <p>
+            Lo que se describe en las siete piezas siguientes está en desarrollo. En cuanto esté lista
+            la compartiremos con toda la comunidad, con sus claves de acceso y una sesión para verla.
+            Hasta entonces, todo sigue funcionando como hasta ahora.
+          </p>
+        </div>
+      </div>
 
       <div class="app-modulo" data-modulo="1"></div>
     </div>
@@ -1093,14 +1135,30 @@ p{margin:0}
   <section class="seccion" id="responsables" style="--acc:var(--frambuesa)">
     <div class="contenedor">
       <div class="seccion__cab">
-        <span class="eyebrow">Plan · segunda pata</span>
+        <span class="eyebrow">Plan · primera pata</span>
         <h2>Quién se encarga de qué</h2>
         <p>
-          Doce bloques con sus responsables. Donde pone <em>plaza libre</em> es que falta gente:
+          Catorce bloques con sus responsables. Donde pone <em>plaza libre</em> es que falta gente:
           esos huecos son la primera petición del curso.
         </p>
       </div>
       <div class="bloques" id="bloques"></div>
+
+      <div class="seccion__cab" style="margin-top:3.5rem">
+        <span class="eyebrow" style="--acc:var(--coral)">Se busca profesorado</span>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">Profesorado enlace de cada grupo</h2>
+        <p>
+          Hace falta una persona por grupo de 1.º y 2.º de ESO que se encargue de que toda la información
+          de Comunidades de Aprendizaje llegue de verdad a su alumnado: los sueños, las actividades, las
+          fechas y cómo sumar puntos. Sin ese puente, lo que se decide en comisión no baja al aula.
+        </p>
+      </div>
+      <div class="grupos" id="grupos-enlace"></div>
+      <p style="font-size:.85rem;color:var(--tinta-2);margin-top:1rem">
+        ¿Te encargas de uno? Escribe a <a id="enlace-correo" href="#coordinacion">coordinación</a>
+        diciendo qué grupo prefieres.
+      </p>
+
       <div class="app-modulo" data-modulo="2"></div>
     </div>
   </section>
@@ -1109,7 +1167,7 @@ p{margin:0}
   <section class="seccion" id="calendario" style="--acc:var(--mostaza)">
     <div class="contenedor">
       <div class="seccion__cab">
-        <span class="eyebrow">Plan · tercera pata</span>
+        <span class="eyebrow">Plan · segunda pata</span>
         <h2>El curso, trimestre a trimestre</h2>
         <p>
           Fechas estimadas a partir de las ediciones de cursos anteriores. Despliega cualquier evento
@@ -1125,7 +1183,7 @@ p{margin:0}
   <section class="seccion" id="creditos" style="--acc:var(--azul)">
     <div class="contenedor">
       <div class="seccion__cab">
-        <span class="eyebrow">Plan · cuarta pata · novedades</span>
+        <span class="eyebrow">Plan · tercera pata · novedades</span>
         <h2>Lo que suma tu participación</h2>
         <p>
           Este curso el reconocimiento de la participación está escrito y es público: tres documentos,
@@ -1181,10 +1239,17 @@ p{margin:0}
         </div>
         <a class="btn btn--acento" style="--acc:var(--mostaza)" id="btn-propuesta" href="#coordinacion">Enviar una propuesta</a>
       </div>
-      <p style="font-size:.8rem;color:var(--tinta-3);margin-top:1.4rem">
-        Ejemplos para arrancar la conversación. Ninguno está aprobado todavía.
+      <h3 style="font-size:1.05rem;margin-top:1.8rem">Recompensas de ejemplo, ya cargadas en la aplicación</h3>
+      <p style="font-size:.82rem;color:var(--tinta-3);margin-top:.3rem">
+        Sirven para arrancar. El catálogo definitivo lo decide la comunidad y se puede ampliar durante el curso.
       </p>
-      <div class="beneficios" id="beneficios" style="margin-top:.6rem"></div>
+      <div class="beneficios" id="beneficios" style="margin-top:.8rem"></div>
+
+      <h3 style="font-size:1.05rem;margin-top:1.8rem">Ideas de reto colaborativo</h3>
+      <p style="font-size:.82rem;color:var(--tinta-3);margin-top:.3rem">
+        Un reto lo gana un equipo entero a la vez, nunca una sola persona. Estas son propuestas, todavía sin acordar.
+      </p>
+      <div class="beneficios" id="retos" style="margin-top:.8rem"></div>
 
       <div class="app-modulo" data-modulo="7"></div>
       <div class="aviso">
@@ -1594,27 +1659,27 @@ const CDA = {
   app:{
     regla:"Son dos monedas distintas y no se mezclan. Los puntos de participación del alumnado cuentan para la rúbrica acordada y pueden sumar 1 punto en la nota: los aplica el profesorado, no la aplicación. Los créditos comunitarios de familias y voluntariado viven en un registro separado del expediente académico: no modifican calificaciones, no se exportan a Séneca y no influyen en la promoción ni en la titulación. No es una promesa, está escrito en el propio código.",
     modulos:[
-      { n:1, titulo:"Buzón de Sueños", gancho:"Lo primero que sustituye la app son los carteles de papel.",
-        hace:["Cualquiera propone un sueño desde el móvil, y el resto de la comunidad puede apoyarlo.","Cada sueño recorre cinco estados visibles: recibido, en estudio, aceptado, en marcha y cumplido.","Antes de publicar un sueño en el muro público la app pide confirmación: es contenido sensible y conviene pensarlo dos veces."],
-        aparte:{t:"Por qué importa",x:"El muro es público. Así, cuando un sueño se cumple, todo el mundo ve cuánto tardó y quién lo empujó."} },
-      { n:2, titulo:"Comisiones mixtas", gancho:"Lo segundo, las actas que siempre se pierden.",
-        hace:["Convocatoria, orden del día y acta de cada reunión, en el mismo sitio.","Los acuerdos se votan dentro de la app y se aprueban por mayoría simple; las abstenciones no cuentan.","Cada objetivo tiene responsable y fecha, y se ve de un vistazo si va en plazo."],
-        aparte:{t:"La regla de la mesa",x:"Solo Dirección abre y cierra una votación, pero el voto de cada sector vale exactamente lo mismo."} },
+      { n:1, titulo:"Buzón de Sueños", gancho:"Lo primero: poder soñar durante todo el curso, no solo en noviembre.",
+        hace:["Cualquiera podrá proponer un sueño desde el móvil, y el resto de la comunidad apoyarlo.","No sustituye a nada: se seguirán recogiendo sueños en papel, en tutoría y por correo. La aplicación será una vía más, nunca la única.","Cada sueño irá mostrando en qué punto está: recibido, en estudio, aceptado, en marcha o cumplido."],
+        aparte:{t:"Por qué importa",x:"Hoy un sueño se pierde entre la recogida y la comisión. Con el estado a la vista, cualquiera podrá seguir el suyo sin tener que preguntar."} },
+      { n:2, titulo:"Comisiones mixtas", gancho:"Lo segundo, sin quitarle ni un gramo de protagonismo a la reunión presencial.",
+        hace:["Las comisiones seguirán siendo presenciales: es ahí donde se habla, se discute y se decide.","Cuando alguien no pueda asistir, o haya que cerrar algo entre dos reuniones, se podrá votar en diferido desde la aplicación.","Cada acuerdo quedará con responsable y con fecha, para no depender de quién se acuerde de qué."],
+        aparte:{t:"Lo presencial manda",x:"El voto en diferido es un recurso para casos puntuales, no una manera de vaciar la reunión."} },
       { n:3, titulo:"Agenda comunitaria", gancho:"Lo tercero, el clásico «yo no me enteré».",
-        hace:["Todas las actuaciones abiertas, con inscripción en un clic.","Recordatorio el día antes para quien se ha apuntado.","Al terminar se registra la asistencia, y de ahí salen las horas de voluntariado del curso."],
-        aparte:{t:"Termómetro comunitario",x:"La suma de esas horas alimenta una meta colectiva de 500 horas para el curso. Es una meta del centro: nunca un ranking de personas."} },
-      { n:4, titulo:"Puntos y créditos", gancho:"Y aquí llega la novedad grande: los baremos de arriba, dentro de la app y al día.",
-        hace:["Cada actuación vale lo que dice el baremo acordado, ni más ni menos.","La app lleva las dos cuentas por separado: los puntos del alumnado, que van a la rúbrica, y los créditos de familias y voluntariado, que van a recompensas.","El baremo del profesorado es editable desde Dirección: si la comunidad cambia el criterio, cambia la app."],
-        aparte:{t:"Quién decide",x:"Los baremos no los inventa la aplicación: son los tres documentos de esta sección, acordados por la comunidad. Todo movimiento queda en un histórico consultable y exportable."} },
-      { n:5, titulo:"Pasaporte, niveles e insignias", gancho:"El reconocimiento, sin convertirlo en una competición.",
-        hace:["Un pasaporte personal con todo lo aportado durante el curso.","Cinco niveles según los créditos, de Participante a Referente Comunitario.","Insignias de identidad que Dirección concede con una dedicatoria escrita: Mentor de Sabiduría, Embajadora de Convivencia, Tejedora de Comunidad, Voz de las Familias."],
-        aparte:{t:"Lo que nunca habrá",x:"No hay clasificaciones ni rachas, y no las habrá: está documentado como política de diseño. Las insignias de identidad no dan créditos, porque no todo lo que vale se cuenta."} },
-      { n:6, titulo:"Recompensas y retos", gancho:"El mecanismo de canje ya está hecho. Lo que falta es decidir qué se canjea.",
-        hace:["La app ya sabe descontar créditos y registrar un canje: el catálogo se rellena cuando la comunidad lo acuerde.","Cada recompensa se publica con su precio en créditos, a la vista de todo el mundo.","Retos colaborativos que acreditan a un equipo mixto entero a la vez, no a una sola persona."],
-        aparte:{t:"Aquí hace falta el claustro",x:"El catálogo de recompensas de las familias está en blanco a propósito. Es la decisión pendiente más importante del trimestre."} },
-      { n:7, titulo:"Diseño calmo, certificados y datos", gancho:"Y lo último: que la app no se convierta en una molestia.",
-        hace:["Los correos no urgentes no salen entre las 20:00 y las 8:00, ni en fin de semana: se guardan y se envían después.","Un único resumen diario en lugar de veinte avisos sueltos.","Modo accesible con texto grande y alto contraste, interfaz en español, inglés y árabe, y un tour de práctica donde se puede probar todo sin que quede registrado."],
-        aparte:{t:"Papeleo resuelto",x:"El certificado de voluntariado y el pasaporte se descargan en PDF, y cualquiera puede exportar o borrar sus propios datos."} }
+        hace:["Información actualizada de todos los eventos y actividades de Comunidades de Aprendizaje, reunidos en un solo sitio.","Inscripción en un clic y recordatorio el día antes para quien se haya apuntado.","Al terminar se registrará la asistencia, y de ahí saldrán las horas de voluntariado del curso."],
+        aparte:{t:"Termómetro comunitario",x:"La suma de esas horas alimentará una meta colectiva del centro para el curso. Una meta común, nunca un ranking de personas."} },
+      { n:4, titulo:"Puntos, créditos y rúbricas", gancho:"Y aquí llega el cambio que más trabajo ahorra: los baremos, calculados solos.",
+        hace:["La rúbrica del alumnado pasa de Moodle a la aplicación: un único sitio donde consultar los puntos.","El baremo del profesorado se irá calculando automáticamente según se registren las actuaciones, en lugar de rehacer la hoja entera al final de curso.","Dos cuentas separadas: los puntos del alumnado, que van a la rúbrica, y los créditos de familias y voluntariado, que van a recompensas."],
+        aparte:{t:"Quién decide",x:"Los baremos no los inventa la aplicación: son los tres documentos de esta sección, acordados por la comunidad. Ella solo los aplica y los suma."} },
+      { n:5, titulo:"Pasaporte, niveles e insignias", gancho:"El reconocimiento del alumnado, sin convertirlo en una competición.",
+        hace:["Un pasaporte personal con todo lo aportado durante el curso.","Cinco niveles según los créditos acumulados, de Participante a Referente Comunitario.","Insignias de identidad concedidas con una dedicatoria escrita: Mentor de Sabiduría, Embajadora de Convivencia, Tejedora de Comunidad, Voz de las Familias."],
+        aparte:{t:"Lo que nunca habrá",x:"No habrá clasificaciones ni rachas: está escrito como política de diseño. Las insignias de identidad no dan créditos, porque no todo lo que vale se cuenta."} },
+      { n:6, titulo:"Recompensas y retos", gancho:"Y los créditos servirán para algo que se toca.",
+        hace:["Recompensas que se canjean por créditos, con el precio siempre a la vista: un día sin deberes por 20, elegir la actividad de tutoría por 25, delegado o delegada por un día por 30, o una visita a una empresa local por 50.","Retos colaborativos que acreditan de golpe a todo un equipo mixto, y no a una sola persona.","El catálogo es ampliable durante el curso: lo de abajo son los ejemplos ya cargados para arrancar."],
+        aparte:{t:"Aquí hace falta el claustro",x:"Las recompensas de las familias siguen abiertas. Es la decisión pendiente más importante del trimestre."} },
+      { n:7, titulo:"Diseño calmo, certificados y datos", gancho:"Y lo último: que la aplicación no se convierta en una molestia.",
+        hace:["Los correos no urgentes no saldrán entre las 20:00 y las 8:00, ni en fin de semana: se guardarán y se enviarán después.","Un único resumen diario en lugar de veinte avisos sueltos.","Modo accesible con texto grande y alto contraste, interfaz en español, inglés y árabe, y un recorrido de práctica donde probarlo todo sin que quede registrado."],
+        aparte:{t:"Papeleo resuelto",x:"El certificado de voluntariado y el pasaporte se descargarán en PDF, y cualquiera podrá exportar o borrar sus propios datos."} }
     ]
   },
 
@@ -1624,6 +1689,25 @@ const CDA = {
     { nombre:"Mentora", desde:50, hasta:74, c:"#D2941C" },
     { nombre:"Agente de Cambio", desde:75, hasta:99, c:"#238281" },
     { nombre:"Referente Comunitario", desde:100, hasta:null, c:"#2F7A48" }
+  ],
+
+  /* ✏️ EDITA AQUÍ — profesorado enlace de cada grupo.
+     Escribe el nombre entre las comillas cuando alguien se encargue del grupo. */
+  gruposEnlace:[
+    { grupo:"1.º ESO A", persona:"" },
+    { grupo:"1.º ESO B", persona:"" },
+    { grupo:"1.º ESO C", persona:"" },
+    { grupo:"2.º ESO A", persona:"" },
+    { grupo:"2.º ESO B", persona:"" },
+    { grupo:"2.º ESO C", persona:"" }
+  ],
+
+  /* ideas de reto colaborativo: acreditan a un equipo mixto entero, no a una persona */
+  retos:[
+    {t:"Que una clase entera traiga a un familiar a un grupo interactivo",c:"equipo"},
+    {t:"Completar un ciclo de tertulias dialógicas sin faltar nadie",c:"equipo"},
+    {t:"Dejar el patio sin una sola basura durante una semana",c:"equipo"},
+    {t:"Que cada grupo de 1.º ESO monte su taller de la Semana Cultural",c:"equipo"}
   ],
 
   beneficios:[
@@ -1710,7 +1794,7 @@ const totalActivos = CDA.comisiones.reduce((a,c)=>a+c.suenos.filter(s=>s.e!=='cu
 pintarCifras('#cifras-plan',[
   {v:totalActivos, k:'sueños en el plan', color:'turquesa'},
   {v:totalPersonas, k:'personas al frente', color:'coral'},
-  {v:totalVacantes, k:'plazas libres', color:'mostaza'},
+  {v:totalVacantes + CDA.gruposEnlace.filter(g=>!g.persona).length, k:'plazas libres', color:'mostaza'},
   {v:CDA.app.modulos.length, k:'piezas nuevas de la app', color:'azul'}
 ]);
 
@@ -1942,6 +2026,13 @@ $('#bloques').innerHTML = CDA.bloques.map(b=>`
   </article>
 `).join('');
 
+/* profesorado enlace de cada grupo de 1.º y 2.º de ESO */
+$('#grupos-enlace').innerHTML = CDA.gruposEnlace.map(g=>`
+  <article class="grupo ${g.persona ? 'grupo--cubierto' : 'grupo--libre'}">
+    <b>${esc(g.grupo)}</b>
+    <span>${g.persona ? esc(g.persona) : 'Plaza libre'}</span>
+  </article>`).join('');
+
 /* ==========================================================================
    9. TRIMESTRES
    ========================================================================== */
@@ -2036,6 +2127,7 @@ $$('[data-modulo]').forEach(caja=>{
         La app · pieza ${m.n} de ${totalModulos}
       </span>
       <h3>${esc(m.titulo)}</h3>
+      <span class="app-modulo__obras">En desarrollo</span>
     </div>
     <p class="app-modulo__gancho">${esc(m.gancho)}</p>
     <div class="app-modulo__rejilla">
@@ -2058,6 +2150,8 @@ $('#niveles').innerHTML = CDA.niveles.map(n=>`
   </div>`).join('');
 $('#beneficios').innerHTML = CDA.beneficios.map(b=>`
   <div class="beneficio"><span>${esc(b.t)}</span><b>${b.c} cr.</b></div>`).join('');
+$('#retos').innerHTML = CDA.retos.map(r=>`
+  <div class="beneficio" style="border-style:dashed"><span>${esc(r.t)}</span><b>en equipo</b></div>`).join('');
 
 /* ==========================================================================
    12. COORDINACIÓN
@@ -2092,6 +2186,14 @@ $('#beneficios').innerHTML = CDA.beneficios.map(b=>`
   if (btn && c.email){
     btn.href = `mailto:${c.email}?subject=${encodeURIComponent('Propuesta de recompensa para las familias')}`
              + `&body=${encodeURIComponent('Mi propuesta de recompensa:\n\n\nA quién va dirigida:\n\n\nQué haría falta para ponerla en marcha:\n')}`;
+  }
+
+  /* ofrecerse como profesorado enlace de un grupo */
+  const enlace = $('#enlace-correo');
+  if (enlace && c.email){
+    enlace.href = `mailto:${c.email}?subject=${encodeURIComponent('Me ofrezco como profesorado enlace de grupo')}`
+                + `&body=${encodeURIComponent('Grupo que prefiero (1.º ESO A/B/C o 2.º ESO A/B/C):\n\n\nNombre:\n')}`;
+    enlace.textContent = c.email;
   }
 
   /* contacto en el pie */
@@ -2285,6 +2387,8 @@ function guionBienvenida(){
            items:CDA.fases.map(f=>({t:`${f.nombre} — ${f.texto}`, ok:!!f.activa})) });
   L.push({ color:'coral', eyebrow:'Las comisiones', titulo:'Cuatro <em>comisiones</em> mixtas',
            items:CDA.comisiones.map(c=>({t:`${c.nombre} — ${activos(c).length} sueños en el plan`})) });
+  /* cada comisión, entera, dentro de la presentación general */
+  CDA.comisiones.forEach((c,i)=> L.push(...guionComision(i, false)));
   L.push({ tipo:'portada', color:'salvia', eyebrow:'Gracias', titulo:'Muchas <em>gracias</em>',
            sub:'¡Tu participación hace nuestra escuela mejor!' });
   return L;
@@ -2303,7 +2407,8 @@ function guionActuacion(id){
   ];
 }
 
-function guionComision(i){
+/* cierre = false cuando la comisión va encadenada dentro de la presentación general */
+function guionComision(i, cierre = true){
   const c = CDA.comisiones[i];
   const hechos = cumplidos(c).length;
   const resto = activos(c);
@@ -2324,8 +2429,9 @@ function guionComision(i){
   for (let k=0; k<porHacer.length; k+=6)
     L.push({ color:c.color, eyebrow:`Sueños del plan · ${Math.floor(k/6)+1}`,
              titulo:'Lo que <em>queda</em>', items:porHacer.slice(k,k+6).map(s=>s.t) });
-  L.push({ tipo:'portada', color:c.color, eyebrow:esc(c.nombre), titulo:'Muchas <em>gracias</em>',
-           sub:'Cumplamos los sueños de nuestra comunidad' });
+  if (cierre)
+    L.push({ tipo:'portada', color:c.color, eyebrow:esc(c.nombre), titulo:'Muchas <em>gracias</em>',
+             sub:'Cumplamos los sueños de nuestra comunidad' });
   return L;
 }
 
@@ -2337,17 +2443,16 @@ document.addEventListener('click', e=>{
   if (tipo==='comision')   Deck.abrir(CDA.comisiones[+b.dataset.i].nombre, guionComision(+b.dataset.i));
 });
 $('#btn-presentar').addEventListener('click', ()=>{
-  const enPlan = $('#seg-2').getAttribute('aria-selected')==='true';
-  if (enPlan) Deck.abrir(CDA.comisiones[comisionActiva].nombre, guionComision(comisionActiva));
-  else Deck.abrir('Bienvenida a la Comunidad de Aprendizaje', guionBienvenida());
+  Deck.abrir('Comunidades de Aprendizaje · IES Al-Ándalus', guionBienvenida());
 });
 
 /* ==========================================================================
    16. NAVEGACIÓN: SUBMENÚ, PARTES Y SECCIÓN ACTIVA
    ========================================================================== */
 const MAPA = {
-  parte1:[['#portada','Portada'],['#que-es','Qué es'],['#fases','Las cinco fases']],
-  parte2:[['#plan','El plan'],['#suenos','Sueños'],['#responsables','Responsables'],
+  parte1:[['#portada','Portada'],['#que-es','Qué es'],['#fases','Las cinco fases'],
+          ['#suenos','Sueños y comisiones']],
+  parte2:[['#plan','El plan'],['#responsables','Responsables'],
           ['#calendario','Calendario'],['#creditos','Baremos'],['#pasaporte','Pasaporte'],
           ['#coordinacion','Coordinación'],['#equipo','El equipo']]
 };
