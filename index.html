@@ -281,6 +281,27 @@ p{margin:0}
 .parte__tit span{font-size:.85rem;color:var(--tinta-2)}
 
 /* ==========================================================================
+   LOGOS INSTITUCIONALES
+   Van sobre una placa blanca: el sello del IES lleva texto negro alrededor
+   y el logo de CdA texto gris, así que sobre fondo oscuro se perderían.
+   ========================================================================== */
+.logos{
+  display:inline-flex;align-items:center;gap:clamp(.9rem,2vw,1.4rem);
+  padding:.8rem 1.25rem;border-radius:var(--r-l);
+  background:#fff;border:1px solid var(--linea);box-shadow:var(--sombra-1);
+  width:max-content;max-width:100%;
+}
+.logos img{height:var(--alto,54px);width:auto;flex:0 0 auto}
+.logos__raya{width:1px;align-self:stretch;background:#E3DCCB;flex:0 0 auto}
+.logos--pie{--alto:32px;padding:.55rem .9rem;box-shadow:none;opacity:.9}
+.logos--pie:hover{opacity:1}
+.lam__logos{--alto:clamp(44px,7vw,72px);margin-inline:auto;margin-bottom:.4rem}
+@media (max-width:420px){
+  .logos{gap:.7rem;padding:.65rem .9rem}
+  .logos img{height:calc(var(--alto,54px) * .8)}
+}
+
+/* ==========================================================================
    PORTADA
    ========================================================================== */
 .portada{position:relative;padding-block:clamp(2.5rem,6vw,4.5rem) clamp(3rem,6vw,5rem);overflow:hidden}
@@ -971,9 +992,16 @@ p{margin:0}
     <div class="contenedor">
       <div class="portada__rejilla">
         <div>
+          <div class="logos" style="--alto:clamp(48px,6vw,62px);margin-bottom:1.4rem">
+            <img src="assets/logo-ies.png" width="520" height="520"
+                 alt="Escudo del IES Al-Ándalus de Almería">
+            <span class="logos__raya"></span>
+            <img src="assets/logo-cda.png" width="700" height="346"
+                 alt="Comunidades de Aprendizaje · IES Al-Ándalus, Almería">
+          </div>
           <span class="portada__sello">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 4.2 9.1 7h2.9l-2.35 1.7.9 2.8L8 9.75 5.55 11.5l.9-2.8L4.1 7H7L8 4.2Z"/></svg>
-            IES Al-Ándalus · Almería · <b>Curso 2026-2027</b>
+            <b>Curso 2026-2027</b>
           </span>
           <h1>Comunidades <em>de</em> Aprendizaje</h1>
           <p class="portada__lema">«Cumplamos los sueños de nuestra comunidad»</p>
@@ -1309,7 +1337,12 @@ p{margin:0}
 
 <footer class="pie">
   <div class="contenedor pie__fila">
-    <span>IES Al-Ándalus · Almería · Comunidad de Aprendizaje · Curso 2026-2027</span>
+    <div class="logos logos--pie">
+      <img src="assets/logo-ies.png" width="520" height="520" alt="Escudo del IES Al-Ándalus" loading="lazy">
+      <span class="logos__raya"></span>
+      <img src="assets/logo-cda.png" width="700" height="346" alt="Comunidades de Aprendizaje" loading="lazy">
+    </div>
+    <span>IES Al-Ándalus · Almería · Curso 2026-2027</span>
     <span id="pie-contacto"></span>
   </div>
 </footer>
@@ -2280,8 +2313,15 @@ const Deck = (function(){
   function lamina(l){
     const acc = l.color ? `--acc:var(--${l.color})` : '';
     const firma = l.firma ? `<p class="lam__firma">${esc(l.firma)}</p>` : '';
+    const logos = l.logos ? `
+      <div class="logos lam__logos">
+        <img src="assets/logo-ies.png" width="520" height="520" alt="Escudo del IES Al-Ándalus">
+        <span class="logos__raya"></span>
+        <img src="assets/logo-cda.png" width="700" height="346" alt="Comunidades de Aprendizaje">
+      </div>` : '';
     if (l.tipo === 'portada'){
       return `<div class="lam lam--portada" style="${acc}">
+        ${logos}
         <span class="lam__eyebrow">${esc(l.eyebrow||'')}</span>
         <h2>${l.titulo}</h2>
         ${l.sub?`<p class="lam__sub">${esc(l.sub)}</p>`:''}
@@ -2367,7 +2407,8 @@ const Deck = (function(){
 /* --- guiones de las presentaciones --- */
 function guionBienvenida(){
   const L = [
-    { tipo:'portada', color:'coral', eyebrow:`${CDA.centro.nombre} · ${CDA.centro.localidad}`,
+    { tipo:'portada', color:'coral', logos:true,
+      eyebrow:`${CDA.centro.nombre} · ${CDA.centro.localidad} · Curso ${CDA.centro.curso}`,
       titulo:'Comunidades<br><em>de</em> Aprendizaje',
       sub:'Cumplamos los sueños de nuestra comunidad',
       cifras:[{v:totalSuenos,k:'sueños'},{v:totalCumplidos,k:'cumplidos'},{v:CDA.bloques.length,k:'bloques'}] },
