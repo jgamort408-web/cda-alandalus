@@ -397,36 +397,42 @@ p{margin:0}
   border:1px solid color-mix(in srgb,var(--acc) 30%,transparent);
 }
 
-/* nube de palabras clave */
-.nube{position:relative;height:290px;display:grid;place-items:center}
+/* nube de palabras clave: flujo con desnivel, para que ninguna se salga de la tarjeta */
+.nube{
+  position:relative;min-height:230px;
+  display:flex;flex-wrap:wrap;align-content:center;justify-content:center;
+  gap:.55rem .4rem;padding:1.4rem .3rem;
+}
 .nube__centro{
-  width:104px;height:104px;border-radius:50%;
+  position:absolute;left:50%;top:50%;translate:-50% -50%;
+  width:158px;height:158px;border-radius:50%;
   display:grid;place-items:center;
-  background:color-mix(in srgb,var(--acc) 14%,var(--papel-2));
-  border:2px dashed color-mix(in srgb,var(--acc) 45%,transparent);
-  color:var(--acc);z-index:2;
+  border:2px dashed color-mix(in srgb,var(--acc) 40%,transparent);
+  color:var(--acc);opacity:.28;z-index:0;pointer-events:none;
 }
 .clave{
-  position:absolute;left:50%;top:50%;
-  translate:-50% -50%;
-  margin-left:var(--x,0px);margin-top:var(--y,0px);
-  padding:.26rem .68rem;border-radius:999px;
+  position:relative;z-index:1;max-width:100%;
+  translate:0 var(--desv,0px);
+  padding:.3rem .75rem;border-radius:999px;
   background:var(--papel-2);border:1px solid var(--linea);
-  font-size:.74rem;font-weight:600;color:var(--tinta-2);white-space:nowrap;
+  font-size:.78rem;font-weight:600;color:var(--tinta-2);
   box-shadow:var(--sombra-1);
-  animation:orbitar var(--dur,9s) ease-in-out infinite;
+  animation:flotar-clave var(--dur,9s) ease-in-out infinite;
   animation-delay:var(--retraso,0s);
   transition:color .25s,border-color .25s,scale .25s;
 }
 .actuacion:hover .clave,.actuacion:focus-within .clave{
-  color:var(--acc);border-color:color-mix(in srgb,var(--acc) 40%,transparent);scale:1.06;
+  color:var(--acc);border-color:color-mix(in srgb,var(--acc) 40%,transparent);scale:1.05;
 }
-@keyframes orbitar{0%,100%{translate:-50% -50%}50%{translate:calc(-50% + var(--dx,4px)) calc(-50% - var(--dy,6px))}}
+@keyframes flotar-clave{
+  0%,100%{translate:0 var(--desv,0px)}
+  50%{translate:0 calc(var(--desv,0px) - var(--dy,7px))}
+}
 @media (max-width:820px){
   .actuacion{grid-template-columns:1fr}
-  .nube{height:auto;display:flex;flex-wrap:wrap;gap:.4rem;justify-content:flex-start;padding-left:.4rem}
+  .nube{min-height:0;justify-content:flex-start;padding:.2rem}
   .nube__centro{display:none}
-  .clave{position:static;translate:none;margin:0;animation:none}
+  .clave{translate:none;animation:none}
 }
 
 /* ---------- fases ---------- */
@@ -1910,25 +1916,20 @@ const tarjetaActuacion = a=>`
 $('#actuaciones').innerHTML     = CDA.actuaciones.filter(a=>a.tipo==='exito').map(tarjetaActuacion).join('');
 $('#bloques-centro').innerHTML  = CDA.actuaciones.filter(a=>a.tipo==='centro').map(tarjetaActuacion).join('');
 
+/* el desnivel y el ritmo se reparten por posición: nada depende de medir el ancho,
+   así que las palabras largas ya no pueden salirse de la tarjeta */
+const DESNIVEL = [-9, 5, -3, 9, -6, 2, -8, 6];
 function colocarClaves(){
   $$('[data-nube]').forEach(nube=>{
-    const claves = $$('.clave', nube);
-    const ancho = nube.clientWidth;
-    if (ancho < 420){ claves.forEach(c=>c.style.cssText=''); return; }
-    const rx = Math.min(ancho/2 - 58, 150), ry = 112;
-    claves.forEach((c,i)=>{
-      const ang = (-90 + (360/claves.length)*i) * Math.PI/180;
-      c.style.setProperty('--x', Math.round(Math.cos(ang)*rx)+'px');
-      c.style.setProperty('--y', Math.round(Math.sin(ang)*ry)+'px');
-      c.style.setProperty('--dx', (Math.cos(ang)*5).toFixed(1)+'px');
-      c.style.setProperty('--dy', (4 + (i%3)*2)+'px');
-      c.style.setProperty('--dur', (7.5 + (i%4)*1.3)+'s');
-      c.style.setProperty('--retraso', (i*.35).toFixed(2)+'s');
+    $$('.clave', nube).forEach((c,i)=>{
+      c.style.setProperty('--desv', DESNIVEL[i % DESNIVEL.length] + 'px');
+      c.style.setProperty('--dy', (5 + (i % 3) * 2) + 'px');
+      c.style.setProperty('--dur', (7.5 + (i % 4) * 1.3) + 's');
+      c.style.setProperty('--retraso', (i * .35).toFixed(2) + 's');
     });
   });
 }
 colocarClaves();
-addEventListener('resize', colocarClaves);
 
 /* ==========================================================================
    6. FASES
