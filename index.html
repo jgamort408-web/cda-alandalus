@@ -1275,9 +1275,24 @@ p{margin:0}
         <span class="eyebrow">Plan · primera pata</span>
         <h2>Quién se encarga de qué</h2>
         <p>
-          Catorce bloques con sus responsables. Donde pone <em>plaza libre</em> es que falta gente:
-          esos huecos son la primera petición del curso.
+          El equipo directivo respalda el proyecto y catorce bloques lo sostienen con sus responsables.
+          Donde pone <em>plaza libre</em> es que falta gente: esos huecos son la primera petición del curso.
         </p>
+      </div>
+
+      <div class="seccion__cab" style="margin-top:0">
+        <span class="eyebrow" style="--acc:var(--azul)">Dirección del centro</span>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">El equipo directivo</h2>
+        <p>
+          Comunidades de Aprendizaje no es el proyecto de una persona: se sostiene porque la dirección
+          del centro lo hace suyo y abre las puertas que hacen falta.
+        </p>
+      </div>
+      <div class="bloques" id="equipo-directivo"></div>
+
+      <div class="seccion__cab" style="margin-top:3.5rem">
+        <span class="eyebrow">Los catorce bloques</span>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">Cada bloque y su gente</h2>
       </div>
       <div class="bloques" id="bloques"></div>
 
@@ -1690,6 +1705,13 @@ const CDA = {
       ]}
   ],
 
+  /* ---------- equipo directivo del centro ---------- */
+  equipoDirectivo:[
+    { cargo:"Dirección",           color:"coral",     personas:["Sandra L."] },
+    { cargo:"Vicedirección",       color:"azul",      personas:["Conchi S."] },
+    { cargo:"Jefatura de Estudios", color:"turquesa", personas:["Mari Carmen C.","María del Mar R.","Emilio José M.","Ignacio F."] }
+  ],
+
   /* ---------- los doce bloques y sus responsables ---------- */
   bloques:[
     { nombre:"Grupos Interactivos", color:"turquesa", personas:["Carmen R."] },
@@ -1898,7 +1920,8 @@ const $  = (s,c=document)=>c.querySelector(s);
 const $$ = (s,c=document)=>[...c.querySelectorAll(s)];
 const esc = t => String(t).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 const menos = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const iniciales = n => n.split(/\s+/).slice(0,2).map(p=>p[0]).join('').toUpperCase();
+/* «María del Mar R.» → MM: las partículas no cuentan como nombre */
+const iniciales = n => n.split(/\s+/).filter(p=>!/^(de|del|la|las|los|y)$/i.test(p)).slice(0,2).map(p=>p[0]).join('').toUpperCase();
 
 const ETIQUETA = { cumplido:'Cumplido', proceso:'En marcha', debate:'En debate', pendiente:'Pendiente' };
 const activos   = c => c.suenos.filter(s=>s.e!=='cumplido');
@@ -2161,6 +2184,16 @@ pintarComision();
 /* ==========================================================================
    8. BLOQUES Y RESPONSABLES
    ========================================================================== */
+/* equipo directivo del centro */
+$('#equipo-directivo').innerHTML = CDA.equipoDirectivo.map(c=>`
+  <article class="bloque" style="--acc:var(--${c.color})">
+    <h4>${esc(c.cargo)}</h4>
+    <ul class="personas">
+      ${c.personas.map(p=>`<li><span class="avatar">${esc(iniciales(p))}</span>${esc(p)}</li>`).join('')}
+    </ul>
+  </article>
+`).join('');
+
 $('#bloques').innerHTML = CDA.bloques.map(b=>`
   <article class="bloque" style="--acc:var(--${b.color})">
     <h4>${esc(b.nombre)}</h4>

@@ -21,6 +21,7 @@ Está comentado en español y las partes que hay que rellenar a mano llevan la m
 | Qué cambiar | Dónde |
 |---|---|
 | Sueños, estados y comisiones | `CDA.comisiones` |
+| Equipo directivo del centro | `CDA.equipoDirectivo` |
 | Bloques y responsables | `CDA.bloques` |
 | Calendario del curso | `CDA.trimestres` |
 | Datos de coordinación | `CDA.coordinacion` ✏️ |
