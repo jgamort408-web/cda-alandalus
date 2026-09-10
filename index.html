@@ -671,6 +671,31 @@ p{margin:0}
 .grupo--cubierto span{color:var(--salvia)}
 
 /* ==========================================================================
+   LA SEMANA — qué toca cada día y dónde
+   ========================================================================== */
+.tabla-envoltura{
+  overflow-x:auto;border:1px solid var(--linea);border-radius:var(--r-l);
+  background:var(--papel-2);box-shadow:var(--sombra-1);
+}
+.horario{width:100%;min-width:480px;border-collapse:collapse;font-size:.9rem}
+.horario th,.horario td{padding:.75rem 1.1rem;text-align:left;vertical-align:middle;border-bottom:1px solid var(--linea)}
+.horario thead th{
+  font-family:var(--f-ui);font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-3);background:var(--papel-3);border-bottom:1px solid var(--linea-fuerte);
+}
+.horario tbody th{font-weight:700;color:var(--tinta);border-left:4px solid var(--acc)}
+.horario tbody tr:last-child th,.horario tbody tr:last-child td{border-bottom:0}
+.horario tbody tr:hover{background:color-mix(in srgb,var(--acc) 4%,var(--papel-2))}
+.horario small{display:block;font-size:.71rem;font-weight:700;color:var(--tinta-3);margin-top:.35rem}
+.horario .pordeterminar{color:var(--tinta-3);font-style:italic}
+.dias{display:inline-flex;gap:.25rem}
+.dias i{
+  width:25px;height:25px;border-radius:50%;display:grid;place-items:center;font-style:normal;
+  font-size:.69rem;font-weight:800;color:var(--tinta-3);background:var(--papel-3);
+}
+.dias i.on{background:var(--acc);color:#fff}
+
+/* ==========================================================================
    TRIMESTRES
    ========================================================================== */
 .trimestres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
@@ -1321,7 +1346,36 @@ p{margin:0}
     <div class="contenedor">
       <div class="seccion__cab">
         <span class="eyebrow">Plan · segunda pata</span>
-        <h2>El curso, trimestre a trimestre</h2>
+        <h2>Cuándo y dónde</h2>
+        <p>
+          Primero la semana, que es lo que se repite; después el curso entero, trimestre a trimestre.
+        </p>
+      </div>
+
+      <div class="seccion__cab" style="margin-top:0">
+        <span class="eyebrow" style="--acc:var(--turquesa)">La semana</span>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">Qué toca cada día</h2>
+        <p>
+          Los recreos activos, las bibliotecas tutorizadas y los recreos musicales van de lunes a viernes,
+          menos el miércoles. El miércoles, en semanas alternas, es el día de las tertulias y de las comisiones.
+        </p>
+      </div>
+      <div class="tabla-envoltura">
+        <table class="horario">
+          <caption class="sr">Actividades de la semana, días en que se hacen y lugar de reunión</caption>
+          <thead>
+            <tr><th scope="col">Actividad</th><th scope="col">Días</th><th scope="col">Dónde</th></tr>
+          </thead>
+          <tbody id="horario"></tbody>
+        </table>
+      </div>
+      <p style="font-size:.85rem;color:var(--tinta-2);margin-top:1rem">
+        Los sitios marcados como <em>por determinar</em> se cierran en las primeras reuniones del curso.
+      </p>
+
+      <div class="seccion__cab" style="margin-top:3.5rem">
+        <span class="eyebrow">El curso</span>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">Trimestre a trimestre</h2>
         <p>
           Fechas estimadas a partir de las ediciones de cursos anteriores. Despliega cualquier evento
           para ver cuándo se celebró y a qué hora: esa es la mejor pista de cuándo caerá este año.
@@ -1550,7 +1604,7 @@ const CDA = {
       resumen:"El patio deja de ser tiempo muerto: deporte, juegos de mesa, música, biblioteca y actividades interculturales durante el recreo, con alumnado que organiza y que media. Menos conflictos y menos gente sola.",
       claves:["patio","deporte","juegos de mesa","música","aula ATAL","mediación","nadie solo"],
       presenta:["Espacios simultáneos: pistas, mesas de juego, biblioteca abierta y música elegida por el alumnado.","Un recreo a la semana, actividad ligada a la cultura del país que se trabaja en el aula ATAL.","Está abierta a todo el alumnado, no solo al de origen extranjero.","El propio alumnado organiza las ligas y forma el equipo de mediación.","El objetivo es que ningún alumno pase el recreo aislado."] },
-    { id:"cm", resp:["Carmen R.","José M.", "Miguel Ángel", "Loli M.","Montse G.","Sergio G.","Alfonso R.","David M."], nombre:"Comisiones Mixtas", color:"coral", tipo:"exito",
+    { id:"cm", resp:["Carmen R.","José M.", "Miguel Ángel", "Loli M.","José Tomás G.","Montse G.","Sergio G.","Alfonso R.","David M."], nombre:"Comisiones Mixtas", color:"coral", tipo:"exito",
       resumen:"Alumnado, familias, profesorado y personal del centro deciden juntos y en igualdad. Cada comisión recoge los sueños de su ámbito, los prioriza y los convierte en acuerdos con responsable y con plazo.",
       claves:["alumnado","familias","profesorado","acuerdos","sueños","una persona, una voz"],
       presenta:["Cuatro comisiones: Infraestructura y Emprendimiento, Actividades, Convivencia y Formación Profesional.","En la mesa todos los sectores valen lo mismo: no decide el cargo, decide el acuerdo.","De la comisión salen los sueños priorizados, quién se encarga y para cuándo."] },
@@ -1663,7 +1717,7 @@ const CDA = {
         {t:"Poder elegir más personas en la Semana Cultural.",e:"pendiente"}
       ]},
     { id:"conviv", nombre:"Convivencia", color:"frambuesa",
-      responsables:["Loli M."], vacantes:1,
+      responsables:["Loli M.","José Tomás G."], vacantes:0,
       lema:"Cómo nos tratamos.",
       resumen:"Aquí están los sueños que no se compran: respeto, empatía y un centro seguro. También los que se contradicen entre sí —el móvil, por ejemplo— y que justo por eso hay que hablarlos en comisión.",
       suenos:[
@@ -1720,9 +1774,9 @@ const CDA = {
     { nombre:"Bibliotecas Tutorizadas", color:"turquesa", personas:["Antonio G.","José M."] },
     { nombre:"Tertulias Dialógicas, Pedagógicas e Interculturales", color:"frambuesa", personas:["Mar B.","José Miguel M.","Adolfina M."] },
     { nombre:"Recreos Activos", color:"salvia", personas:["Roberto L.","Paqui E."] },
-    { nombre:"Juegos de Mesa", color:"mostaza", personas:[], vacantes:1 },
+    { nombre:"Juegos de Mesa", color:"mostaza", personas:["José Daniel L."], vacantes:0 },
     { nombre:"Comisión de Actividades", color:"mostaza", personas:["Carmen R.","José M.", "Miguel Ángel"], vacantes:0 },
-    { nombre:"Comisión de Convivencia", color:"frambuesa", personas:["Loli M."], vacantes:1 },
+    { nombre:"Comisión de Convivencia", color:"frambuesa", personas:["Loli M.","José Tomás G."], vacantes:0 },
     { nombre:"Comisión de Formación Profesional", color:"salvia", personas:["Montse G.","Sergio G."] },
     { nombre:"Comisión de Infraestructura y Emprendimiento", color:"turquesa", personas:["Alfonso R.","David M."] },
     { nombre:"Redes Sociales", color:"mostaza", personas:["Mar P.","Paula M.","Elena S."] },
@@ -1730,6 +1784,28 @@ const CDA = {
     { nombre:"Proyecto Musical de Timbre y Recreos Musicales", color:"frambuesa", personas:["Mónica G."] },
     { nombre:"Modelo Dialógico de Resolución de Conflictos", color:"salvia", personas:["Rocío P.","Mónica F."] },
     { nombre:"Podcast", color:"turquesa", personas:["Juan B."] }
+  ],
+
+  /* ---------- la semana: qué toca cada día y dónde ----------
+     dias: L M X J V · ritmo: lo que se lee debajo de los círculos
+     pendiente:true pinta el sitio como todavía sin decidir ✏️        */
+  semana:[
+    { actividad:"Recreos Activos", color:"mostaza", dias:["L","M","J","V"], ritmo:"Todas las semanas",
+      lugar:"Patio y pabellón" },
+    { actividad:"Bibliotecas Tutorizadas", color:"salvia", dias:["L","M","J","V"], ritmo:"Todas las semanas",
+      lugar:"Un aula de la segunda planta", pendiente:true },
+    { actividad:"Recreos Musicales", color:"frambuesa", dias:["L","M","J","V"], ritmo:"Todas las semanas",
+      lugar:"", pendiente:true },
+    { actividad:"Tertulias", color:"frambuesa", dias:["X"], ritmo:"Miércoles alternos",
+      lugar:"Biblioteca" },
+    { actividad:"Comisión de Actividades", color:"mostaza", dias:["X"], ritmo:"Miércoles alternos",
+      lugar:"Aula de plástica" },
+    { actividad:"Comisión de Convivencia", color:"frambuesa", dias:["X"], ritmo:"Miércoles alternos",
+      lugar:"Un aula de la primera planta", pendiente:true },
+    { actividad:"Comisión de Infraestructura y Emprendimiento", color:"turquesa", dias:["X"], ritmo:"Miércoles alternos",
+      lugar:"", pendiente:true },
+    { actividad:"Comisión de Formación Profesional", color:"salvia", dias:["X"], ritmo:"Miércoles alternos",
+      lugar:"", pendiente:true }
   ],
 
   /* ---------- calendario por trimestres ---------- */
@@ -2224,6 +2300,31 @@ $('#enlace-pendientes').textContent =
   enlacesLibres.length === 0 ? 'Ya están todos los grupos cubiertos.'
   : enlacesLibres.length === 1 ? `Solo queda por cubrir ${enlacesLibres[0]}.`
   : `Quedan por cubrir ${enlacesLibres.slice(0,-1).join(', ')} y ${enlacesLibres.at(-1)}.`;
+
+/* ==========================================================================
+   8 bis. LA SEMANA
+   ========================================================================== */
+const DIAS = [['L','lunes'],['M','martes'],['X','miércoles'],['J','jueves'],['V','viernes']];
+
+$('#horario').innerHTML = CDA.semana.map(f=>{
+  const nombres = DIAS.filter(([d])=>f.dias.includes(d)).map(([,n])=>n);
+  const listado = nombres.length > 1
+    ? `${nombres.slice(0,-1).join(', ')} y ${nombres.at(-1)}`
+    : nombres[0];
+  const sitio = f.lugar
+    ? esc(f.lugar) + (f.pendiente ? ' <span class="pordeterminar">(por determinar)</span>' : '')
+    : '<span class="pordeterminar">Por determinar</span>';
+  return `
+  <tr style="--acc:var(--${f.color})">
+    <th scope="row">${esc(f.actividad)}</th>
+    <td>
+      <span class="dias">${DIAS.map(([d])=>`<i class="${f.dias.includes(d)?'on':''}" aria-hidden="true">${d}</i>`).join('')}</span>
+      <span class="sr">${esc(listado)}</span>
+      <small>${esc(f.ritmo)}</small>
+    </td>
+    <td>${sitio}</td>
+  </tr>`;
+}).join('');
 
 /* ==========================================================================
    9. TRIMESTRES
