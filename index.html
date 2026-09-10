@@ -11,7 +11,7 @@
 <link rel="canonical" href="https://jgamort408-web.github.io/cda-alandalus/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Comunidad de Aprendizaje · IES Al-Ándalus">
-<meta name="keywords" content="comunidades de aprendizaje, IES Al-Ándalus, Almería, grupos interactivos, tertulias dialógicas, bibliotecas tutorizadas, recreos activos, comisiones mixtas, aprendizaje dialógico, fase del sueño">
+<meta name="keywords" content="comunidades de aprendizaje, IES Al-Ándalus, Almería, grupos interactivos, tertulias dialógicas, tertulias interculturales, bibliotecas tutorizadas, recreos activos, comisiones mixtas, aprendizaje dialógico, fase del sueño">
 <meta name="theme-color" content="#F3F6F6" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0B1822" media="(prefers-color-scheme: dark)">
 
@@ -1300,14 +1300,15 @@ p{margin:0}
         <span class="eyebrow" style="--acc:var(--coral)">Se busca profesorado</span>
         <h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">Profesorado enlace de cada grupo</h2>
         <p>
-          Hace falta una persona por grupo de 1.º y 2.º de ESO que se encargue de que toda la información
+          Una persona por grupo de 1.º y 2.º de ESO se encarga de que toda la información
           de Comunidades de Aprendizaje llegue de verdad a su alumnado: los sueños, las actividades, las
           fechas y cómo sumar puntos. Sin ese puente, lo que se decide en comisión no baja al aula.
+          <strong id="enlace-pendientes"></strong>
         </p>
       </div>
       <div class="grupos" id="grupos-enlace"></div>
       <p style="font-size:.85rem;color:var(--tinta-2);margin-top:1rem">
-        ¿Te encargas de uno? Escribe a <a id="enlace-correo" href="#coordinacion">coordinación</a>
+        ¿Te encargas tú? Escribe a <a id="enlace-correo" href="#coordinacion">coordinación</a>
         diciendo qué grupo prefieres.
       </p>
 
@@ -1432,7 +1433,7 @@ p{margin:0}
     <div>
       <span class="eyebrow">Curso 2026-2027</span>
       <h2 id="equipo-tit">Coordinadores y coordinadoras de bloques</h2>
-      <p id="equipo-sub">Doce bloques y las personas que los sostienen.</p>
+      <p id="equipo-sub">Catorce bloques y las personas que los sostienen.</p>
     </div>
     <div style="display:flex;gap:.5rem;flex-wrap:wrap">
       <button class="btn btn--linea btn--mini" id="btn-nombres" aria-pressed="false">Ver los nombres en texto</button>
@@ -1537,18 +1538,18 @@ const CDA = {
       resumen:"El aula se divide en grupos pequeños y heterogéneos. En cada uno hay una persona voluntaria que no explica: dinamiza para que el alumnado se ayude entre sí. Cada 10 o 15 minutos, los grupos rotan de actividad.",
       claves:["heterogéneo","voluntariado","10-15 minutos","rotación","solidaridad","inclusión"],
       presenta:["Cuatro o cinco grupos por aula, cada uno con una actividad distinta y una persona adulta que dinamiza.","El voluntariado no corrige ni explica: pregunta, reparte turnos y cuida que todo el mundo participe.","En una sola hora, cada alumno pasa por cuatro actividades y cuatro dinamizaciones diferentes."] },
-    { id:"td", resp:["Mar B.","José Miguel M."], nombre:"Tertulias Dialógicas y Pedagógicas", color:"frambuesa", tipo:"exito",
-      resumen:"Se lee un clásico universal y cada persona trae subrayado el párrafo que le ha removido. Nadie interpreta por encima de nadie: manda el argumento, no la autoridad de quien habla.",
-      claves:["clásicos universales","turno de palabra","moderación","argumento","escucha","igualdad"],
-      presenta:["Se acuerda entre todos hasta dónde se lee, y cada participante elige un fragmento y lo justifica.","Una persona modera, da los turnos y prioriza a quien menos ha intervenido.","El principio fundamental es el de diálogo igualitario."] },
+    { id:"td", resp:["Mar B.","José Miguel M.","Adolfina M."], nombre:"Tertulias Dialógicas, Pedagógicas e Interculturales", color:"frambuesa", tipo:"exito",
+      resumen:"Se lee un texto compartido y cada persona trae subrayado el párrafo que le ha removido. Nadie interpreta por encima de nadie: manda el argumento, no la autoridad de quien habla. Junto a los clásicos universales están las tertulias interculturales, que se hacen en varios idiomas.",
+      claves:["clásicos universales","varios idiomas","tradición oral","turno de palabra","argumento","igualdad"],
+      presenta:["Se acuerda entre todos hasta dónde se lee, y cada participante elige un fragmento y lo justifica.","Una persona modera, da los turnos y prioriza a quien menos ha intervenido.","Las interculturales se hacen en varios idiomas, y no siempre sobre clásicos universales.","También se leen textos de tradición oral, o escritos por los propios participantes a partir de ellos.","De los clásicos universales hay adaptaciones, pero solo en castellano.","El principio fundamental es el de diálogo igualitario."] },
     { id:"bt", resp:["Antonio G.","José M."], nombre:"Bibliotecas Tutorizadas", color:"salvia", tipo:"exito",
       resumen:"La biblioteca abre en los recreos con acompañamiento del profesorado voluntario. Es tiempo extra de aprendizaje para quien lo necesita, sin sacar a nadie de su grupo y sin bajarle el nivel a nadie.",
       claves:["recreo","acompañamiento","más tiempo","trabajo entre iguales","lectura","refuerzo"],
       presenta:["Ampliar el tiempo de aprendizaje en lugar de recortar el currículum: ese es el criterio.","Profesorado voluntario y alumnado mayor acompañan tareas, lecturas y estudio.","Trabajo entre iguales: quien ya lo ha entendido se lo explica a quien todavía no.","Es el marco donde vamos a poner en marcha el alumnado cotutor."] },
     { id:"ra", resp:["Roberto L.","Paqui E."], nombre:"Recreos Activos", color:"mostaza", tipo:"exito",
-      resumen:"El patio deja de ser tiempo muerto: deporte, juegos de mesa, música y biblioteca durante el recreo, con alumnado que organiza y que media. Menos conflictos y menos gente sola.",
-      claves:["patio","deporte","juegos de mesa","música","mediación","nadie solo"],
-      presenta:["Espacios simultáneos: pistas, mesas de juego, biblioteca abierta y música elegida por el alumnado.","El propio alumnado organiza las ligas y forma el equipo de mediación.","El objetivo es que ningún alumno pase el recreo aislado."] },
+      resumen:"El patio deja de ser tiempo muerto: deporte, juegos de mesa, música, biblioteca y actividades interculturales durante el recreo, con alumnado que organiza y que media. Menos conflictos y menos gente sola.",
+      claves:["patio","deporte","juegos de mesa","música","aula ATAL","mediación","nadie solo"],
+      presenta:["Espacios simultáneos: pistas, mesas de juego, biblioteca abierta y música elegida por el alumnado.","Un recreo a la semana, actividad ligada a la cultura del país que se trabaja en el aula ATAL.","Está abierta a todo el alumnado, no solo al de origen extranjero.","El propio alumnado organiza las ligas y forma el equipo de mediación.","El objetivo es que ningún alumno pase el recreo aislado."] },
     { id:"cm", resp:["Carmen R.","José M.", "Miguel Ángel", "Loli M.","Montse G.","Sergio G.","Alfonso R.","David M."], nombre:"Comisiones Mixtas", color:"coral", tipo:"exito",
       resumen:"Alumnado, familias, profesorado y personal del centro deciden juntos y en igualdad. Cada comisión recoge los sueños de su ámbito, los prioriza y los convierte en acuerdos con responsable y con plazo.",
       claves:["alumnado","familias","profesorado","acuerdos","sueños","una persona, una voz"],
@@ -1713,11 +1714,11 @@ const CDA = {
     { cargo:"Secretaría",          color:"salvia",   personas:["Jesús Jorge C."] }
   ],
 
-  /* ---------- los doce bloques y sus responsables ---------- */
+  /* ---------- los catorce bloques y sus responsables ---------- */
   bloques:[
     { nombre:"Grupos Interactivos", color:"turquesa", personas:["Carmen R."] },
     { nombre:"Bibliotecas Tutorizadas", color:"turquesa", personas:["Antonio G.","José M."] },
-    { nombre:"Tertulias Dialógicas y Pedagógicas", color:"frambuesa", personas:["Mar B.","José Miguel M."] },
+    { nombre:"Tertulias Dialógicas, Pedagógicas e Interculturales", color:"frambuesa", personas:["Mar B.","José Miguel M.","Adolfina M."] },
     { nombre:"Recreos Activos", color:"salvia", personas:["Roberto L.","Paqui E."] },
     { nombre:"Juegos de Mesa", color:"mostaza", personas:[], vacantes:1 },
     { nombre:"Comisión de Actividades", color:"mostaza", personas:["Carmen R.","José M.", "Miguel Ángel"], vacantes:0 },
@@ -1866,13 +1867,15 @@ const CDA = {
 
   /* ✏️ EDITA AQUÍ — profesorado enlace de cada grupo.
      Escribe el nombre entre las comillas cuando alguien se encargue del grupo. */
+  /* «cubierto» marca el grupo que ya tiene a alguien cuando todavía no publicamos el nombre.
+     Si se pone el nombre en «persona», el grupo cuenta como cubierto sin necesidad de la marca. */
   gruposEnlace:[
-    { grupo:"1.º ESO A", persona:"" },
-    { grupo:"1.º ESO B", persona:"" },
-    { grupo:"1.º ESO C", persona:"" },
-    { grupo:"2.º ESO A", persona:"" },
+    { grupo:"1.º ESO A", persona:"", cubierto:true },
+    { grupo:"1.º ESO B", persona:"", cubierto:true },
+    { grupo:"1.º ESO C", persona:"", cubierto:true },
+    { grupo:"2.º ESO A", persona:"", cubierto:true },
     { grupo:"2.º ESO B", persona:"" },
-    { grupo:"2.º ESO C", persona:"" }
+    { grupo:"2.º ESO C", persona:"", cubierto:true }
   ],
 
   /* ideas de reto colaborativo: acreditan a un equipo mixto entero, no a una persona */
@@ -1908,7 +1911,7 @@ const CDA = {
   /* ---------- imagen final a pantalla completa ---------- */
   equipo:{
     titulo:"Coordinadores y coordinadoras de bloques",
-    entradilla:"Doce bloques y las personas que los sostienen. Detrás de cada sueño cumplido hay alguien que se encargó de que pasara.",
+    entradilla:"Catorce bloques y las personas que los sostienen. Detrás de cada sueño cumplido hay alguien que se encargó de que pasara.",
     imagen:"assets/coordinadores-bloques.png",
     pie:"Comunidad de Aprendizaje · IES Al-Ándalus · Almería"
   }
@@ -1921,6 +1924,9 @@ const $  = (s,c=document)=>c.querySelector(s);
 const $$ = (s,c=document)=>[...c.querySelectorAll(s)];
 const esc = t => String(t).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 const menos = matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* un grupo está cubierto si tiene nombre o si lleva la marca «cubierto» */
+const enlaceCubierto = g => !!(g.persona || g.cubierto);
+
 /* «María del Mar R.» → MM: las partículas no cuentan como nombre */
 const iniciales = n => n.split(/\s+/).filter(p=>!/^(de|del|la|las|los|y)$/i.test(p)).slice(0,2).map(p=>p[0]).join('').toUpperCase();
 
@@ -1968,7 +1974,7 @@ const totalActivos = CDA.comisiones.reduce((a,c)=>a+c.suenos.filter(s=>s.e!=='cu
 pintarCifras('#cifras-plan',[
   {v:totalActivos, k:'sueños en el plan', color:'turquesa'},
   {v:totalPersonas, k:'personas al frente', color:'coral'},
-  {v:totalVacantes + CDA.gruposEnlace.filter(g=>!g.persona).length, k:'plazas libres', color:'mostaza'},
+  {v:totalVacantes + CDA.gruposEnlace.filter(g=>!enlaceCubierto(g)).length, k:'plazas libres', color:'mostaza'},
   {v:CDA.app.modulos.length, k:'piezas nuevas de la app', color:'azul'}
 ]);
 
@@ -2207,10 +2213,17 @@ $('#bloques').innerHTML = CDA.bloques.map(b=>`
 
 /* profesorado enlace de cada grupo de 1.º y 2.º de ESO */
 $('#grupos-enlace').innerHTML = CDA.gruposEnlace.map(g=>`
-  <article class="grupo ${g.persona ? 'grupo--cubierto' : 'grupo--libre'}">
+  <article class="grupo ${enlaceCubierto(g) ? 'grupo--cubierto' : 'grupo--libre'}">
     <b>${esc(g.grupo)}</b>
-    <span>${g.persona ? esc(g.persona) : 'Plaza libre'}</span>
+    <span>${enlaceCubierto(g) ? esc(g.persona || 'Cubierto') : 'Plaza libre'}</span>
   </article>`).join('');
+
+/* la frase de arriba se escribe sola a partir de los grupos que falten */
+const enlacesLibres = CDA.gruposEnlace.filter(g=>!enlaceCubierto(g)).map(g=>g.grupo);
+$('#enlace-pendientes').textContent =
+  enlacesLibres.length === 0 ? 'Ya están todos los grupos cubiertos.'
+  : enlacesLibres.length === 1 ? `Solo queda por cubrir ${enlacesLibres[0]}.`
+  : `Quedan por cubrir ${enlacesLibres.slice(0,-1).join(', ')} y ${enlacesLibres.at(-1)}.`;
 
 /* ==========================================================================
    9. TRIMESTRES
