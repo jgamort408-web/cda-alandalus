@@ -8,20 +8,23 @@
      —quien tenga la dirección entra—, pero así no aparece en Google. La otra
      mitad del apaño está en el robots.txt del sitio. -->
 <meta name="robots" content="noindex, nofollow">
-<title>Vuestra participación tiene premio · CdA IES Al-Ándalus</title>
+<title>Vuestra participación suma · CdA IES Al-Ándalus</title>
 <!--
     Mensaje para las familias, para enlazar desde Séneca.
 
     Pensado para leerse EN EL MÓVIL, que es donde lo van a abrir. Sin fuentes
-    externas, sin scripts y sin nada que descargar: todo está en este fichero o
-    en la carpeta «capturas» de al lado.
+    externas, sin scripts y sin nada que descargar.
 
-    Las familias de este centro YA SABEN lo que es una Comunidad de
-    Aprendizaje: aquí no se les explica, se les dice lo que hay que hacer.
+    Dos cosas se evitan a propósito:
+
+      · NO se nombra ninguna recompensa concreta. El catálogo se va a
+        construir a lo largo del curso, y nombrar cosas ahora es
+        comprometerlas. La captura del catálogo lleva su aviso.
+      · NO se usan «premio» ni «regalar». Los créditos se suman participando,
+        no se regalan, y decirlo de otro modo cuenta otra historia.
 
     Las monedas son las de verdad, sacadas del componente <x-moneda> con
-    `php artisan tinker herramientas/seneca/monedas.php`. Una moneda repintada
-    «parecida» se desincroniza al primer retoque.
+    `php artisan tinker herramientas/seneca/monedas.php`.
 -->
 <style>
     *,*::before,*::after{box-sizing:border-box}
@@ -39,7 +42,6 @@
     .bloque{padding:26px 20px}
     h1,h2,h3{margin:0; line-height:1.25; text-wrap:balance}
 
-    /* ── Portada ─────────────────────────────────────────────────────── */
     .portada{
         background:linear-gradient(160deg,#0D2560 0%,#173A82 55%,#2050A0 100%);
         color:#fff; padding:34px 20px 30px; text-align:center;
@@ -49,7 +51,6 @@
     .portada h1{font-size:31px; font-weight:800; letter-spacing:-.01em}
     .portada p{margin:14px 0 0; font-size:16.5px; line-height:1.55; color:#D6E2F7}
 
-    /* ── El mecanismo, en tres golpes ────────────────────────────────── */
     .mecanismo{display:flex; flex-direction:column; gap:10px; margin:0}
     .mec{
         display:flex; align-items:center; gap:13px; border:2px solid var(--linea);
@@ -61,11 +62,7 @@
         font-size:17px; font-weight:800;
     }
     .mec span{font-size:15.5px; line-height:1.45; font-weight:600}
-    .remate{
-        margin:14px 0 0; text-align:center; font-size:17px; font-weight:800; color:var(--verde);
-    }
 
-    /* ── Secciones ───────────────────────────────────────────────────── */
     .titulo-seccion{
         font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
         color:var(--suave); margin:0 0 6px;
@@ -73,7 +70,6 @@
     h2.grande{font-size:25px; font-weight:800; margin:0 0 6px}
     .entradilla{margin:0 0 18px; color:var(--suave); font-size:15.5px}
 
-    /* ── Listas de golpe ─────────────────────────────────────────────── */
     ul.lista{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:7px}
     ul.lista li{
         display:flex; gap:10px; align-items:flex-start; background:#F1FBF4;
@@ -83,13 +79,9 @@
     ul.lista li::before{content:"✔"; color:var(--verde); font-weight:800; flex:0 0 auto}
     ul.lista li em{font-style:normal; color:var(--suave); font-weight:600; font-size:13.5px}
 
-    /* ── La rúbrica ──────────────────────────────────────────────────── */
-    .rubrica{
-        display:block; width:100%; height:auto; margin:16px 0 0;
-        border:2px solid var(--linea); border-radius:14px;
-    }
+    .rubrica{display:block; width:100%; height:auto; margin:16px 0 0;
+        border:2px solid var(--linea); border-radius:14px}
 
-    /* ── Las dos monedas ─────────────────────────────────────────────── */
     .moneda-ficha{border:2px solid var(--linea); border-radius:18px; padding:18px; margin:0 0 14px}
     .moneda-ficha--acad{border-color:#F0C98A; background:#FFFBF2}
     .moneda-ficha--com{border-color:#A8D9E6; background:#F2FBFD}
@@ -111,7 +103,6 @@
         font-size:15.5px; line-height:1.5;
     }
 
-    /* ── Pasos ───────────────────────────────────────────────────────── */
     .paso{margin:0 0 24px}
     .paso:last-child{margin-bottom:0}
     .paso-cab{display:flex; align-items:flex-start; gap:12px; margin-bottom:11px}
@@ -123,7 +114,6 @@
     .paso-cab h3{font-size:18px; font-weight:800; padding-top:4px}
     .paso p{margin:0 0 11px; font-size:15px; line-height:1.5}
 
-    /* ── Capturas ────────────────────────────────────────────────────── */
     figure{margin:0}
     .pantalla{
         display:block; width:100%; max-width:270px; margin:0 auto; height:auto;
@@ -136,23 +126,14 @@
         line-height:1.45; color:var(--suave); font-weight:600;
     }
 
-    /* ── Tabla de recompensas ────────────────────────────────────────── */
-    .tabla-envoltorio{overflow-x:auto; margin:16px 0 0}
-    table{border-collapse:collapse; width:100%; font-size:14px}
-    caption{caption-side:bottom; padding-top:10px; font-size:13px; color:var(--verde);
-        text-align:left; font-weight:700}
-    th,td{padding:9px 10px; text-align:left; border-bottom:1px solid var(--linea)}
-    thead th{
-        background:var(--azul); color:#fff; font-size:11px; font-weight:800;
-        letter-spacing:.06em; text-transform:uppercase; border-bottom:0;
+    /* El aviso de que el catálogo está a medias: en ámbar, que es el color de
+       lo que está avisando en toda la aplicación. */
+    .enobras{
+        margin:16px 0 0; border:2px solid #F2C879; background:#FFF6E5; color:#7A4E07;
+        border-radius:14px; padding:16px 18px; font-size:15px; line-height:1.55;
     }
-    thead th:first-child{border-radius:9px 0 0 0}
-    thead th:last-child{border-radius:0 9px 0 0}
-    tbody tr:nth-child(even){background:#FAFBFE}
-    td.veces{font-weight:800; color:var(--verde); text-align:center; white-space:nowrap}
-    td.puntos{font-weight:800; color:var(--cian); text-align:center}
+    .enobras strong{color:#6B4A00}
 
-    /* ── Correo / aviso / cierre ─────────────────────────────────────── */
     .correo{margin:16px 0 0; text-align:center; background:var(--azul); color:#fff;
         border-radius:16px; padding:20px 18px}
     .correo p{margin:0 0 12px; font-size:15px; line-height:1.5; color:#D6E2F7}
@@ -183,27 +164,26 @@
     <!-- ══ Portada ══════════════════════════════════════════════════ -->
     <header class="portada">
         <p class="sello">Comunidad de Aprendizaje · IES Al-Ándalus</p>
-        <h1>Vuestra participación<br>ya tiene premio</h1>
-        <p>Venís al instituto. Ganáis créditos.<br>Vuestro hijo o hija los cambia por algo que le apetece.</p>
+        <h1>Vuestra participación<br>suma</h1>
+        <p>Participáis en el instituto. Sumáis créditos.<br>Vuestro hijo o hija consigue recompensas.</p>
     </header>
 
     <!-- ══ El mecanismo ═════════════════════════════════════════════ -->
     <section class="bloque">
         <div class="mecanismo">
-            <div class="mec"><b>1</b><span>Venís a lo que sea: un grupo interactivo, una tertulia, una fiesta. <strong>5 créditos.</strong></span></div>
-            <div class="mec"><b>2</b><span>Se los pasáis con un código desde el móvil.</span></div>
-            <div class="mec"><b>3</b><span>Los cambia por lo que quiera del catálogo.</span></div>
+            <div class="mec"><b>1</b><span>Participáis en una actividad del centro. <strong>5 créditos.</strong></span></div>
+            <div class="mec"><b>2</b><span>Esos créditos pasan a vuestro hijo o hija desde el móvil.</span></div>
+            <div class="mec"><b>3</b><span>Con ellos entra en el catálogo del centro y elige.</span></div>
         </div>
-        <p class="remate">Ya está. Eso es todo.</p>
     </section>
 
     <hr class="sep">
 
-    <!-- ══ Dónde se ganan ═══════════════════════════════════════════ -->
+    <!-- ══ Dónde se suman ═══════════════════════════════════════════ -->
     <section class="bloque">
-        <p class="titulo-seccion">Dónde los ganáis</p>
-        <h2 class="grande">5 créditos por cada vez que venís</h2>
-        <p class="entradilla">No hay que preparar nada ni saber de nada. Se explica al llegar.</p>
+        <p class="titulo-seccion">Dónde se suman</p>
+        <h2 class="grande">5 créditos cada vez que participáis</h2>
+        <p class="entradilla">No hace falta preparar nada ni saber de nada. Se explica al llegar.</p>
 
         <ul class="lista">
             <li>Grupos interactivos</li>
@@ -212,7 +192,7 @@
             <li>Asamblea de delegados</li>
             <li>Consejo escolar</li>
             <li>Fiesta del Sueño <em>· 1.er trimestre — 5 por familiar, hasta 25</em></li>
-            <li>Semana Cultural <em>· 2.º trimestre — venir u organizar, hasta 25</em></li>
+            <li>Semana Cultural <em>· 2.º trimestre — participar u organizar, hasta 25</em></li>
             <li>Fiesta de las Familias <em>· 3.er trimestre — 5 por familiar, hasta 25</em></li>
             <li>Cualquier otra actividad de la comunidad <em>· hasta 5 por sesión</em></li>
         </ul>
@@ -221,6 +201,36 @@
             <img class="rubrica" src="capturas/12-rubrica-familias.jpg"
                  alt="Rúbrica de Participación Familias, curso 2026-2027: las nueve formas de conseguir créditos y cuántos da cada una.">
             <figcaption>La rúbrica del curso, para tenerla a mano.</figcaption>
+        </figure>
+    </section>
+
+    <hr class="sep">
+
+    <!-- ══ Las recompensas ══════════════════════════════════════════ -->
+    <section class="bloque">
+        <p class="titulo-seccion">Para qué sirven</p>
+        <h2 class="grande">Las recompensas</h2>
+        <p class="entradilla">
+            Con esos créditos, vuestro hijo o vuestra hija entra en el catálogo del centro
+            y elige lo que quiere.
+        </p>
+
+        <div class="enobras">
+            <strong>El catálogo todavía se está construyendo</strong>, y seguirá creciendo
+            durante todo el curso con lo que vaya haciendo falta. Por eso aquí no aparece
+            ninguna recompensa concreta: lo que veáis en las imágenes es solo un ejemplo
+            de cómo se verá.
+        </div>
+
+        <p style="margin:18px 0 0; font-size:16px; line-height:1.55">
+            <strong>Las más sencillas cuestan 5 créditos.</strong> Es decir: con una sola
+            participación vuestra, ya puede pedir la primera.
+        </p>
+
+        <figure style="margin-top:18px">
+            <img class="pantalla" src="capturas/08-alumno-recompensas.png"
+                 alt="El catálogo de recompensas del alumnado, con su saldo de créditos arriba.">
+            <figcaption>Un ejemplo del catálogo, aún en construcción.</figcaption>
         </figure>
     </section>
 
@@ -249,13 +259,13 @@
                     <span class="moneda-quien">Solo los consigue el alumnado</span>
                 </div>
             </div>
-            <p>Se los gana él o ella con su trabajo. No se compran ni se regalan.</p>
+            <p>Se los gana él o ella con su trabajo. Dependen solo de su esfuerzo.</p>
             <strong class="clave">Al llegar a 50, +1 en la nota final de todas las materias.</strong>
         </article>
 
         <article class="moneda-ficha moneda-ficha--com">
             <div class="moneda-cab">
-                <svg viewBox="0 0 48 48" role="img" aria-label="Puntos comunitarios">
+                <svg viewBox="0 0 48 48" role="img" aria-label="Créditos comunitarios">
                     <circle cx="24" cy="24" r="23" fill="#1F7A93"/>
                     <circle cx="24" cy="24" r="19.5" fill="#F1FAFC"/>
                     <circle cx="24" cy="24" r="19.5" fill="none" stroke="#1F7A93" stroke-opacity=".3" stroke-width="1.4"/>
@@ -267,52 +277,52 @@
                 </svg>
                 <div>
                     <h3>Créditos comunitarios</h3>
-                    <span class="moneda-quien">Solo los conseguís vosotros</span>
+                    <span class="moneda-quien">Solo los sumáis vosotros</span>
                 </div>
             </div>
-            <p>Los ganáis participando y se los pasáis con un código.</p>
+            <p>Se suman participando y pasan a vuestro hijo o hija con un código.</p>
             <strong class="clave">Sirven solo para recompensas. No suben ninguna nota.</strong>
         </article>
 
         <p class="subraya">
-            Dicho claro: <strong>participar no le sube la nota a nadie</strong>. La nota se la gana
-            él o ella. Lo vuestro abre otra puerta —la de las recompensas— y <strong>esa solo la
-            abrís vosotros</strong>.
+            Dicho claro: <strong>participar no le sube la nota a nadie</strong>. La nota se la
+            gana él o ella. Lo vuestro abre otra puerta —la de las recompensas— y
+            <strong>esa solo se abre participando</strong>.
         </p>
 
         <figure style="margin-top:18px">
             <img class="pantalla" src="capturas/11-alumno-escritorio.png"
-                 alt="Pantalla del alumnado con las dos monedas: 38 de 50 puntos académicos y los créditos comunitarios.">
+                 alt="Pantalla del alumnado con las dos monedas: los puntos académicos y los créditos comunitarios, por separado.">
             <figcaption>Así lo ve vuestro hijo o hija: las dos monedas, separadas.</figcaption>
         </figure>
     </section>
 
     <hr class="sep">
 
-    <!-- ══ Cómo se los pasáis ═══════════════════════════════════════ -->
+    <!-- ══ Cómo pasan los créditos ══════════════════════════════════ -->
     <section class="bloque">
         <p class="titulo-seccion">Con el móvil, en un minuto</p>
-        <h2 class="grande">Cómo se los pasáis</h2>
+        <h2 class="grande">Cómo le llegan</h2>
 
         <div class="paso">
             <div class="paso-cab"><span class="paso-num">1</span><h3>Miráis a qué apuntaros</h3></div>
-            <p>Cada actuación dice el día, lo que dura y los créditos que da.</p>
+            <p>Cada actividad dice el día, lo que dura y los créditos que suma.</p>
             <figure>
                 <img class="pantalla" src="capturas/03-familia-oportunidades.png"
-                     alt="Lista de actuaciones abiertas con su fecha, sus horas y los créditos que da cada una.">
+                     alt="Lista de actividades abiertas con su fecha, sus horas y los créditos que suma cada una.">
                 <figcaption>Lo que hay abierto, con sus créditos al lado.</figcaption>
             </figure>
         </div>
 
         <div class="paso">
-            <div class="paso-cab"><span class="paso-num">2</span><h3>Generáis el vale</h3></div>
+            <div class="paso-cab"><span class="paso-num">2</span><h3>Creáis el vale</h3></div>
             <p>Elegís cuántos créditos le pasáis y sale un código con QR. Sin nombres y de un solo uso.</p>
             <figure>
                 <div class="par">
                     <img class="pantalla" src="capturas/05-familia-traspasar.png"
-                         alt="Pantalla para traspasar créditos, con el saldo y el botón de generar vale.">
+                         alt="Pantalla para pasar créditos, con el saldo y el botón de crear el vale.">
                     <img class="pantalla" src="capturas/06-familia-vale-qr.png"
-                         alt="El vale generado, con su código QR, su código escrito y los créditos que lleva.">
+                         alt="El vale creado, con su código QR, su código escrito y los créditos que lleva.">
                 </div>
                 <figcaption>Elegís la cantidad y sale el vale con su QR.</figcaption>
             </figure>
@@ -331,51 +341,17 @@
 
     <hr class="sep">
 
-    <!-- ══ Qué se lleva ═════════════════════════════════════════════ -->
-    <section class="bloque">
-        <p class="titulo-seccion">Y esto es lo que se lleva</p>
-        <h2 class="grande">Qué puede pedir</h2>
-        <p class="entradilla">Cada recompensa dice cuántas veces tenéis que venir. Sin cuentas.</p>
-
-        <div class="tabla-envoltorio">
-            <table>
-                <caption>Con venir UNA vez ya hay algo que pedir. No hay que esperar a juntar nada.</caption>
-                <thead>
-                    <tr><th>Veces</th><th>Pts.</th><th>Qué se lleva</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td class="veces">1</td><td class="puntos">5</td><td>Elegir la música del recreo · Un diploma firmado</td></tr>
-                    <tr><td class="veces">2</td><td class="puntos">10</td><td>Un día con la mesa de futbolín · Dos mañanas en el huerto</td></tr>
-                    <tr><td class="veces">3</td><td class="puntos">15</td><td>Su foto en el tablón de honor · Imprimir su modelo 3D</td></tr>
-                    <tr><td class="veces">4</td><td class="puntos">20</td><td>Un día sin deberes</td></tr>
-                    <tr><td class="veces">5</td><td class="puntos">25</td><td>Delegado una semana · Elegir su sitio en clase una semana</td></tr>
-                    <tr><td class="veces">6-8</td><td class="puntos">30-40</td><td>Dirigir una tutoría · El libro que elija · Padrino de lectura</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <figure style="margin-top:20px">
-            <div class="par">
-                <img class="pantalla" src="capturas/08-alumno-recompensas.png"
-                     alt="Catálogo de recompensas del alumnado, con el saldo arriba y la primera recompensa.">
-                <img class="pantalla" src="capturas/09-alumno-recompensas-mas.png"
-                     alt="Más recompensas, cada una con las participaciones que cuesta.">
-            </div>
-            <figcaption>En verde, bajo cada recompensa: «Tu familia lo consigue con…».</figcaption>
-        </figure>
-    </section>
-
-    <hr class="sep">
-
     <!-- ══ Ideas ════════════════════════════════════════════════════ -->
     <section class="bloque">
-        <p class="titulo-seccion">Esto no está cerrado</p>
-        <h2 class="grande">Faltan recompensas por inventar</h2>
-        <p class="entradilla" style="margin-bottom:0">La lista irá creciendo con lo que vaya haciendo falta.</p>
+        <p class="titulo-seccion">Se admiten propuestas</p>
+        <h2 class="grande">Ayudadnos a construirlo</h2>
+        <p class="entradilla" style="margin-bottom:0">
+            El catálogo lo vamos a ir haciendo entre todos a lo largo del curso.
+        </p>
 
         <div class="correo">
-            <p>¿Se os ocurre una que esté bien? Escribidnos. La estudiamos y, si encaja y no da
-               problemas, la metemos en la aplicación.</p>
+            <p>¿Se os ocurre alguna recompensa que encaje? Escribidnos. La estudiamos y, si
+               encaja y no da problemas, la metemos en la aplicación.</p>
             <a href="mailto:cda@iesalandalus.org">cda@iesalandalus.org</a>
         </div>
     </section>
