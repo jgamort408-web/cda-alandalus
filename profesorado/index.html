@@ -219,9 +219,9 @@
           </div>
         </div>
         <p>Sirven para pedir recompensas y <strong>no suman nota</strong>. Cada vez que un
-           familiar participa gana 5, y se los pasa a un estudiante del centro para que los use.</p>
+           familiar participa gana 5, y se los pasa a un hijo o una hija para que los use.</p>
         <span class="moneda__clave">
-          5 puntos por cada participación de un familiar<br>
+          5 puntos por cada participación de alguien de la familia<br>
           2.º de Bach. y 2.º de SMR ganan aquí la misma cantidad que los demás en académicos
         </span>
       </div>
@@ -241,7 +241,7 @@
     <p class="rotulo">Dónde se ganan</p>
     <h2 class="titulo">Dos tablas, porque son dos monedas</h2>
     <p class="entradilla">
-      La misma actividad da <strong>puntos académicos</strong> a un estudiante y
+      La misma actividad da <strong>puntos académicos</strong> a quien estudia aquí y
       <strong>puntos comunitarios</strong> a un familiar. No decide la actividad: decide quién
       participa. Por eso cada cantidad lleva su moneda al lado.
     </p>
@@ -264,7 +264,7 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>Consejo escolar</strong><br><small style="color:var(--muted)">El alumnado que representa a sus compañeros</small></td>
+            <td><strong>Consejo escolar</strong><br><small style="color:var(--muted)">El alumnado que representa a sus compañeros y compañeras</small></td>
             <td><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>4</span><br><small style="color:var(--muted)">por sesión</small></td>
             <td>Cuando se convoca una sesión.</td>
             <td>Los representantes del alumnado</td>
@@ -303,7 +303,7 @@
             <td><strong>Grupo interactivo</strong><br><small style="color:var(--muted)">Haciendo de voluntario o voluntaria en una mesa</small></td>
             <td><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>3</span><br><small style="color:var(--muted)">cada vez</small></td>
             <td>En las aulas, cuando se convocan.</td>
-            <td>Solo lo asigna la coordinación de grupos interactivos. <strong>Por asistir sin más no se ganan puntos</strong></td>
+            <td><strong>Solo el alumnado de Bachillerato y de SMR.</strong> Lo asigna la coordinación de grupos interactivos; por asistir sin más no se ganan puntos</td>
           </tr>
         </tbody>
       </table>
@@ -313,6 +313,12 @@
       <strong>¿Hay un máximo de puntos por actividad?</strong> Se decidirá según las necesidades del
       centro, y quedará claro durante <strong>el primer mes de cada trimestre</strong>. Hasta
       entonces, cuenta cada sesión.
+    </p>
+
+    <p class="aviso aviso--verde" style="margin-top:12px">
+      <strong>Lo que se hace dentro de una materia no da puntos: da nota en esa materia.</strong>
+      Si una actividad la propone una asignatura, quien participa lo hace como parte de ella y
+      el profesorado la evalúa ahí. Los puntos son para lo que se hace <em>además</em> de la clase.
     </p>
 
     <h3 style="display:flex;align-items:center;gap:10px;font-size:18px;color:var(--cyan-d);margin:26px 0 10px">
@@ -370,7 +376,7 @@
     <h2 class="titulo">Las recompensas de ahora mismo</h2>
     <p class="entradilla">
       Se piden con puntos comunitarios. Lo más barato cuesta <strong>una sola participación</strong>
-      de un familiar: la idea es que se vea el resultado el mismo día, no dentro de un mes.
+      de alguien de la familia: la idea es que se vea el resultado el mismo día, no dentro de un mes.
     </p>
 
     <p class="aviso" style="margin-bottom:12px">
@@ -384,6 +390,13 @@
       La música del recreo, el timbre musical y el modelo 3D se eligen, sí, pero lo elegido tiene
       que ser apropiado para un centro escolar. Conviene decirlo al enseñar el catálogo, y no
       después: el problema no es negar una canción, es prometer que no hay filtro.
+    </p>
+
+    <p class="aviso aviso--verde" style="margin-bottom:18px">
+      <strong>Y las que necesitan a alguien del profesorado, van cuando se pueda.</strong>
+      El huerto, la impresión 3D, la tutoría, la tertulia: se cumplen todas, pero según la
+      disponibilidad de quien las hace posibles. Un vale no caduca, así que esperar no cuesta
+      nada; prometer un día concreto, sí.
     </p>
 
     <ul class="precios no-imprimir" role="group" aria-label="Filtrar por precio">
@@ -505,7 +518,7 @@
 
 <script>
 /* El catálogo, tal cual está en database/seeders/BenefitSeeder.php.
-   Cada participación de un familiar son 5 puntos, así que las veces que
+   Cada participación de alguien de la familia son 5 puntos, así que las veces que
    cuesta cada cosa se calculan solas: por eso todos los precios son
    múltiplos de 5. */
 const CATALOGO = [
@@ -518,16 +531,21 @@ const CATALOGO = [
   ['Elegir el timbre musical una semana','Tu canción suena al entrar y al salir durante una semana entera.','Autonomía',10,'#0F766E'],
   ['Un día con la mesa de futbolín','La mesa es tuya y de quien tú invites durante los recreos de un día.','Autonomía',10,'#FE8A18'],
   ['Dos mañanas en el huerto','Dos sesiones en el huerto del centro, cuando el tiempo lo permita.','Recursos',10,'#257A3E'],
-  ['25 % en la excursión de fin de trimestre','Un cuarto menos en el precio de la salida. Se presenta al pagarla.','Recursos',15,'#257A3E'],
+  ['25 % en la excursión de fin de trimestre','Un cuarto menos en el precio de la salida de fin de trimestre. Se presenta al pagarla.','Recursos',15,'#257A3E'],
   ['Foto en el tablón de honor','Tu foto en el tablón de la entrada durante todo un mes.','Reconocimiento',15,'#0369A1'],
   ['Imprime tu modelo 3D','Eliges una pieza de la lista de modelos habilitados y te la imprimimos.','Recursos',15,'#7C3AED'],
+  ['Tu sección en el podcast','Una sección tuya en un episodio del podcast del centro, con la comisión de Podcast al lado.','Liderazgo',15,'#7C3AED'],
+  ['Entrevista para las redes del centro','Te entrevistan y la entrevista se publica en las redes del centro.','Reconocimiento',15,'#DB2777'],
+  ['Fotógrafo o fotógrafa de un evento','Haces las fotos oficiales de una jornada del centro, y salen firmadas con tu nombre.','Liderazgo',15,'#0369A1'],
   ['Ser extra del pasaje del terror','Al otro lado: te maquillan y eres de quien asusta.','Liderazgo',20,'#DC2626'],
-  ['Día sin deberes','Un día entero sin tareas para casa. Enseña el vale antes de que las manden.','Autonomía',20,'#0F766E'],
+  ['Tu árbol en el huerto','Plantas un árbol en el huerto del centro, con una placa con tu nombre. Se queda ahí.','Reconocimiento',20,'#257A3E'],
+  ['Veinte minutos de profe en tutoría','En una hora de tutoría das veinte minutos de clase sobre algo que dominas, con tu tutor o tutora al lado.','Liderazgo',20,'#163880'],
   ['Delegado o delegada por una semana','Recoges las propuestas de tu clase y las llevas a la comisión mixta.','Liderazgo',25,'#163880'],
-  ['Elige tu sitio en clase una semana','Te sientas donde quieras durante una semana.','Autonomía',25,'#475569'],
-  ['Elegir actividad de tutoría','Propones y diriges la actividad de una hora de tutoría.','Liderazgo',30,'#DC2626'],
-  ['Libro de lectura a elegir','El libro que elijas, para ti. Si gusta, entra en la próxima tertulia.','Recursos',35,'#0369A1'],
-  ['Padrino o madrina de lectura','Un trimestre leyendo cada semana con el alumnado de primero.','Liderazgo',40,'#DB2777'],
+  ['Elige tu sitio en clase una semana','Una semana en el sitio que elijas, entre los que el profesorado permita. Mientras se cumplan las normas: quien no las cumpla vuelve a su sitio.','Autonomía',25,'#475569'],
+  ['La película de la tutoría','Eliges la película de la última tutoría del trimestre, para toda la clase, con el visto bueno de tu tutor o tutora.','Autonomía',25,'#DC2626'],
+  ['Elegir actividad de tutoría','Propones y diriges la actividad de una hora de tutoría, con tu tutor o tutora al lado.','Liderazgo',30,'#DC2626'],
+  ['Tu diseño en el patio','Pintas un azulejo o un trozo de mural del patio con tu diseño, aprobado antes. Se queda para siempre.','Reconocimiento',30,'#FE8A18'],
+  ['Elige el fragmento de una tertulia','Tú eliges el texto que se lee y se comenta en una tertulia dialógica, con la coordinación al lado.','Liderazgo',35,'#0369A1'],
 ];
 
 /* Un icono por categoría, no por recompensa: cuatro siluetas que se

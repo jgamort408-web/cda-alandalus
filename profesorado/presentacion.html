@@ -113,12 +113,12 @@
      pantalla de aula y una sola en el móvil. */
   .tarifa{display:grid;gap:clamp(10px,1.6vw,16px);grid-template-columns:1fr;text-align:left}
   @media (min-width:700px){ .tarifa{grid-template-columns:repeat(2,1fr)} }
-  @media (min-width:1000px){ .tarifa{grid-template-columns:repeat(4,1fr)} }
-  .tarifa__grupo{border:2px solid var(--cyan-d);border-radius:var(--rr);background:var(--cyan-l);padding:clamp(10px,1.4vw,15px)}
-  .tarifa__cab{display:flex;align-items:baseline;gap:7px;margin-bottom:8px;flex-wrap:wrap}
+  @media (min-width:980px){ .tarifa{grid-template-columns:repeat(5,1fr)} }
+  .tarifa__grupo{border:2px solid var(--cyan-d);border-radius:var(--rr);background:var(--cyan-l);padding:clamp(8px,1.1vw,13px)}
+  .tarifa__cab{display:flex;align-items:baseline;gap:7px;margin-bottom:6px;flex-wrap:wrap}
   .tarifa__coste{font-size:clamp(20px,2.7vw,30px);font-weight:800;color:var(--cyan-d);line-height:1;font-variant-numeric:tabular-nums}
   .tarifa__veces{font-size:clamp(11px,1.3vw,14px);font-weight:700;color:var(--muted)}
-  .tarifa ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+  .tarifa ul{list-style:none;margin:0;padding:0;display:grid;gap:3px}
   .tarifa li{font-size:clamp(12px,1.45vw,16px);font-weight:600;line-height:1.35;display:flex;gap:6px}
   .tarifa li::before{content:"·";font-weight:800;color:var(--cyan-d)}
   .tarifa li em{font-style:normal;font-weight:800;color:var(--cyan-d);margin-left:auto;padding-left:8px}
@@ -267,7 +267,7 @@
       <p class="sobre"><svg class="icono-moneda" aria-hidden="true"><use href="#m-com"/></svg>Puntos comunitarios</p>
       <h2>Los gana tu familia viniendo</h2>
       <span class="cifra cifra--com"><svg class="icono-moneda" aria-label="Puntos comunitarios" role="img"><use href="#m-com"/></svg>5</span>
-      <span class="cifra__pie">puntos comunitarios por cada participación de un familiar</span>
+      <span class="cifra__pie">puntos comunitarios por cada participación de alguien de la familia</span>
       <p class="grande">
         Da igual a qué venga: a un grupo interactivo, a una tertulia, a una comisión.
         Cada vez son 5, y te los pasa a ti para que pidas lo que quieras.
@@ -358,7 +358,7 @@
           <ul>
             <li>Reservar el futbolín</li>
             <li>Kit de material escolar</li>
-            <li>Elegir la música del recreo</li>
+            <li>Elige la música del recreo</li>
             <li>Diploma de reconocimiento</li>
           </ul>
         </div>
@@ -367,7 +367,7 @@
           <ul>
             <li>Un desayuno gratis</li>
             <li>Entrada al pasaje del terror</li>
-            <li>El timbre musical una semana</li>
+            <li>Elegir el timbre musical una semana</li>
             <li>Un día con la mesa de futbolín</li>
             <li>Dos mañanas en el huerto</li>
           </ul>
@@ -378,26 +378,35 @@
             <li>25 % en la excursión de fin de trimestre</li>
             <li>Foto en el tablón de honor</li>
             <li>Imprime tu modelo 3D</li>
+            <li>Tu sección en el podcast</li>
+            <li>Entrevista para las redes del centro</li>
+            <li>Fotógrafo o fotógrafa de un evento</li>
           </ul>
         </div>
         <div class="tarifa__grupo">
-          <div class="tarifa__cab"><span class="tarifa__coste">20 a 40</span><span class="tarifa__veces">de 4 a 8</span></div>
+          <div class="tarifa__cab"><span class="tarifa__coste">20</span><span class="tarifa__veces">4 participaciones</span></div>
           <ul>
-            <li>Ser extra del pasaje del terror <em>20</em></li>
-            <li>Día sin deberes <em>20</em></li>
-            <li>Delegado o delegada una semana <em>25</em></li>
-            <li>Elegir tu sitio en clase <em>25</em></li>
+            <li>Ser extra del pasaje del terror</li>
+            <li>Tu árbol en el huerto</li>
+            <li>Veinte minutos de profe en tutoría</li>
+          </ul>
+        </div>
+        <div class="tarifa__grupo">
+          <div class="tarifa__cab"><span class="tarifa__coste">25 a 35</span><span class="tarifa__veces">de 5 a 7</span></div>
+          <ul>
+            <li>Delegado o delegada por una semana <em>25</em></li>
+            <li>Elige tu sitio en clase una semana <em>25</em></li>
+            <li>La película de la tutoría <em>25</em></li>
             <li>Elegir actividad de tutoría <em>30</em></li>
-            <li>Libro de lectura a elegir <em>35</em></li>
-            <li>Padrino o madrina de lectura <em>40</em></li>
+            <li>Tu diseño en el patio <em>30</em></li>
+            <li>Elige el fragmento de una tertulia <em>35</em></li>
           </ul>
         </div>
       </div>
       <p class="grande" style="font-size:clamp(13.5px,1.8vw,18px);margin-top:14px">
-        Lo más barato cuesta <strong>una sola participación</strong> de un familiar.
-        <span style="color:var(--orange-d);font-weight:700">El catálogo no es definitivo: va a cambiar durante el curso.</span>
-        Las que consisten en elegir algo —la música, el timbre, el modelo 3D— <strong>las aprueba
-        antes el profesorado responsable</strong>: lo que se elija tiene que valer para un instituto.
+        Lo más barato cuesta <strong>una participación</strong>.
+        <span style="color:var(--orange-d);font-weight:700">El catálogo va a cambiar durante el curso</span>,
+        y lo que se elige lo aprueba antes el profesorado responsable.
       </p>
     </div>
   </section>
