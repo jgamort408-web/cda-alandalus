@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vuestra participación suma</title>
+<meta name="description" content="Hoja resumen para las familias: los dos tipos de puntos, dónde se participa y qué se puede pedir.">
+<meta name="theme-color" content="#0D2560">
+
+<!--
+    La hoja que se lleva a casa. UNA cara de A4.
+
+    Va dirigida a las familias, no al alumnado: es la que tiene que decidir
+    si alguien viene al centro. Por eso evita el vocabulario de dentro
+    («baremo», «actuación educativa de éxito») y nunca dice «premio» ni
+    «regalar»: los puntos comunitarios se suman participando.
+-->
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="estilo.css">
+<style>
+  .acciones{
+    position:sticky;top:0;z-index:5;background:var(--lb-darker);color:#fff;
+    display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:10px 16px;
+    background-image:radial-gradient(circle,var(--stud) 2.5px,transparent 2.5px);background-size:18px 18px;
+  }
+  .acciones a{color:var(--cyan);font-size:13.5px;font-weight:700;text-decoration:none}
+  .acciones span{font-size:13px;color:rgba(255,255,255,.7);margin-left:auto}
+
+  .hoja{
+    max-width:800px;margin:20px auto;background:var(--white);color:var(--text);
+    border:2px solid var(--border);border-radius:var(--rr);padding:26px;
+  }
+  .cabecera{display:flex;align-items:center;gap:14px;border-bottom:3px solid var(--lb);padding-bottom:14px;margin-bottom:18px}
+  .cabecera img.ies{width:52px}
+  .cabecera img.cda{width:96px}
+  .cabecera div{margin-left:auto;text-align:right}
+  .cabecera h1{font-size:21px;color:var(--lb-darker);line-height:1.15}
+  .cabecera p{font-size:12.5px;color:var(--muted);font-weight:600}
+
+  .lema{font-size:17px;font-weight:700;line-height:1.45;margin-bottom:16px}
+  .lema b{color:var(--lb-darker)}
+
+  .dos{display:grid;gap:12px;grid-template-columns:1fr}
+  @media (min-width:620px){ .dos{grid-template-columns:1fr 1fr} }
+
+  .caja{border:2px solid var(--border);border-radius:var(--rr);padding:14px}
+  .caja--acad{border-color:var(--orange);background:var(--orange-l)}
+  .caja--com{border-color:var(--cyan-d);background:var(--cyan-l)}
+  .caja__cab{display:flex;align-items:center;gap:11px;margin-bottom:9px}
+  .caja__cab svg{width:42px;height:42px;flex:0 0 auto}
+  .caja__cab h2{font-size:16px}
+  .caja__cab small{display:block;font-size:11.5px;font-weight:700;color:var(--muted)}
+  .caja p{font-size:13.5px;line-height:1.45}
+  .caja b.dato{display:block;margin-top:8px;font-size:14.5px}
+
+  h3.apartado{
+    font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--lb);margin:20px 0 9px;padding-bottom:5px;border-bottom:1.5px solid var(--border);
+  }
+
+  ol.comovenir{list-style:none;counter-reset:p;margin:0;padding:0;display:grid;gap:8px}
+  ol.comovenir li{counter-increment:p;display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:13.5px;line-height:1.45}
+  ol.comovenir li::before{
+    content:counter(p);width:26px;height:26px;border-radius:7px;background:var(--lb);color:#fff;
+    font-weight:800;font-size:13px;display:grid;place-items:center;
+  }
+
+  table.compacta{min-width:0;font-size:13px}
+  table.compacta th,table.compacta td{padding:7px 9px}
+  table.compacta thead th{font-size:11px}
+
+  .ejemplos{display:flex;flex-wrap:wrap;gap:7px;padding:0;margin:0;list-style:none}
+  .ejemplos li{border:1.5px solid var(--border);border-radius:999px;padding:5px 12px;font-size:12.5px;font-weight:700}
+  .ejemplos li em{font-style:normal;color:var(--cyan-d);font-weight:800}
+
+  .pieh{
+    margin-top:20px;padding-top:14px;border-top:3px solid var(--lb);
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+    font-size:13px;font-weight:600;
+  }
+  .pieh a{font-weight:800}
+  .nota{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+
+  @media print{
+    @page{size:A4 portrait;margin:11mm}
+    .acciones{display:none}
+    .hoja{margin:0;border:0;border-radius:0;padding:0;max-width:none}
+    body{font-size:9.6pt}
+    .cabecera h1{font-size:16pt}
+    .lema{font-size:11.5pt;margin-bottom:9pt}
+    .caja p,ol.comovenir li,table.compacta{font-size:9pt}
+    .caja__cab svg{width:32px;height:32px}
+    h3.apartado{margin:11pt 0 5pt}
+    .dos{grid-template-columns:1fr 1fr}
+    .tabla-caja{border-width:1pt}
+  }
+</style>
+</head>
+<body>
+
+<div class="acciones no-imprimir">
+  <a href="./">← Volver al material</a>
+  <a href="#" id="imprimir">Imprimir esta hoja</a>
+  <span>Una cara de A4</span>
+</div>
+
+<div class="hoja">
+
+  <header class="cabecera">
+    <img class="ies" src="../assets/logo-ies.png" width="520" height="520" alt="IES Al-Ándalus">
+    <img class="cda" src="../assets/logo-cda.png" width="700" height="346" alt="Comunidades de Aprendizaje">
+    <div>
+      <h1>Vuestra participación suma</h1>
+      <p>Comunidad de Aprendizaje · Curso 2026-2027</p>
+    </div>
+  </header>
+
+  <p class="lema">
+    El instituto se abre a las familias. Podéis entrar <b>a las aulas y a los recreos</b>
+    a aprender junto al alumnado. Y cada vez que venís, vuestro hijo o hija gana puntos.
+  </p>
+
+  <div class="dos">
+
+    <div class="caja caja--acad">
+      <div class="caja__cab">
+        <svg viewBox="0 0 48 48" role="img" aria-label="Puntos académicos">
+          <circle cx="24" cy="24" r="23" fill="#A86A06"/>
+          <circle cx="24" cy="24" r="19.5" fill="#FFC23D"/>
+          <path d="M24 12.4 39 19.2 24 26 9 19.2Z" fill="#6B4200"/>
+          <path d="M15.6 22.2v6.6c0 2.6 3.8 4.4 8.4 4.4s8.4-1.8 8.4-4.4v-6.6L24 26.9Z" fill="#6B4200" opacity=".78"/>
+          <path d="M37.2 20v8.4" stroke="#6B4200" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+          <circle cx="37.2" cy="30.4" r="2.1" fill="#6B4200"/>
+        </svg>
+        <div><h2>Puntos académicos</h2><small>Los gana el alumnado</small></div>
+      </div>
+      <p>Se consiguen participando, y sirven para conseguir <strong>un punto más en todas las
+         materias</strong> al final de cada trimestre.</p>
+      <b class="dato">40 puntos en la E.S.O.<br>60 en 1.º de Bachillerato y 1.º de SMR</b>
+    </div>
+
+    <div class="caja caja--com">
+      <div class="caja__cab">
+        <svg viewBox="0 0 48 48" role="img" aria-label="Puntos comunitarios">
+          <circle cx="24" cy="24" r="23" fill="#1F7A93"/>
+          <circle cx="24" cy="24" r="19.5" fill="#F1FAFC"/>
+          <g transform="translate(13.6 11.2) scale(0.0547)" fill="none" stroke-width="62" stroke-linecap="round">
+            <path d="M52 104 C 74 42 132 16 196 16 C 272 16 338 72 338 162 L 338 392 C 338 428 352 444 378 448" stroke="#3CB4D8"/>
+            <path d="M207 369 A 100 100 0 1 1 207 241" stroke="#9CCC30"/>
+          </g>
+        </svg>
+        <div><h2>Puntos comunitarios</h2><small>Los ganáis vosotras y vosotros</small></div>
+      </div>
+      <p>Son los que ganáis al participar. No suman nota: sirven para que vuestro hijo o hija
+         pida cosas del catálogo del centro.</p>
+      <b class="dato">5 puntos por cada participación,<br>sea en lo que sea</b>
+    </div>
+
+  </div>
+
+  <h3 class="apartado">Cómo se participa</h3>
+  <!-- El texto de cada paso va dentro de un <span>: la fila es una rejilla de
+       dos columnas, y un <strong> suelto se convertiría en celda propia y se
+       montaría encima de lo de al lado. -->
+  <ol class="comovenir">
+    <li><span>Decídselo a la tutora o al tutor, o escribid a <strong>cda@iesalandalus.org</strong>. No hace falta nada más.</span></li>
+    <li><span>Venís al centro el día que os venga bien, al rato que podáis. Con una vez ya cuenta.</span></li>
+    <li><span>Quien coordina la actividad anota vuestra participación, y esos 5 puntos pasan a vuestro hijo o hija.</span></li>
+  </ol>
+
+  <h3 class="apartado">Qué hay, cuándo y dónde</h3>
+  <div class="tabla-caja">
+    <table class="compacta">
+      <thead>
+        <tr><th scope="col">Actividad</th><th scope="col">Cuándo</th><th scope="col">Dónde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Tertulias dialógicas</strong><br><small>Se lee un libro y se comenta entre todos</small></td>
+            <td>Miércoles alternos, en el recreo</td><td>Biblioteca</td></tr>
+        <tr><td><strong>Comisiones mixtas</strong><br><small>Se decide junto al profesorado y al alumnado</small></td>
+            <td>Miércoles alternos, en el recreo</td><td>Pasillo de Matemáticas y Lengua (1.ª planta)</td></tr>
+        <tr><td><strong>Bibliotecas tutorizadas</strong><br><small>Alumnado que se ayuda entre cursos</small></td>
+            <td>Lunes, martes, jueves y viernes, en el recreo</td><td>Idiomas 1 (2.ª planta)</td></tr>
+        <tr><td><strong>Grupos interactivos</strong><br><small>Mesas pequeñas en clase, con una persona adulta en cada una</small></td>
+            <td>Se avisa de cada uno con antelación</td><td>En las aulas</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="apartado">Con esos puntos se puede pedir</h3>
+  <ul class="ejemplos">
+    <li>Reservar el futbolín · <em>5</em></li>
+    <li>Elegir la música del recreo · <em>5</em></li>
+    <li>Kit de material escolar · <em>5</em></li>
+    <li>Un desayuno · <em>10</em></li>
+    <li>El timbre musical una semana · <em>10</em></li>
+    <li>25 % en la excursión · <em>15</em></li>
+    <li>Un día sin deberes · <em>20</em></li>
+  </ul>
+  <p class="nota">
+    Con <strong>una sola participación</strong> ya hay algo que pedir. El catálogo completo está
+    en el centro y en la aplicación, y <strong>no es definitivo</strong>: irá cambiando durante el
+    curso, también con las ideas que proponga el alumnado.
+  </p>
+
+  <div class="pieh">
+    <span>IES Al-Ándalus · Almería</span>
+    <span>Dudas y apuntarse: <a href="mailto:cda@iesalandalus.org">cda@iesalandalus.org</a></span>
+  </div>
+
+</div>
+
+<script>
+document.getElementById('imprimir').addEventListener('click', e => { e.preventDefault(); window.print(); });
+</script>
+</body>
+</html>

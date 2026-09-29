@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Contarlo en clase</title>
+<meta name="description" content="Todo lo que hace falta para explicar al alumnado los puntos académicos y comunitarios de la Comunidad de Aprendizaje: guion, presentación, carteles y hoja resumen.">
+<meta name="theme-color" content="#0D2560">
+
+<!--
+    Material de aula para el profesorado que lo va a contar.
+
+    Todos los números salen de la aplicación y no de un documento aparte:
+
+      · metas 40 / 60 ............ config/cda.php  (puntos_academicos_meta,
+                                   puntos_academicos_meta_por_curso)
+      · 5 puntos por participación config/cda.php  (volunteer_credits)
+      · puntos de cada actuación . database/seeders/PointActivitySeeder.php
+      · catálogo de recompensas .. database/seeders/BenefitSeeder.php
+      · las monedas .............. resources/views/components/moneda.blade.php
+
+    Dos cosas que se evitan a propósito, como en la página de familias:
+    no se dice «premio» ni «regalar» —los puntos comunitarios se suman
+    participando— y el catálogo lleva siempre su aviso de provisional.
+-->
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<a class="saltar" href="#empieza">Saltar al contenido</a>
+
+<header class="barra">
+  <div class="barra__fila">
+    <a class="marca" href="../">
+      <img class="ies" src="../assets/logo-ies.png" width="520" height="520" alt="">
+      <span class="marca__raya"></span>
+      <img class="cda" src="../assets/logo-cda.png" width="700" height="346" alt="">
+      <span class="marca__txt">I.E.S. Al-Ándalus<small>Comunidades de Aprendizaje</small></span>
+    </a>
+    <a class="volver" href="../">← Volver al plan</a>
+    <button class="icono-btn" id="btn-tema" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">
+      <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+        <circle cx="10" cy="10" r="4"/><path d="M10 1.5v2M10 16.5v2M1.5 10h2M16.5 10h2M4 4l1.4 1.4M14.6 14.6 16 16M16 4l-1.4 1.4M5.4 14.6 4 16" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ PORTADA ============================ -->
+<section class="seccion" id="empieza">
+  <div class="contenedor">
+    <p class="rotulo">Material de aula · Curso 2026-2027</p>
+    <h2 class="titulo">Contarlo en clase</h2>
+    <p class="entradilla">
+      Todo lo que hace falta para explicar al alumnado cómo se ganan puntos en
+      la Comunidad de Aprendizaje. Está pensado para una tutoría de veinte
+      minutos y <strong>no hay que saber nada de antes</strong>: el guion lo
+      dice todo.
+    </p>
+
+    <div class="rejilla rejilla--2">
+      <a class="ladrillo ladrillo--acento" href="presentacion.html" style="text-decoration:none;color:inherit">
+        <p class="rotulo" style="color:var(--lb)">Para proyectar</p>
+        <h3 style="font-size:19px;margin-bottom:6px">Presentación interactiva</h3>
+        <p style="font-size:14.5px;color:var(--muted)">Once pantallas, con las flechas del teclado. Poco texto y letra grande.</p>
+        <span class="btn" style="margin-top:12px">Abrir la presentación</span>
+      </a>
+      <div class="ladrillo">
+        <p class="rotulo">Para repartir</p>
+        <h3 style="font-size:19px;margin-bottom:6px">Hoja resumen</h3>
+        <p style="font-size:14.5px;color:var(--muted)">Una cara, para que se la lleven a casa y la lean las familias.</p>
+        <a class="btn btn--suave" style="margin-top:12px" href="resumen.html">Ver e imprimir</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= GUION DEL DOCENTE ======================= -->
+<section class="seccion">
+  <div class="contenedor">
+    <p class="rotulo">Antes de entrar en clase</p>
+    <h2 class="titulo">Guion, paso a paso</h2>
+    <p class="entradilla">
+      Veinte minutos. Si solo tienes diez, haz los pasos 1, 2 y 5.
+    </p>
+
+    <ol class="pasos">
+      <li>
+        <div>
+          <span class="minuto">2 minutos</span>
+          <h3>Qué es una Comunidad de Aprendizaje</h3>
+          <p>El centro se abre: familias y voluntariado entran en las aulas y en los recreos a
+             aprender con el alumnado, no a mirar. Cuantas más personas adultas haya dentro,
+             más aprende todo el mundo. Eso es todo lo que hay que entender.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <span class="minuto">5 minutos</span>
+          <h3>Las dos monedas</h3>
+          <p>Es lo único que se pueden confundir, así que va despacio: los <strong>académicos</strong>
+             suben la nota y solo los gana el alumnado; los <strong>comunitarios</strong> sirven para
+             recompensas y los ganan las familias (y 2.º de Bachillerato y 2.º de SMR).</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <span class="minuto">4 minutos</span>
+          <h3>Dónde se ganan</h3>
+          <p>Enseña la tabla de actuaciones con los días y el sitio de cada una. Insiste en que
+             las tertulias y las comisiones son <strong>en el recreo</strong> y que ya están funcionando.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <span class="minuto">5 minutos</span>
+          <h3>Qué se puede pedir</h3>
+          <p>Abre el panel de recompensas. Deja claro que <strong>no es definitivo</strong> y que
+             lo que ellos propongan puede acabar ahí. Es justo lo que engancha.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <span class="minuto">4 minutos</span>
+          <h3>Recoger las ideas de la clase</h3>
+          <p>Saca la hoja de propuestas <strong>en la pizarra, entre todos</strong>, y que un
+             portavoz la escriba. Una hoja por clase con quince ideas llega; treinta hojas con
+             una idea cada una se pierden. Nos la hacéis llegar a
+             <a href="mailto:cda@iesalandalus.org">cda@iesalandalus.org</a>.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <span class="minuto">Al salir</span>
+          <h3>Reparte la hoja resumen</h3>
+          <p>Es para las familias, no para el alumnado: ahí está lo que tienen que saber en casa
+             para decidir si vienen. Y ese es el objetivo de todo esto.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- =========================== LAS MONEDAS ========================== -->
+<section class="seccion" id="monedas">
+  <div class="contenedor">
+    <p class="rotulo">Lo que hay que contar</p>
+    <h2 class="titulo">Hay dos tipos de puntos</h2>
+    <p class="entradilla">Se distinguen por color y por dibujo, nunca solo por color. Son las monedas de la aplicación.</p>
+
+    <div class="rejilla rejilla--2">
+      <div class="moneda moneda--acad">
+        <div class="moneda__cab">
+          <svg viewBox="0 0 48 48" role="img" aria-label="Puntos académicos">
+            <circle cx="24" cy="24" r="23" fill="#A86A06"/>
+            <circle cx="24" cy="24" r="19.5" fill="#FFC23D"/>
+            <circle cx="24" cy="24" r="19.5" fill="none" stroke="#A86A06" stroke-opacity=".3" stroke-width="1.4"/>
+            <path d="M24 12.4 39 19.2 24 26 9 19.2Z" fill="#6B4200"/>
+            <path d="M15.6 22.2v6.6c0 2.6 3.8 4.4 8.4 4.4s8.4-1.8 8.4-4.4v-6.6L24 26.9Z" fill="#6B4200" opacity=".78"/>
+            <path d="M37.2 20v8.4" stroke="#6B4200" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+            <circle cx="37.2" cy="30.4" r="2.1" fill="#6B4200"/>
+            <ellipse cx="24" cy="15" rx="12.5" ry="7" fill="#fff" opacity=".16"/>
+          </svg>
+          <div>
+            <h3>Puntos académicos</h3>
+            <span class="moneda__quien">Solo los consigue el alumnado</span>
+          </div>
+        </div>
+        <p>Se ganan participando en las actuaciones de la Comunidad. Sirven para conseguir
+           <strong>un punto más en todas las materias</strong> al final de cada trimestre.</p>
+        <span class="moneda__clave">
+          40 puntos en 1.º, 2.º, 3.º y 4.º de E.S.O.<br>
+          60 puntos en 1.º de Bachillerato y 1.º de SMR
+        </span>
+      </div>
+
+      <div class="moneda moneda--com">
+        <div class="moneda__cab">
+          <svg viewBox="0 0 48 48" role="img" aria-label="Puntos comunitarios">
+            <circle cx="24" cy="24" r="23" fill="#1F7A93"/>
+            <circle cx="24" cy="24" r="19.5" fill="#F1FAFC"/>
+            <circle cx="24" cy="24" r="19.5" fill="none" stroke="#1F7A93" stroke-opacity=".3" stroke-width="1.4"/>
+            <g transform="translate(13.6 11.2) scale(0.0547)" fill="none" stroke-width="62" stroke-linecap="round">
+              <path d="M52 104 C 74 42 132 16 196 16 C 272 16 338 72 338 162 L 338 392 C 338 428 352 444 378 448" stroke="#3CB4D8"/>
+              <path d="M207 369 A 100 100 0 1 1 207 241" stroke="#9CCC30"/>
+            </g>
+            <ellipse cx="24" cy="15" rx="12.5" ry="7" fill="#fff" opacity=".16"/>
+          </svg>
+          <div>
+            <h3>Puntos comunitarios</h3>
+            <span class="moneda__quien">Las familias, y 2.º de Bach. y 2.º de SMR</span>
+          </div>
+        </div>
+        <p>Sirven para pedir recompensas y <strong>no suman nota</strong>. Cada vez que un
+           familiar participa gana 5, y se los pasa a un estudiante del centro para que los use.</p>
+        <span class="moneda__clave">
+          5 puntos por cada participación de un familiar<br>
+          2.º de Bach. y 2.º de SMR cobran aquí lo que los demás cobran en académicos
+        </span>
+      </div>
+    </div>
+
+    <p class="aviso aviso--azul" style="margin-top:18px">
+      <strong>La pregunta que siempre sale:</strong> «¿entonces mi familia me sube la nota?».
+      No. Lo que gana la familia son puntos comunitarios, que valen para recompensas.
+      La nota solo la sube lo que hace el propio alumnado.
+    </p>
+  </div>
+</section>
+
+<!-- ============================= BAREMO ============================= -->
+<section class="seccion" id="baremo">
+  <div class="contenedor">
+    <p class="rotulo">Dónde se ganan</p>
+    <h2 class="titulo">Las actuaciones, una a una</h2>
+    <p class="entradilla">Los puntos son los que da la aplicación por defecto. Quien coordina cada actuación puede bajarlos si la participación no ha sido la que se esperaba.</p>
+
+    <div class="tabla-caja">
+      <table>
+        <caption class="rotulo" style="text-align:left;padding:12px 13px 0">Puntos para el alumnado por sesión</caption>
+        <thead>
+          <tr>
+            <th scope="col">Actuación</th>
+            <th scope="col">Puntos</th>
+            <th scope="col">Cuándo y dónde</th>
+            <th scope="col">Quién</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tertulia dialógica</strong></td>
+            <td class="num"><span class="pts pts--acad">3</span></td>
+            <td>Miércoles alternos, en el recreo. En la <strong>Biblioteca</strong>. Cada semana que tocan hay copias del texto en el hall.</td>
+            <td>Todo el alumnado</td>
+          </tr>
+          <tr>
+            <td><strong>Comisión mixta</strong></td>
+            <td class="num"><span class="pts pts--acad">3</span></td>
+            <td>Miércoles alternos, en el recreo. En el <strong>pasillo de Matemáticas y Lengua</strong> (1.ª planta); la de FP, en su aula de siempre, por los ordenadores.</td>
+            <td>Todo el alumnado</td>
+          </tr>
+          <tr>
+            <td><strong>Biblioteca tutorizada</strong></td>
+            <td class="num"><span class="pts pts--acad">2</span></td>
+            <td>Lunes, martes, jueves y viernes, en el recreo. En <strong>Idiomas 1</strong> (2.ª planta).</td>
+            <td>1.º a 4.º de E.S.O. y 1.º de SMR. Por parejas <strong>de cursos distintos</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Recreos activos</strong></td>
+            <td class="num"><span class="pts pts--acad">2</span></td>
+            <td>Lunes, martes, jueves y viernes, en el recreo. En el patio.</td>
+            <td>Los organizan 1.º de Bachillerato y 1.º de SMR</td>
+          </tr>
+          <tr>
+            <td><strong>Biblioteca musical</strong></td>
+            <td class="num"><span class="pts pts--acad">2</span></td>
+            <td>En el <strong>Aula de Música</strong>.</td>
+            <td>1.º a 4.º de E.S.O. y 1.º de SMR</td>
+          </tr>
+          <tr>
+            <td><strong>Grupos interactivos</strong></td>
+            <td class="num"><span class="pts pts--no">—</span></td>
+            <td>En clase, con voluntariado en las mesas.</td>
+            <td>El alumnado <strong>no gana puntos por asistir</strong>. Si hace de voluntario o voluntaria, gana <strong>3 académicos</strong> cada vez</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rejilla rejilla--2" style="margin-top:16px">
+      <p class="aviso aviso--verde">
+        <strong>Tertulias y comisiones no tienen tope:</strong> cuantas más, mejor.
+      </p>
+      <p class="aviso">
+        <strong>Las bibliotecas y los recreos sí:</strong> 25 puntos por trimestre cada una, y en la
+        biblioteca tutorizada como mucho 2 al día.
+      </p>
+    </div>
+
+    <p class="aviso aviso--azul" style="margin-top:14px">
+      <strong>Para 2.º de Bachillerato y 2.º de SMR:</strong> participan en lo mismo y ganan lo mismo,
+      pero en puntos comunitarios. Es lo justo, porque su nota ya no se puede subir con esto.
+    </p>
+  </div>
+</section>
+
+<!-- =========================== RECOMPENSAS ========================== -->
+<section class="seccion" id="recompensas">
+  <div class="contenedor">
+    <p class="rotulo">Qué se puede pedir</p>
+    <h2 class="titulo">Las recompensas de ahora mismo</h2>
+    <p class="entradilla">
+      Se piden con puntos comunitarios. Lo más barato cuesta <strong>una sola participación</strong>
+      de un familiar: la idea es que se vea el resultado el mismo día, no dentro de un mes.
+    </p>
+
+    <p class="aviso" style="margin-bottom:18px">
+      <strong>Este catálogo no es definitivo.</strong> Va a cambiar a lo largo del curso, y una
+      parte de lo que entre saldrá de lo que proponga el alumnado. Dilo en clase: es lo que más
+      anima a participar.
+    </p>
+
+    <ul class="precios no-imprimir" role="group" aria-label="Filtrar por precio">
+      <li><button type="button" data-filtro="todo" aria-pressed="true">Todas</button></li>
+      <li><button type="button" data-filtro="5" aria-pressed="false">5 puntos · 1 participación</button></li>
+      <li><button type="button" data-filtro="10" aria-pressed="false">10 · 2 participaciones</button></li>
+      <li><button type="button" data-filtro="15" aria-pressed="false">15 · 3</button></li>
+      <li><button type="button" data-filtro="20" aria-pressed="false">20 o más</button></li>
+    </ul>
+
+    <ul class="recompensas" id="lista-recompensas"></ul>
+  </div>
+</section>
+
+<!-- ============================ MATERIAL ============================ -->
+<section class="seccion" id="material">
+  <div class="contenedor">
+    <p class="rotulo">Para imprimir y repartir</p>
+    <h2 class="titulo">Material</h2>
+    <p class="entradilla">Los carteles están hechos para imprimirse en el centro, en A3 o en A4.</p>
+
+    <div class="rejilla rejilla--2">
+
+      <div class="material">
+        <div>
+          <h3>Hoja resumen para casa</h3>
+          <p>Una cara con las dos monedas, las actuaciones y cómo participa una familia. Es la que se reparte al alumnado para que llegue a casa.</p>
+          <a class="btn" href="resumen.html">Abrir e imprimir</a>
+        </div>
+      </div>
+
+      <div class="material">
+        <div>
+          <h3>Hoja de propuestas de la clase</h3>
+          <p>Para rellenar entre todos en la pizarra y que un portavoz la pase a limpio. Una por clase.</p>
+          <a class="btn" href="propuestas.html">Abrir e imprimir</a>
+        </div>
+      </div>
+
+      <div class="material">
+        <img src="descargas/miniaturas/cartel-puntos-academicos.jpg" alt="" loading="lazy">
+        <div>
+          <h3>Cartel de puntos académicos · alumnado</h3>
+          <p>Las actividades, los días de cada una y los puntos que suman.</p>
+          <a class="btn btn--suave" href="descargas/cartel-puntos-academicos.pdf">PDF · 1 página</a>
+        </div>
+      </div>
+
+      <div class="material">
+        <img src="descargas/miniaturas/cartel-recompensas-familias.jpg" alt="" loading="lazy">
+        <div>
+          <h3>Cartel de recompensas · familias</h3>
+          <p>Qué puede pedir su hijo o hija con los puntos que se ganan viniendo al centro.</p>
+          <a class="btn btn--suave" href="descargas/cartel-recompensas-familias.pdf">PDF · 1 página</a>
+        </div>
+      </div>
+
+      <div class="material">
+        <img src="descargas/miniaturas/cartel-recompensas.jpg" alt="" loading="lazy">
+        <div>
+          <h3>Cartel de recompensas · completo</h3>
+          <p>Las dos monedas, el catálogo y cuántos puntos hacen falta para el +1.</p>
+          <a class="btn btn--suave" href="descargas/cartel-recompensas.pdf">PDF · 1 página</a>
+        </div>
+      </div>
+
+      <div class="material">
+        <img src="descargas/miniaturas/tarjeta-comunidad-aprendizaje.jpg" alt="" loading="lazy">
+        <div>
+          <h3>Tarjeta de la Comunidad</h3>
+          <p>Tarjeta de visita con las recompensas por detrás. Diez por hoja, a doble cara.</p>
+          <a class="btn btn--suave" href="descargas/tarjeta-comunidad-aprendizaje.pdf">PDF · 2 páginas</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================= DUDAS ============================== -->
+<section class="seccion" id="dudas">
+  <div class="contenedor">
+    <p class="rotulo">Por si preguntan</p>
+    <h2 class="titulo">Cuatro respuestas cortas</h2>
+
+    <div class="rejilla rejilla--2">
+      <div class="ladrillo">
+        <h3 style="font-size:16px;margin-bottom:5px">«¿Los puntos se pierden?»</h3>
+        <p style="font-size:14.5px;color:var(--muted)">Los académicos se cuentan por trimestre: al llegar a la meta se anota el +1 y lo que sobra cuenta para el trimestre siguiente.</p>
+      </div>
+      <div class="ladrillo">
+        <h3 style="font-size:16px;margin-bottom:5px">«¿Mi familia tiene que venir mucho?»</h3>
+        <p style="font-size:14.5px;color:var(--muted)">Con una vez ya hay recompensa que pedir. No hace falta comprometerse a nada más.</p>
+      </div>
+      <div class="ladrillo">
+        <h3 style="font-size:16px;margin-bottom:5px">«¿Y si en mi casa no puede venir nadie?»</h3>
+        <p style="font-size:14.5px;color:var(--muted)">Los puntos académicos —los de la nota— se ganan participando uno mismo, sin que venga nadie de casa. Eso no depende de la familia.</p>
+      </div>
+      <div class="ladrillo">
+        <h3 style="font-size:16px;margin-bottom:5px">«¿Dónde veo mis puntos?»</h3>
+        <p style="font-size:14.5px;color:var(--muted)">En la aplicación del centro, con la cuenta de cada persona. Mientras tanto, lo lleva quien coordina cada actuación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__fila">
+    <div class="pie__logos">
+      <img class="ies" src="../assets/logo-ies.png" width="520" height="520" alt="Escudo del IES Al-Ándalus" loading="lazy">
+      <img class="cda" src="../assets/logo-cda.png" width="700" height="346" alt="Comunidades de Aprendizaje" loading="lazy">
+    </div>
+    <span>IES Al-Ándalus · Almería · Curso 2026-2027</span>
+    <a href="mailto:cda@iesalandalus.org">cda@iesalandalus.org</a>
+  </div>
+</footer>
+
+<script>
+/* El catálogo, tal cual está en database/seeders/BenefitSeeder.php.
+   Cada participación de un familiar son 5 puntos, así que las veces que
+   cuesta cada cosa se calculan solas: por eso todos los precios son
+   múltiplos de 5. */
+const CATALOGO = [
+  ['Reservar el futbolín','La mesa es tuya y de quien tú invites durante el recreo que elijas.','Autonomía',5,'#FE8A18'],
+  ['Kit de material escolar','Bolígrafos, lápiz, goma y un cuaderno, del almacén del centro.','Recursos',5,'#0369A1'],
+  ['Elige la música del recreo','Tu lista suena en el patio durante todo un recreo.','Autonomía',5,'#DB2777'],
+  ['Diploma de reconocimiento','Con tu nombre, firmado por Dirección, para llevártelo a casa.','Reconocimiento',5,'#B45309'],
+  ['Un desayuno gratis','Invita la casa en la cafetería: un desayuno de la carta del recreo.','Recursos',10,'#B45309'],
+  ['Entrada al pasaje del terror','Pasas sin pagar el día de Halloween, en el pasaje de 4.º de E.S.O.','Autonomía',10,'#7C3AED'],
+  ['Elegir el timbre musical una semana','Tu canción suena al entrar y al salir durante una semana entera.','Autonomía',10,'#0F766E'],
+  ['Un día con la mesa de futbolín','La mesa es tuya y de quien tú invites durante los recreos de un día.','Autonomía',10,'#FE8A18'],
+  ['Dos mañanas en el huerto','Dos sesiones en el huerto del centro, cuando el tiempo lo permita.','Recursos',10,'#257A3E'],
+  ['25 % en la excursión de fin de trimestre','Un cuarto menos en el precio de la salida. Se presenta al pagarla.','Recursos',15,'#257A3E'],
+  ['Foto en el tablón de honor','Tu foto en el tablón de la entrada durante todo un mes.','Reconocimiento',15,'#0369A1'],
+  ['Imprime tu modelo 3D','Eliges una pieza de la lista de modelos habilitados y te la imprimimos.','Recursos',15,'#7C3AED'],
+  ['Ser extra del pasaje del terror','Al otro lado: te maquillan y eres de quien asusta.','Liderazgo',20,'#DC2626'],
+  ['Día sin deberes','Un día entero sin tareas para casa. Enseña el vale antes de que las manden.','Autonomía',20,'#0F766E'],
+  ['Delegado o delegada por una semana','Recoges las propuestas de tu clase y las llevas a la comisión mixta.','Liderazgo',25,'#163880'],
+  ['Elige tu sitio en clase una semana','Te sientas donde quieras durante una semana.','Autonomía',25,'#475569'],
+  ['Elegir actividad de tutoría','Propones y diriges la actividad de una hora de tutoría.','Liderazgo',30,'#DC2626'],
+  ['Libro de lectura a elegir','El libro que elijas, para ti. Si gusta, entra en la próxima tertulia.','Recursos',35,'#0369A1'],
+  ['Padrino o madrina de lectura','Un trimestre leyendo cada semana con el alumnado de primero.','Liderazgo',40,'#DB2777'],
+];
+
+/* Un icono por categoría, no por recompensa: cuatro siluetas que se
+   distinguen a un metro de la pizarra valen más que diecinueve que no. */
+const ICONOS = {
+  'Autonomía':      '<path d="M4 12h12M11 7l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/>',
+  'Recursos':       '<path d="M3.5 7 10 3.5 16.5 7v6L10 16.5 3.5 13V7Z" stroke-linejoin="round"/><path d="M3.5 7 10 10.5 16.5 7M10 10.5v6" stroke-linejoin="round"/>',
+  'Reconocimiento': '<path d="m10 3 2.1 4.3 4.7.7-3.4 3.3.8 4.7L10 13.8l-4.2 2.2.8-4.7L3.2 8l4.7-.7L10 3Z" stroke-linejoin="round"/>',
+  'Liderazgo':      '<path d="M3 6.5 6.5 10 10 4.5 13.5 10 17 6.5V15H3V6.5Z" stroke-linejoin="round"/>',
+};
+
+const lista = document.getElementById('lista-recompensas');
+
+function veces(coste){
+  const n = coste / 5;
+  return n === 1 ? '1 participación' : n + ' participaciones';
+}
+
+function pintar(filtro){
+  lista.innerHTML = '';
+  CATALOGO
+    .filter(([,,,coste]) => filtro === 'todo'
+        || (filtro === '20' ? coste >= 20 : coste === Number(filtro)))
+    .forEach(([titulo, descripcion, categoria, coste, color]) => {
+      const li = document.createElement('li');
+      li.className = 'recompensa';
+      li.innerHTML =
+        '<div class="recompensa__cab">' +
+          '<span class="recompensa__punto" style="background:' + color + '">' +
+            '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">' +
+              ICONOS[categoria] +
+            '</svg>' +
+          '</span>' +
+          '<h3></h3>' +
+        '</div>' +
+        '<p></p>' +
+        '<div class="recompensa__pie">' +
+          '<span class="recompensa__coste"></span>' +
+          '<span class="recompensa__veces"></span>' +
+        '</div>';
+      li.querySelector('h3').textContent = titulo;
+      li.querySelector('p').textContent = descripcion;
+      li.querySelector('.recompensa__coste').textContent = coste + ' puntos';
+      li.querySelector('.recompensa__veces').textContent = veces(coste);
+      lista.appendChild(li);
+    });
+}
+
+pintar('todo');
+
+document.querySelectorAll('.precios button').forEach(boton => {
+  boton.addEventListener('click', () => {
+    document.querySelectorAll('.precios button')
+      .forEach(b => b.setAttribute('aria-pressed', String(b === boton)));
+    pintar(boton.dataset.filtro);
+  });
+});
+
+/* Modo claro / oscuro, con la misma memoria que el resto del sitio. */
+const btnTema = document.getElementById('btn-tema');
+try {
+  const guardado = localStorage.getItem('cda-tema');
+  if (guardado) document.documentElement.dataset.theme = guardado;
+} catch (e) { /* navegación privada: se queda con el del sistema */ }
+
+btnTema.addEventListener('click', () => {
+  const oscuroAhora = document.documentElement.dataset.theme
+    ? document.documentElement.dataset.theme === 'dark'
+    : matchMedia('(prefers-color-scheme: dark)').matches;
+  const nuevo = oscuroAhora ? 'light' : 'dark';
+  document.documentElement.dataset.theme = nuevo;
+  try { localStorage.setItem('cda-tema', nuevo); } catch (e) { /* igual que arriba */ }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tus puntos en la Comunidad</title>
+<meta name="description" content="Presentación para proyectar en clase: los puntos académicos, los comunitarios y dónde se ganan.">
+<meta name="theme-color" content="#0D2560">
+
+<!--
+    Para proyectar. Once pantallas, flechas del teclado o clic.
+
+    Poca letra a propósito: lo que se cuenta lo cuenta quien está delante,
+    y la pantalla solo sujeta la idea. Los números son los de la aplicación
+    (ver el comentario de index.html, que dice de dónde sale cada uno).
+-->
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="estilo.css">
+<style>
+  body{overflow:hidden}
+  /* vh primero y dvh después: en los móviles con barra que aparece y
+     desaparece manda dvh, y donde no se entienda queda vh, que es correcto. */
+  .escenario{height:100vh;height:100dvh;display:flex;flex-direction:column}
+
+  .lamina{
+    flex:1;display:none;align-content:center;justify-items:center;
+    padding:clamp(20px,4vh,48px) clamp(16px,5vw,64px);text-align:center;
+    overflow-y:auto;
+  }
+  .lamina[data-activa]{display:grid}
+  .lamina > *{max-width:960px;width:100%}
+
+  .lamina .sobre{
+    font-size:clamp(12px,1.6vw,15px);font-weight:800;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--lb);margin-bottom:14px;
+  }
+  .lamina h2{font-size:clamp(28px,6.2vw,60px);color:var(--lb-darker);letter-spacing:-.015em}
+  .lamina p.grande{font-size:clamp(17px,2.6vw,27px);color:var(--muted);margin-top:18px;line-height:1.45}
+  .lamina strong{color:var(--text)}
+
+  .cifra{
+    font-size:clamp(56px,14vw,130px);font-weight:800;line-height:1;
+    color:var(--orange-d);font-variant-numeric:tabular-nums;
+  }
+  .cifra--com{color:var(--cyan-d)}
+  .cifra__pie{display:block;font-size:clamp(14px,2vw,20px);font-weight:700;color:var(--muted);margin-top:10px}
+
+  .duo{display:grid;gap:clamp(14px,2.5vw,26px);grid-template-columns:1fr}
+  @media (min-width:780px){ .duo{grid-template-columns:1fr 1fr} }
+  .duo .moneda{text-align:left}
+
+  .metas{display:grid;gap:16px;grid-template-columns:1fr}
+  @media (min-width:640px){ .metas{grid-template-columns:1fr 1fr} }
+  .meta-caja{
+    border:3px solid var(--orange);background:var(--orange-l);border-radius:var(--rr);
+    padding:clamp(18px,3vw,30px);
+  }
+  .meta-caja .cifra{font-size:clamp(46px,10vw,86px)}
+  .meta-caja span.curso{display:block;font-size:clamp(14px,2vw,19px);font-weight:700;color:var(--orange-d);margin-top:8px}
+
+  .sitios{display:grid;gap:12px;text-align:left}
+  .sitio{
+    display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+    background:var(--white);border:2px solid var(--border);border-radius:var(--rr);
+    padding:clamp(12px,2vw,18px);box-shadow:var(--sombra);
+  }
+  .sitio b{font-size:clamp(15px,2.1vw,21px)}
+  .sitio small{display:block;font-size:clamp(12.5px,1.7vw,16px);color:var(--muted);font-weight:500;line-height:1.4}
+  .sitio .pts{font-size:clamp(15px,2.2vw,22px);padding:4px 14px}
+
+  .fichas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .ficha{
+    background:var(--white);border:2px solid var(--border);border-radius:var(--rr);
+    padding:10px 16px;font-size:clamp(13px,1.8vw,17px);font-weight:700;box-shadow:var(--sombra);
+  }
+  .ficha em{font-style:normal;color:var(--cyan-d);font-weight:800}
+
+  /* ── Mandos ── */
+  .mandos{
+    display:flex;align-items:center;gap:12px;justify-content:center;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));
+    background:var(--lb-darker);color:#fff;
+    background-image:radial-gradient(circle,var(--stud) 2.5px,transparent 2.5px);background-size:18px 18px;
+  }
+  .mandos button{
+    border:0;border-radius:var(--r);background:rgba(255,255,255,.14);color:#fff;
+    width:44px;height:44px;display:grid;place-items:center;cursor:pointer;font:inherit;
+  }
+  .mandos button:hover{background:rgba(255,255,255,.26)}
+  .mandos button[disabled]{opacity:.32;cursor:default}
+  .mandos .cuenta{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;min-width:62px}
+  .mandos a{color:var(--cyan);font-size:13.5px;font-weight:700;text-decoration:none;margin-left:auto}
+  .mandos a:hover{text-decoration:underline}
+  .puntos{display:flex;gap:6px}
+  .puntos span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.3)}
+  .puntos span[data-activa]{background:var(--cyan);transform:scale(1.25)}
+  @media (max-width:620px){ .puntos,.mandos a{display:none} }
+
+  .barra-avance{height:5px;background:rgba(255,255,255,.16)}
+  .barra-avance i{display:block;height:100%;background:var(--orange);transition:width .18s ease}
+  @media (prefers-reduced-motion:reduce){ .barra-avance i{transition:none} }
+
+  @media print{ .escenario{height:auto} .lamina{display:grid !important;break-after:page} .mandos,.barra-avance{display:none} }
+</style>
+</head>
+<body>
+<div class="escenario">
+
+<main id="laminas">
+
+  <!-- 1 -->
+  <section class="lamina" data-activa>
+    <div>
+      <img src="../assets/logo-cda.png" alt="" width="700" height="346" style="width:min(300px,62vw);margin-bottom:22px">
+      <p class="sobre">I.E.S. Al-Ándalus · Curso 2026-2027</p>
+      <h2>Tus puntos en la Comunidad</h2>
+      <p class="grande">Cómo se ganan, para qué sirven y qué puedes pedir con ellos.</p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="lamina">
+    <div>
+      <p class="sobre">Primero, lo importante</p>
+      <h2>Una Comunidad de Aprendizaje abre el centro</h2>
+      <p class="grande">
+        Familias y voluntariado <strong>entran en las aulas y en los recreos</strong> a aprender
+        con vosotros. No vienen a mirar: vienen a participar.
+      </p>
+      <p class="grande">Cuantas más personas adultas hay dentro, más aprende todo el mundo.</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="lamina">
+    <div>
+      <p class="sobre">A partir de ahora</p>
+      <h2>Hay dos tipos de puntos</h2>
+      <div class="duo" style="margin-top:26px">
+        <div class="moneda moneda--acad">
+          <div class="moneda__cab">
+            <svg viewBox="0 0 48 48" role="img" aria-label="Puntos académicos">
+              <circle cx="24" cy="24" r="23" fill="#A86A06"/>
+              <circle cx="24" cy="24" r="19.5" fill="#FFC23D"/>
+              <path d="M24 12.4 39 19.2 24 26 9 19.2Z" fill="#6B4200"/>
+              <path d="M15.6 22.2v6.6c0 2.6 3.8 4.4 8.4 4.4s8.4-1.8 8.4-4.4v-6.6L24 26.9Z" fill="#6B4200" opacity=".78"/>
+              <path d="M37.2 20v8.4" stroke="#6B4200" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+              <circle cx="37.2" cy="30.4" r="2.1" fill="#6B4200"/>
+              <ellipse cx="24" cy="15" rx="12.5" ry="7" fill="#fff" opacity=".16"/>
+            </svg>
+            <div><h3>Académicos</h3><span class="moneda__quien">Suben la nota</span></div>
+          </div>
+          <p>Los ganas <strong>tú</strong>, participando.</p>
+        </div>
+        <div class="moneda moneda--com">
+          <div class="moneda__cab">
+            <svg viewBox="0 0 48 48" role="img" aria-label="Puntos comunitarios">
+              <circle cx="24" cy="24" r="23" fill="#1F7A93"/>
+              <circle cx="24" cy="24" r="19.5" fill="#F1FAFC"/>
+              <g transform="translate(13.6 11.2) scale(0.0547)" fill="none" stroke-width="62" stroke-linecap="round">
+                <path d="M52 104 C 74 42 132 16 196 16 C 272 16 338 72 338 162 L 338 392 C 338 428 352 444 378 448" stroke="#3CB4D8"/>
+                <path d="M207 369 A 100 100 0 1 1 207 241" stroke="#9CCC30"/>
+              </g>
+              <ellipse cx="24" cy="15" rx="12.5" ry="7" fill="#fff" opacity=".16"/>
+            </svg>
+            <div><h3>Comunitarios</h3><span class="moneda__quien">Sirven para recompensas</span></div>
+          </div>
+          <p>Los gana <strong>tu familia</strong> y te los pasa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="lamina">
+    <div>
+      <p class="sobre">Puntos académicos</p>
+      <h2>Suben la nota de todas las materias</h2>
+      <p class="grande">
+        Al llegar a la meta, se te anota <strong>+1 en todas las materias</strong> en ese trimestre.
+      </p>
+      <p class="grande">Solo los consigue el alumnado, participando en las actuaciones.</p>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="lamina">
+    <div>
+      <p class="sobre">La meta de cada curso</p>
+      <h2>¿Cuántos hacen falta?</h2>
+      <div class="metas" style="margin-top:26px">
+        <div class="meta-caja">
+          <span class="cifra">40</span>
+          <span class="curso">1.º, 2.º, 3.º y 4.º de E.S.O.</span>
+        </div>
+        <div class="meta-caja">
+          <span class="cifra">60</span>
+          <span class="curso">1.º de Bachillerato y 1.º de SMR</span>
+        </div>
+      </div>
+      <p class="grande" style="font-size:clamp(15px,2vw,20px)">
+        Lo que sobre al pasar la meta cuenta para el trimestre siguiente.
+      </p>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="lamina">
+    <div>
+      <p class="sobre">Puntos comunitarios</p>
+      <h2>Los gana tu familia viniendo</h2>
+      <span class="cifra cifra--com">5</span>
+      <span class="cifra__pie">puntos comunitarios por cada participación de un familiar</span>
+      <p class="grande">
+        Da igual a qué venga: a un grupo interactivo, a una tertulia, a una comisión.
+        Cada vez son 5, y te los pasa a ti para que pidas lo que quieras.
+      </p>
+      <p class="grande" style="font-size:clamp(15px,2vw,20px)"><strong>No suman nota.</strong> Sirven para recompensas.</p>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="lamina">
+    <div>
+      <p class="sobre">2.º de Bachillerato y 2.º de SMR</p>
+      <h2>Vosotros cobráis en comunitarios</h2>
+      <p class="grande">
+        Participáis en lo mismo y ganáis <strong>lo mismo que los demás</strong>,
+        pero en puntos comunitarios en lugar de académicos.
+      </p>
+      <p class="grande" style="font-size:clamp(15px,2vw,20px)">
+        Es lo justo: vuestra nota ya no se puede subir con esto, así que se cambia por recompensas.
+      </p>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="lamina">
+    <div>
+      <p class="sobre">Dónde se ganan</p>
+      <h2>Las actuaciones</h2>
+      <div class="sitios" style="margin-top:22px">
+        <div class="sitio">
+          <span class="pts pts--acad">3</span>
+          <span><b>Tertulia dialógica</b><small>Miércoles alternos, en el recreo · Biblioteca</small></span>
+          <small style="color:var(--green);font-weight:800">sin tope</small>
+        </div>
+        <div class="sitio">
+          <span class="pts pts--acad">3</span>
+          <span><b>Comisión mixta</b><small>Miércoles alternos, en el recreo · Pasillo de Matemáticas y Lengua</small></span>
+          <small style="color:var(--green);font-weight:800">sin tope</small>
+        </div>
+        <div class="sitio">
+          <span class="pts pts--acad">2</span>
+          <span><b>Biblioteca tutorizada</b><small>Lunes, martes, jueves y viernes, en el recreo · Idiomas 1</small></span>
+          <small style="color:var(--muted);font-weight:700">por parejas</small>
+        </div>
+        <div class="sitio">
+          <span class="pts pts--acad">2</span>
+          <span><b>Recreos activos</b><small>Los organizan 1.º de Bachillerato y 1.º de SMR</small></span>
+          <small style="color:var(--muted);font-weight:700">en el patio</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="lamina">
+    <div>
+      <p class="sobre">Y esto no es para más adelante</p>
+      <h2>Ya están funcionando</h2>
+      <div class="fichas" style="margin-top:24px">
+        <span class="ficha">Bibliotecas tutorizadas · <em>Idiomas 1</em></span>
+        <span class="ficha">Comisiones mixtas · <em>pasillo de Mates y Lengua</em></span>
+        <span class="ficha">Tertulias dialógicas · <em>Biblioteca</em></span>
+      </div>
+      <p class="grande">
+        Cada semana que toca tertulia dejamos <strong>copias del texto en el hall</strong>,
+        para que puedas llevártelo en papel.
+      </p>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section class="lamina">
+    <div>
+      <p class="sobre">Con los puntos comunitarios</p>
+      <h2>Esto se puede pedir</h2>
+      <div class="fichas" style="margin-top:22px">
+        <span class="ficha">Reservar el futbolín · <em>5</em></span>
+        <span class="ficha">Elegir la música del recreo · <em>5</em></span>
+        <span class="ficha">Un desayuno · <em>10</em></span>
+        <span class="ficha">El timbre musical una semana · <em>10</em></span>
+        <span class="ficha">25 % en la excursión · <em>15</em></span>
+        <span class="ficha">Día sin deberes · <em>20</em></span>
+        <span class="ficha">Elegir tu sitio en clase · <em>25</em></span>
+      </div>
+      <p class="grande">
+        Lo más barato cuesta <strong>una sola participación</strong> de un familiar.
+      </p>
+      <p class="grande" style="font-size:clamp(14px,1.9vw,18px);color:var(--orange-d);font-weight:700">
+        El catálogo no es definitivo: va a cambiar durante el curso.
+      </p>
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section class="lamina">
+    <div>
+      <p class="sobre">Y ahora os toca a vosotros</p>
+      <h2>¿Qué recompensas queréis?</h2>
+      <p class="grande">
+        Las vamos a decidir con vuestras ideas. Las apuntamos ahora entre todos,
+        en una hoja para toda la clase.
+      </p>
+      <p class="grande">
+        <strong>Y lo otro:</strong> hablad en casa. Cada vez que venga alguien de vuestra familia,
+        son 5 puntos para vosotros.
+      </p>
+      <p class="grande" style="font-size:clamp(15px,2vw,19px)">
+        <a href="mailto:cda@iesalandalus.org">cda@iesalandalus.org</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<div class="barra-avance"><i id="avance"></i></div>
+
+<nav class="mandos" aria-label="Controles de la presentación">
+  <button id="atras" aria-label="Pantalla anterior">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <span class="cuenta" id="cuenta" aria-live="polite">1 / 11</span>
+  <button id="alante" aria-label="Pantalla siguiente">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7.5 4l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="puntos" id="puntos" aria-hidden="true"></div>
+  <button id="pantalla" aria-label="Pantalla completa" title="Pantalla completa">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7.5V3h4.5M16.5 7.5V3H12M3 12.5V17h4.5M16.5 12.5V17H12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <a href="./">Volver al material</a>
+</nav>
+
+</div>
+
+<script>
+const laminas = Array.from(document.querySelectorAll('.lamina'));
+const cuenta  = document.getElementById('cuenta');
+const avance  = document.getElementById('avance');
+const puntos  = document.getElementById('puntos');
+const atras   = document.getElementById('atras');
+const alante  = document.getElementById('alante');
+let actual = 0;
+
+laminas.forEach(() => puntos.appendChild(document.createElement('span')));
+const bolas = Array.from(puntos.children);
+
+function ir(n){
+  actual = Math.max(0, Math.min(laminas.length - 1, n));
+  laminas.forEach((l, i) => i === actual ? l.setAttribute('data-activa','') : l.removeAttribute('data-activa'));
+  bolas.forEach((b, i) => i === actual ? b.setAttribute('data-activa','') : b.removeAttribute('data-activa'));
+  cuenta.textContent = (actual + 1) + ' / ' + laminas.length;
+  avance.style.width = ((actual + 1) / laminas.length * 100) + '%';
+  atras.disabled  = actual === 0;
+  alante.disabled = actual === laminas.length - 1;
+  location.hash = 'p' + (actual + 1);
+}
+
+atras.addEventListener('click',  () => ir(actual - 1));
+alante.addEventListener('click', () => ir(actual + 1));
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); ir(actual + 1); }
+  if (e.key === 'ArrowLeft'  || e.key === 'PageUp')                    { e.preventDefault(); ir(actual - 1); }
+  if (e.key === 'Home') { e.preventDefault(); ir(0); }
+  if (e.key === 'End')  { e.preventDefault(); ir(laminas.length - 1); }
+});
+
+/* Un clic en la lámina avanza, que es como se pasa con el mando del proyector.
+   Se excluyen los enlaces para no comerse un correo que alguien quiera pulsar. */
+document.getElementById('laminas').addEventListener('click', e => {
+  if (!e.target.closest('a')) ir(actual + 1);
+});
+
+document.getElementById('pantalla').addEventListener('click', () => {
+  document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
+});
+
+const inicio = Number((location.hash.match(/^#p(\d+)$/) || [])[1]);
+ir(inicio ? inicio - 1 : 0);
+</script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Las recompensas que proponemos</title>
+<meta name="description" content="Hoja para recoger en clase, entre todo el grupo, las recompensas que el alumnado propone para el catálogo.">
+<meta name="theme-color" content="#0D2560">
+
+<!--
+    UNA hoja por clase, no una por estudiante.
+
+    Es a propósito: treinta formularios con una idea cada uno se pierden por
+    el camino y hay que descifrar treinta letras distintas. Una hoja rellenada
+    en la pizarra entre todos, con quince ideas ya discutidas y un portavoz
+    que la pasa a limpio, llega entera y llega mejor.
+
+    Se puede rellenar a mano (imprimir) o a máquina antes de imprimir: los
+    campos son editables en pantalla.
+-->
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="estilo.css">
+<style>
+  .acciones{
+    position:sticky;top:0;z-index:5;background:var(--lb-darker);color:#fff;
+    display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:10px 16px;
+    background-image:radial-gradient(circle,var(--stud) 2.5px,transparent 2.5px);background-size:18px 18px;
+  }
+  .acciones a,.acciones button{color:var(--cyan);font:inherit;font-size:13.5px;font-weight:700;
+    text-decoration:none;background:0;border:0;cursor:pointer;padding:0}
+  .acciones span{font-size:13px;color:rgba(255,255,255,.7);margin-left:auto}
+
+  .hoja{max-width:820px;margin:20px auto;background:var(--white);border:2px solid var(--border);
+    border-radius:var(--rr);padding:26px}
+
+  .cabecera{display:flex;align-items:center;gap:14px;border-bottom:3px solid var(--lb);padding-bottom:13px;margin-bottom:16px}
+  .cabecera img.ies{width:48px}
+  .cabecera img.cda{width:90px}
+  .cabecera div{margin-left:auto;text-align:right}
+  .cabecera h1{font-size:20px;color:var(--lb-darker);line-height:1.15}
+  .cabecera p{font-size:12.5px;color:var(--muted);font-weight:600}
+
+  .datos{display:grid;gap:10px;grid-template-columns:1fr;margin-bottom:14px}
+  @media (min-width:600px){ .datos{grid-template-columns:1.2fr 1fr 1fr} }
+  .campo{display:flex;flex-direction:column;gap:3px}
+  .campo label{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .campo input{
+    font:inherit;font-size:14px;font-weight:700;color:var(--text);
+    border:0;border-bottom:2px solid var(--lb);background:transparent;padding:5px 2px;
+  }
+  .campo input:focus{outline:0;border-bottom-color:var(--orange)}
+
+  .reglas{background:var(--lb-light);border:2px solid var(--lb);border-radius:var(--rr);padding:13px 15px;margin-bottom:16px}
+  .reglas h2{font-size:13.5px;color:var(--lb-darker);margin-bottom:7px}
+  .reglas ul{margin:0;padding-left:18px;font-size:13px;line-height:1.5}
+  .reglas li{margin-bottom:3px}
+  .reglas li b{color:var(--lb-darker)}
+
+  table.propuestas{min-width:0;font-size:13px}
+  table.propuestas thead th{font-size:10.5px}
+  table.propuestas td{height:30px;padding:4px 9px}
+  table.propuestas td.n{width:30px;text-align:center;font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums}
+  /* Rayas verticales: sin ellas, al escribir a mano no se ve dónde empieza
+     cada columna y las tres respuestas acaban corridas. */
+  table.propuestas td.precio{width:92px;border-left:1px solid var(--border)}
+  table.propuestas td.quien{width:110px;border-left:1px solid var(--border)}
+  table.propuestas thead th:nth-child(3),
+  table.propuestas thead th:nth-child(4){border-left:1px solid var(--border)}
+  table.propuestas .escribe{
+    display:block;width:100%;min-height:22px;font:inherit;font-size:13px;color:var(--text);
+    border:0;background:transparent;outline:0;
+  }
+  table.propuestas .escribe:focus{background:var(--orange-l);border-radius:4px}
+
+  .pieh{margin-top:18px;padding-top:13px;border-top:3px solid var(--lb);
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;font-size:13px;font-weight:600}
+  .pieh a{font-weight:800}
+  .nota{font-size:11.5px;color:var(--muted);margin-top:7px}
+
+  @media print{
+    @page{size:A4 portrait;margin:11mm}
+    .acciones{display:none}
+    .hoja{margin:0;border:0;border-radius:0;padding:0;max-width:none}
+    body{font-size:9.6pt}
+    .cabecera h1{font-size:15pt}
+    .reglas{background:#fff !important;border-width:1pt}
+    table.propuestas td{height:26pt}
+    .campo input{border-bottom-color:#555}
+  }
+</style>
+</head>
+<body>
+
+<div class="acciones no-imprimir">
+  <a href="./">← Volver al material</a>
+  <button type="button" id="imprimir">Imprimir la hoja</button>
+  <span>Se puede rellenar a mano o escribiendo aquí antes de imprimir</span>
+</div>
+
+<div class="hoja">
+
+  <header class="cabecera">
+    <img class="ies" src="../assets/logo-ies.png" width="520" height="520" alt="IES Al-Ándalus">
+    <img class="cda" src="../assets/logo-cda.png" width="700" height="346" alt="Comunidades de Aprendizaje">
+    <div>
+      <h1>Las recompensas que proponemos</h1>
+      <p>Comunidad de Aprendizaje · Curso 2026-2027</p>
+    </div>
+  </header>
+
+  <div class="datos">
+    <div class="campo"><label for="grupo">Grupo</label><input id="grupo" type="text" autocomplete="off"></div>
+    <div class="campo"><label for="portavoz">Portavoz</label><input id="portavoz" type="text" autocomplete="off"></div>
+    <div class="campo"><label for="fecha">Fecha</label><input id="fecha" type="text" autocomplete="off"></div>
+  </div>
+
+  <div class="reglas">
+    <h2>Antes de escribir, tres cosas</h2>
+    <ul>
+      <li>Tiene que ser algo que <b>el centro pueda dar de verdad</b>: sin gastar dinero de las familias y sin saltarse las normas.</li>
+      <li>Los precios van <b>de 5 en 5</b>, porque cada participación de un familiar son 5 puntos. Así se sabe cuántas visitas cuesta cada cosa.</li>
+      <li>Vale más una idea que nadie había pensado que diez repetidas. <b>Discutidlas antes</b> y escribid solo las que convenzan al grupo.</li>
+    </ul>
+  </div>
+
+  <div class="tabla-caja">
+    <table class="propuestas">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Qué proponemos</th>
+          <th scope="col">Cuánto debería costar</th>
+          <th scope="col">Para quién</th>
+        </tr>
+      </thead>
+      <tbody id="filas"></tbody>
+    </table>
+  </div>
+
+  <p class="nota">
+    «Para quién»: si es para una persona, para un grupo pequeño o para toda la clase.
+    No todas las ideas entrarán en el catálogo, pero todas se leen.
+  </p>
+
+  <div class="pieh">
+    <span>Entregadla a vuestro tutor o tutora</span>
+    <span>o enviadla a <a href="mailto:cda@iesalandalus.org">cda@iesalandalus.org</a></span>
+  </div>
+
+</div>
+
+<script>
+/* Quince filas: caben en una cara y son bastantes para una clase entera.
+   Se generan aquí para no tener quince bloques iguales en el documento. */
+const cuerpo = document.getElementById('filas');
+
+for (let i = 1; i <= 15; i++) {
+  const fila = document.createElement('tr');
+  fila.innerHTML =
+    '<td class="n">' + i + '</td>' +
+    '<td><span class="escribe" contenteditable="true" role="textbox" aria-label="Propuesta ' + i + '"></span></td>' +
+    '<td class="precio"><span class="escribe" contenteditable="true" role="textbox" aria-label="Precio de la propuesta ' + i + '"></span></td>' +
+    '<td class="quien"><span class="escribe" contenteditable="true" role="textbox" aria-label="Para quién, propuesta ' + i + '"></span></td>';
+  cuerpo.appendChild(fila);
+}
+
+document.getElementById('imprimir').addEventListener('click', () => window.print());
+</script>
+</body>
+</html>
