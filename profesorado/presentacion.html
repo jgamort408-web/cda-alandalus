@@ -27,8 +27,15 @@
      desaparece manda dvh, y donde no se entienda queda vh, que es correcto. */
   .escenario{height:100vh;height:100dvh;display:flex;flex-direction:column}
 
+  /* Quien tiene que estirarse es ESTE, que es el hijo flexible del escenario.
+     Ponerle `flex:1` a la lámina no servía de nada —su padre no era una caja
+     flexible—, así que el <main> se quedaba con la altura del texto y la barra
+     de mandos subía hasta la mitad de la pantalla.
+     `min-height:0` para que pueda encoger y sea la lámina la que desplace. */
+  #laminas{flex:1 1 auto;min-height:0;display:grid;grid-template-rows:1fr}
+
   .lamina{
-    flex:1;display:none;align-content:center;justify-items:center;
+    display:none;align-content:center;justify-items:center;
     padding:clamp(20px,4vh,48px) clamp(16px,5vw,64px);text-align:center;
     overflow-y:auto;
   }
@@ -79,6 +86,20 @@
     padding:10px 16px;font-size:clamp(13px,1.8vw,17px);font-weight:700;box-shadow:var(--sombra);
   }
   .ficha em{font-style:normal;color:var(--cyan-d);font-weight:800}
+
+  /* El catálogo entero, agrupado por lo que cuesta. Cuatro columnas en
+     pantalla de aula y una sola en el móvil. */
+  .tarifa{display:grid;gap:clamp(10px,1.6vw,16px);grid-template-columns:1fr;text-align:left}
+  @media (min-width:700px){ .tarifa{grid-template-columns:repeat(2,1fr)} }
+  @media (min-width:1000px){ .tarifa{grid-template-columns:repeat(4,1fr)} }
+  .tarifa__grupo{border:2px solid var(--cyan-d);border-radius:var(--rr);background:var(--cyan-l);padding:clamp(10px,1.4vw,15px)}
+  .tarifa__cab{display:flex;align-items:baseline;gap:7px;margin-bottom:8px;flex-wrap:wrap}
+  .tarifa__coste{font-size:clamp(20px,2.7vw,30px);font-weight:800;color:var(--cyan-d);line-height:1;font-variant-numeric:tabular-nums}
+  .tarifa__veces{font-size:clamp(11px,1.3vw,14px);font-weight:700;color:var(--muted)}
+  .tarifa ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+  .tarifa li{font-size:clamp(12px,1.45vw,16px);font-weight:600;line-height:1.35;display:flex;gap:6px}
+  .tarifa li::before{content:"·";font-weight:800;color:var(--cyan-d)}
+  .tarifa li em{font-style:normal;font-weight:800;color:var(--cyan-d);margin-left:auto;padding-left:8px}
 
   /* ── Mandos ── */
   .mandos{
@@ -220,7 +241,10 @@
         Da igual a qué venga: a un grupo interactivo, a una tertulia, a una comisión.
         Cada vez son 5, y te los pasa a ti para que pidas lo que quieras.
       </p>
-      <p class="grande" style="font-size:clamp(15px,2vw,20px)"><strong>No suman nota.</strong> Sirven para recompensas.</p>
+      <p class="grande" style="font-size:clamp(15px,2vw,20px)">
+        Cada visita suma sus 5 puntos y <strong>van enteros a un estudiante</strong>, el que
+        la familia decida. Sirven para pedir recompensas.
+      </p>
     </div>
   </section>
 
@@ -228,13 +252,13 @@
   <section class="lamina">
     <div>
       <p class="sobre">2.º de Bachillerato y 2.º de SMR</p>
-      <h2>Vosotros cobráis en comunitarios</h2>
+      <h2>Vosotros ganáis puntos comunitarios</h2>
       <p class="grande">
-        Participáis en lo mismo y ganáis <strong>lo mismo que los demás</strong>,
+        Participáis en lo mismo y ganáis <strong>la misma cantidad que los demás</strong>,
         pero en puntos comunitarios en lugar de académicos.
       </p>
       <p class="grande" style="font-size:clamp(15px,2vw,20px)">
-        Es lo justo: vuestra nota ya no se puede subir con esto, así que se cambia por recompensas.
+        Así vuestra participación también vale algo: se convierte en recompensas.
       </p>
     </div>
   </section>
@@ -291,20 +315,50 @@
     <div>
       <p class="sobre">Con los puntos comunitarios</p>
       <h2>Esto se puede pedir</h2>
-      <div class="fichas" style="margin-top:22px">
-        <span class="ficha">Reservar el futbolín · <em>5</em></span>
-        <span class="ficha">Elegir la música del recreo · <em>5</em></span>
-        <span class="ficha">Un desayuno · <em>10</em></span>
-        <span class="ficha">El timbre musical una semana · <em>10</em></span>
-        <span class="ficha">25 % en la excursión · <em>15</em></span>
-        <span class="ficha">Día sin deberes · <em>20</em></span>
-        <span class="ficha">Elegir tu sitio en clase · <em>25</em></span>
+      <div class="tarifa" style="margin-top:20px">
+        <div class="tarifa__grupo">
+          <div class="tarifa__cab"><span class="tarifa__coste">5</span><span class="tarifa__veces">1 participación</span></div>
+          <ul>
+            <li>Reservar el futbolín</li>
+            <li>Kit de material escolar</li>
+            <li>Elegir la música del recreo</li>
+            <li>Diploma de reconocimiento</li>
+          </ul>
+        </div>
+        <div class="tarifa__grupo">
+          <div class="tarifa__cab"><span class="tarifa__coste">10</span><span class="tarifa__veces">2 participaciones</span></div>
+          <ul>
+            <li>Un desayuno gratis</li>
+            <li>Entrada al pasaje del terror</li>
+            <li>El timbre musical una semana</li>
+            <li>Un día con la mesa de futbolín</li>
+            <li>Dos mañanas en el huerto</li>
+          </ul>
+        </div>
+        <div class="tarifa__grupo">
+          <div class="tarifa__cab"><span class="tarifa__coste">15</span><span class="tarifa__veces">3 participaciones</span></div>
+          <ul>
+            <li>25 % en la excursión de fin de trimestre</li>
+            <li>Foto en el tablón de honor</li>
+            <li>Imprime tu modelo 3D</li>
+          </ul>
+        </div>
+        <div class="tarifa__grupo">
+          <div class="tarifa__cab"><span class="tarifa__coste">20 a 40</span><span class="tarifa__veces">de 4 a 8</span></div>
+          <ul>
+            <li>Ser extra del pasaje del terror <em>20</em></li>
+            <li>Día sin deberes <em>20</em></li>
+            <li>Delegado o delegada una semana <em>25</em></li>
+            <li>Elegir tu sitio en clase <em>25</em></li>
+            <li>Elegir actividad de tutoría <em>30</em></li>
+            <li>Libro de lectura a elegir <em>35</em></li>
+            <li>Padrino o madrina de lectura <em>40</em></li>
+          </ul>
+        </div>
       </div>
-      <p class="grande">
+      <p class="grande" style="font-size:clamp(14px,1.9vw,19px);margin-top:16px">
         Lo más barato cuesta <strong>una sola participación</strong> de un familiar.
-      </p>
-      <p class="grande" style="font-size:clamp(14px,1.9vw,18px);color:var(--orange-d);font-weight:700">
-        El catálogo no es definitivo: va a cambiar durante el curso.
+        <span style="color:var(--orange-d);font-weight:700">El catálogo no es definitivo: va a cambiar durante el curso.</span>
       </p>
     </div>
   </section>

@@ -170,6 +170,14 @@ thead th{background:var(--lb-light);color:var(--lb-darker);font-size:12.5px;
   text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
 tbody tr:last-child td{border-bottom:0}
 td.num{font-variant-numeric:tabular-nums;font-weight:800;white-space:nowrap}
+/* Cada cantidad lleva su moneda al lado. La MISMA actividad da académicos a
+   un estudiante y comunitarios a un familiar, así que el número solo no dice
+   de qué está hablando: hace falta el dibujo. */
+svg.mini{width:19px;height:19px;vertical-align:-4px;flex:0 0 auto}
+.valor{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.valor--acad{color:var(--orange-d)}
+.valor--com{color:var(--cyan-d)}
+
 .pts{display:inline-block;padding:2px 9px;border-radius:999px;font-size:13.5px;font-weight:800}
 .pts--acad{background:var(--orange-l);color:var(--orange-d);border:1.5px solid var(--orange)}
 .pts--com{background:var(--cyan-l);color:var(--cyan-d);border:1.5px solid var(--cyan-d)}

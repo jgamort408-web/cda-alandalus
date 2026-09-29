@@ -4,17 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Vuestra participación suma</title>
-<meta name="description" content="Hoja resumen para las familias: los dos tipos de puntos, dónde se participa y qué se puede pedir.">
+<title>Los puntos de la Comunidad</title>
+<meta name="description" content="Hoja resumen de dos caras: por delante los puntos académicos del alumnado, por detrás los comunitarios del voluntariado y las recompensas.">
 <meta name="theme-color" content="#0D2560">
 
 <!--
-    La hoja que se lleva a casa. UNA cara de A4.
+    La hoja que se lleva a casa. DOS caras, y cada una con un dueño:
 
-    Va dirigida a las familias, no al alumnado: es la que tiene que decidir
-    si alguien viene al centro. Por eso evita el vocabulario de dentro
-    («baremo», «actuación educativa de éxito») y nunca dice «premio» ni
-    «regalar»: los puntos comunitarios se suman participando.
+      · Delante — el alumnado. Puntos académicos: los que suben la nota.
+      · Detrás  — el voluntariado y las familias. Puntos comunitarios: los
+                  que se cambian por recompensas. Y el catálogo.
+
+    Separarlas es lo que evita la confusión de siempre («¿mi familia me sube
+    la nota?»). Cada cantidad lleva al lado la moneda que le corresponde,
+    porque la MISMA actividad da académicos a un estudiante y comunitarios a
+    un familiar: es el quién, y no la actividad, lo que decide la moneda.
+
+    Las monedas son el SVG del componente <x-moneda> de la aplicación, y se
+    distinguen por dibujo además de por color: hay daltonismos que juntan el
+    ámbar y el verde.
+
+    Nada de «premio», «regalar» ni «cobrar»: los puntos se ganan participando.
 -->
 
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -25,187 +35,314 @@
 <style>
   .acciones{
     position:sticky;top:0;z-index:5;background:var(--lb-darker);color:#fff;
-    display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:10px 16px;
+    display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:10px 16px;
     background-image:radial-gradient(circle,var(--stud) 2.5px,transparent 2.5px);background-size:18px 18px;
   }
-  .acciones a{color:var(--cyan);font-size:13.5px;font-weight:700;text-decoration:none}
+  .acciones a,.acciones button{color:var(--cyan);font:inherit;font-size:13.5px;font-weight:700;
+    text-decoration:none;background:0;border:0;cursor:pointer;padding:0}
   .acciones span{font-size:13px;color:rgba(255,255,255,.7);margin-left:auto}
 
-  .hoja{
-    max-width:800px;margin:20px auto;background:var(--white);color:var(--text);
+  .cara{
+    max-width:800px;margin:20px auto;background:var(--white);
     border:2px solid var(--border);border-radius:var(--rr);padding:26px;
   }
-  .cabecera{display:flex;align-items:center;gap:14px;border-bottom:3px solid var(--lb);padding-bottom:14px;margin-bottom:18px}
-  .cabecera img.ies{width:52px}
-  .cabecera img.cda{width:96px}
+
+  .cabecera{display:flex;align-items:center;gap:13px;border-bottom:3px solid var(--lb);padding-bottom:12px;margin-bottom:15px}
+  .cabecera img.ies{width:48px}
+  .cabecera img.cda{width:88px}
   .cabecera div{margin-left:auto;text-align:right}
-  .cabecera h1{font-size:21px;color:var(--lb-darker);line-height:1.15}
-  .cabecera p{font-size:12.5px;color:var(--muted);font-weight:600}
+  .cabecera h1{font-size:19px;color:var(--lb-darker);line-height:1.15}
+  .cabecera p{font-size:12px;color:var(--muted);font-weight:600}
+  .cara--detras .cabecera{border-bottom-color:var(--cyan-d)}
+  .cara--detras .cabecera h1{color:var(--cyan-d)}
 
-  .lema{font-size:17px;font-weight:700;line-height:1.45;margin-bottom:16px}
-  .lema b{color:var(--lb-darker)}
-
-  .dos{display:grid;gap:12px;grid-template-columns:1fr}
-  @media (min-width:620px){ .dos{grid-template-columns:1fr 1fr} }
-
-  .caja{border:2px solid var(--border);border-radius:var(--rr);padding:14px}
-  .caja--acad{border-color:var(--orange);background:var(--orange-l)}
-  .caja--com{border-color:var(--cyan-d);background:var(--cyan-l)}
-  .caja__cab{display:flex;align-items:center;gap:11px;margin-bottom:9px}
-  .caja__cab svg{width:42px;height:42px;flex:0 0 auto}
-  .caja__cab h2{font-size:16px}
-  .caja__cab small{display:block;font-size:11.5px;font-weight:700;color:var(--muted)}
-  .caja p{font-size:13.5px;line-height:1.45}
-  .caja b.dato{display:block;margin-top:8px;font-size:14.5px}
+  /* La ficha que abre cada cara: la moneda, para qué sirve y cuánto hace falta. */
+  .abre{display:grid;grid-template-columns:auto 1fr;gap:15px;align-items:center;
+    border:3px solid;border-radius:var(--rr);padding:15px;margin-bottom:15px}
+  .abre--acad{border-color:var(--orange);background:var(--orange-l)}
+  .abre--com{border-color:var(--cyan-d);background:var(--cyan-l)}
+  .abre svg.grande{width:62px;height:62px}
+  .abre h2{font-size:17px;margin-bottom:3px}
+  .abre p{font-size:13.5px;line-height:1.45}
+  .abre b.para{display:block;font-size:14.5px;margin-top:6px}
 
   h3.apartado{
-    font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--lb);margin:20px 0 9px;padding-bottom:5px;border-bottom:1.5px solid var(--border);
+    font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--lb);margin:16px 0 8px;padding-bottom:4px;border-bottom:1.5px solid var(--border);
   }
+  .cara--detras h3.apartado{color:var(--cyan-d)}
 
-  ol.comovenir{list-style:none;counter-reset:p;margin:0;padding:0;display:grid;gap:8px}
-  ol.comovenir li{counter-increment:p;display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:13.5px;line-height:1.45}
+  svg.mini{width:19px;height:19px;vertical-align:-4px;flex:0 0 auto}
+
+  table.puntos{min-width:0;font-size:12.8px}
+  table.puntos th,table.puntos td{padding:7px 9px}
+  table.puntos thead th{font-size:10.5px}
+  .cara--detras table.puntos thead th{background:var(--cyan-l);color:var(--cyan-d)}
+  table.puntos td.gana{width:104px;white-space:nowrap}
+  .valor{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-variant-numeric:tabular-nums}
+  .valor--acad{color:var(--orange-d)}
+  .valor--com{color:var(--cyan-d)}
+  table.puntos small{display:block;color:var(--muted);font-weight:500;line-height:1.3;margin-top:1px}
+
+  .franja{
+    display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:center;
+    border:2px solid var(--cyan-d);background:var(--cyan-l);border-radius:var(--rr);
+    padding:11px 13px;margin-top:11px;font-size:13px;line-height:1.45;font-weight:600;
+  }
+  .franja svg{width:30px;height:30px}
+
+  ol.comovenir{list-style:none;counter-reset:p;margin:0;padding:0;display:grid;gap:7px}
+  ol.comovenir li{counter-increment:p;display:grid;grid-template-columns:24px 1fr;gap:9px;font-size:13px;line-height:1.45}
   ol.comovenir li::before{
-    content:counter(p);width:26px;height:26px;border-radius:7px;background:var(--lb);color:#fff;
-    font-weight:800;font-size:13px;display:grid;place-items:center;
+    content:counter(p);width:24px;height:24px;border-radius:7px;background:var(--cyan-d);color:#fff;
+    font-weight:800;font-size:12.5px;display:grid;place-items:center;
   }
 
-  table.compacta{min-width:0;font-size:13px}
-  table.compacta th,table.compacta td{padding:7px 9px}
-  table.compacta thead th{font-size:11px}
-
-  .ejemplos{display:flex;flex-wrap:wrap;gap:7px;padding:0;margin:0;list-style:none}
-  .ejemplos li{border:1.5px solid var(--border);border-radius:999px;padding:5px 12px;font-size:12.5px;font-weight:700}
-  .ejemplos li em{font-style:normal;color:var(--cyan-d);font-weight:800}
+  /* El catálogo entero en columnas: cabe en media cara. */
+  .catalogo{columns:3;column-gap:16px;margin:0;padding:0;list-style:none;font-size:12.3px}
+  @media (max-width:560px){ .catalogo{columns:1} }
+  .catalogo li{break-inside:avoid;display:flex;gap:6px;padding:2.5px 0;line-height:1.35;font-weight:600}
+  .catalogo li b{margin-left:auto;color:var(--cyan-d);font-weight:800;font-variant-numeric:tabular-nums}
+  .catalogo li::before{content:"·";color:var(--cyan-d);font-weight:800}
 
   .pieh{
-    margin-top:20px;padding-top:14px;border-top:3px solid var(--lb);
+    margin-top:16px;padding-top:12px;border-top:3px solid var(--lb);
     display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
-    font-size:13px;font-weight:600;
+    font-size:12.5px;font-weight:600;
   }
+  .cara--detras .pieh{border-top-color:var(--cyan-d)}
   .pieh a{font-weight:800}
-  .nota{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+  .nota{font-size:11.2px;color:var(--muted);margin-top:7px;line-height:1.4}
 
   @media print{
-    @page{size:A4 portrait;margin:11mm}
+    @page{size:A4 portrait;margin:10mm}
     .acciones{display:none}
-    .hoja{margin:0;border:0;border-radius:0;padding:0;max-width:none}
-    body{font-size:9.6pt}
-    .cabecera h1{font-size:16pt}
-    .lema{font-size:11.5pt;margin-bottom:9pt}
-    .caja p,ol.comovenir li,table.compacta{font-size:9pt}
-    .caja__cab svg{width:32px;height:32px}
-    h3.apartado{margin:11pt 0 5pt}
-    .dos{grid-template-columns:1fr 1fr}
-    .tabla-caja{border-width:1pt}
+    .cara{margin:0;border:0;border-radius:0;padding:0;max-width:none}
+    .cara--delante{break-after:page}
+    body{font-size:9.4pt}
+    .cabecera h1{font-size:14.5pt}
+    .abre svg.grande{width:46px;height:46px}
+    .catalogo{font-size:8.4pt}
+    table.puntos{font-size:8.7pt}
   }
 </style>
 </head>
 <body>
 
+<!-- Las dos monedas, una sola vez: el resto de la hoja las reutiliza. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="m-acad" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="23" fill="#A86A06"/>
+    <circle cx="24" cy="24" r="19.5" fill="#FFC23D"/>
+    <path d="M24 12.4 39 19.2 24 26 9 19.2Z" fill="#6B4200"/>
+    <path d="M15.6 22.2v6.6c0 2.6 3.8 4.4 8.4 4.4s8.4-1.8 8.4-4.4v-6.6L24 26.9Z" fill="#6B4200" opacity=".78"/>
+    <path d="M37.2 20v8.4" stroke="#6B4200" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+    <circle cx="37.2" cy="30.4" r="2.1" fill="#6B4200"/>
+  </symbol>
+  <symbol id="m-com" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="23" fill="#1F7A93"/>
+    <circle cx="24" cy="24" r="19.5" fill="#F1FAFC"/>
+    <g transform="translate(13.6 11.2) scale(0.0547)" fill="none" stroke-width="62" stroke-linecap="round">
+      <path d="M52 104 C 74 42 132 16 196 16 C 272 16 338 72 338 162 L 338 392 C 338 428 352 444 378 448" stroke="#3CB4D8"/>
+      <path d="M207 369 A 100 100 0 1 1 207 241" stroke="#9CCC30"/>
+    </g>
+  </symbol>
+</svg>
+
 <div class="acciones no-imprimir">
   <a href="./">← Volver al material</a>
-  <a href="#" id="imprimir">Imprimir esta hoja</a>
-  <span>Una cara de A4</span>
+  <button type="button" id="imprimir">Imprimir las dos caras</button>
+  <span>A4 · imprimir a doble cara</span>
 </div>
 
-<div class="hoja">
+<!-- ============================ CARA 1 ============================ -->
+<div class="cara cara--delante">
 
   <header class="cabecera">
     <img class="ies" src="../assets/logo-ies.png" width="520" height="520" alt="IES Al-Ándalus">
     <img class="cda" src="../assets/logo-cda.png" width="700" height="346" alt="Comunidades de Aprendizaje">
     <div>
-      <h1>Vuestra participación suma</h1>
+      <h1>Los puntos del alumnado</h1>
       <p>Comunidad de Aprendizaje · Curso 2026-2027</p>
     </div>
   </header>
 
-  <p class="lema">
-    El instituto se abre a las familias. Podéis entrar <b>a las aulas y a los recreos</b>
-    a aprender junto al alumnado. Y cada vez que venís, vuestro hijo o hija gana puntos.
-  </p>
-
-  <div class="dos">
-
-    <div class="caja caja--acad">
-      <div class="caja__cab">
-        <svg viewBox="0 0 48 48" role="img" aria-label="Puntos académicos">
-          <circle cx="24" cy="24" r="23" fill="#A86A06"/>
-          <circle cx="24" cy="24" r="19.5" fill="#FFC23D"/>
-          <path d="M24 12.4 39 19.2 24 26 9 19.2Z" fill="#6B4200"/>
-          <path d="M15.6 22.2v6.6c0 2.6 3.8 4.4 8.4 4.4s8.4-1.8 8.4-4.4v-6.6L24 26.9Z" fill="#6B4200" opacity=".78"/>
-          <path d="M37.2 20v8.4" stroke="#6B4200" stroke-width="1.7" stroke-linecap="round" fill="none"/>
-          <circle cx="37.2" cy="30.4" r="2.1" fill="#6B4200"/>
-        </svg>
-        <div><h2>Puntos académicos</h2><small>Los gana el alumnado</small></div>
-      </div>
-      <p>Se consiguen participando, y sirven para conseguir <strong>un punto más en todas las
-         materias</strong> al final de cada trimestre.</p>
-      <b class="dato">40 puntos en la E.S.O.<br>60 en 1.º de Bachillerato y 1.º de SMR</b>
+  <div class="abre abre--acad">
+    <svg class="grande" role="img" aria-label="Moneda de puntos académicos"><use href="#m-acad"/></svg>
+    <div>
+      <h2>Puntos académicos</h2>
+      <p>Los gana <strong>el alumnado</strong> participando en las actividades de la Comunidad.
+         Sirven para una sola cosa, y es la importante: <strong>subir la nota</strong>.</p>
+      <b class="para">Al llegar a la meta se anota <strong>+1 en todas las materias</strong> en ese trimestre</b>
     </div>
-
-    <div class="caja caja--com">
-      <div class="caja__cab">
-        <svg viewBox="0 0 48 48" role="img" aria-label="Puntos comunitarios">
-          <circle cx="24" cy="24" r="23" fill="#1F7A93"/>
-          <circle cx="24" cy="24" r="19.5" fill="#F1FAFC"/>
-          <g transform="translate(13.6 11.2) scale(0.0547)" fill="none" stroke-width="62" stroke-linecap="round">
-            <path d="M52 104 C 74 42 132 16 196 16 C 272 16 338 72 338 162 L 338 392 C 338 428 352 444 378 448" stroke="#3CB4D8"/>
-            <path d="M207 369 A 100 100 0 1 1 207 241" stroke="#9CCC30"/>
-          </g>
-        </svg>
-        <div><h2>Puntos comunitarios</h2><small>Los ganáis vosotras y vosotros</small></div>
-      </div>
-      <p>Son los que ganáis al participar. No suman nota: sirven para que vuestro hijo o hija
-         pida cosas del catálogo del centro.</p>
-      <b class="dato">5 puntos por cada participación,<br>sea en lo que sea</b>
-    </div>
-
   </div>
 
-  <h3 class="apartado">Cómo se participa</h3>
-  <!-- El texto de cada paso va dentro de un <span>: la fila es una rejilla de
-       dos columnas, y un <strong> suelto se convertiría en celda propia y se
-       montaría encima de lo de al lado. -->
-  <ol class="comovenir">
-    <li><span>Decídselo a la tutora o al tutor, o escribid a <strong>cda@iesalandalus.org</strong>. No hace falta nada más.</span></li>
-    <li><span>Venís al centro el día que os venga bien, al rato que podáis. Con una vez ya cuenta.</span></li>
-    <li><span>Quien coordina la actividad anota vuestra participación, y esos 5 puntos pasan a vuestro hijo o hija.</span></li>
-  </ol>
-
-  <h3 class="apartado">Qué hay, cuándo y dónde</h3>
+  <h3 class="apartado">Cuántos hacen falta</h3>
   <div class="tabla-caja">
-    <table class="compacta">
+    <table class="puntos">
+      <tbody>
+        <tr>
+          <td><strong>1.º, 2.º, 3.º y 4.º de E.S.O.</strong></td>
+          <td class="gana"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>40 puntos</span></td>
+        </tr>
+        <tr>
+          <td><strong>1.º de Bachillerato y 1.º de SMR</strong></td>
+          <td class="gana"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>60 puntos</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="nota">Lo que sobre al pasar la meta cuenta para el trimestre siguiente.</p>
+
+  <h3 class="apartado">Dónde se ganan</h3>
+  <div class="tabla-caja">
+    <table class="puntos">
       <thead>
-        <tr><th scope="col">Actividad</th><th scope="col">Cuándo</th><th scope="col">Dónde</th></tr>
+        <tr>
+          <th scope="col">Actividad</th>
+          <th scope="col">Cuándo y dónde</th>
+          <th scope="col">El alumnado gana</th>
+        </tr>
       </thead>
       <tbody>
-        <tr><td><strong>Tertulias dialógicas</strong><br><small>Se lee un libro y se comenta entre todos</small></td>
-            <td>Miércoles alternos, en el recreo</td><td>Biblioteca</td></tr>
-        <tr><td><strong>Comisiones mixtas</strong><br><small>Se decide junto al profesorado y al alumnado</small></td>
-            <td>Miércoles alternos, en el recreo</td><td>Pasillo de Matemáticas y Lengua (1.ª planta)</td></tr>
-        <tr><td><strong>Bibliotecas tutorizadas</strong><br><small>Alumnado que se ayuda entre cursos</small></td>
-            <td>Lunes, martes, jueves y viernes, en el recreo</td><td>Idiomas 1 (2.ª planta)</td></tr>
-        <tr><td><strong>Grupos interactivos</strong><br><small>Mesas pequeñas en clase, con una persona adulta en cada una</small></td>
-            <td>Se avisa de cada uno con antelación</td><td>En las aulas</td></tr>
+        <tr>
+          <td><strong>Tertulia dialógica</strong><small>Se lee un fragmento y se comenta entre todos</small></td>
+          <td>Miércoles alternos, en el recreo · Biblioteca<small>Cada semana que tocan hay copias del fragmento en el hall</small></td>
+          <td class="gana"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>3</span><small>sin tope</small></td>
+        </tr>
+        <tr>
+          <td><strong>Comisión mixta</strong><small>Se decide junto al profesorado y a las familias</small></td>
+          <td>Miércoles alternos, en el recreo · Pasillo de Matemáticas y Lengua (1.ª planta)</td>
+          <td class="gana"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>3</span><small>sin tope</small></td>
+        </tr>
+        <tr>
+          <td><strong>Biblioteca tutorizada</strong><small>Alumnado que se ayuda entre cursos distintos</small></td>
+          <td>Lunes, martes, jueves y viernes, en el recreo · Idiomas 1 (2.ª planta)</td>
+          <td class="gana"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>2</span><small>hasta 25 al trimestre</small></td>
+        </tr>
+        <tr>
+          <td><strong>Recreos activos</strong><small>Los organizan 1.º de Bachillerato y 1.º de SMR</small></td>
+          <td>Lunes, martes, jueves y viernes, en el recreo · En el patio</td>
+          <td class="gana"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>2</span><small>hasta 25 al trimestre</small></td>
+        </tr>
+        <tr>
+          <td><strong>Biblioteca musical</strong><small>Como la tutorizada, con instrumentos</small></td>
+          <td>Aula de Música</td>
+          <td class="gana"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>2</span><small>hasta 25 al trimestre</small></td>
+        </tr>
+        <tr>
+          <td><strong>Grupo interactivo</strong><small>Haciendo de voluntario o voluntaria en una mesa</small></td>
+          <td>En las aulas, cuando se convocan</td>
+          <td class="gana"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>3</span><small>cada vez</small></td>
+        </tr>
       </tbody>
     </table>
   </div>
 
-  <h3 class="apartado">Con esos puntos se puede pedir</h3>
-  <ul class="ejemplos">
-    <li>Reservar el futbolín · <em>5</em></li>
-    <li>Elegir la música del recreo · <em>5</em></li>
-    <li>Kit de material escolar · <em>5</em></li>
-    <li>Un desayuno · <em>10</em></li>
-    <li>El timbre musical una semana · <em>10</em></li>
-    <li>25 % en la excursión · <em>15</em></li>
-    <li>Un día sin deberes · <em>20</em></li>
+  <div class="franja">
+    <svg role="img" aria-label="Moneda de puntos comunitarios"><use href="#m-com"/></svg>
+    <span><strong>2.º de Bachillerato y 2.º de SMR:</strong> participáis en lo mismo y ganáis la misma
+      cantidad, pero en <strong>puntos comunitarios</strong>, que se cambian por recompensas. Están explicados al dorso.</span>
+  </div>
+
+  <div class="pieh">
+    <span>IES Al-Ándalus · Almería</span>
+    <span>Al dorso: cómo participan las familias</span>
+  </div>
+
+</div>
+
+<!-- ============================ CARA 2 ============================ -->
+<div class="cara cara--detras">
+
+  <header class="cabecera">
+    <img class="ies" src="../assets/logo-ies.png" width="520" height="520" alt="IES Al-Ándalus">
+    <img class="cda" src="../assets/logo-cda.png" width="700" height="346" alt="Comunidades de Aprendizaje">
+    <div>
+      <h1>Los puntos del voluntariado</h1>
+      <p>Familias y personas voluntarias</p>
+    </div>
+  </header>
+
+  <div class="abre abre--com">
+    <svg class="grande" role="img" aria-label="Moneda de puntos comunitarios"><use href="#m-com"/></svg>
+    <div>
+      <h2>Puntos comunitarios</h2>
+      <p>Los ganáis <strong>vosotras y vosotros</strong> cada vez que venís al centro a participar.
+         Sirven para una cosa distinta de la nota: <strong>pedir recompensas</strong> del catálogo.</p>
+      <b class="para">5 puntos por cada participación, sea en la actividad que sea</b>
+    </div>
+  </div>
+
+  <h3 class="apartado">Qué se gana al venir</h3>
+  <div class="tabla-caja">
+    <table class="puntos">
+      <thead>
+        <tr>
+          <th scope="col">Quién participa</th>
+          <th scope="col">En qué</th>
+          <th scope="col">Gana</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Una familia</strong><small>Madres, padres, abuelas, abuelos, quien sea de casa</small></td>
+          <td>Grupos interactivos, tertulias, comisiones, bibliotecas… cualquiera</td>
+          <td class="gana"><span class="valor valor--com"><svg class="mini" aria-hidden="true"><use href="#m-com"/></svg>5</span><small>cada visita</small></td>
+        </tr>
+        <tr>
+          <td><strong>Una persona voluntaria</strong><small>Del barrio, exalumnado, entidades</small></td>
+          <td>Cualquiera de las actividades de la Comunidad</td>
+          <td class="gana"><span class="valor valor--com"><svg class="mini" aria-hidden="true"><use href="#m-com"/></svg>5</span><small>cada visita</small></td>
+        </tr>
+        <tr>
+          <td><strong>2.º de Bachillerato y 2.º de SMR</strong><small>Su nota ya no se sube con esto, así que ganan recompensas</small></td>
+          <td>Las mismas actividades que el resto del alumnado</td>
+          <td class="gana"><span class="valor valor--com"><svg class="mini" aria-hidden="true"><use href="#m-com"/></svg>2 o 3</span><small>lo mismo que los demás</small></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="franja">
+    <svg role="img" aria-label="Moneda de puntos comunitarios"><use href="#m-com"/></svg>
+    <span>Cada participación vale <strong>5 puntos, siempre los mismos</strong>, y van enteros
+      <strong>a un estudiante del centro</strong>: el que vosotros digáis. Si tenéis más de un hijo o
+      hija aquí, en cada visita elegís a quién se los lleváis.</span>
+  </div>
+
+  <h3 class="apartado">Cómo se participa</h3>
+  <ol class="comovenir">
+    <li><span>Decídselo a la tutora o al tutor, o escribid a <strong>cda@iesalandalus.org</strong>. No hace falta nada más.</span></li>
+    <li><span>Venís el día que os venga bien, al rato que podáis. Con una vez ya cuenta.</span></li>
+    <li><span>Quien coordina la actividad anota vuestra participación, y esos 5 puntos pasan al estudiante que digáis.</span></li>
+  </ol>
+
+  <h3 class="apartado">El catálogo de recompensas</h3>
+  <ul class="catalogo">
+    <li>Reservar el futbolín <b>5</b></li>
+    <li>Kit de material escolar <b>5</b></li>
+    <li>Elegir la música del recreo <b>5</b></li>
+    <li>Diploma de reconocimiento <b>5</b></li>
+    <li>Un desayuno gratis <b>10</b></li>
+    <li>Entrada al pasaje del terror <b>10</b></li>
+    <li>Timbre musical una semana <b>10</b></li>
+    <li>Un día con el futbolín <b>10</b></li>
+    <li>Dos mañanas en el huerto <b>10</b></li>
+    <li>25 % en la excursión <b>15</b></li>
+    <li>Foto en el tablón de honor <b>15</b></li>
+    <li>Imprime tu modelo 3D <b>15</b></li>
+    <li>Ser extra del pasaje del terror <b>20</b></li>
+    <li>Día sin deberes <b>20</b></li>
+    <li>Delegado o delegada una semana <b>25</b></li>
+    <li>Elegir tu sitio en clase <b>25</b></li>
+    <li>Elegir actividad de tutoría <b>30</b></li>
+    <li>Libro de lectura a elegir <b>35</b></li>
+    <li>Padrino o madrina de lectura <b>40</b></li>
   </ul>
   <p class="nota">
-    Con <strong>una sola participación</strong> ya hay algo que pedir. El catálogo completo está
-    en el centro y en la aplicación, y <strong>no es definitivo</strong>: irá cambiando durante el
-    curso, también con las ideas que proponga el alumnado.
+    Con <strong>una sola participación</strong> ya hay algo que pedir. El catálogo <strong>no es
+    definitivo</strong>: irá cambiando durante el curso, también con las ideas que proponga el alumnado.
   </p>
 
   <div class="pieh">
@@ -216,7 +353,7 @@
 </div>
 
 <script>
-document.getElementById('imprimir').addEventListener('click', e => { e.preventDefault(); window.print(); });
+document.getElementById('imprimir').addEventListener('click', () => window.print());
 </script>
 </body>
 </html>

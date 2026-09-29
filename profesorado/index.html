@@ -21,7 +21,7 @@
       · las monedas .............. resources/views/components/moneda.blade.php
 
     Dos cosas que se evitan a propósito, como en la página de familias:
-    no se dice «premio» ni «regalar» —los puntos comunitarios se suman
+    no se dice «premio», «regalar» ni «cobrar» —los puntos se ganan
     participando— y el catálogo lleva siempre su aviso de provisional.
 -->
 
@@ -33,6 +33,26 @@
 </head>
 <body>
 <a class="saltar" href="#empieza">Saltar al contenido</a>
+
+<!-- Las dos monedas, definidas una vez y reutilizadas en las tablas. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="m-acad" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="23" fill="#A86A06"/>
+    <circle cx="24" cy="24" r="19.5" fill="#FFC23D"/>
+    <path d="M24 12.4 39 19.2 24 26 9 19.2Z" fill="#6B4200"/>
+    <path d="M15.6 22.2v6.6c0 2.6 3.8 4.4 8.4 4.4s8.4-1.8 8.4-4.4v-6.6L24 26.9Z" fill="#6B4200" opacity=".78"/>
+    <path d="M37.2 20v8.4" stroke="#6B4200" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+    <circle cx="37.2" cy="30.4" r="2.1" fill="#6B4200"/>
+  </symbol>
+  <symbol id="m-com" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="23" fill="#1F7A93"/>
+    <circle cx="24" cy="24" r="19.5" fill="#F1FAFC"/>
+    <g transform="translate(13.6 11.2) scale(0.0547)" fill="none" stroke-width="62" stroke-linecap="round">
+      <path d="M52 104 C 74 42 132 16 196 16 C 272 16 338 72 338 162 L 338 392 C 338 428 352 444 378 448" stroke="#3CB4D8"/>
+      <path d="M207 369 A 100 100 0 1 1 207 241" stroke="#9CCC30"/>
+    </g>
+  </symbol>
+</svg>
 
 <header class="barra">
   <div class="barra__fila">
@@ -75,7 +95,7 @@
       <div class="ladrillo">
         <p class="rotulo">Para repartir</p>
         <h3 style="font-size:19px;margin-bottom:6px">Hoja resumen</h3>
-        <p style="font-size:14.5px;color:var(--muted)">Una cara, para que se la lleven a casa y la lean las familias.</p>
+        <p style="font-size:14.5px;color:var(--muted)">Dos caras: delante el alumnado y los puntos académicos, detrás el voluntariado, los comunitarios y el catálogo.</p>
         <a class="btn btn--suave" style="margin-top:12px" href="resumen.html">Ver e imprimir</a>
       </div>
     </div>
@@ -202,7 +222,7 @@
            familiar participa gana 5, y se los pasa a un estudiante del centro para que los use.</p>
         <span class="moneda__clave">
           5 puntos por cada participación de un familiar<br>
-          2.º de Bach. y 2.º de SMR cobran aquí lo que los demás cobran en académicos
+          2.º de Bach. y 2.º de SMR ganan aquí la misma cantidad que los demás en académicos
         </span>
       </div>
     </div>
@@ -219,75 +239,109 @@
 <section class="seccion" id="baremo">
   <div class="contenedor">
     <p class="rotulo">Dónde se ganan</p>
-    <h2 class="titulo">Las actuaciones, una a una</h2>
-    <p class="entradilla">Los puntos son los que da la aplicación por defecto. Quien coordina cada actuación puede bajarlos si la participación no ha sido la que se esperaba.</p>
+    <h2 class="titulo">Dos tablas, porque son dos monedas</h2>
+    <p class="entradilla">
+      La misma actividad da <strong>puntos académicos</strong> a un estudiante y
+      <strong>puntos comunitarios</strong> a un familiar. No decide la actividad: decide quién
+      participa. Por eso cada cantidad lleva su moneda al lado.
+    </p>
+
+    <h3 style="display:flex;align-items:center;gap:10px;font-size:18px;color:var(--orange-d);margin-bottom:10px">
+      <svg class="mini" style="width:28px;height:28px" aria-hidden="true"><use href="#m-acad"/></svg>
+      Lo que gana el alumnado · puntos académicos
+    </h3>
+    <p style="font-size:14.5px;color:var(--muted);margin-bottom:12px">Suben la nota: al llegar a la meta del curso, +1 en todas las materias de ese trimestre.</p>
 
     <div class="tabla-caja">
       <table>
-        <caption class="rotulo" style="text-align:left;padding:12px 13px 0">Puntos para el alumnado por sesión</caption>
         <thead>
           <tr>
             <th scope="col">Actuación</th>
-            <th scope="col">Puntos</th>
+            <th scope="col">Gana</th>
             <th scope="col">Cuándo y dónde</th>
             <th scope="col">Quién</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Tertulia dialógica</strong></td>
-            <td class="num"><span class="pts pts--acad">3</span></td>
-            <td>Miércoles alternos, en el recreo. En la <strong>Biblioteca</strong>. Cada semana que tocan hay copias del texto en el hall.</td>
+            <td><strong>Tertulia dialógica</strong><br><small style="color:var(--muted)">Se lee un fragmento y se comenta entre todos</small></td>
+            <td><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>3</span><br><small style="color:var(--green);font-weight:700">sin tope</small></td>
+            <td>Miércoles alternos, en el recreo. En la <strong>Biblioteca</strong>. Cada semana que tocan hay copias del fragmento en el hall.</td>
             <td>Todo el alumnado</td>
           </tr>
           <tr>
             <td><strong>Comisión mixta</strong></td>
-            <td class="num"><span class="pts pts--acad">3</span></td>
+            <td><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>3</span><br><small style="color:var(--green);font-weight:700">sin tope</small></td>
             <td>Miércoles alternos, en el recreo. En el <strong>pasillo de Matemáticas y Lengua</strong> (1.ª planta); la de FP, en su aula de siempre, por los ordenadores.</td>
             <td>Todo el alumnado</td>
           </tr>
           <tr>
             <td><strong>Biblioteca tutorizada</strong></td>
-            <td class="num"><span class="pts pts--acad">2</span></td>
+            <td><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>2</span><br><small style="color:var(--muted)">25 al trimestre</small></td>
             <td>Lunes, martes, jueves y viernes, en el recreo. En <strong>Idiomas 1</strong> (2.ª planta).</td>
             <td>1.º a 4.º de E.S.O. y 1.º de SMR. Por parejas <strong>de cursos distintos</strong></td>
           </tr>
           <tr>
             <td><strong>Recreos activos</strong></td>
-            <td class="num"><span class="pts pts--acad">2</span></td>
+            <td><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>2</span><br><small style="color:var(--muted)">25 al trimestre</small></td>
             <td>Lunes, martes, jueves y viernes, en el recreo. En el patio.</td>
             <td>Los organizan 1.º de Bachillerato y 1.º de SMR</td>
           </tr>
           <tr>
             <td><strong>Biblioteca musical</strong></td>
-            <td class="num"><span class="pts pts--acad">2</span></td>
+            <td><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>2</span><br><small style="color:var(--muted)">25 al trimestre</small></td>
             <td>En el <strong>Aula de Música</strong>.</td>
             <td>1.º a 4.º de E.S.O. y 1.º de SMR</td>
           </tr>
           <tr>
-            <td><strong>Grupos interactivos</strong></td>
-            <td class="num"><span class="pts pts--no">—</span></td>
-            <td>En clase, con voluntariado en las mesas.</td>
-            <td>El alumnado <strong>no gana puntos por asistir</strong>. Si hace de voluntario o voluntaria, gana <strong>3 académicos</strong> cada vez</td>
+            <td><strong>Grupo interactivo</strong><br><small style="color:var(--muted)">Haciendo de voluntario o voluntaria en una mesa</small></td>
+            <td><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>3</span><br><small style="color:var(--muted)">cada vez</small></td>
+            <td>En las aulas, cuando se convocan.</td>
+            <td>Solo lo asigna la coordinación de grupos interactivos. <strong>Por asistir sin más no se ganan puntos</strong></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="rejilla rejilla--2" style="margin-top:16px">
-      <p class="aviso aviso--verde">
-        <strong>Tertulias y comisiones no tienen tope:</strong> cuantas más, mejor.
-      </p>
-      <p class="aviso">
-        <strong>Las bibliotecas y los recreos sí:</strong> 25 puntos por trimestre cada una, y en la
-        biblioteca tutorizada como mucho 2 al día.
-      </p>
+    <h3 style="display:flex;align-items:center;gap:10px;font-size:18px;color:var(--cyan-d);margin:26px 0 10px">
+      <svg class="mini" style="width:28px;height:28px" aria-hidden="true"><use href="#m-com"/></svg>
+      Lo que gana quien viene de fuera · puntos comunitarios
+    </h3>
+    <p style="font-size:14.5px;color:var(--muted);margin-bottom:12px">Se cambian por recompensas del catálogo. No van a la nota, van al catálogo.</p>
+
+    <div class="tabla-caja">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Quién participa</th>
+            <th scope="col">Gana</th>
+            <th scope="col">En qué actuación</th>
+            <th scope="col">Detalle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Una familia</strong></td>
+            <td><span class="valor valor--com"><svg class="mini" aria-hidden="true"><use href="#m-com"/></svg>5</span><br><small style="color:var(--muted)">cada visita</small></td>
+            <td>Cualquiera: grupos interactivos, tertulias, comisiones, bibliotecas…</td>
+            <td>Los 5 puntos van enteros <strong>a un estudiante</strong>, el que la familia diga en cada visita</td>
+          </tr>
+          <tr>
+            <td><strong>Una persona voluntaria</strong></td>
+            <td><span class="valor valor--com"><svg class="mini" aria-hidden="true"><use href="#m-com"/></svg>5</span><br><small style="color:var(--muted)">cada visita</small></td>
+            <td>Cualquiera de las actuaciones</td>
+            <td>Se marca la participación después de la actividad, no al apuntarse</td>
+          </tr>
+          <tr>
+            <td><strong>2.º de Bachillerato<br>y 2.º de SMR</strong></td>
+            <td><span class="valor valor--com"><svg class="mini" aria-hidden="true"><use href="#m-com"/></svg>2 o 3</span><br><small style="color:var(--muted)">lo mismo que los demás</small></td>
+            <td>Las mismas actuaciones que el resto del alumnado</td>
+            <td>Ganan la misma cantidad que los demás, pero en comunitarios</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <p class="aviso aviso--azul" style="margin-top:14px">
-      <strong>Para 2.º de Bachillerato y 2.º de SMR:</strong> participan en lo mismo y ganan lo mismo,
-      pero en puntos comunitarios. Es lo justo, porque su nota ya no se puede subir con esto.
-    </p>
   </div>
 </section>
 
@@ -331,7 +385,7 @@
       <div class="material">
         <div>
           <h3>Hoja resumen para casa</h3>
-          <p>Una cara con las dos monedas, las actuaciones y cómo participa una familia. Es la que se reparte al alumnado para que llegue a casa.</p>
+          <p>Dos caras. Delante, el alumnado y los puntos académicos. Detrás, las familias, los comunitarios y el catálogo de recompensas. Se imprime a doble cara.</p>
           <a class="btn" href="resumen.html">Abrir e imprimir</a>
         </div>
       </div>
