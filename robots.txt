@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /familias/
 Disallow: /profesorado/
+Disallow: /guia-familias/
 
 Sitemap: https://jgamort408-web.github.io/cda-alandalus/sitemap.xml

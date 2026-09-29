@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Participar, en una hoja</title>
+<meta name="description" content="Hoja para imprimir: cómo participa una familia en la Comunidad de Aprendizaje del IES Al-Ándalus y qué gana con ello.">
+<meta name="theme-color" content="#0D2560">
+
+<!--
+    La hoja de la nevera. UNA cara de A4.
+
+    Cerrada como la guía: el único enlace que sale de aquí es el correo, y el
+    botón de volver va a la guía de familias y a ningún otro sitio.
+-->
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="estilo.css">
+<style>
+  .acciones{
+    position:sticky;top:0;z-index:5;background:var(--lb-darker);color:#fff;
+    display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:10px 16px;
+    background-image:radial-gradient(circle,var(--stud) 2.5px,transparent 2.5px);background-size:18px 18px;
+  }
+  .acciones a,.acciones button{color:var(--cyan);font:inherit;font-size:13.5px;font-weight:700;
+    text-decoration:none;background:0;border:0;cursor:pointer;padding:0}
+  .acciones span{font-size:13px;color:rgba(255,255,255,.7);margin-left:auto}
+
+  .hoja{max-width:800px;margin:20px auto;background:var(--white);
+    border:2px solid var(--border);border-radius:var(--rr);padding:26px}
+
+  .cabecera{display:flex;align-items:center;gap:14px;border-bottom:3px solid var(--cyan-d);padding-bottom:13px;margin-bottom:16px}
+  .cabecera img.ies{width:52px}
+  .cabecera img.cda{width:96px}
+  .cabecera div{margin-left:auto;text-align:right}
+  .cabecera h1{font-size:21px;color:var(--cyan-d);line-height:1.15}
+  .cabecera p{font-size:12.5px;color:var(--muted);font-weight:600}
+
+  .lema{font-size:16.5px;font-weight:700;line-height:1.45;margin-bottom:14px}
+  .lema b{color:var(--lb-darker)}
+
+  .cinco{display:flex;align-items:center;gap:15px;border:3px solid var(--cyan-d);
+    background:var(--cyan-l);border-radius:var(--rr);padding:14px 16px;margin-bottom:15px}
+  .cinco svg{width:52px;height:52px;flex:0 0 auto}
+  .cinco b{font-size:40px;line-height:1;color:var(--cyan-d)}
+  .cinco span{font-size:15px;font-weight:700;line-height:1.4}
+
+  h3.apartado{
+    font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--cyan-d);margin:15px 0 8px;padding-bottom:4px;border-bottom:1.5px solid var(--border);
+  }
+
+  ol.pasos3{list-style:none;counter-reset:p;margin:0;padding:0;display:grid;gap:8px}
+  ol.pasos3 li{counter-increment:p;display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:14px;line-height:1.45}
+  ol.pasos3 li::before{
+    content:counter(p);width:26px;height:26px;border-radius:7px;background:var(--cyan-d);color:#fff;
+    font-weight:800;font-size:13px;display:grid;place-items:center;
+  }
+
+  table.donde{min-width:0;font-size:13px}
+  table.donde th,table.donde td{padding:7px 9px}
+  table.donde thead th{font-size:10.5px;background:var(--cyan-l);color:var(--cyan-d)}
+
+  .ejemplos{display:flex;flex-wrap:wrap;gap:7px;padding:0;margin:0;list-style:none}
+  .ejemplos li{border:1.5px solid var(--border);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:700}
+  .ejemplos li em{font-style:normal;color:var(--cyan-d);font-weight:800}
+
+  .nota{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.45}
+
+  .pieh{margin-top:16px;padding-top:13px;border-top:3px solid var(--cyan-d);
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+    font-size:13.5px;font-weight:700}
+  .pieh a{font-weight:800}
+
+  @media print{
+    @page{size:A4 portrait;margin:11mm}
+    .acciones{display:none}
+    .hoja{margin:0;border:0;border-radius:0;padding:0;max-width:none}
+    /* Apretado para que entre en UNA cara: una hoja de nevera que ocupa dos
+       se queda a medias en la fotocopiadora y se reparte la mitad. */
+    body{font-size:8.6pt}
+    .cabecera{padding-bottom:8pt;margin-bottom:9pt}
+    .cabecera h1{font-size:14.5pt}
+    .cabecera img.ies{width:40px}
+    .cabecera img.cda{width:76px}
+    .lema{font-size:10.5pt;margin-bottom:8pt}
+    .cinco{padding:8pt 10pt;margin-bottom:9pt;gap:11px}
+    .cinco b{font-size:26pt}
+    .cinco svg{width:36px;height:36px}
+    .cinco span{font-size:9pt}
+    h3.apartado{margin:9pt 0 5pt}
+    ol.pasos3{gap:4pt}
+    ol.pasos3 li{font-size:8.8pt}
+    table.donde,table.donde th,table.donde td{font-size:8.2pt}
+    table.donde th,table.donde td{padding:4pt 6pt}
+    .ejemplos li{font-size:8.2pt;padding:3pt 8pt}
+    .nota{font-size:7.6pt;margin-top:5pt}
+    .pieh{margin-top:9pt;padding-top:7pt;font-size:9pt}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="m-com" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="23" fill="#1F7A93"/>
+    <circle cx="24" cy="24" r="19.5" fill="#F1FAFC"/>
+    <g transform="translate(13.6 11.2) scale(0.0547)" fill="none" stroke-width="62" stroke-linecap="round">
+      <path d="M52 104 C 74 42 132 16 196 16 C 272 16 338 72 338 162 L 338 392 C 338 428 352 444 378 448" stroke="#3CB4D8"/>
+      <path d="M207 369 A 100 100 0 1 1 207 241" stroke="#9CCC30"/>
+    </g>
+  </symbol>
+  <symbol id="m-acad" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="23" fill="#A86A06"/>
+    <circle cx="24" cy="24" r="19.5" fill="#FFC23D"/>
+    <path d="M24 12.4 39 19.2 24 26 9 19.2Z" fill="#6B4200"/>
+    <path d="M15.6 22.2v6.6c0 2.6 3.8 4.4 8.4 4.4s8.4-1.8 8.4-4.4v-6.6L24 26.9Z" fill="#6B4200" opacity=".78"/>
+    <path d="M37.2 20v8.4" stroke="#6B4200" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+    <circle cx="37.2" cy="30.4" r="2.1" fill="#6B4200"/>
+  </symbol>
+</svg>
+
+<div class="acciones no-imprimir">
+  <a href="./">← Volver a la guía</a>
+  <button type="button" id="imprimir">Imprimir esta hoja</button>
+  <span>Una cara de A4</span>
+</div>
+
+<div class="hoja">
+
+  <header class="cabecera">
+    <img class="ies" src="assets/logo-ies.png" width="520" height="520" alt="IES Al-Ándalus">
+    <img class="cda" src="assets/logo-cda.png" width="700" height="346" alt="Comunidades de Aprendizaje">
+    <div>
+      <h1>Vuestra participación suma</h1>
+      <p>Comunidad de Aprendizaje · Curso 2026-2027</p>
+    </div>
+  </header>
+
+  <p class="lema">
+    El instituto <b>abre las aulas y los recreos</b> a las familias. No venís a mirar: venís a
+    sentaros con el alumnado. Y cada vez que venís, vuestro hijo o hija gana puntos.
+  </p>
+
+  <div class="cinco">
+    <svg role="img" aria-label="Moneda de puntos comunitarios"><use href="#m-com"/></svg>
+    <b>5</b>
+    <span>
+      puntos comunitarios por cada participación, sea en la actividad que sea.<br>
+      Si tenéis más de un hijo o hija aquí, <strong>podéis repartirlos entre ellos</strong>.
+    </span>
+  </div>
+
+  <h3 class="apartado">Cómo se apunta uno</h3>
+  <ol class="pasos3">
+    <li><span>Decídselo a la tutora o al tutor, o escribid a <strong>cda@iesalandalus.org</strong>. Con eso ya está.</span></li>
+    <li><span>Venís el día que podáis y el rato que podáis. <strong>Con una vez ya cuenta.</strong></span></li>
+    <li><span>Quien coordina anota vuestra participación, y esos 5 puntos pasan a vuestro hijo o hija.</span></li>
+  </ol>
+
+  <h3 class="apartado">Qué hay, cuándo y dónde</h3>
+  <div class="tabla-caja">
+    <table class="donde">
+      <thead>
+        <tr><th scope="col">Actividad</th><th scope="col">Cuándo</th><th scope="col">Dónde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Grupos interactivos</strong><br><small>Mesas pequeñas, con una persona adulta en cada una</small></td>
+            <td>Se avisa de cada uno</td><td>En las aulas</td></tr>
+        <tr><td><strong>Tertulias dialógicas</strong><br><small>Se lee un fragmento y se comenta entre todos</small></td>
+            <td>Miércoles alternos, en el recreo</td><td>Biblioteca</td></tr>
+        <tr><td><strong>Comisiones mixtas</strong><br><small>Se decide junto al profesorado y al alumnado</small></td>
+            <td>Miércoles alternos, en el recreo</td><td>Pasillo de Matemáticas y Lengua (1.ª planta)</td></tr>
+        <tr><td><strong>Bibliotecas tutorizadas</strong><br><small>Alumnado que se ayuda entre cursos</small></td>
+            <td>Lunes, martes, jueves y viernes, en el recreo</td><td>Idiomas 1 (2.ª planta)</td></tr>
+        <tr><td><strong>Consejo escolar</strong><br><small>Si representáis a las familias</small></td>
+            <td>Cuando se convoca</td><td>En el centro</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="apartado">Con esos puntos se puede pedir</h3>
+  <ul class="ejemplos">
+    <li>Reservar el futbolín · <em>5</em></li>
+    <li>Elegir la música del recreo · <em>5</em></li>
+    <li>Kit de material escolar · <em>5</em></li>
+    <li>Un desayuno · <em>10</em></li>
+    <li>El timbre musical una semana · <em>10</em></li>
+    <li>25 % en la excursión · <em>15</em></li>
+    <li>Una sección en el podcast · <em>15</em></li>
+    <li>Un árbol en el huerto · <em>20</em></li>
+    <li>La película de la tutoría · <em>25</em></li>
+  </ul>
+  <p class="nota">
+    Con <strong>una sola participación</strong> ya hay algo que pedir. El catálogo completo está en
+    el centro y <strong>no es definitivo</strong>: irá cambiando durante el curso. Lo que consiste en
+    elegir algo lo aprueba antes el profesorado, y lo que necesita profesorado se hace según su
+    disponibilidad. Los vales no caducan.
+  </p>
+
+  <h3 class="apartado">Y lo que gana vuestro hijo o hija por su cuenta</h3>
+  <p style="font-size:13.5px;line-height:1.5;display:flex;gap:11px;align-items:flex-start">
+    <svg style="width:34px;height:34px;flex:0 0 auto" role="img" aria-label="Moneda de puntos académicos"><use href="#m-acad"/></svg>
+    <span>Participando por su cuenta gana <strong>puntos académicos</strong>, que sí suben la nota: al
+    llegar a la meta se le anota <strong>+1 en todas las materias</strong> de ese trimestre.
+    Son <strong>40 puntos</strong> en la E.S.O. y <strong>60</strong> en 1.º de Bachillerato y 1.º de S.M.R.
+    Los vuestros son para recompensas; la nota la sube lo que hace él o ella.</span>
+  </p>
+
+  <div class="pieh">
+    <span>IES Al-Ándalus · Almería</span>
+    <span>Apuntarse y dudas: <a href="mailto:cda@iesalandalus.org">cda@iesalandalus.org</a></span>
+  </div>
+
+</div>
+
+<script>
+document.getElementById('imprimir').addEventListener('click', () => window.print());
+</script>
+</body>
+</html>

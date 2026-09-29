@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Participar en el instituto</title>
+<meta name="description" content="Guía para las familias del IES Al-Ándalus: qué es una Comunidad de Aprendizaje, cómo participar y qué gana vuestro hijo o hija con ello.">
+<meta name="theme-color" content="#0D2560">
+
+<!--
+    La guía de las familias.
+
+    CERRADA A PROPÓSITO: desde aquí no se sale a ninguna otra página del
+    sitio. Ni al Plan de Actuación, ni al material del profesorado, ni a la
+    portada. Los logos no son enlaces, el pie no lleva más que el correo, y
+    los ficheros que hacen falta (la hoja para imprimir, el cartel) están
+    dentro de esta misma carpeta. Si alguien añade aquí un enlace «volver»,
+    rompe lo único que se pidió expresamente.
+
+    Los números salen de la aplicación, no de un documento aparte:
+    `config/cda.php` (metas y los 5 por participación),
+    `PointActivitySeeder` (lo que da cada actividad) y
+    `BenefitSeeder` (las recompensas).
+-->
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<a class="saltar" href="#empezamos">Saltar al contenido</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="m-acad" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="23" fill="#A86A06"/>
+    <circle cx="24" cy="24" r="19.5" fill="#FFC23D"/>
+    <path d="M24 12.4 39 19.2 24 26 9 19.2Z" fill="#6B4200"/>
+    <path d="M15.6 22.2v6.6c0 2.6 3.8 4.4 8.4 4.4s8.4-1.8 8.4-4.4v-6.6L24 26.9Z" fill="#6B4200" opacity=".78"/>
+    <path d="M37.2 20v8.4" stroke="#6B4200" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+    <circle cx="37.2" cy="30.4" r="2.1" fill="#6B4200"/>
+    <ellipse cx="24" cy="15" rx="12.5" ry="7" fill="#fff" opacity=".16"/>
+  </symbol>
+  <symbol id="m-com" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="23" fill="#1F7A93"/>
+    <circle cx="24" cy="24" r="19.5" fill="#F1FAFC"/>
+    <g transform="translate(13.6 11.2) scale(0.0547)" fill="none" stroke-width="62" stroke-linecap="round">
+      <path d="M52 104 C 74 42 132 16 196 16 C 272 16 338 72 338 162 L 338 392 C 338 428 352 444 378 448" stroke="#3CB4D8"/>
+      <path d="M207 369 A 100 100 0 1 1 207 241" stroke="#9CCC30"/>
+    </g>
+    <ellipse cx="24" cy="15" rx="12.5" ry="7" fill="#fff" opacity=".16"/>
+  </symbol>
+</svg>
+
+<!-- Los logos NO son un enlace: desde aquí no se va a ninguna parte. -->
+<header class="barra">
+  <div class="barra__fila">
+    <span class="marca">
+      <img class="ies" src="assets/logo-ies.png" width="520" height="520" alt="IES Al-Ándalus">
+      <span class="marca__raya"></span>
+      <img class="cda" src="assets/logo-cda.png" width="700" height="346" alt="Comunidades de Aprendizaje">
+      <span class="marca__txt">I.E.S. Al-Ándalus<small>Comunidades de Aprendizaje</small></span>
+    </span>
+    <button class="icono-btn" id="btn-tema" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro" style="margin-left:auto">
+      <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+        <circle cx="10" cy="10" r="4"/><path d="M10 1.5v2M10 16.5v2M1.5 10h2M16.5 10h2M4 4l1.4 1.4M14.6 14.6 16 16M16 4l-1.4 1.4M5.4 14.6 4 16" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="seccion" id="empezamos">
+  <div class="contenedor">
+    <p class="rotulo">Para las familias · Curso 2026-2027</p>
+    <h2 class="titulo" style="font-size:clamp(26px,5.6vw,40px)">El instituto se abre, y os necesita dentro</h2>
+    <p class="entradilla" style="font-size:17px">
+      No hace falta saber de nada ni preparar nada. Con venir <strong>una vez</strong>, ya cuenta.
+      Y cada vez que venís, vuestro hijo o hija gana puntos para pedir cosas en el centro.
+    </p>
+    <p class="aviso aviso--verde" style="font-size:16px">
+      Esta guía son <strong>seis pasos</strong>. Se lee en cinco minutos y está todo dicho.
+    </p>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="contenedor">
+    <ol class="camino">
+
+      <li class="hito">
+        <h2>Qué es esto de Comunidades de Aprendizaje</h2>
+        <p>
+          Es una forma de trabajar en la que el instituto <strong>abre las aulas y los recreos</strong>
+          a las familias y al vecindario. No venís a mirar ni a que os expliquen nada: venís a
+          sentaros con el alumnado y a aprender con ellos.
+        </p>
+        <p>
+          La razón es sencilla y está comprobada: <strong>cuantas más personas adultas hay dentro,
+          más aprende todo el mundo</strong>. También vuestro hijo o vuestra hija.
+        </p>
+      </li>
+
+      <li class="hito">
+        <h2>Qué podéis hacer</h2>
+        <p>Elegís lo que os apetezca y lo que os cuadre de horario. Todo esto ya está funcionando:</p>
+        <ul class="actividades">
+          <li class="actividad">
+            <h3>Grupos interactivos</h3>
+            <p>La clase se parte en mesas pequeñas y en cada una hay una persona adulta que anima y
+               echa una mano. No hay que saber la materia: hay que estar.</p>
+            <span class="cuando">En las aulas · se avisa de cada uno</span>
+          </li>
+          <li class="actividad">
+            <h3>Tertulias dialógicas</h3>
+            <p>Se lee un fragmento —un trozo corto— y se comenta entre todos. Cada cual dice lo que
+               le ha parecido. No hay respuestas buenas ni malas.</p>
+            <span class="cuando">Miércoles alternos, en el recreo · Biblioteca</span>
+          </li>
+          <li class="actividad">
+            <h3>Comisiones mixtas</h3>
+            <p>Donde se decide de verdad: familias, profesorado y alumnado juntos, cada uno con su voz.</p>
+            <span class="cuando">Miércoles alternos, en el recreo · Pasillo de Matemáticas y Lengua</span>
+          </li>
+          <li class="actividad">
+            <h3>Bibliotecas tutorizadas</h3>
+            <p>Alumnado que se ayuda entre cursos distintos, con personas adultas acompañando.</p>
+            <span class="cuando">Lunes, martes, jueves y viernes, en el recreo · Idiomas 1</span>
+          </li>
+          <li class="actividad">
+            <h3>Consejo escolar</h3>
+            <p>Si representáis a las familias en el consejo, asistir también suma.</p>
+            <span class="cuando">Cuando se convoca</span>
+          </li>
+          <li class="actividad">
+            <h3>Y lo que propongáis</h3>
+            <p>Si sabéis hacer algo que le venga bien al instituto —un oficio, un idioma, un taller—,
+               decidlo. Muchas de las mejores actividades han salido así.</p>
+            <span class="cuando">Escribidnos</span>
+          </li>
+        </ul>
+      </li>
+
+      <li class="hito">
+        <h2>Cómo se apunta uno</h2>
+        <p>
+          <strong>Decídselo a la tutora o al tutor</strong> de vuestro hijo o hija, o escribid a
+          <a href="mailto:cda@iesalandalus.org"><strong>cda@iesalandalus.org</strong></a>.
+          Con decir «quiero participar» ya está: os avisamos de lo siguiente que haya.
+        </p>
+        <p>
+          No hay que comprometerse a nada más. Venís el día que podáis y el rato que podáis.
+        </p>
+      </li>
+
+      <li class="hito hito--cian">
+        <h2>Qué ganáis por venir</h2>
+        <div class="golpe">
+          <svg role="img" aria-label="Moneda de puntos comunitarios"><use href="#m-com"/></svg>
+          <b>5</b>
+          <span>puntos comunitarios por cada participación, sea en la actividad que sea</span>
+        </div>
+        <p>
+          Son <strong>siempre 5</strong>, venga quien venga de casa: madre, padre, abuela, abuelo,
+          tía, hermano mayor. Y si tenéis más de un hijo o hija en el centro,
+          <strong>podéis repartirlos entre ellos</strong> como queráis.
+        </p>
+        <p>
+          Estos puntos <strong>no son notas</strong>. Sirven para que vuestro hijo o hija pida cosas
+          del catálogo del centro.
+        </p>
+      </li>
+
+      <li class="hito hito--cian">
+        <h2>Qué puede pedir con ellos</h2>
+        <p>
+          Lo más barato cuesta <strong>5 puntos</strong>, o sea <strong>una sola visita vuestra</strong>.
+          Con que vayáis una vez, esa misma tarde ya hay algo que pedir.
+        </p>
+        <ul class="premios" id="premios"></ul>
+        <p class="aviso" style="margin-top:14px;font-size:15px">
+          Este catálogo <strong>irá cambiando durante el curso</strong>, también con las ideas que
+          proponga el alumnado. Lo que consiste en elegir algo —una canción, un modelo para
+          imprimir— lo aprueba antes el profesorado responsable, y lo que necesita a alguien del
+          profesorado se hace según su disponibilidad. Los vales no caducan.
+        </p>
+      </li>
+
+      <li class="hito hito--naranja">
+        <h2>Y lo que gana por su cuenta</h2>
+        <p>
+          Aparte de lo vuestro, vuestro hijo o hija gana <strong>puntos académicos</strong> cuando
+          participa por su cuenta en estas mismas actividades. Esos sí suben la nota:
+        </p>
+        <div class="golpe" style="background:var(--orange-l);border-color:var(--orange)">
+          <svg role="img" aria-label="Moneda de puntos académicos"><use href="#m-acad"/></svg>
+          <span style="font-size:17px">
+            Al llegar a la meta del curso se le anota <b style="font-size:inherit;color:var(--orange-d)">+1 en
+            todas las materias</b> de ese trimestre.<br>
+            <strong>40 puntos</strong> en la E.S.O. · <strong>60</strong> en 1.º de Bachillerato y 1.º de S.M.R.
+          </span>
+        </div>
+        <p>
+          Son dos cosas distintas y conviene no mezclarlas: <strong>lo que ganáis vosotros son
+          recompensas; la nota la sube lo que hace él o ella</strong>.
+        </p>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="contenedor">
+    <p class="rotulo">Por si os lo estáis preguntando</p>
+    <h2 class="titulo">Cuatro dudas normales</h2>
+    <div class="rejilla rejilla--2" style="margin-top:14px">
+      <div class="ladrillo">
+        <h3 style="font-size:16.5px;margin-bottom:5px">«Es que yo no sé explicar nada»</h3>
+        <p style="font-size:15px;color:var(--muted)">No hace falta. En una mesa de grupo interactivo lo que se pide es que animéis y que nadie se quede atrás. La materia la lleva el profesorado.</p>
+      </div>
+      <div class="ladrillo">
+        <h3 style="font-size:16.5px;margin-bottom:5px">«No hablo bien español»</h3>
+        <p style="font-size:15px;color:var(--muted)">Mejor todavía. En esta comunidad hay muchas lenguas y todas suman. Hay quien participa en la suya.</p>
+      </div>
+      <div class="ladrillo">
+        <h3 style="font-size:16.5px;margin-bottom:5px">«¿Tengo que venir muchas veces?»</h3>
+        <p style="font-size:15px;color:var(--muted)">Con una ya hay recompensa que pedir. Venid las que podáis, y si un mes no podéis, no pasa nada.</p>
+      </div>
+      <div class="ladrillo">
+        <h3 style="font-size:16.5px;margin-bottom:5px">«¿Y si en casa no puede venir nadie?»</h3>
+        <p style="font-size:15px;color:var(--muted)">Los puntos de la nota se ganan participando él o ella, sin que venga nadie. Eso no depende de vosotros.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="contenedor">
+    <div class="ladrillo ladrillo--acento" style="text-align:center">
+      <p class="rotulo" style="color:var(--lb)">Para tenerlo a mano</p>
+      <h2 class="titulo" style="font-size:22px;margin-bottom:8px">Lleváoslo en papel</h2>
+      <p style="font-size:15.5px;color:var(--muted);max-width:52ch;margin:0 auto 16px">
+        Una hoja con todo lo de esta guía, para imprimir y dejarla en la nevera.
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+        <a class="btn" href="hoja.html">Abrir la hoja e imprimir</a>
+        <a class="btn btn--suave" href="cartel-recompensas-familias.pdf">Cartel de recompensas (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="contenedor">
+    <div class="ladrillo" style="text-align:center;border-color:var(--cyan-d);box-shadow:0 2px 0 var(--cyan-d)">
+      <h2 class="titulo" style="font-size:24px;color:var(--cyan-d);margin-bottom:10px">¿Os apuntáis?</h2>
+      <p style="font-size:17px;margin-bottom:14px">
+        Escribid una línea. No hace falta más.
+      </p>
+      <a class="btn btn--naranja" href="mailto:cda@iesalandalus.org?subject=Quiero%20participar%20en%20la%20Comunidad%20de%20Aprendizaje">
+        cda@iesalandalus.org
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__fila">
+    <div class="pie__logos">
+      <img class="ies" src="assets/logo-ies.png" width="520" height="520" alt="" loading="lazy">
+      <img class="cda" src="assets/logo-cda.png" width="700" height="346" alt="" loading="lazy">
+    </div>
+    <span>IES Al-Ándalus · Almería · Curso 2026-2027</span>
+    <a href="mailto:cda@iesalandalus.org">cda@iesalandalus.org</a>
+  </div>
+</footer>
+
+<script>
+/* El catálogo, el mismo que el de la aplicación (BenefitSeeder). */
+const PREMIOS = [
+  ['Reservar el futbolín',5],
+  ['Kit de material escolar',5],
+  ['Elegir la música del recreo',5],
+  ['Diploma de reconocimiento',5],
+  ['Un desayuno gratis',10],
+  ['Entrada al pasaje del terror',10],
+  ['Elegir el timbre musical una semana',10],
+  ['Un día con la mesa de futbolín',10],
+  ['Dos mañanas en el huerto',10],
+  ['25 % en la excursión de fin de trimestre',15],
+  ['Foto en el tablón de honor',15],
+  ['Imprimir tu modelo 3D',15],
+  ['Una sección en el podcast del centro',15],
+  ['Entrevista para las redes del centro',15],
+  ['Fotógrafo o fotógrafa de un evento',15],
+  ['Ser extra del pasaje del terror',20],
+  ['Un árbol en el huerto, con su nombre',20],
+  ['Veinte minutos de profe en tutoría',20],
+  ['Delegado o delegada por una semana',25],
+  ['Elegir su sitio en clase una semana',25],
+  ['La película de la tutoría',25],
+  ['Elegir la actividad de una tutoría',30],
+  ['Su diseño en un azulejo del patio',30],
+  ['Elegir el fragmento de una tertulia',35],
+];
+
+const lista = document.getElementById('premios');
+PREMIOS.forEach(([titulo, coste]) => {
+  const li = document.createElement('li');
+  const b = document.createElement('b');
+  li.append(titulo + ' ');
+  b.textContent = coste;
+  li.append(b);
+  lista.appendChild(li);
+});
+
+/* Modo claro / oscuro. */
+const btnTema = document.getElementById('btn-tema');
+try {
+  const guardado = localStorage.getItem('cda-tema');
+  if (guardado) document.documentElement.dataset.theme = guardado;
+} catch (e) { /* navegación privada: se queda con el del sistema */ }
+
+btnTema.addEventListener('click', () => {
+  const oscuroAhora = document.documentElement.dataset.theme
+    ? document.documentElement.dataset.theme === 'dark'
+    : matchMedia('(prefers-color-scheme: dark)').matches;
+  const nuevo = oscuroAhora ? 'light' : 'dark';
+  document.documentElement.dataset.theme = nuevo;
+  try { localStorage.setItem('cda-tema', nuevo); } catch (e) { /* igual que arriba */ }
+});
+</script>
+</body>
+</html>

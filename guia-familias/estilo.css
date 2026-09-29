@@ -1,0 +1,340 @@
+/* ==========================================================================
+   AL-ÁNDALUS DIALÓGICO — material de aula
+   Los mismos tokens que la aplicación (resources/css/app.css): placa LEGO,
+   Poppins, azul/naranja/cian. Si allí cambia un color, aquí también.
+   ========================================================================== */
+
+*,*::before,*::after{box-sizing:border-box}
+
+:root{
+  /* Paleta de la aplicación, tal cual */
+  --lb:#2050A0; --lb-dark:#163880; --lb-darker:#0D2560; --lb-mid:#4A78C0; --lb-light:#EBF2FB;
+  --cyan:#46BDDB; --cyan-d:#2A8AAA; --cyan-l:#E0F6FB;
+  --orange:#FE8A18; --orange-d:#C05A00; --orange-l:#FFF0DC;
+  --green:#257A3E; --green-d:#1A5A2E; --green-l:#E6F4EA;
+  --plate:#DDD8CC; --plate-dark:#C8C3B8;
+  --surface:#F8F6F0; --white:#FFFFFF;
+  --text:#1A2235; --muted:#54637D; --border:#C8C3B8;
+  --placa:#ECE7DB;
+  --stud:rgba(255,255,255,.22);
+  --r:6px; --rr:12px;
+  --sombra:0 2px 0 var(--plate-dark);
+  --sombra-2:0 3px 0 var(--plate-dark), 0 10px 22px -14px rgba(13,37,96,.5);
+  --ancho:1080px;
+  color-scheme:light;
+}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --lb:#7BB3F0; --lb-dark:#4A78C0; --lb-darker:#BBD4F5; --lb-light:#16233A;
+    --cyan:#6FD3EC; --cyan-d:#46BDDB; --cyan-l:#12303A;
+    --orange:#FFA94D; --orange-d:#FE8A18; --orange-l:#332008;
+    --green:#5FBF7E; --green-d:#257A3E; --green-l:#12291A;
+    --plate:#2A3446; --plate-dark:#1C2433;
+    --surface:#161E2C; --white:#1E2736;
+    --text:#E9EDF4; --muted:#9FB0C6; --border:#33405A;
+    --placa:#101724;
+    --stud:rgba(255,255,255,.07);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --lb:#7BB3F0; --lb-dark:#4A78C0; --lb-darker:#BBD4F5; --lb-light:#16233A;
+  --cyan:#6FD3EC; --cyan-d:#46BDDB; --cyan-l:#12303A;
+  --orange:#FFA94D; --orange-d:#FE8A18; --orange-l:#332008;
+  --green:#5FBF7E; --green-d:#257A3E; --green-l:#12291A;
+  --plate:#2A3446; --plate-dark:#1C2433;
+  --surface:#161E2C; --white:#1E2736;
+  --text:#E9EDF4; --muted:#9FB0C6; --border:#33405A;
+  --placa:#101724;
+  --stud:rgba(255,255,255,.07);
+  color-scheme:dark;
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  font-family:'Poppins','Nunito',system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--text);
+  background-color:var(--placa);
+  /* La placa de construcción de la aplicación: cara del stud, pared y sombra. */
+  background-image:
+    radial-gradient(circle at 14px 13px, rgba(255,255,255,.42) 7.4px, transparent 7.7px),
+    radial-gradient(circle at 14px 15px, rgba(0,0,0,.07) 7.5px, transparent 7.8px),
+    radial-gradient(circle at 14px 18px, rgba(0,0,0,.10) 7.5px, transparent 9px);
+  background-size:34px 34px;
+  background-attachment:fixed;
+  line-height:1.6;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) body{
+    background-image:
+      radial-gradient(circle at 14px 13px, rgba(255,255,255,.07) 7.4px, transparent 7.7px),
+      radial-gradient(circle at 14px 16px, rgba(0,0,0,.30) 7.5px, transparent 8px);
+  }
+}
+:root[data-theme="dark"] body{
+  background-image:
+    radial-gradient(circle at 14px 13px, rgba(255,255,255,.07) 7.4px, transparent 7.7px),
+    radial-gradient(circle at 14px 16px, rgba(0,0,0,.30) 7.5px, transparent 8px);
+}
+
+h1,h2,h3,h4{margin:0;line-height:1.2;text-wrap:balance;font-weight:800}
+p{margin:0}
+img{max-width:100%;height:auto}
+a{color:var(--lb);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:var(--r)}
+
+.contenedor{max-width:var(--ancho);margin:0 auto;padding-inline:16px}
+.saltar{position:absolute;left:-9999px}
+.saltar:focus{left:16px;top:16px;z-index:99;background:var(--white);padding:10px 14px;border-radius:var(--r)}
+
+/* ── Barra ───────────────────────────────────────────────────────────── */
+.barra{
+  background:var(--lb-darker);color:#fff;position:sticky;top:0;z-index:20;
+  background-image:radial-gradient(circle,var(--stud) 2.5px,transparent 2.5px);
+  background-size:18px 18px;
+  box-shadow:0 2px 0 rgba(0,0,0,.18);
+}
+.barra__fila{
+  max-width:var(--ancho);margin:0 auto;padding:10px 16px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.marca{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;margin-right:auto}
+.marca img{display:block}
+.marca img.ies{width:34px;height:34px}
+.marca img.cda{width:64px;height:auto}
+.marca__raya{width:1px;height:26px;background:rgba(255,255,255,.28)}
+.marca__txt{font-size:14px;font-weight:700;line-height:1.15}
+.marca__txt small{display:block;font-size:11.5px;font-weight:500;color:var(--cyan)}
+.barra a.volver{color:var(--cyan);font-size:13px;font-weight:700;text-decoration:none}
+.barra a.volver:hover{text-decoration:underline}
+
+.icono-btn{
+  width:36px;height:36px;border-radius:var(--r);border:0;cursor:pointer;
+  background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;
+}
+.icono-btn:hover{background:rgba(255,255,255,.22)}
+
+/* ── Piezas ──────────────────────────────────────────────────────────── */
+.seccion{padding:40px 0}
+.seccion + .seccion{padding-top:8px}
+
+.rotulo{
+  font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 6px;
+}
+h2.titulo{font-size:clamp(22px,4.2vw,30px);color:var(--lb-darker)}
+.entradilla{margin:8px 0 22px;color:var(--muted);font-size:16px;max-width:62ch}
+
+.ladrillo{
+  background:var(--white);border:2px solid var(--border);border-radius:var(--rr);
+  box-shadow:var(--sombra);padding:20px;
+}
+.ladrillo--acento{border-color:var(--lb);box-shadow:0 2px 0 var(--lb-dark)}
+
+.rejilla{display:grid;gap:14px}
+@media (min-width:640px){ .rejilla--2{grid-template-columns:repeat(2,1fr)} }
+@media (min-width:860px){ .rejilla--3{grid-template-columns:repeat(3,1fr)} }
+
+/* ── Las dos monedas ─────────────────────────────────────────────────── */
+.moneda{border:3px solid;border-radius:var(--rr);padding:20px;background:var(--white)}
+.moneda--acad{border-color:var(--orange);background:var(--orange-l)}
+.moneda--com{border-color:var(--cyan-d);background:var(--cyan-l)}
+.moneda__cab{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.moneda__cab svg{width:56px;height:56px;flex:0 0 auto}
+.moneda__cab h3{font-size:19px}
+.moneda__quien{display:block;font-size:12.5px;font-weight:700;margin-top:2px}
+.moneda--acad .moneda__quien{color:var(--orange-d)}
+.moneda--com .moneda__quien{color:var(--cyan-d)}
+.moneda p{font-size:15.5px}
+.moneda__clave{
+  display:block;margin-top:12px;padding:11px 13px;border-radius:var(--r);
+  font-size:15px;font-weight:700;line-height:1.45;
+}
+.moneda--acad .moneda__clave{background:#FFE4BF;color:#6B3200}
+.moneda--com .moneda__clave{background:#CDEEF7;color:#0B4757}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .moneda--acad .moneda__clave{background:#4A2E08;color:#FFD8A8}
+  :root:not([data-theme="light"]) .moneda--com .moneda__clave{background:#123B47;color:#B6E8F5}
+}
+:root[data-theme="dark"] .moneda--acad .moneda__clave{background:#4A2E08;color:#FFD8A8}
+:root[data-theme="dark"] .moneda--com .moneda__clave{background:#123B47;color:#B6E8F5}
+
+/* ── Tabla del baremo ────────────────────────────────────────────────── */
+.tabla-caja{overflow-x:auto;border:2px solid var(--border);border-radius:var(--rr);background:var(--white)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+th,td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+thead th{background:var(--lb-light);color:var(--lb-darker);font-size:12.5px;
+  text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;font-weight:800;white-space:nowrap}
+/* Cada cantidad lleva su moneda al lado. La MISMA actividad da académicos a
+   un estudiante y comunitarios a un familiar, así que el número solo no dice
+   de qué está hablando: hace falta el dibujo. */
+svg.mini{width:19px;height:19px;vertical-align:-4px;flex:0 0 auto}
+.valor{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.valor--acad{color:var(--orange-d)}
+.valor--com{color:var(--cyan-d)}
+
+.pts{display:inline-block;padding:2px 9px;border-radius:999px;font-size:13.5px;font-weight:800}
+.pts--acad{background:var(--orange-l);color:var(--orange-d);border:1.5px solid var(--orange)}
+.pts--com{background:var(--cyan-l);color:var(--cyan-d);border:1.5px solid var(--cyan-d)}
+.pts--no{background:transparent;color:var(--muted);border:1.5px dashed var(--border)}
+
+/* ── Recompensas ─────────────────────────────────────────────────────── */
+.precios{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;padding:0;list-style:none}
+.precios button{
+  border:2px solid var(--border);background:var(--white);color:var(--text);
+  border-radius:999px;padding:6px 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;
+}
+.precios button[aria-pressed="true"]{background:var(--lb);border-color:var(--lb-dark);color:#fff}
+
+.recompensas{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));padding:0;margin:0;list-style:none}
+.recompensa{
+  background:var(--white);border:2px solid var(--border);border-radius:var(--rr);
+  padding:14px;display:flex;flex-direction:column;gap:8px;box-shadow:var(--sombra);
+}
+.recompensa__cab{display:flex;align-items:center;gap:10px}
+.recompensa__punto{width:34px;height:34px;border-radius:9px;flex:0 0 auto;display:grid;place-items:center}
+.recompensa__punto svg{width:19px;height:19px;color:#fff}
+.recompensa h3{font-size:15.5px;line-height:1.3}
+.recompensa p{font-size:13.5px;color:var(--muted);line-height:1.45}
+.recompensa__pie{margin-top:auto;display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.recompensa__coste{font-size:19px;font-weight:800;color:var(--cyan-d);font-variant-numeric:tabular-nums}
+.recompensa__veces{font-size:12.5px;color:var(--muted);font-weight:600}
+
+/* ── Avisos ──────────────────────────────────────────────────────────── */
+.aviso{
+  border-left:6px solid var(--orange);background:var(--orange-l);color:#6B3200;
+  padding:14px 16px;border-radius:0 var(--rr) var(--rr) 0;font-size:15px;font-weight:600;
+}
+.aviso--verde{border-left-color:var(--green);background:var(--green-l);color:var(--green-d)}
+.aviso--azul{border-left-color:var(--lb);background:var(--lb-light);color:var(--lb-darker)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .aviso{color:#FFD8A8}
+  :root:not([data-theme="light"]) .aviso--verde{color:#9FE3B4}
+  :root:not([data-theme="light"]) .aviso--azul{color:#BBD4F5}
+}
+:root[data-theme="dark"] .aviso{color:#FFD8A8}
+:root[data-theme="dark"] .aviso--verde{color:#9FE3B4}
+:root[data-theme="dark"] .aviso--azul{color:#BBD4F5}
+
+/* ── Botones ─────────────────────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer;
+  font:inherit;font-weight:700;font-size:15px;padding:11px 18px;border-radius:var(--r);
+  border:2px solid var(--lb-dark);background:var(--lb);color:#fff;box-shadow:0 3px 0 var(--lb-dark);
+}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--lb-dark)}
+.btn--naranja{background:var(--orange);border-color:var(--orange-d);box-shadow:0 3px 0 var(--orange-d);color:#3A1C00}
+.btn--naranja:active{box-shadow:0 1px 0 var(--orange-d)}
+.btn--suave{background:var(--white);color:var(--lb);border-color:var(--border);box-shadow:var(--sombra)}
+
+/* ── Material descargable ────────────────────────────────────────────── */
+.material{display:flex;gap:14px;align-items:flex-start;background:var(--white);
+  border:2px solid var(--border);border-radius:var(--rr);padding:14px;box-shadow:var(--sombra)}
+.material img{width:78px;flex:0 0 auto;border:1px solid var(--border);border-radius:var(--r)}
+.material h3{font-size:15.5px;margin-bottom:4px}
+.material p{font-size:13.5px;color:var(--muted);line-height:1.45;margin-bottom:9px}
+.material .btn{padding:7px 13px;font-size:13.5px}
+
+/* ── Pasos del guion docente ─────────────────────────────────────────── */
+.pasos{counter-reset:paso;list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.pasos li{
+  counter-increment:paso;display:grid;grid-template-columns:38px 1fr;gap:13px;align-items:start;
+  background:var(--white);border:2px solid var(--border);border-radius:var(--rr);padding:14px;
+}
+.pasos li::before{
+  content:counter(paso);width:38px;height:38px;border-radius:10px;background:var(--orange);
+  color:#3A1C00;font-weight:800;font-size:17px;display:grid;place-items:center;
+  box-shadow:0 3px 0 var(--orange-d);
+}
+.pasos h3{font-size:16px;margin-bottom:3px}
+.pasos p{font-size:14.5px;color:var(--muted)}
+.pasos .minuto{font-size:12px;font-weight:800;color:var(--lb);text-transform:uppercase;letter-spacing:.08em}
+
+/* ── Pie ─────────────────────────────────────────────────────────────── */
+.pie{background:var(--lb-darker);color:rgba(255,255,255,.82);margin-top:44px;
+  background-image:radial-gradient(circle,var(--stud) 2.5px,transparent 2.5px);background-size:18px 18px}
+.pie__fila{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
+  padding:22px 16px;font-size:13.5px}
+.pie a{color:var(--cyan)}
+.pie__logos{display:flex;align-items:center;gap:11px}
+.pie__logos img.ies{width:38px}
+.pie__logos img.cda{width:74px}
+
+/* ── Impresión ───────────────────────────────────────────────────────── */
+@media print{
+  :root{--placa:#fff;--white:#fff;--surface:#fff;--text:#000;--muted:#333;--border:#999}
+  body{background:#fff !important;background-image:none !important;font-size:10.5pt}
+  .barra,.pie,.no-imprimir{display:none !important}
+  .ladrillo,.recompensa,.material,.pasos li{box-shadow:none !important;break-inside:avoid}
+  .seccion{padding:0 0 10pt}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;color:#555;word-break:break-all}
+  a.btn::after{content:""}
+}
+
+/* ==========================================================================
+   Guía de familias: los pasos, en grande.
+   Esta página la abre gente que no ha visto nunca la aplicación y que la lee
+   en el móvil, así que el número de cada paso tiene que verse desde lejos y
+   el recorrido tiene que sentirse como un camino, no como una lista.
+   ========================================================================== */
+
+.camino{counter-reset:paso;display:grid;gap:18px;margin:0;padding:0;list-style:none}
+
+.hito{
+  counter-increment:paso;position:relative;background:var(--white);
+  border:3px solid var(--border);border-radius:calc(var(--rr) + 4px);
+  padding:22px 20px 20px;box-shadow:var(--sombra-2);
+}
+.hito::before{
+  content:counter(paso);position:absolute;top:-19px;left:18px;
+  width:44px;height:44px;border-radius:12px;background:var(--lb);color:#fff;
+  font-size:21px;font-weight:800;display:grid;place-items:center;
+  box-shadow:0 4px 0 var(--lb-dark);
+}
+.hito--naranja{border-color:var(--orange)}
+.hito--naranja::before{background:var(--orange);color:#3A1C00;box-shadow:0 4px 0 var(--orange-d)}
+.hito--cian{border-color:var(--cyan-d)}
+.hito--cian::before{background:var(--cyan-d);box-shadow:0 4px 0 #15596B}
+
+.hito h2{font-size:clamp(19px,3.4vw,25px);color:var(--lb-darker);margin:12px 0 8px}
+.hito--naranja h2{color:var(--orange-d)}
+.hito--cian h2{color:var(--cyan-d)}
+.hito p{font-size:16px;line-height:1.55;margin-bottom:10px}
+.hito p:last-child{margin-bottom:0}
+.hito strong{color:var(--text)}
+
+/* La cifra grande de «5 puntos». */
+.golpe{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  background:var(--cyan-l);border:3px solid var(--cyan-d);border-radius:var(--rr);
+  padding:16px 18px;margin:12px 0;
+}
+.golpe svg{width:60px;height:60px;flex:0 0 auto}
+.golpe b{font-size:clamp(34px,6vw,50px);line-height:1;color:var(--cyan-d);font-variant-numeric:tabular-nums}
+.golpe span{font-size:16px;font-weight:700;line-height:1.35;flex:1 1 180px}
+
+/* Qué se puede hacer: una tarjeta por actividad. */
+.actividades{display:grid;gap:12px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+@media (min-width:660px){ .actividades{grid-template-columns:1fr 1fr} }
+.actividad{
+  background:var(--surface);border:2px solid var(--border);border-radius:var(--rr);padding:14px 15px;
+}
+.actividad h3{font-size:16.5px;margin-bottom:3px;color:var(--lb-darker)}
+.actividad p{font-size:14px;color:var(--muted);line-height:1.45;margin:0}
+.actividad .cuando{
+  display:inline-block;margin-top:8px;font-size:13px;font-weight:700;
+  background:var(--lb-light);color:var(--lb-darker);border-radius:999px;padding:4px 11px;
+}
+
+/* El catálogo, en columnas y sin ruido. */
+.premios{columns:2;column-gap:18px;margin:10px 0 0;padding:0;list-style:none}
+@media (min-width:760px){ .premios{columns:3} }
+@media (max-width:460px){ .premios{columns:1} }
+.premios li{break-inside:avoid;display:flex;gap:7px;padding:3px 0;font-size:14.5px;line-height:1.35;font-weight:600}
+.premios li b{margin-left:auto;color:var(--cyan-d);font-weight:800;font-variant-numeric:tabular-nums}
+.premios li::before{content:"·";color:var(--cyan-d);font-weight:800}
