@@ -36,11 +36,29 @@
 
   .lamina{
     display:none;align-content:center;justify-items:center;
-    padding:clamp(20px,4vh,48px) clamp(16px,5vw,64px);text-align:center;
+    padding:clamp(12px,2.4vh,34px) clamp(14px,4vw,56px);text-align:center;
     overflow-y:auto;
   }
   .lamina[data-activa]{display:grid}
-  .lamina > *{max-width:960px;width:100%}
+
+  /* Cada lámina va sobre una tarjeta, no suelta sobre la placa.
+     El fondo de studs tiene relieve y contraste propio, y el texto plano
+     encima se leía regular desde el fondo del aula: sobre papel blanco, no. */
+  .lamina > *{
+    max-width:1020px;width:100%;
+    background:var(--white);
+    border:3px solid var(--plate-dark);
+    border-radius:calc(var(--rr) + 6px);
+    box-shadow:0 4px 0 var(--plate-dark), 0 24px 48px -28px rgba(13,37,96,.55);
+    padding:clamp(18px,2.6vw,38px);
+  }
+
+  /* Dentro de la tarjeta, lo que antes era blanco desaparecería: se pasa al
+     crema de la aplicación, que sí se distingue sobre el papel. */
+  .sitio,.ficha{background:var(--surface)}
+
+  /* La moneda metida en una frase: acompaña al texto y crece con él. */
+  .icono-moneda{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.1em}
 
   .lamina .sobre{
     font-size:clamp(12px,1.6vw,15px);font-weight:800;letter-spacing:.16em;
@@ -78,7 +96,11 @@
   }
   .sitio b{font-size:clamp(15px,2.1vw,21px)}
   .sitio small{display:block;font-size:clamp(12.5px,1.7vw,16px);color:var(--muted);font-weight:500;line-height:1.4}
-  .sitio .pts{font-size:clamp(15px,2.2vw,22px);padding:4px 14px}
+  .sitio .pts{font-size:clamp(15px,2.2vw,22px);padding:4px 13px;display:inline-flex;align-items:center;gap:5px}
+  .sobre .icono-moneda{width:1.5em;height:1.5em;vertical-align:-.45em;margin-right:.45em}
+  h2 .icono-moneda{width:.82em;height:.82em;vertical-align:-.06em;margin-right:.22em}
+  .cifra .icono-moneda{width:.62em;height:.62em;vertical-align:.02em;margin-right:.12em}
+  .meta-caja .cifra .icono-moneda{width:.55em;height:.55em}
 
   .fichas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
   .ficha{
@@ -130,6 +152,31 @@
 </style>
 </head>
 <body>
+
+<!-- Las dos monedas de la aplicación, definidas una vez. Cada vez que en una
+     lámina se nombra un tipo de punto, se pone la suya al lado: a diez metros
+     de la pizarra el dibujo se reconoce antes que la palabra. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="m-acad" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="23" fill="#A86A06"/>
+    <circle cx="24" cy="24" r="19.5" fill="#FFC23D"/>
+    <path d="M24 12.4 39 19.2 24 26 9 19.2Z" fill="#6B4200"/>
+    <path d="M15.6 22.2v6.6c0 2.6 3.8 4.4 8.4 4.4s8.4-1.8 8.4-4.4v-6.6L24 26.9Z" fill="#6B4200" opacity=".78"/>
+    <path d="M37.2 20v8.4" stroke="#6B4200" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+    <circle cx="37.2" cy="30.4" r="2.1" fill="#6B4200"/>
+    <ellipse cx="24" cy="15" rx="12.5" ry="7" fill="#fff" opacity=".16"/>
+  </symbol>
+  <symbol id="m-com" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="23" fill="#1F7A93"/>
+    <circle cx="24" cy="24" r="19.5" fill="#F1FAFC"/>
+    <g transform="translate(13.6 11.2) scale(0.0547)" fill="none" stroke-width="62" stroke-linecap="round">
+      <path d="M52 104 C 74 42 132 16 196 16 C 272 16 338 72 338 162 L 338 392 C 338 428 352 444 378 448" stroke="#3CB4D8"/>
+      <path d="M207 369 A 100 100 0 1 1 207 241" stroke="#9CCC30"/>
+    </g>
+    <ellipse cx="24" cy="15" rx="12.5" ry="7" fill="#fff" opacity=".16"/>
+  </symbol>
+</svg>
+
 <div class="escenario">
 
 <main id="laminas">
@@ -165,30 +212,14 @@
       <div class="duo" style="margin-top:26px">
         <div class="moneda moneda--acad">
           <div class="moneda__cab">
-            <svg viewBox="0 0 48 48" role="img" aria-label="Puntos académicos">
-              <circle cx="24" cy="24" r="23" fill="#A86A06"/>
-              <circle cx="24" cy="24" r="19.5" fill="#FFC23D"/>
-              <path d="M24 12.4 39 19.2 24 26 9 19.2Z" fill="#6B4200"/>
-              <path d="M15.6 22.2v6.6c0 2.6 3.8 4.4 8.4 4.4s8.4-1.8 8.4-4.4v-6.6L24 26.9Z" fill="#6B4200" opacity=".78"/>
-              <path d="M37.2 20v8.4" stroke="#6B4200" stroke-width="1.7" stroke-linecap="round" fill="none"/>
-              <circle cx="37.2" cy="30.4" r="2.1" fill="#6B4200"/>
-              <ellipse cx="24" cy="15" rx="12.5" ry="7" fill="#fff" opacity=".16"/>
-            </svg>
+            <svg role="img" aria-label="Moneda de puntos académicos"><use href="#m-acad"/></svg>
             <div><h3>Académicos</h3><span class="moneda__quien">Suben la nota</span></div>
           </div>
           <p>Los ganas <strong>tú</strong>, participando.</p>
         </div>
         <div class="moneda moneda--com">
           <div class="moneda__cab">
-            <svg viewBox="0 0 48 48" role="img" aria-label="Puntos comunitarios">
-              <circle cx="24" cy="24" r="23" fill="#1F7A93"/>
-              <circle cx="24" cy="24" r="19.5" fill="#F1FAFC"/>
-              <g transform="translate(13.6 11.2) scale(0.0547)" fill="none" stroke-width="62" stroke-linecap="round">
-                <path d="M52 104 C 74 42 132 16 196 16 C 272 16 338 72 338 162 L 338 392 C 338 428 352 444 378 448" stroke="#3CB4D8"/>
-                <path d="M207 369 A 100 100 0 1 1 207 241" stroke="#9CCC30"/>
-              </g>
-              <ellipse cx="24" cy="15" rx="12.5" ry="7" fill="#fff" opacity=".16"/>
-            </svg>
+            <svg role="img" aria-label="Moneda de puntos comunitarios"><use href="#m-com"/></svg>
             <div><h3>Comunitarios</h3><span class="moneda__quien">Sirven para recompensas</span></div>
           </div>
           <p>Los gana <strong>tu familia</strong> y te los pasa.</p>
@@ -200,7 +231,7 @@
   <!-- 4 -->
   <section class="lamina">
     <div>
-      <p class="sobre">Puntos académicos</p>
+      <p class="sobre"><svg class="icono-moneda" aria-hidden="true"><use href="#m-acad"/></svg>Puntos académicos</p>
       <h2>Suben la nota de todas las materias</h2>
       <p class="grande">
         Al llegar a la meta, se te anota <strong>+1 en todas las materias</strong> en ese trimestre.
@@ -216,11 +247,11 @@
       <h2>¿Cuántos hacen falta?</h2>
       <div class="metas" style="margin-top:26px">
         <div class="meta-caja">
-          <span class="cifra">40</span>
+          <span class="cifra"><svg class="icono-moneda" aria-label="Puntos académicos" role="img"><use href="#m-acad"/></svg>40</span>
           <span class="curso">1.º, 2.º, 3.º y 4.º de E.S.O.</span>
         </div>
         <div class="meta-caja">
-          <span class="cifra">60</span>
+          <span class="cifra"><svg class="icono-moneda" aria-label="Puntos académicos" role="img"><use href="#m-acad"/></svg>60</span>
           <span class="curso">1.º de Bachillerato y 1.º de SMR</span>
         </div>
       </div>
@@ -233,9 +264,9 @@
   <!-- 6 -->
   <section class="lamina">
     <div>
-      <p class="sobre">Puntos comunitarios</p>
+      <p class="sobre"><svg class="icono-moneda" aria-hidden="true"><use href="#m-com"/></svg>Puntos comunitarios</p>
       <h2>Los gana tu familia viniendo</h2>
-      <span class="cifra cifra--com">5</span>
+      <span class="cifra cifra--com"><svg class="icono-moneda" aria-label="Puntos comunitarios" role="img"><use href="#m-com"/></svg>5</span>
       <span class="cifra__pie">puntos comunitarios por cada participación de un familiar</span>
       <p class="grande">
         Da igual a qué venga: a un grupo interactivo, a una tertulia, a una comisión.
@@ -252,10 +283,11 @@
   <section class="lamina">
     <div>
       <p class="sobre">2.º de Bachillerato y 2.º de SMR</p>
-      <h2>Vosotros ganáis puntos comunitarios</h2>
+      <h2><svg class="icono-moneda" aria-hidden="true"><use href="#m-com"/></svg>Vosotros ganáis puntos comunitarios</h2>
       <p class="grande">
         Participáis en lo mismo y ganáis <strong>la misma cantidad que los demás</strong>,
-        pero en puntos comunitarios en lugar de académicos.
+        pero en <svg class="icono-moneda" aria-hidden="true"><use href="#m-com"/></svg><strong>puntos
+        comunitarios</strong> en lugar de <svg class="icono-moneda" aria-hidden="true"><use href="#m-acad"/></svg>académicos.
       </p>
       <p class="grande" style="font-size:clamp(15px,2vw,20px)">
         Así vuestra participación también vale algo: se convierte en recompensas.
@@ -270,22 +302,22 @@
       <h2>Las actuaciones</h2>
       <div class="sitios" style="margin-top:22px">
         <div class="sitio">
-          <span class="pts pts--acad">3</span>
+          <span class="pts pts--acad"><svg class="icono-moneda" aria-label="Puntos académicos" role="img"><use href="#m-acad"/></svg>3</span>
           <span><b>Tertulia dialógica</b><small>Miércoles alternos, en el recreo · Biblioteca</small></span>
           <small style="color:var(--green);font-weight:800">sin tope</small>
         </div>
         <div class="sitio">
-          <span class="pts pts--acad">3</span>
+          <span class="pts pts--acad"><svg class="icono-moneda" aria-label="Puntos académicos" role="img"><use href="#m-acad"/></svg>3</span>
           <span><b>Comisión mixta</b><small>Miércoles alternos, en el recreo · Pasillo de Matemáticas y Lengua</small></span>
           <small style="color:var(--green);font-weight:800">sin tope</small>
         </div>
         <div class="sitio">
-          <span class="pts pts--acad">2</span>
+          <span class="pts pts--acad"><svg class="icono-moneda" aria-label="Puntos académicos" role="img"><use href="#m-acad"/></svg>2</span>
           <span><b>Biblioteca tutorizada</b><small>Lunes, martes, jueves y viernes, en el recreo · Idiomas 1</small></span>
           <small style="color:var(--muted);font-weight:700">por parejas</small>
         </div>
         <div class="sitio">
-          <span class="pts pts--acad">2</span>
+          <span class="pts pts--acad"><svg class="icono-moneda" aria-label="Puntos académicos" role="img"><use href="#m-acad"/></svg>2</span>
           <span><b>Recreos activos</b><small>Los organizan 1.º de Bachillerato y 1.º de SMR</small></span>
           <small style="color:var(--muted);font-weight:700">en el patio</small>
         </div>
@@ -313,7 +345,7 @@
   <!-- 10 -->
   <section class="lamina">
     <div>
-      <p class="sobre">Con los puntos comunitarios</p>
+      <p class="sobre"><svg class="icono-moneda" aria-hidden="true"><use href="#m-com"/></svg>Con los puntos comunitarios</p>
       <h2>Esto se puede pedir</h2>
       <div class="tarifa" style="margin-top:20px">
         <div class="tarifa__grupo">
@@ -374,7 +406,8 @@
       </p>
       <p class="grande">
         <strong>Y lo otro:</strong> hablad en casa. Cada vez que venga alguien de vuestra familia,
-        son 5 puntos para vosotros.
+        son <svg class="icono-moneda" aria-hidden="true"><use href="#m-com"/></svg><strong>5 puntos
+        comunitarios</strong> para vosotros.
       </p>
       <p class="grande" style="font-size:clamp(15px,2vw,19px)">
         <a href="mailto:cda@iesalandalus.org">cda@iesalandalus.org</a>
