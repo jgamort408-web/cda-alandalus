@@ -61,6 +61,13 @@
     font-weight:800;font-size:13px;display:grid;place-items:center;
   }
 
+  /* Los cuatro datos, en fichas: se repasan con el dedo al escribir. */
+  .cuatro{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+  .cuatro span{
+    border:1.5px solid var(--lb-mid);background:var(--lb-light);color:var(--lb-darker);
+    border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;
+  }
+
   table.donde{min-width:0;font-size:13px}
   table.donde th,table.donde td{padding:7px 9px}
   table.donde thead th{font-size:10.5px;background:var(--cyan-l);color:var(--cyan-d)}
@@ -157,7 +164,14 @@
 
   <h3 class="apartado">Cómo se apunta uno</h3>
   <ol class="pasos3">
-    <li><span>Decídselo a la tutora o al tutor, o escribid a <strong>cda@iesalandalus.org</strong>. Con eso ya está.</span></li>
+    <li><span>Decídselo a la tutora o al tutor, o escribid a <strong>cda@iesalandalus.org</strong>
+      indicando <strong>estos cuatro datos</strong>:
+      <span class="cuatro">
+        <span>Nombre y apellidos de quien participa</span>
+        <span>Teléfono de contacto</span>
+        <span>Nombre y apellidos de vuestro hijo o hija</span>
+        <span>Su curso</span>
+      </span></span></li>
     <li><span>Venís el día que podáis y el rato que podáis. <strong>Con una vez ya cuenta.</strong></span></li>
     <li><span>Quien coordina anota vuestra participación, y esos 5 puntos pasan a vuestro hijo o hija.</span></li>
   </ol>
