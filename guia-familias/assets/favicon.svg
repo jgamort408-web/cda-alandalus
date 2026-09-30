@@ -1,5 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#24549C"/>
-  <circle cx="16" cy="16" r="12.5" fill="none" stroke="#3CB4D8" stroke-width="1.3" stroke-dasharray="3 3" opacity=".75"/>
-  <path d="M16 6.5 18.4 13h6.8l-5.5 4 2.1 6.6L16 19.5 10.2 23.6l2.1-6.6-5.5-4h6.8L16 6.5Z" fill="#9CCC30"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-42 -25 514 514" role="img" aria-label="Comunidades de Aprendizaje">
+  <!--
+    La «a» de Comunidades de Aprendizaje, sola y sin el texto: a 16 píxeles
+    una palabra no se lee, y lo que se reconoce es la silueta. Son los mismos
+    dos trazos del logo —el asta en cian y el cuenco en verde— y las mismas
+    coordenadas que usa la moneda de puntos comunitarios de la aplicación.
+  -->
+  <g fill="none" stroke-width="62" stroke-linecap="round">
+    <path d="M52 104 C 74 42 132 16 196 16 C 272 16 338 72 338 162 L 338 392 C 338 428 352 444 378 448" stroke="#3CB4D8"/>
+    <path d="M207 369 A 100 100 0 1 1 207 241" stroke="#9CCC30"/>
+  </g>
 </svg>

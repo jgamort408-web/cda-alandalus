@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Subir la nota participando</title>
+<meta name="description" content="Hoja para el alumnado: cómo se ganan los puntos académicos del IES Al-Ándalus y qué hace falta para el punto extra en todas las materias.">
+<meta name="theme-color" content="#0D2560">
+
+<!--
+    La hoja del alumnado, dentro de la carpeta de familias a propósito: la
+    familia la ve y se la enseña a su hijo o hija. Habla de tú, porque quien
+    tiene que decidir participar es quien estudia, no quien lee.
+
+    Cerrada igual que el resto: de aquí solo se sale al correo y a la guía.
+-->
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="estilo.css">
+<style>
+  .acciones{
+    position:sticky;top:0;z-index:5;background:var(--lb-darker);color:#fff;
+    display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:10px 16px;
+    background-image:radial-gradient(circle,var(--stud) 2.5px,transparent 2.5px);background-size:18px 18px;
+  }
+  .acciones a,.acciones button{color:var(--cyan);font:inherit;font-size:13.5px;font-weight:700;
+    text-decoration:none;background:0;border:0;cursor:pointer;padding:0}
+  .acciones span{font-size:13px;color:rgba(255,255,255,.7);margin-left:auto}
+
+  .hoja{max-width:800px;margin:20px auto;background:var(--white);
+    border:2px solid var(--border);border-radius:var(--rr);padding:26px}
+
+  .cabecera{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    border-bottom:3px solid var(--orange);padding-bottom:13px;margin-bottom:14px}
+  .cabecera img.ies{width:52px}
+  .cabecera img.cda{width:96px}
+  .cabecera div{margin-left:auto;text-align:right}
+  .cabecera h1{font-size:21px;color:var(--orange-d);line-height:1.15}
+  .cabecera p{font-size:12.5px;color:var(--muted);font-weight:600}
+  @media (max-width:520px){
+    .cabecera div{margin-left:0;text-align:left;width:100%}
+  }
+
+  .paraquien{
+    font-size:12.5px;font-weight:700;background:var(--cyan-l);color:var(--cyan-d);
+    border:1.5px solid var(--cyan-d);border-radius:999px;padding:5px 13px;
+    display:inline-block;margin-bottom:12px;
+  }
+
+  .premio{display:flex;align-items:center;gap:15px;flex-wrap:wrap;
+    border:3px solid var(--orange);background:var(--orange-l);border-radius:var(--rr);
+    padding:14px 16px;margin-bottom:14px}
+  .premio svg{width:52px;height:52px;flex:0 0 auto}
+  .premio span{font-size:15.5px;font-weight:700;line-height:1.45;flex:1 1 240px}
+  .premio b{color:var(--orange-d)}
+
+  .metas{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+  @media (max-width:440px){ .metas{grid-template-columns:1fr} }
+  .meta{border:2px solid var(--orange);background:var(--orange-l);border-radius:var(--rr);
+    padding:11px 13px;text-align:center}
+  .meta b{display:block;font-size:30px;font-weight:800;color:var(--orange-d);line-height:1;font-variant-numeric:tabular-nums}
+  .meta span{display:block;font-size:12.5px;font-weight:700;margin-top:4px}
+
+  h3.apartado{
+    font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--orange-d);margin:15px 0 8px;padding-bottom:4px;border-bottom:1.5px solid var(--border);
+  }
+
+  table.gana{min-width:0;font-size:13px}
+  table.gana th,table.gana td{padding:7px 9px}
+  table.gana thead th{font-size:10.5px;background:var(--orange-l);color:var(--orange-d)}
+  table.gana td.pts{width:74px;white-space:nowrap}
+  table.gana small{display:block;color:var(--muted);font-weight:500;line-height:1.3;margin-top:1px}
+
+  .nota{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.45}
+
+  .pieh{margin-top:16px;padding-top:13px;border-top:3px solid var(--orange);
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+    font-size:13.5px;font-weight:700}
+  .pieh a{font-weight:800}
+
+  @media print{
+    @page{size:A4 portrait;margin:11mm}
+    .acciones{display:none}
+    .hoja{margin:0;border:0;border-radius:0;padding:0;max-width:none}
+    body{font-size:9pt}
+    .cabecera h1{font-size:15pt}
+    .premio svg{width:38px;height:38px}
+    .premio span{font-size:10pt}
+    .meta b{font-size:22pt}
+    table.gana,table.gana th,table.gana td{font-size:8.6pt}
+    table.gana th,table.gana td{padding:5pt 7pt}
+    h3.apartado{margin:10pt 0 5pt}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="m-acad" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="23" fill="#A86A06"/>
+    <circle cx="24" cy="24" r="19.5" fill="#FFC23D"/>
+    <path d="M24 12.4 39 19.2 24 26 9 19.2Z" fill="#6B4200"/>
+    <path d="M15.6 22.2v6.6c0 2.6 3.8 4.4 8.4 4.4s8.4-1.8 8.4-4.4v-6.6L24 26.9Z" fill="#6B4200" opacity=".78"/>
+    <path d="M37.2 20v8.4" stroke="#6B4200" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+    <circle cx="37.2" cy="30.4" r="2.1" fill="#6B4200"/>
+  </symbol>
+</svg>
+
+<div class="acciones no-imprimir">
+  <a href="./">← Volver a la guía</a>
+  <button type="button" id="imprimir">Imprimir esta hoja</button>
+  <span>Una cara de A4</span>
+</div>
+
+<div class="hoja">
+
+  <header class="cabecera">
+    <img class="ies" src="assets/logo-ies.png" width="520" height="520" alt="IES Al-Ándalus">
+    <img class="cda" src="assets/logo-cda.png" width="700" height="346" alt="Comunidades de Aprendizaje">
+    <div>
+      <h1>Sube tu nota participando</h1>
+      <p>Comunidad de Aprendizaje · Curso 2026-2027</p>
+    </div>
+  </header>
+
+  <span class="paraquien">Para el alumnado · enséñasela a tu hijo o hija</span>
+
+  <div class="premio">
+    <svg role="img" aria-label="Moneda de puntos académicos"><use href="#m-acad"/></svg>
+    <span>
+      Participar en la Comunidad de Aprendizaje te da <b>puntos académicos</b>. Al llegar a la meta
+      de tu curso, se te anota <b>+1 en todas las materias</b> de ese trimestre.
+    </span>
+  </div>
+
+  <div class="metas">
+    <div class="meta"><b>40</b><span>1.º, 2.º, 3.º y 4.º de E.S.O.</span></div>
+    <div class="meta"><b>60</b><span>1.º de Bachillerato y 1.º de S.M.R.</span></div>
+  </div>
+  <p class="nota" style="margin-top:-6px">
+    Lo que te sobre al pasar la meta cuenta para el trimestre siguiente. En 2.º de Bachillerato y
+    2.º de S.M.R. se gana lo mismo, pero en puntos comunitarios, que se cambian por recompensas.
+  </p>
+
+  <h3 class="apartado">Dónde se ganan, y cuántos</h3>
+  <div class="tabla-caja">
+    <table class="gana">
+      <thead>
+        <tr><th scope="col">Actividad</th><th scope="col">Ganas</th><th scope="col">Cuándo y dónde</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tertulia dialógica</strong><small>Se lee un fragmento y se comenta entre todos</small></td>
+          <td class="pts"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>3</span></td>
+          <td>Miércoles alternos, en el recreo · Biblioteca<small>Hay copias del fragmento en el hall</small></td>
+        </tr>
+        <tr>
+          <td><strong>Comisión mixta</strong><small>Se decide junto al profesorado y a las familias</small></td>
+          <td class="pts"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>3</span></td>
+          <td>Miércoles alternos, en el recreo · Pasillo de Matemáticas y Lengua</td>
+        </tr>
+        <tr>
+          <td><strong>Consejo escolar</strong><small>Si representas a tus compañeros y compañeras</small></td>
+          <td class="pts"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>4</span></td>
+          <td>Cuando se convoca una sesión</td>
+        </tr>
+        <tr>
+          <td><strong>Biblioteca tutorizada</strong><small>Ayudas o te ayudan, entre cursos distintos</small></td>
+          <td class="pts"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>2</span></td>
+          <td>Lunes, martes, jueves y viernes, en el recreo · Idiomas 1</td>
+        </tr>
+        <tr>
+          <td><strong>Recreos activos</strong><small>Los organizan 1.º de Bachillerato y 1.º de S.M.R.</small></td>
+          <td class="pts"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>2</span></td>
+          <td>Lunes, martes, jueves y viernes, en el recreo · En el patio</td>
+        </tr>
+        <tr>
+          <td><strong>Biblioteca musical</strong><small>Como la tutorizada, con instrumentos</small></td>
+          <td class="pts"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>2</span></td>
+          <td>Aula de Música</td>
+        </tr>
+        <tr>
+          <td><strong>Grupo interactivo</strong><small>Haciendo de voluntario o voluntaria en una mesa. Solo Bachillerato y S.M.R.</small></td>
+          <td class="pts"><span class="valor valor--acad"><svg class="mini" aria-hidden="true"><use href="#m-acad"/></svg>3</span></td>
+          <td>En las aulas, cuando se convocan</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="nota">
+    Si hay un máximo de puntos por actividad se decidirá según las necesidades del centro, y
+    quedará claro durante el primer mes de cada trimestre. <strong>Lo que se hace dentro de una
+    materia no da puntos: da nota en esa materia.</strong> Los puntos son para lo que haces además
+    de la clase.
+  </p>
+
+  <h3 class="apartado">Tres cosas que conviene saber</h3>
+  <p style="font-size:13.5px;line-height:1.55">
+    <strong>1.</strong> No hay que apuntarse a nada con antelación: vas y ya está, salvo en los
+    grupos interactivos.<br>
+    <strong>2.</strong> Las tertulias y las comisiones son <strong>en el recreo</strong>, así que no
+    pierdes clase.<br>
+    <strong>3.</strong> Si tu familia participa, gana <strong>puntos comunitarios</strong> y te los
+    pasa a ti para pedir recompensas. Son otra cosa: esos no suben la nota, pero se cambian por
+    cosas del catálogo del centro.
+  </p>
+
+  <div class="pieh">
+    <span>IES Al-Ándalus · Almería</span>
+    <span>Dudas: <a href="mailto:cda@iesalandalus.org">cda@iesalandalus.org</a></span>
+  </div>
+
+</div>
+
+<script>
+document.getElementById('imprimir').addEventListener('click', () => window.print());
+</script>
+</body>
+</html>
