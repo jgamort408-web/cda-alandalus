@@ -324,3 +324,67 @@ svg.mini{width:19px;height:19px;vertical-align:-4px;flex:0 0 auto}
   margin-top:14px;font-size:clamp(14px,2vw,16.5px);font-weight:700;line-height:1.45;
   background:var(--white);border-radius:var(--r);padding:11px 14px;
 }
+
+/* ==========================================================================
+   El menú lateral, detrás de un botón de tres barras.
+   Plegado siempre, también en el ordenador: la página es larga y lo que
+   hace falta es poder saltar, no tener una columna ocupando sitio.
+   ========================================================================== */
+
+.btn-menu{
+  width:40px;height:40px;border-radius:var(--r);border:0;cursor:pointer;
+  background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;flex:0 0 auto;
+}
+.btn-menu:hover{background:rgba(255,255,255,.26)}
+
+.velo{
+  position:fixed;inset:0;z-index:40;background:rgba(9,18,34,.55);
+  opacity:0;visibility:hidden;transition:opacity .18s ease,visibility .18s ease;
+}
+.velo[data-abierto]{opacity:1;visibility:visible}
+
+.menu-lateral{
+  position:fixed;top:0;left:0;bottom:0;z-index:41;width:min(310px,86vw);
+  background:var(--lb-darker);color:#fff;overflow-y:auto;
+  transform:translateX(-100%);transition:transform .22s ease;
+  box-shadow:6px 0 28px -10px rgba(0,0,0,.6);
+  background-image:radial-gradient(circle,var(--stud) 2.5px,transparent 2.5px);background-size:18px 18px;
+  padding-bottom:24px;
+}
+.menu-lateral[data-abierto]{transform:translateX(0)}
+@media (prefers-reduced-motion:reduce){
+  .velo,.menu-lateral{transition:none}
+}
+
+.menu-lateral__cab{
+  display:flex;align-items:center;gap:10px;padding:14px 16px;
+  border-bottom:1px solid rgba(255,255,255,.16);position:sticky;top:0;
+  background:var(--lb-darker);
+}
+.menu-lateral__cab strong{font-size:14px;line-height:1.2;flex:1}
+.menu-lateral__cab small{display:block;font-size:11.5px;font-weight:500;color:var(--cyan)}
+.menu-lateral__cerrar{
+  width:34px;height:34px;border:0;border-radius:var(--r);cursor:pointer;
+  background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;flex:0 0 auto;
+}
+.menu-lateral__cerrar:hover{background:rgba(255,255,255,.26)}
+
+.menu-lateral ol{list-style:none;margin:0;padding:10px 10px 0;counter-reset:mm}
+.menu-lateral li{margin-bottom:2px}
+.menu-lateral a{
+  display:flex;gap:11px;align-items:center;padding:11px 12px;border-radius:var(--r);
+  color:rgba(255,255,255,.9);text-decoration:none;font-size:14.5px;font-weight:600;line-height:1.3;
+}
+.menu-lateral a:hover,.menu-lateral a:focus-visible{background:rgba(255,255,255,.14);color:#fff}
+.menu-lateral a[aria-current="true"]{background:var(--cyan);color:var(--lb-darker);font-weight:800}
+.menu-lateral a .n{
+  flex:0 0 auto;width:24px;height:24px;border-radius:7px;background:rgba(255,255,255,.16);
+  display:grid;place-items:center;font-size:12.5px;font-weight:800;
+}
+.menu-lateral a[aria-current="true"] .n{background:rgba(13,37,96,.22);color:var(--lb-darker)}
+.menu-lateral__grupo{
+  font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cyan);padding:14px 12px 5px;
+}
+
+@media print{ .btn-menu,.velo,.menu-lateral{display:none !important} }

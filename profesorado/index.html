@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="estilo.css?v=202609301204">
+<link rel="stylesheet" href="estilo.css?v=202609301230">
 </head>
 <body>
 <a class="saltar" href="#empieza">Saltar al contenido</a>
@@ -63,6 +63,12 @@
       <span class="marca__txt">I.E.S. Al-Ándalus<small>Comunidades de Aprendizaje</small></span>
     </a>
     <a class="volver" href="../">← Volver al plan</a>
+    <button class="btn-menu" id="btn-menu" aria-label="Secciones de la página"
+            aria-expanded="false" aria-controls="menu-lateral" title="Secciones">
+      <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 5.5h14M3 10h14M3 14.5h14" stroke-linecap="round"/>
+      </svg>
+    </button>
     <button class="icono-btn" id="btn-tema" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">
       <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
         <circle cx="10" cy="10" r="4"/><path d="M10 1.5v2M10 16.5v2M1.5 10h2M16.5 10h2M4 4l1.4 1.4M14.6 14.6 16 16M16 4l-1.4 1.4M5.4 14.6 4 16" stroke-linecap="round"/>
@@ -70,6 +76,30 @@
     </button>
   </div>
 </header>
+
+<!-- El menú, plegado siempre: la página es larga y lo que hace falta es
+     poder saltar, no una columna fija comiendo sitio. -->
+<div class="velo" id="velo" hidden></div>
+<nav class="menu-lateral" id="menu-lateral" aria-label="Secciones de la página" aria-hidden="true">
+  <div class="menu-lateral__cab">
+    <strong>Material de aula<small>Comunidades de Aprendizaje</small></strong>
+    <button type="button" class="menu-lateral__cerrar" id="menu-cerrar" aria-label="Cerrar el menú">
+      <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+        <path d="M5 5l10 10M15 5L5 15" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <ol>
+      <li><a href="#empieza">Empieza aquí</a></li>
+      <li><a href="#guion">Guion paso a paso</a></li>
+      <li><a href="#monedas">Las dos monedas</a></li>
+      <li><a href="#baremo">Dónde se ganan</a></li>
+      <li><a href="#recompensas">Las recompensas</a></li>
+      <li><a href="#material">Material para imprimir</a></li>
+      <li><a href="#dudas">Por si preguntan</a></li>
+  </ol>
+</nav>
+
 
 <main>
 
@@ -120,14 +150,14 @@
         <p class="rotulo">Para repartir</p>
         <h3 style="font-size:19px;margin-bottom:6px">Hoja resumen</h3>
         <p style="font-size:14.5px;color:var(--muted)">Dos caras: delante el alumnado y los puntos académicos, detrás el voluntariado, los comunitarios y el catálogo.</p>
-        <a class="btn btn--suave" style="margin-top:12px" href="resumen.html">Ver e imprimir</a>
+        <a class="btn btn--suave" style="margin-top:12px" href="descargas/hoja-resumen.pdf" download>Descargar en PDF</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ======================= GUION DEL DOCENTE ======================= -->
-<section class="seccion">
+<section class="seccion" id="guion">
   <div class="contenedor">
     <p class="rotulo">Antes de entrar en clase</p>
     <h2 class="titulo">Guion, paso a paso</h2>
@@ -447,8 +477,8 @@
       <div class="material">
         <div>
           <h3>Hoja resumen para casa</h3>
-          <p>Dos caras. Delante, el alumnado y los puntos académicos. Detrás, las familias, los comunitarios y el catálogo de recompensas. Se imprime a doble cara.</p>
-          <a class="btn" href="resumen.html">Abrir e imprimir</a>
+          <p>Dos caras, en PDF. Delante, el alumnado y los puntos académicos. Detrás, las familias, los comunitarios y el catálogo. Se imprime a doble cara.</p>
+          <a class="btn" href="descargas/hoja-resumen.pdf" download>PDF · 2 páginas</a>
         </div>
       </div>
 
@@ -643,6 +673,68 @@ btnTema.addEventListener('click', () => {
   document.documentElement.dataset.theme = nuevo;
   try { localStorage.setItem('cda-tema', nuevo); } catch (e) { /* igual que arriba */ }
 });
+</script>
+
+<script>
+/* El menú lateral.
+   Se cierra al elegir, con Escape y tocando fuera: en el móvil, un cajón
+   que solo se cierra con su aspa es un cajón que se queda abierto. */
+(function () {
+  const cajon  = document.getElementById('menu-lateral');
+  const velo   = document.getElementById('velo');
+  const abrir  = document.getElementById('btn-menu');
+  const cerrar = document.getElementById('menu-cerrar');
+  if (!cajon || !velo || !abrir) return;
+
+  let ultimoFoco = null;
+
+  function mostrar(si) {
+    if (si) { ultimoFoco = document.activeElement; velo.hidden = false; }
+    cajon.toggleAttribute('data-abierto', si);
+    velo.toggleAttribute('data-abierto', si);
+    cajon.setAttribute('aria-hidden', String(!si));
+    abrir.setAttribute('aria-expanded', String(si));
+    document.body.style.overflow = si ? 'hidden' : '';
+
+    if (si) {
+      cajon.querySelector('a').focus();
+    } else {
+      setTimeout(function () { velo.hidden = true; }, 220);
+      if (ultimoFoco) ultimoFoco.focus();
+    }
+  }
+
+  abrir.addEventListener('click', function () { mostrar(!cajon.hasAttribute('data-abierto')); });
+  cerrar.addEventListener('click', function () { mostrar(false); });
+  velo.addEventListener('click', function () { mostrar(false); });
+  cajon.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { mostrar(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && cajon.hasAttribute('data-abierto')) mostrar(false);
+  });
+
+  /* Marca en qué sección se está, para no perderse en una página larga. */
+  const enlaces = Array.from(cajon.querySelectorAll('a'));
+  const destinos = enlaces
+    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window && destinos.length) {
+    const vistas = new Set();
+    const vigia = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) { vistas.add(e.target.id); } else { vistas.delete(e.target.id); }
+      });
+      const primera = destinos.find(function (d) { return vistas.has(d.id); });
+      enlaces.forEach(function (a) {
+        a.setAttribute('aria-current', String(primera && a.getAttribute('href') === '#' + primera.id));
+      });
+    }, { rootMargin: '-15% 0px -70% 0px' });
+
+    destinos.forEach(function (d) { vigia.observe(d); });
+  }
+})();
 </script>
 </body>
 </html>

@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="estilo.css?v=202609301204">
+<link rel="stylesheet" href="estilo.css?v=202609301230">
 </head>
 <body>
 <a class="saltar" href="#empezamos">Saltar al contenido</a>
@@ -63,6 +63,12 @@
       <img class="cda" src="assets/logo-cda.png" width="700" height="346" alt="Comunidades de Aprendizaje">
       <span class="marca__txt">I.E.S. Al-Ándalus<small>Comunidades de Aprendizaje</small></span>
     </span>
+    <button class="btn-menu" id="btn-menu" aria-label="Secciones de la página"
+            aria-expanded="false" aria-controls="menu-lateral" title="Secciones">
+      <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 5.5h14M3 10h14M3 14.5h14" stroke-linecap="round"/>
+      </svg>
+    </button>
     <button class="icono-btn" id="btn-tema" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro" style="margin-left:auto">
       <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
         <circle cx="10" cy="10" r="4"/><path d="M10 1.5v2M10 16.5v2M1.5 10h2M16.5 10h2M4 4l1.4 1.4M14.6 14.6 16 16M16 4l-1.4 1.4M5.4 14.6 4 16" stroke-linecap="round"/>
@@ -70,6 +76,36 @@
     </button>
   </div>
 </header>
+
+<!-- El menú, plegado siempre: la página es larga y lo que hace falta es
+     poder saltar, no una columna fija comiendo sitio. -->
+<div class="velo" id="velo" hidden></div>
+<nav class="menu-lateral" id="menu-lateral" aria-label="Secciones de la página" aria-hidden="true">
+  <div class="menu-lateral__cab">
+    <strong>Guía para familias<small>I.E.S. Al-Ándalus</small></strong>
+    <button type="button" class="menu-lateral__cerrar" id="menu-cerrar" aria-label="Cerrar el menú">
+      <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+        <path d="M5 5l10 10M15 5L5 15" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <ol>
+      <li><a href="#empezamos">Empezad por aquí</a></li>
+      <li class="menu-lateral__grupo" role="presentation">Los seis pasos</li>
+      <li><a href="#paso-1"><span class="n">1</span>Qué es esto</a></li>
+      <li><a href="#paso-2"><span class="n">2</span>Qué podéis hacer</a></li>
+      <li><a href="#paso-3"><span class="n">3</span>Cómo se apunta uno</a></li>
+      <li><a href="#paso-4"><span class="n">4</span>Qué ganáis por venir</a></li>
+      <li><a href="#paso-5"><span class="n">5</span>Qué puede pedir</a></li>
+      <li><a href="#paso-6"><span class="n">6</span>Lo que gana por su cuenta</a></li>
+      <li class="menu-lateral__grupo" role="presentation">Y además</li>
+      <li><a href="#detalle">Cuánto da cada cosa</a></li>
+      <li><a href="#dudas">Cuatro dudas normales</a></li>
+      <li><a href="#papel">Para llevarse en papel</a></li>
+      <li><a href="#apuntarse">¿Os apuntáis?</a></li>
+  </ol>
+</nav>
+
 
 <main>
 
@@ -118,7 +154,7 @@
   <div class="contenedor">
     <ol class="camino">
 
-      <li class="hito">
+      <li class="hito" id="paso-1">
         <h2>Qué es esto de Comunidades de Aprendizaje</h2>
         <p>
           Es una forma de trabajar en la que el instituto <strong>abre las aulas y los recreos</strong>
@@ -137,7 +173,7 @@
         </p>
       </li>
 
-      <li class="hito">
+      <li class="hito" id="paso-2">
         <h2>Qué podéis hacer</h2>
         <p>Elegís lo que os apetezca y lo que os cuadre de horario. Todo esto ya está funcionando:</p>
         <ul class="actividades">
@@ -177,7 +213,7 @@
         </ul>
       </li>
 
-      <li class="hito">
+      <li class="hito" id="paso-3">
         <h2>Cómo se apunta uno</h2>
         <p>Por cualquiera de estos tres caminos, el que os resulte más fácil:</p>
         <ul class="datos" style="margin-bottom:12px">
@@ -201,7 +237,7 @@
         </p>
       </li>
 
-      <li class="hito hito--cian">
+      <li class="hito hito--cian" id="paso-4">
         <h2>Qué ganáis por venir</h2>
         <div class="golpe">
           <svg role="img" aria-label="Moneda de puntos comunitarios"><use href="#m-com"/></svg>
@@ -219,7 +255,7 @@
         </p>
       </li>
 
-      <li class="hito hito--cian">
+      <li class="hito hito--cian" id="paso-5">
         <h2>Qué puede pedir con ellos</h2>
         <p>
           Lo más barato cuesta <strong>5 puntos</strong>, o sea <strong>una sola visita vuestra</strong>.
@@ -255,7 +291,7 @@
         </div>
       </li>
 
-      <li class="hito hito--naranja">
+      <li class="hito hito--naranja" id="paso-6">
         <h2>Y lo que gana por su cuenta</h2>
         <p>
           Aparte de lo vuestro, vuestro hijo o hija gana <strong>puntos académicos</strong> cuando
@@ -398,7 +434,7 @@
   </div>
 </section>
 
-<section class="seccion">
+<section class="seccion" id="dudas">
   <div class="contenedor">
     <p class="rotulo">Por si os lo estáis preguntando</p>
     <h2 class="titulo">Cuatro dudas normales</h2>
@@ -423,25 +459,25 @@
   </div>
 </section>
 
-<section class="seccion">
+<section class="seccion" id="papel">
   <div class="contenedor">
     <div class="ladrillo ladrillo--acento" style="text-align:center">
       <p class="rotulo" style="color:var(--lb)">Para tenerlo a mano</p>
       <h2 class="titulo" style="font-size:22px;margin-bottom:8px">Lleváoslo en papel</h2>
       <p style="font-size:15.5px;max-width:56ch;margin:0 auto 16px">
-        Dos hojas de una cara. La vuestra para la nevera, y la de vuestro hijo o hija para que vea
+        Dos hojas de una cara, en PDF: se abren y se imprimen igual en el móvil que en el ordenador. La vuestra para la nevera, y la de vuestro hijo o hija para que vea
         <strong>cómo sube su nota participando</strong>: es la que mejor funciona para animarle.
       </p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-        <a class="btn" href="hoja.html">Vuestra hoja</a>
-        <a class="btn btn--naranja" href="hoja-alumnado.html">La hoja de vuestro hijo o hija</a>
+        <a class="btn" href="hoja-familias.pdf" download>Vuestra hoja (PDF)</a>
+        <a class="btn btn--naranja" href="hoja-alumnado.pdf" download>La hoja de vuestro hijo o hija (PDF)</a>
         <a class="btn btn--suave" href="cartel-recompensas-familias.pdf">Cartel de recompensas (PDF)</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="seccion">
+<section class="seccion" id="apuntarse">
   <div class="contenedor">
     <div class="ladrillo" style="text-align:center;border-color:var(--cyan-d);box-shadow:0 2px 0 var(--cyan-d)">
       <h2 class="titulo" style="font-size:24px;color:var(--cyan-d);margin-bottom:10px">¿Os apuntáis?</h2>
@@ -574,6 +610,68 @@ btnTema.addEventListener('click', () => {
   document.documentElement.dataset.theme = nuevo;
   try { localStorage.setItem('cda-tema', nuevo); } catch (e) { /* igual que arriba */ }
 });
+</script>
+
+<script>
+/* El menú lateral.
+   Se cierra al elegir, con Escape y tocando fuera: en el móvil, un cajón
+   que solo se cierra con su aspa es un cajón que se queda abierto. */
+(function () {
+  const cajon  = document.getElementById('menu-lateral');
+  const velo   = document.getElementById('velo');
+  const abrir  = document.getElementById('btn-menu');
+  const cerrar = document.getElementById('menu-cerrar');
+  if (!cajon || !velo || !abrir) return;
+
+  let ultimoFoco = null;
+
+  function mostrar(si) {
+    if (si) { ultimoFoco = document.activeElement; velo.hidden = false; }
+    cajon.toggleAttribute('data-abierto', si);
+    velo.toggleAttribute('data-abierto', si);
+    cajon.setAttribute('aria-hidden', String(!si));
+    abrir.setAttribute('aria-expanded', String(si));
+    document.body.style.overflow = si ? 'hidden' : '';
+
+    if (si) {
+      cajon.querySelector('a').focus();
+    } else {
+      setTimeout(function () { velo.hidden = true; }, 220);
+      if (ultimoFoco) ultimoFoco.focus();
+    }
+  }
+
+  abrir.addEventListener('click', function () { mostrar(!cajon.hasAttribute('data-abierto')); });
+  cerrar.addEventListener('click', function () { mostrar(false); });
+  velo.addEventListener('click', function () { mostrar(false); });
+  cajon.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { mostrar(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && cajon.hasAttribute('data-abierto')) mostrar(false);
+  });
+
+  /* Marca en qué sección se está, para no perderse en una página larga. */
+  const enlaces = Array.from(cajon.querySelectorAll('a'));
+  const destinos = enlaces
+    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window && destinos.length) {
+    const vistas = new Set();
+    const vigia = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) { vistas.add(e.target.id); } else { vistas.delete(e.target.id); }
+      });
+      const primera = destinos.find(function (d) { return vistas.has(d.id); });
+      enlaces.forEach(function (a) {
+        a.setAttribute('aria-current', String(primera && a.getAttribute('href') === '#' + primera.id));
+      });
+    }, { rootMargin: '-15% 0px -70% 0px' });
+
+    destinos.forEach(function (d) { vigia.observe(d); });
+  }
+})();
 </script>
 </body>
 </html>
